@@ -1,0 +1,314 @@
+.research-box {
+  padding: 25px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+  height: 100%;
+}
+
+.research-box h3 {
+  font-size: 20px;
+  color: #012970;
+  margin-bottom: 10px;
+}
+
+.research-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.research-meta i {
+  color: #012970;
+}
+
+.research-info {
+  padding-left: 18px;
+}
+
+.research-info li {
+  margin-bottom: 6px;
+}
+
+.badge.status {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.badge.ongoing {
+  background: #ffc107;
+  color: #000;
+}
+
+.badge.completed {
+  background: #198754;
+  color: #fff;
+}
+
+/* Filter Container */
+.research-filters,
+.publication-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+/* Button Style */
+.filter-btn {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid #dee2e6;
+  background: #ffffff;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+/* Hover */
+.filter-btn:hover {
+  background: #f0f4ff;
+  color: #012970;
+  border-color: #012970;
+}
+
+/* Active */
+.filter-btn.active {
+  background: #012970;
+  color: #ffffff;
+  border-color: #012970;
+  box-shadow: 0 6px 18px rgba(1,41,112,0.35);
+}
+
+/* Mobile Friendly */
+@media (max-width: 576px) {
+  .filter-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
+
+.publication-badges {
+  display: flex;
+  gap: 12px;
+}
+
+.publication-badges .badge {
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 14px;
+  color: #fff;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.badge.scopus {
+  background-color: #f48024;
+}
+
+.badge.sinta {
+  background-color: #2c7be5;
+}
+
+.badge.scholar {
+  background-color: #f45142;
+}
+
+.badge.orcid {
+  background-color: #91c011;
+}
+
+.badge.researchgate {
+  background-color: #00a79d;
+}
+
+.badge.wos {
+  background-color: #5e2b97;
+}
+
+.publication-filters {
+  margin-bottom: 25px;
+}
+
+.filter-btn {
+  padding: 8px 15px;
+  border: none;
+  background: #e9ecef;
+  border-radius: 20px;
+  margin-right: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: #012970;
+  color: #fff;
+}
+
+.publication-item {
+  margin-bottom: 15px;
+}
+
+.teaching-box {
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  height: 100%;
+}
+
+.teaching-box h3 {
+  font-size: 20px;
+  color: #012970;
+  margin-bottom: 10px;
+}
+
+.teaching-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.teaching-meta i {
+  color: #012970;
+}
+
+.teaching-info {
+  padding-left: 18px;
+}
+
+.teaching-info li {
+  margin-bottom: 6px;
+}
+
+.community-box {
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  height: 100%;
+}
+
+.community-box h3 {
+  font-size: 20px;
+  color: #012970;
+  margin-bottom: 10px;
+}
+
+.community-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.community-meta i {
+  color: #012970;
+}
+
+.community-info {
+  padding-left: 18px;
+}
+
+.community-info li {
+  margin-bottom: 6px;
+}
+
+.pkm-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 8px 0 12px;
+}
+
+.pkm-badge {
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 6px;
+  letter-spacing: 0.3px;
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+/* DRTPM */
+.pkm-badge.drtpm {
+  background: rgba(220, 53, 69, 0.12);
+  color: #dc3545;
+  border: 1px solid #dc3545;
+}
+
+/* Matching Fund */
+.pkm-badge.matching {
+  background: rgba(13, 110, 253, 0.12);
+  color: #0d6efd;
+  border: 1px solid #0d6efd;
+}
+
+/* Mandiri */
+.pkm-badge.mandiri {
+  background: rgba(25, 135, 84, 0.12);
+  color: #198754;
+  border: 1px solid #198754;
+}
+
+/* =====================================================
+   Academic Filter Style (Non-destructive)
+===================================================== */
+.academic-filters {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 30px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.academic-filters li {
+  padding: 10px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid #dee2e6;
+  background: #ffffff;
+  color: #495057;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.academic-filters li:hover {
+  background: #f0f4ff;
+  color: #012970;
+  border-color: #012970;
+}
+
+.academic-filters li.filter-active {
+  background: #012970;
+  color: #ffffff;
+  border-color: #012970;
+  box-shadow: 0 6px 18px rgba(1,41,112,0.35);
+}
+
+/* Mobile friendly */
+@media (max-width: 576px) {
+  .academic-filters li {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
