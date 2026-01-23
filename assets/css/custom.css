@@ -312,3 +312,20 @@
     font-size: 13px;
   }
 }
+
+.loading {
+  display: none;
+  color: #555;
+}
+
+.error-message {
+  display: none;
+  color: #df1529;
+  font-weight: 600;
+}
+
+.sent-message {
+  display: none;
+  color: #18d26e;
+  font-weight: 600;
+}

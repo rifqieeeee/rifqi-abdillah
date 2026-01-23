@@ -143,7 +143,16 @@
           </div>
 
           <div class="col-lg-7">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="200">
+            <form id="contactForm" action="https://formspree.io/f/mbdgklbz" method="POST" data-aos="fade-up" data-aos-delay="200">
+
+              <input type="hidden" name="email" value="email">
+              <input type="hidden" name="_subject" value="Thank you for contacting Rifqi Abdillah">
+              <input type="hidden" name="_autoresponse"
+                    value="Thank you for your message. I will respond as soon as possible. For urgent matters, please contact me via email or WhatsApp.">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+
+
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -190,6 +199,60 @@
 
   </main>
 
+<script>
+  const form = document.getElementById("contactForm");
+  const loading = document.querySelector(".loading");
+  const errorMsg = document.querySelector(".error-message");
+  const sentMsg = document.querySelector(".sent-message");
+
+  form.addEventListener("submit", async function (e) {
+    e.preventDefault();
+
+    loading.style.display = "block";
+    errorMsg.style.display = "none";
+    sentMsg.style.display = "none";
+
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData.entries());
+
+    try {
+      /* 1️⃣ Google Sheets */
+      await fetch(
+        "https://script.google.com/macros/s/AKfycbzIsc_AgR41I00LbTf5qhCI-lMUO8c34RlIhAjn-PBSayjgBXJGTU3XlWqbBzPrA5O3Zw/exec",
+        {
+          method: "POST",
+          body: JSON.stringify(data),
+          headers: { "Content-Type": "application/json" }
+        }
+      );
+
+      /* 2️⃣ Formspree */
+      const response = await fetch(form.action, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
+
+      loading.style.display = "none";
+
+      if (response.ok) {
+        sentMsg.style.display = "block";
+        form.reset();
+      } else {
+        errorMsg.style.display = "block";
+        errorMsg.innerText = "Failed to send message. Please try again.";
+      }
+
+    } catch (err) {
+      loading.style.display = "none";
+      errorMsg.style.display = "block";
+      errorMsg.innerText = "An error occurred. Please try again later.";
+    }
+  });
+</script>
+
+
+
   <footer id="footer" class="footer position-relative light-background">
 
     <div class="container">
@@ -215,7 +278,7 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
   <script src="assets/vendor/aos/aos.js"></script>
   <script src="assets/vendor/typed.js/typed.umd.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
