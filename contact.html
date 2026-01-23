@@ -143,36 +143,39 @@
           </div>
 
           <div class="col-lg-7">
-            <form id="contactForm" action="https://formspree.io/f/mbdgklbz" method="POST" data-aos="fade-up" data-aos-delay="200">
+            <form id="contactForm"
+                  action="https://formspree.io/f/mbdgklbz"
+                  method="POST"
+                  data-aos="fade-up"
+                  data-aos-delay="200">
 
-              <input type="hidden" name="email" value="email">
+              <!-- Formspree settings -->
               <input type="hidden" name="_subject" value="Thank you for contacting Rifqi Abdillah">
               <input type="hidden" name="_autoresponse"
                     value="Thank you for your message. I will respond as soon as possible. For urgent matters, please contact me via email or WhatsApp.">
               <input type="hidden" name="_template" value="table">
               <input type="hidden" name="_captcha" value="false">
 
-
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                  <label class="pb-2">Your Name</label>
+                  <input type="text" name="name" class="form-control" required>
                 </div>
 
                 <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
-                  <input type="email" class="form-control" name="email" id="email-field" required="">
+                  <label class="pb-2">Your Email</label>
+                  <input type="email" name="email" class="form-control" required>
                 </div>
 
                 <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                  <label class="pb-2">Subject</label>
+                  <input type="text" name="subject" class="form-control" required>
                 </div>
 
                 <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  <label class="pb-2">Message</label>
+                  <textarea name="message" rows="10" class="form-control" required></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">
@@ -182,13 +185,12 @@
                     Your message has been sent. Thank you! <br>
                     For faster response, please contact me via email or WhatsApp.
                   </div>
-
-
                   <button type="submit">Send Message</button>
                 </div>
 
               </div>
             </form>
+
           </div><!-- End Contact Form -->
 
         </div>
