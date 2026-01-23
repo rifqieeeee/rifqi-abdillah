@@ -221,10 +221,10 @@
         "https://script.google.com/macros/s/AKfycbzIsc_AgR41I00LbTf5qhCI-lMUO8c34RlIhAjn-PBSayjgBXJGTU3XlWqbBzPrA5O3Zw/exec",
         {
           method: "POST",
-          body: JSON.stringify(data),
-          headers: { "Content-Type": "application/json" }
+          body: formData
         }
       );
+
 
       /* 2️⃣ Formspree */
       const response = await fetch(form.action, {
