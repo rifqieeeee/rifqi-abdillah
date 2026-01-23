@@ -95,10 +95,10 @@
         <li><a href="about.html"><i class="bi bi-person navicon"></i>About</a></li>
         <li><a href="resume.html"><i class="bi bi-file-earmark-text navicon"></i>Resume</a></li>
         <li><a href="publications.html"><i class="bi bi-journal-text navicon"></i>Publications</a></li>
-        <li><a href="research.html"><i class="bi bi-search navicon"></i>Research</a></li>
+        <li><a class="active" href="research.html"><i class="bi bi-search navicon"></i>Research</a></li>
         <li><a href="teaching.html"><i class="bi bi-easel navicon"></i>Teaching</a></li>
         <li><a href="community.html"><i class="bi bi-people navicon"></i>Community Service</a></li>
-        <li><a class="active" href="projects.html"><i class="bi bi-images navicon"></i>Projects</a></li>
+        <li><a href="projects.html"><i class="bi bi-images navicon"></i>Projects</a></li>
         <li><a href="contact.html"><i class="bi bi-envelope navicon"></i>Contact</a></li>
 
       </ul>
@@ -108,17 +108,81 @@
 
   <main class="main">
 
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="portfolio section">
+    <!-- Research Section -->
+    <section id="research" class="research section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Portfolio</h2>
-        <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        <h2>Research</h2>
+        <p>Research projects, grants, and scholarly activities conducted at national and international levels.</p>
       </div><!-- End Section Title -->
 
-      <h2>Under Development!</h2>
-    </section><!-- /Portfolio Section -->
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <!-- Research Filters -->
+        <div class="research-filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+          <button class="filter-btn" data-filter="completed">Completed</button>
+          <button class="filter-btn" data-filter="international">International</button>
+          <button class="filter-btn" data-filter="national">National</button>
+        </div>
+
+        <div class="row gy-4">
+
+          <!-- Research Item -->
+          <div class="col-lg-6 research-item ongoing international">
+            <div class="research-box">
+              <h3>Title of Research Project</h3>
+
+              <p class="research-meta">
+                <span><i class="bi bi-calendar-event"></i> 2024 – 2026</span>
+                <span><i class="bi bi-geo-alt"></i> International</span>
+                <span class="badge status ongoing">Ongoing</span>
+              </p>
+
+              <p>
+                Brief description of the research focus, objectives, and expected contributions to science or society.
+              </p>
+
+              <ul class="research-info">
+                <li><strong>Role:</strong> Principal Investigator</li>
+                <li><strong>Funding:</strong> International Grant Scheme</li>
+                <li><strong>Collaborators:</strong> University / Research Group</li>
+              </ul>
+
+            </div>
+          </div>
+
+          <!-- Research Item -->
+          <div class="col-lg-6 research-item completed national">
+            <div class="research-box">
+              <h3>Judul Penelitian Nasional</h3>
+
+              <p class="research-meta">
+                <span><i class="bi bi-calendar-event"></i> 2022 – 2023</span>
+                <span><i class="bi bi-geo-alt"></i> National</span>
+                <span class="badge status completed">Completed</span>
+              </p>
+
+              <p>
+                Ringkasan singkat mengenai topik, metode, dan luaran penelitian yang telah diselesaikan.
+              </p>
+
+              <ul class="research-info">
+                <li><strong>Role:</strong> Member</li>
+                <li><strong>Funding:</strong> DRTPM Kemendikbud</li>
+                <li><strong>Output:</strong> Journal Publication, Conference Paper</li>
+              </ul>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section><!-- /Research Section -->
 
   </main>
 
