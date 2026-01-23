@@ -18,26 +18,6 @@ button.addEventListener('click', () => {
 });
 });
 
-const filterButtons = document.querySelectorAll('.filter-btn');
-const publicationItems = document.querySelectorAll('.publication-item');
-
-filterButtons.forEach(button => {
-button.addEventListener('click', () => {
-    filterButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-
-    const filter = button.getAttribute('data-filter');
-
-    publicationItems.forEach(item => {
-    if (filter === 'all' || item.classList.contains(filter)) {
-        item.style.display = 'list-item';
-    } else {
-        item.style.display = 'none';
-    }
-    });
-});
-});
-
 const teachingButtons = document.querySelectorAll('.teaching-filters .filter-btn');
 const teachingItems = document.querySelectorAll('.teaching-item');
 
