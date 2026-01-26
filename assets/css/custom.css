@@ -4,6 +4,7 @@
   border-radius: 10px;
   box-shadow: 0 5px 20px rgba(0,0,0,0.08);
   height: 100%;
+  text-align: justify;
 }
 
 .research-box h3 {
@@ -167,6 +168,7 @@
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   height: 100%;
+  text-align: justify;
 }
 
 .teaching-box h3 {
@@ -201,6 +203,7 @@
   border-radius: 12px;
   box-shadow: 0 6px 20px rgba(0,0,0,0.08);
   height: 100%;
+  text-align: justify;
 }
 
 .community-box h3 {
@@ -415,5 +418,73 @@
   padding-bottom: 5px;
   margin-bottom: 15px;
   font-weight: 600;
-  text-decoration: underline;
 }
+
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.hero img {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.75)
+  );
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hero p {
+  font-size: 1.4rem;
+  margin-top: 10px;
+}
+
+.hero-btn {
+  margin-top: 25px;
+  padding: 12px 32px;
+  border-radius: 50px;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+
+  background-color: var(--accent-color);
+  color: #ffffff;
+  border: 1px solid rgba(255,255,255,0.15);
+
+  box-shadow: 0 6px 18px rgba(0,0,0,0.28);
+  transition: background-color 0.3s ease,
+              box-shadow 0.3s ease,
+              transform 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: var(--accent-soft);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+  transform: translateY(-1.5px);
+}
+
+.hero-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+}
+
