@@ -1,0 +1,207 @@
+{
+  "publications": [
+
+    {
+      "category": "international",
+      "type": "conference",
+      "year": 2025,
+      "authors": "Parama Diptya Widayaka, Pradini Puspitaningayu, Sayyidul Aulia Alamsyah, Endryansyah Endryansyah, Lusia Rakhmawati, Paramitha Nerisafitra, Rifqi Abdillah, Akbar Wildhanata, Haikal Alif Eyrlangga",
+      "title": "TinyML-Based Object Detection on Smart Blind Stick for Visually Impaired Person",
+      "venue": "International Conference on Vocational Education and Electrical Engineering (ICVEE)",
+      "pages": "227–232",
+      "publisher": "IEEE",
+      "link": "https://doi.org/10.1109/ICVEE66651.2025.11281396"
+    },
+    {
+      "category": "international",
+      "type": "conference",
+      "year": 2025,
+      "authors": "Rifqi Abdillah, Mohammad Wildan Habibi, Moch Deny Pratama, Parama Diptya Widayaka, Muhammad Sonhaji Akbar, Bartolomeus Priya Perkasa Utama Widada",
+      "title": "Edge Computing-Based Monitoring of Mosquito Breeding Grounds Using the Flatten Method and Neural Network Classifier",
+      "venue": "International Conference on Green Engineering for Sustainable Future (ICoGESF)",
+      "pages": "05001",
+      "publisher": "E3S Web of Conferences",
+      "link": "https://doi.org/10.1051/e3sconf/202564505001"
+    },
+    {
+      "category": "international",
+      "type": "conference",
+      "year": 2025,
+      "authors": "Mohammad Wildan Habibi, I Gusti Putu Asto Buditjahjanto, Tri Rijanto, Lilik Anifah, Rifqi Abdillah, Harun Al Rosyid, Muhammad Hakiki, Ramadhan Cakra Wibawa, Siti Jamiatul Husnaini",
+      "title": "The Effect of an IoT-based Microcontroller Training Kit on Psychomotor Learning Outcomes in Microcontroller and Microprocessor Programming",
+      "venue": "International Conference on Green Engineering for Sustainable Future (ICoGESF)",
+      "pages": "06003",
+      "publisher": "E3S Web of Conferences",
+      "link": "https://doi.org/10.1051/e3sconf/202564506003"
+    },
+    {
+      "category": "international",
+      "type": "conference",
+      "year": 2025,
+      "authors": "Moch Deny Pratama, Rifqi Abdillah, M Adamu Islam Mashuri, Dimas Novian Aditia Syahputra, Faris Abdi El Hakim, Dodik Arwin Dermawan, Dina Zatusiva Haq",
+      "title": "A Comprehensive Research of Supervised Learning Strategies Using Machine Learning and Artificial Neural Network Models for Human Personality Trait Classification: A Multi-Model Performance Analysis",
+      "venue": "International Joint Conference on UNESA",
+      "pages": "Vol.3 (1)",
+      "publisher": "",
+      "link": "https://proceeding.unesa.ac.id/index.php/pijcu/article/view/7335"
+    },
+    {
+      "category": "international",
+      "type": "conference",
+      "year": 2025,
+      "authors": "Rifqi Abdillah, Farhanna Mar'i, Moch Deny Pratama, Muhammad Sonhaji Akbar, Monica Cinthya, Anggraeni Widya Purwita",
+      "title": "Click Count Forecasting with Bi-Directional LSTM and Temporal Feature Fusion",
+      "venue": "International Conference on Advancement in Data Science, E-learning and Information System (ICADEIS)",
+      "pages": "1–6",
+      "publisher": "IEEE",
+      "link": "https://doi.org/10.1109/ICADEIS65852.2025.10933328"
+    },
+    {
+      "category": "international",
+      "type": "conference",
+      "year": 2025,
+      "authors": "Farhanna Mar'i, Rifqi Abdillah, Ronggo Alit, Moh. Aries Syufagi",
+      "title": "Comparison of Machine Learning Methods for Air Quality Prediction Based on Particulate Matter (PM2.5)",
+      "venue": "International Conference on Advancement in Data Science, E-learning and Information System (ICADEIS)",
+      "pages": "1–7",
+      "publisher": "IEEE",
+      "link": "https://doi.org/10.1109/ICADEIS65852.2025.10933404"
+    },
+
+    {
+      "category": "international",
+      "type": "conference",
+      "year": 2023,
+      "authors": "Parama Diptya Widayaka, Pradini Puspitaningayu, Sayyidul Aulia Alamsyah, Rifqi Firmansyah Muktiadji, Arif Widodo, Rifqi Abdillah",
+      "title": "Design and Implementation of 2-DOF Arm Manipulator Robot as Robotic Kinematic Learning Platform",
+      "venue": "International Conference on Vocational Education and Electrical Engineering (ICVEE)",
+      "pages": "197–201",
+      "publisher": "IEEE",
+      "link": "https://doi.org/10.1109/ICVEE59738.2023.10348214"
+    },
+    {
+      "category": "international",
+      "type": "conference",
+      "year": 2023,
+      "authors": "Rifqi Abdillah, Riyanarto Sarno, Taufiq Choirul Amri, Faris Atoil Haq, Kelly Rossa Sungkono, Dwi Sunaryono",
+      "title": "Clustering of Photoplethysmography Data Signals for Developing Noise Filters",
+      "venue": "International Conference on Artificial Intelligence in Information and Communication (ICAIIC)",
+      "pages": "303–308",
+      "publisher": "IEEE",
+      "link": "https://doi.org/10.1109/ICAIIC57133.2023.10066966"
+    },
+    {
+      "category": "international",
+      "type": "conference",
+      "year": 2023,
+      "authors": "Faris Atoil Haq, Riyanarto Sarno, Rifqi Abdillah, Taufiq Choirul Amri, Abdullah Faqih Septiyanto, Kelly Rossa Sungkono",
+      "title": "Feature Selection of Photoplethysmograph Data in Machine Learning",
+      "venue": "International Conference on Artificial Intelligence in Information and Communication (ICAIIC)",
+      "pages": "315–320",
+      "publisher": "IEEE",
+      "link": "https://doi.org/10.1109/ICAIIC57133.2023.10067116"
+    },
+    {
+      "category": "international",
+      "type": "conference",
+      "year": 2023,
+      "authors": "Taufiq Choirul Amri, Riyanarto Sarno, Rifqi Abdillah, Faris Atoil Haq, Abdullah Faqih Septiyanto, Dwi Sunaryono",
+      "title": "Filter Validation for Detecting Outliers of Photoplethysmograph Data",
+      "venue": "International Conference on Artificial Intelligence in Information and Communication (ICAIIC)",
+      "pages": "012–017",
+      "publisher": "IEEE",
+      "link": "https://doi.org/10.1109/ICAIIC57133.2023.10067110"
+    },
+
+    {
+      "category": "national",
+      "type": "journal",
+      "year": 2025,
+      "authors": "Nisa Dwi Septiyanti, Muhammad Irfan Luthfi, Monica Cinthya, Rifqi Abdillah",
+      "title": "Integrasi ChatGPT Sebagai Asisten Virtual Untuk Meningkatkan Efektivitas Pembelajaran Pemrograman Web Berbasis Project Based Learning",
+      "venue": "Jurnal Pendidikan dan Teknologi Indonesia (JPTI)",
+      "pages": "Vol.5 (10), 3051–3063",
+      "link": "https://jpti.journals.id/index.php/jpti/article/view/1373"
+    },
+    {
+      "category": "national",
+      "type": "journal",
+      "year": 2025,
+      "authors": "Moch Deny Pratama, Anisa Nur Azizah, Misbachul Falach Asy'ari, Dimas Novian Aditia Syahputra, M Adamu Islam Mashuri, Binti Kholifah, Rifqi Abdillah, Adinda Putri Pratiwi, Dina Zatusiva Haq",
+      "title": "Enhancing Clickbait Headline Identification Performance Without Preprocessing Through Feature Reduction and Sentiment Analysis",
+      "venue": "Journal of Applied Informatics Research",
+      "pages": "Vol.1 (1), 30–44",
+      "link": "https://journal.unesa.ac.id/index.php/jair/article/view/44659"
+    },
+    {
+      "category": "national",
+      "type": "journal",
+      "year": 2025,
+      "authors": "Monica Cinthya, Retno Aulia Vinarti, Nisa Dwi Septiyanti, Cendra Devayana Putra, Erik Rahman, Rifqi Abdillah",
+      "title": "Penentuan Dosis Koagulan Pada Pengolahan Air Minum: Pendekatan Fuzzy Berbasis Data Dan Penentuan Fuzzy Set Berbasis Z-Score",
+      "venue": "Journal of Innovation And Future Technology",
+      "pages": "Vol.7 (2), 244–257",
+      "link": "https://ejournal.lppm-unbaja.ac.id/index.php/iftech/article/view/4247"
+    },
+    {
+      "category": "national",
+      "type": "journal",
+      "year": 2025,
+      "authors": "Moch Deny Pratama, Dimas Novian Aditia Syahputra, M Adamu Islam Mashuri, Binti Kholifah, Rifqi Abdillah, Adinda Putri Pratiwi",
+      "title": "Optimization of Personalized Fashion Recommendations for H&M: A Collaborative Filtering Algorithm Approach with Temporal Time Interval Analysis",
+      "venue": "Journal of Applied Informatics Research",
+      "pages": "Vol.1 (1), 10–20",
+      "link": "https://journal.unesa.ac.id/index.php/jair/article/view/44593"
+    },
+    {
+      "category": "national",
+      "type": "journal",
+      "year": 2025,
+      "authors": "Anggraeni Widya Purwita, Berlian Maulidya Izzati, Monica Cinthya, Ersha Aisyah Elfaiz, Rifqi Abdillah",
+      "title": "Analisis Transformasi Digital Pelayanan Kesehatan Publik melalui Implementasi Aplikasi SiKuat di Puskesmas Kota Sidoarjo",
+      "venue": "KERNEL: Jurnal Riset Inovasi Bidang Informatika dan Pendidikan Informatika",
+      "pages": "Vol.6 (1), 81–88",
+      "link": "https://doi.org/10.31284/j.kernel.2025.v6i1.7784"
+    },
+    {
+      "category": "national",
+      "type": "journal",
+      "year": 2025,
+      "authors": "Farhanna Mar'i, Rifqi Abdillah, Ronggo Alit, Moh. Aries Syufagi",
+      "title": "Peningkatan Pemahaman Implementasi Machine Learning Bagi Siswa SMK Negeri 1 Bangil dengan Teachable Machine",
+      "venue": "Jurnal Aplikasi Dan Inovasi Ipteks SOLIDITAS",
+      "pages": "Vol.8 (1), 34–42",
+      "link": "https://doi.org/10.31328/js.v8i1.7080"
+    },
+    {
+      "category": "national",
+      "type": "journal",
+      "year": 2024,
+      "authors": "R. C. Wibawa, B. Sujatmiko, Y. Anistyasari, R. Basatha, M. S. Akbar, E. A. Elfaiz, C. D. Putra, R. Abdillah, M. W. Habibi",
+      "title": "Pengembangan Program Pembelajaran Keterampilan Berpikir Komputasional Untuk Siswa Sekolah Indonesia Davao (SID) Filipina",
+      "venue": "Jurnal Pendidikan Tambusai",
+      "pages": "Vol.8 (3), 49464–49472",
+      "link": "https://jptam.org/index.php/jptam/article/view/23606"
+    },
+    {
+      "category": "national",
+      "type": "journal",
+      "year": 2024,
+      "authors": "Moch Deny Pratama, Rifqi Abdillah, Dina Zatusiva Haq",
+      "title": "Water Quality Identification Using Ensemble Machine Learning and Hybrid Resampling SMOTE-ENN Algorithm",
+      "venue": "Fountain of Informatics Journal",
+      "pages": "Vol.9 (2), 83–91",
+      "link": "https://ejournal.unida.gontor.ac.id/index.php/FIJ/article/view/12489"
+    },
+    {
+      "category": "national",
+      "type": "journal",
+      "year": 2024,
+      "authors": "MD Pratama, R Abdillah, D Herumurti, SC Hidayati",
+      "title": "Algorithmic Advancements in Heuristic Search for Enhanced Sudoku Puzzle Solving Across Difficulty Levels",
+      "venue": "Building of Informatics, Technology and Science (BITS)",
+      "pages": "Vol.5 (4), 659–6671",
+      "link": "https://doi.org/10.47065/bits.v5i4.4622"
+    }
+  ]
+}
