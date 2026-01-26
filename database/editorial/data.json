@@ -1,0 +1,44 @@
+{
+  "editorial_board": [
+    {
+      "year": "2024 - Now",
+      "role": "Secretary",
+      "journal": "Journal of Emerging Information Systems and Business Intelligence (JEISBI)",
+      "publisher": "UNESA"
+    }
+  ],
+  "reviewer_activities": [
+    {
+      "year": "2025",
+      "role": "Reviewer",
+      "journal": "Journal of Education Technology and Information System (JETIS)"
+    },
+    {
+      "year": "2025",
+      "role": "Reviewer",
+      "journal": "The Eighth International Conference on Vocational Education and Electrical Engineering (ICVEE)"
+    }
+  ],
+  "conference_committees": [
+    {
+      "year": "2026",
+      "role": "Head of Website and Public Relations",
+      "conference": "The 2nd International Conference on Green Engineering for Sustainable Future (ICoGESF)"
+    },
+    {
+      "year": "2026",
+      "role": "Publication, Documentation, and Website Committee",
+      "conference": "The Ninth International Conference on Vocational Education and Electrical Engineering (ICVEE)"
+    },
+    {
+      "year": "2025",
+      "role": "Head of Website and Public Relations",
+      "conference": "The 1st International Conference on Green Engineering for Sustainable Future (ICoGESF)"
+    },
+    {
+      "year": "2025",
+      "role": "Article Division Committee",
+      "conference": "The Eighth International Conference on Vocational Education and Electrical Engineering (ICVEE)"
+    }
+  ]
+}
