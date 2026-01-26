@@ -52,7 +52,8 @@
 
 /* Filter Container */
 .research-filters,
-.publication-filters {
+.publication-filters,
+.teaching-filters, .community-filters {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
