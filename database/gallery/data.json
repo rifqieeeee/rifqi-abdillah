@@ -1,0 +1,98 @@
+[
+    {
+    "id": "gallery-002",
+    "category": "speech",
+    "title": "Workshop",
+    "description": "Data Acquisition & Processing Workshop at PENS",
+    "image": "assets/img/gallery/010.jpg",
+    "gallery": "portfolio-gallery-teaching"
+  },
+  {
+    "id": "gallery-001",
+    "category": "teaching",
+    "title": "Workshop",
+    "description": "Internet of Things for High School Teachers",
+    "image": "assets/img/gallery/011.jpg",
+    "gallery": "portfolio-gallery-teaching"
+  },
+  {
+    "id": "gallery-001",
+    "category": "teaching",
+    "title": "Teaching",
+    "description": "Teaching at Sekolah Robot Indonesia",
+    "image": "assets/img/gallery/001.jpeg",
+    "gallery": "portfolio-gallery-teaching"
+  },
+  {
+    "id": "gallery-002",
+    "category": "speech",
+    "title": "Speech",
+    "description": "Present BisindoMate at AMD Advancing AI Day 2025",
+    "image": "assets/img/gallery/002.JPG",
+    "gallery": "portfolio-gallery-teaching"
+  },
+  {
+    "id": "gallery-002",
+    "category": "speech",
+    "title": "Teaching",
+    "description": "Teaching at Informatics Program Study",
+    "image": "assets/img/gallery/008.jpg",
+    "gallery": "portfolio-gallery-teaching"
+  },
+  {
+    "id": "gallery-002",
+    "category": "speech",
+    "title": "Webinar",
+    "description": "Webinar IoT at UNEJ",
+    "image": "assets/img/gallery/009.jpg",
+    "gallery": "portfolio-gallery-teaching"
+  },
+  {
+    "id": "gallery-002",
+    "category": "speech",
+    "title": "Teaching",
+    "description": "Student Supervision at PT Otak Kanan Surabaya",
+    "image": "assets/img/gallery/007.jpg",
+    "gallery": "portfolio-gallery-teaching"
+  },
+  {
+    "id": "gallery-006",
+    "category": "speech",
+    "title": "Teaching",
+    "description": "Teaching at Informatics Program Study",
+    "image": "assets/img/gallery/006.jpeg",
+    "gallery": "portfolio-gallery-teaching"
+  },
+  {
+    "id": "gallery-003",
+    "category": "speech",
+    "title": "Speech",
+    "description": "Speech at Decode The Future: Introduction to AI, IoT, and AIoT",
+    "image": "assets/img/gallery/003.jpg",
+    "gallery": "portfolio-gallery-teaching"
+  },
+  {
+    "id": "gallery-004",
+    "category": "speech",
+    "title": "Speech",
+    "description": "Speech at P4F (Pedoman Penghayatan dan Pengamalan Pancasila Al Falah) Program",
+    "image": "assets/img/gallery/004.jpg",
+    "gallery": "portfolio-gallery-teaching"
+  },
+  {
+    "id": "gallery-004",
+    "category": "speech",
+    "title": "Workshop",
+    "description": "Workshop Internet of Things at PIKTI ITS",
+    "image": "assets/img/gallery/005.jpeg",
+    "gallery": "portfolio-gallery-teaching"
+  },
+  {
+    "id": "gallery-004",
+    "category": "speech",
+    "title": "Speech",
+    "description": "Speech about Computer Vision Introduction at ITS",
+    "image": "assets/img/gallery/012.jpg",
+    "gallery": "portfolio-gallery-teaching"
+  }
+]
