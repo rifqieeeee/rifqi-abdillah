@@ -6,7 +6,7 @@
       "scope": "national",
       "status": "completed",
       "description": "This project aims to develop an Internet of Things–based system to monitor mosquito larvae growth using environmental parameters in order to support dengue fever prevention efforts.",
-      "role": "Member",
+      "role": "Principal Investigator",
       "funding": "LPPM Unesa",
       "output": "Conference Paper"
     },
@@ -24,14 +24,160 @@
 
   "opensource": [
     {
-      "title": "IoT Smart Trash Bin for Disability Support",
+      "title": "Automated Earthquake Tracking and Hazard Emergency Response",
+      "category": "IoT, AI",
+      "platform": "Hackster",
+      "platform2": "#",
+      "description": "AETHERS delivers real-time earthquake tracking and instant hazard alerts to protect lives with advanced AI technology",
+      "tech": ["M5StickC PLUS", "M5Stack AtomS3", "Laragon"],
+      "license": "GPL3+",
+      "link": "https://www.hackster.io/a10squad/automated-earthquake-tracking-and-hazard-emergency-response-fca7f2",
+      "link2": "#",
+      "github": "https://github.com/rickthor7/iot-dashboard/tree/main"
+    },
+    {
+      "title": "Hug O’Clock",
+      "category": "Fun Projects",
+      "platform": "Hackster",
+      "platform2": "#",
+      "description": "Hug O’Clock isn’t just a clock it’s a warm embrace from afar. With simple tap to send a virtual hug and feel closer, no matter the distance",
+      "tech": ["Wio Terminal"],
+      "license": "GPL3+",
+      "link": "https://www.hackster.io/rifqiabdillah/hug-o-clock-f4aa9b",
+      "link2": "#",
+      "github": "https://github.com/rifqieeeee/hugoclock"
+    },
+    {
+      "title": "Goat Guards System - LoRa-Based Farm Monitoring Solution",
       "category": "IoT",
-      "platform": "Hackster.io",
-      "description": "Open-source IoT project designed to assist persons with disabilities by providing an automated and accessible waste disposal system.",
-      "tech": ["ESP32", "Ultrasonic Sensor", "Firebase"],
-      "license": "MIT",
-      "hackster": "https://www.hackster.io/USERNAME/PROJECT",
-      "github": "https://github.com/USERNAME/REPO"
+      "platform": "Community DFRobot",
+      "platform2": "Hackster",
+      "description": "LoRa-based farm monitoring solution that detects goat distress sounds and sends real-time alerts remotely",
+      "tech": ["DFRobot UNIHIKER M10", "Wio Terminal", "XIAO ESP32S3 Sense", "DFRobot Mind+"],
+      "license": "GPL3+",
+      "link": "https://community.dfrobot.com/makelog-315036.html",
+      "link2": "https://www.hackster.io/rifqiabdillah/goat-guards-system-lora-based-farm-monitoring-solution-b4b7d8",
+      "github": "https://github.com/rifqieeeee/goat_guards_system"
+    },
+    {
+      "title": "Night Glow Smart Helmet",
+      "category": "AI, Fun Projects",
+      "platform": "Hackster",
+      "platform2": "#",
+      "description": "Stay safe and stylish with AI-driven drowsiness alerts, IMU tech, and vibrant night lighting",
+      "tech": ["IMU"],
+      "license": "GPL3+",
+      "link": "https://www.hackster.io/rifqiabdillah/night-glow-smart-helmet-15cc6d",
+      "link2": "#",
+      "github": "https://github.com/rifqieeeee/NSGH"
+    },
+    {
+      "title": "BisindoMate - Indonesian Sign Language Translator",
+      "category": "AI",
+      "platform": "Hackster",
+      "platform2": "#",
+      "description": "BisindoMate Empowering deaf individuals by providing accessible sign language interpretation",
+      "tech": ["AMD Ryzen AI PCs", "Keras Tensorflow", "AMD Vitis"],
+      "license": "GPL3+",
+      "link": "https://www.hackster.io/praktikum-reborn/bisindomate-indonesian-sign-language-translator-2bb1f9",
+      "link2": "#",
+      "github": "#"
+    },
+    {
+      "title": "FFF Project: Flame-Free Farm",
+      "category": "IoT, AI",
+      "platform": "Maker WIZnet",
+      "platform2": "Hackster",
+      "description": "An innovative IoT solution using various sensors to enhancing farm safety and fire prevention by alerting farmers to potential risks",
+      "tech": ["SURF 5 Board", "WIZPoE-P1", "Grove Vision AI Module V2"],
+      "license": "GPL3+",
+      "link": "https://maker.wiznet.io/rifqieeeee/contest/fff-project-flame-free-farm/",
+      "link2": "https://www.hackster.io/rifqiabdillah/fff-project-flame-free-farm-8c8c0a",
+      "github": "https://github.com/rifqieeeee/FFF_project"
+    },
+    {
+      "title": "NOMOS: Mosquito growth monitoring system",
+      "category": "IoT, AI",
+      "platform": "Hackster",
+      "platform2": "#",
+      "description": "Mosquito growth monitoring system based on temperature, humidity, and water flow at the sewer lines to minimize the spread of dengue fever.",
+      "tech": ["Wio Terminal", "Thingspeak", "Weebly"],
+      "license": "GPL3+",
+      "link": "https://www.hackster.io/rifqiabdillah/nomos-mosquito-growth-monitoring-system-6def4c",
+      "link2": "#",
+      "github": "https://github.com/rifqieeeee/NOMOS-Project"
+    },
+    {
+      "title": "SAJAC PROJECT : Smart Jacket for Caving",
+      "category": "IoT, Wearables",
+      "platform": "Arduino Project Hub",
+      "platform2": "Hackster",
+      "description": "SAJAC is a smart jacket for caving that helps explorers to monitor environmental conditions and request help when needed using BLE and LoRa",
+      "tech": ["Arduino Nicla Sense ME", "K-Way", "ESP32C3", "Wio Terminal", "LoRa"],
+      "license": "GPL3+",
+      "link": "https://projecthub.arduino.cc/rifqieeeee/sajac-project-smart-jacket-for-caving-54e52f",
+      "link2": "https://www.hackster.io/rifqiabdillah/sajac-project-smart-jacket-for-caving-0e6a19",
+      "github": "https://github.com/rifqieeeee/SAJAC-project"
+    },
+    {
+      "title": "Candy Pages: Reading Rewards for Little Bookworms",
+      "category": "Fun Projects",
+      "platform": "Hackster",
+      "platform2": "#",
+      "description": "Embark on sweet reading journeys with Candy Pages! Explore, read, and earn delightful rewards for young bookworms.",
+      "tech": ["Wio Terminal"],
+      "license": "GPL3+",
+      "link": "https://www.hackster.io/rifqiabdillah/candy-pages-reading-rewards-for-little-bookworms-1bac51",
+      "link2": "#",
+      "github": "https://github.com/rifqieeeee/candy_page1"
+    },
+    {
+      "title": "SmoothRide: Auto Wheelchair with Speed Control (Prototipe 1)",
+      "category": "Edge AI",
+      "platform": "Hackster",
+      "platform2": "#",
+      "description": "SmartRide: Adaptive speed on bumpy roads, automatic halt with obstacle detection effortless navigation, always in control!",
+      "tech": ["Blues Swan", "MPU-6050", "Edge Impulse"],
+      "license": "GPL3+",
+      "link": "https://www.hackster.io/rifqiabdillah/smoothride-auto-wheelchair-with-speed-control-prototipe-1-a2d934",
+      "link2": "#",
+      "github": "https://github.com/rifqieeeee/SmoothRide_project1"
+    },
+    {
+      "title": "SENKU: Smart Egg Incubator",
+      "category": "IoT, AI",
+      "platform": "Maker WIZnet",
+      "platform2": "Hackster",
+      "description": "Smart Egg Incubator to Optimize The Temperature and Humidity using real-time wifi to Increase the Chance of Hatching Eggs.",
+      "tech": ["WizFi360-EVB-Mini", "Thingspeak", "Weebly"],
+      "license": "GPL3+",
+      "link": "https://maker.wiznet.io/rifqieeeee/contest/senku%3A%2Dsmart%2Degg%2Dincubator/",
+      "link2": "https://www.hackster.io/rifqiabdillah/senku-smart-egg-incubator-b8a484",
+      "github": "https://github.com/rifqieeeee/SENKU_smart_egg_inkubator"
+    },
+    {
+      "title": "AMG Sprinkbot: Automated Mint Garden Smart Sprinkler System",
+      "category": "IoT",
+      "platform": "Maker WIZnet",
+      "platform2": "Hackster",
+      "description": "AMG Sprinkbot is a project for a smart mint garden, automating watering with soil moisture sensing for optimal growth and care.",
+      "tech": ["W5300-TOE-Shield", "STM32F7", "STM32CubeIDE", "Tera Term"],
+      "license": "GPL3+",
+      "link": "https://maker.wiznet.io/rifqieeeee/contest/amg%2Dsprinkbot%3A%2Dautomated%2Dmint%2Dgarden%2Dsmart%2Dsprinkler%2Dsystem/",
+      "link2": "https://www.hackster.io/rifqiabdillah/amg-sprinkbot-automated-mint-garden-smart-sprinkler-system-70acf9",
+      "github": "https://github.com/rifqieeeee/AMG_sprinkbot/tree/main"
+    },
+    {
+      "title": "Smart Incubator using Nordic Thingy:53",
+      "category": "IoT, AI",
+      "platform": "Hackster",
+      "platform2": "",
+      "description": "The Smart Incubator uses Nordic Thingy:53 to optimize temperature and humidity to reduce energy use in egg incubators",
+      "tech": ["Nordic Thingy:53", "nRF Programmer", "nRF Edge Impulse"],
+      "license": "GPL3+",
+      "link": "https://www.hackster.io/rifqiabdillah/amg-sprinkbot-automated-mint-garden-smart-sprinkler-system-70acf9",
+      "link2": "#",
+      "github": "#"
     }
   ]
 }

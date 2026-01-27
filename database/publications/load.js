@@ -37,3 +37,6 @@ fetch('database/publications/data.json')
     });
   })
   .catch(error => console.error('Error loading publications:', error));
+
+  // Refresh AOS supaya elemen baru ter-animasi
+  AOS.refresh();

@@ -10,40 +10,43 @@ fetch('database/editorial/data.json')
     reviewerList.innerHTML = '';
     conferenceList.innerHTML = '';
 
+    // helper function biar konsisten
+    const createCard = (item, title, subtitle) => {
+      const li = document.createElement('li');
+      li.className = `publication-item year-${item.year}`;
+
+      li.innerHTML = `
+        <div class="activity-card">
+          <div class="activity-role">${item.role}</div>
+          <h4 class="activity-title">${title}</h4>
+          <div class="activity-meta">
+            ${subtitle} • ${item.year}
+          </div>
+        </div>
+      `;
+
+      return li;
+    };
+
     // Editorial Board
     data.editorial_board.forEach(item => {
-      const li = document.createElement('li');
-      li.className = `publication-item ${item.year}`;
-      li.innerHTML = `
-        ${item.role} – 
-        <strong>${item.journal}</strong> 
-        (${item.publisher}, ${item.year})
-      `;
-      editorialList.appendChild(li);
+      editorialList.appendChild(
+        createCard(item, item.journal, item.publisher)
+      );
     });
 
     // Reviewer Activities
     data.reviewer_activities.forEach(item => {
-      const li = document.createElement('li');
-      li.className = `publication-item ${item.year}`;
-      li.innerHTML = `
-        ${item.role} – 
-        <strong>${item.journal}</strong> 
-        (${item.year})
-      `;
-      reviewerList.appendChild(li);
+      reviewerList.appendChild(
+        createCard(item, item.journal, 'Reviewer')
+      );
     });
 
     // Conference Committees
     data.conference_committees.forEach(item => {
-      const li = document.createElement('li');
-      li.className = `publication-item ${item.year}`;
-      li.innerHTML = `
-        ${item.role} – 
-        <strong>${item.conference}</strong> 
-        (${item.year})
-      `;
-      conferenceList.appendChild(li);
+      conferenceList.appendChild(
+        createCard(item, item.conference, 'Conference Committee')
+      );
     });
 
   })

@@ -6,12 +6,19 @@ fetch('database/hki/data.json')
 
     data.hki.forEach(item => {
       const li = document.createElement('li');
-      li.className = `publication-item ${item.year}`;
+      li.className = `publication-item year-${item.year}`;
 
       li.innerHTML = `
-        ${item.authors} (${item.year}). 
-        <strong>${item.title}</strong>. 
-        ${item.type}, ${item.institution}.
+        <div class="hki-card">
+          <div class="hki-meta">
+            ${item.authors} • ${item.year}
+          </div>
+          <h4 class="hki-title">${item.title}</h4>
+          <div class="hki-info">
+            <span class="badge">${item.type}</span>
+            <span class="institution">${item.institution}</span>
+          </div>
+        </div>
       `;
 
       hkiList.appendChild(li);

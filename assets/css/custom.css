@@ -489,3 +489,160 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.25);
 }
 
+/* Container list jadi grid */
+#hki-patents .publication-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+/* Item tidak perlu margin bawah lagi */
+.publication-item {
+  margin: 0;
+}
+
+/* Card HKI */
+.hki-card {
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: all 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover efek */
+.hki-card:hover {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Meta */
+.hki-meta {
+  font-size: 0.8rem;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+/* Judul */
+.hki-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #111827;
+  line-height: 1.4;
+}
+
+/* Info bawah */
+.hki-info {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+/* Badge */
+.hki-info .badge {
+  background: #16a34a;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+}
+
+/* Institusi */
+.hki-info .institution {
+  font-size: 0.8rem;
+  color: #374151;
+}
+
+@media (max-width: 992px) {
+  #hki-patents .publication-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  #hki-patents .publication-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.editorial-board,
+.reviewer-activities,
+.conference-committees {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.activity-card {
+  height: 100%;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 18px;
+  transition: all 0.3s ease;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.activity-card:hover {
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+/* Role (Editor, Reviewer, Committee) */
+.activity-role {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #2563eb;
+  margin-bottom: 6px;
+}
+
+/* Title */
+.activity-title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111827;
+  line-height: 1.4;
+}
+
+/* Meta */
+.activity-meta {
+  margin-top: auto;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+@media (max-width: 992px) {
+  .editorial-board,
+  .reviewer-activities,
+  .conference-committees {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .editorial-board,
+  .reviewer-activities,
+  .conference-committees {
+    grid-template-columns: 1fr;
+  }
+}

@@ -59,14 +59,23 @@ fetch('database/research/data.json')
             </ul>
 
             <div class="mt-3">
-              <a href="${p.hackster}" target="_blank"
+              <a href="${p.link}" target="_blank"
                  class="btn btn-sm btn-outline-primary">
-                <i class="bi bi-box-arrow-up-right"></i> Hackster
+                <i class="bi bi-box-arrow-up-right"></i> ${p.platform}
               </a>
-              <a href="${p.github}" target="_blank"
-                 class="btn btn-sm btn-outline-dark">
-                <i class="bi bi-github"></i> GitHub
-              </a>
+
+              ${p.link2 !== "#" ? `
+                <a href="${p.link2}" target="_blank" class="btn btn-sm btn-outline-success">
+                  <i class="bi bi-box-arrow-up-right"></i> ${p.platform2}
+                </a>
+              ` : ""}
+
+
+              ${p.github !== "#" ? `
+                <a href="${p.github}" target="_blank" class="btn btn-sm btn-outline-dark">
+                  <i class="bi bi-github"></i> GitHub
+                </a>
+              ` : ""}
             </div>
           </div>
         </div>
