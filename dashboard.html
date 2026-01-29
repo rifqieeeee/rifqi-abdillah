@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Research Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f8f9fa;
+    }
+    .card {
+      border-radius: 12px;
+    }
+  </style>
+</head>
+
+<body class="container py-4">
+
+  <h2 class="mb-4">📊 Research Dashboard</h2>
+
+  <!-- FORM -->
+  <div class="card mb-4">
+    <div class="card-body">
+      <h5 class="card-title">Add / Edit Research</h5>
+
+      <form id="researchForm">
+        <input type="hidden" id="id">
+
+        <div class="mb-2">
+          <label class="form-label">Title</label>
+          <input class="form-control" id="title" required>
+        </div>
+
+        <div class="row">
+          <div class="col-md-3 mb-2">
+            <label class="form-label">Year</label>
+            <input class="form-control" id="year">
+          </div>
+
+          <div class="col-md-3 mb-2">
+            <label class="form-label">Scope</label>
+            <select class="form-control" id="scope">
+              <option value="national">National</option>
+              <option value="international">International</option>
+            </select>
+          </div>
+
+          <div class="col-md-3 mb-2">
+            <label class="form-label">Status</label>
+            <select class="form-control" id="status">
+              <option value="ongoing">Ongoing</option>
+              <option value="completed">Completed</option>
+            </select>
+          </div>
+
+          <div class="col-md-3 mb-2">
+            <label class="form-label">Role</label>
+            <input class="form-control" id="role">
+          </div>
+        </div>
+
+        <div class="mb-2">
+          <label class="form-label">Description</label>
+          <textarea class="form-control" id="description"></textarea>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-2">
+            <label class="form-label">Funding</label>
+            <input class="form-control" id="funding">
+          </div>
+          <div class="col-md-6 mb-2">
+            <label class="form-label">Output</label>
+            <input class="form-control" id="output">
+          </div>
+        </div>
+
+        <button class="btn btn-primary mt-3">Save</button>
+        <button type="button" class="btn btn-secondary mt-3" onclick="resetForm()">Cancel</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- TABLE -->
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Research List</h5>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Year</th>
+            <th>Scope</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody id="researchTable"></tbody>
+      </table>
+    </div>
+  </div>
+
+<script>
+const api = "/api/research";
+const table = document.getElementById("researchTable");
+const form = document.getElementById("researchForm");
+
+function loadData() {
+  fetch(api)
+    .then(res => res.json())
+    .then(data => {
+      table.innerHTML = "";
+      data.forEach(r => {
+        table.innerHTML += `
+          <tr>
+            <td>${r.title}</td>
+            <td>${r.year || "-"}</td>
+            <td>${r.scope}</td>
+            <td>${r.status}</td>
+            <td>
+              <button class="btn btn-sm btn-warning" onclick='editData(${JSON.stringify(r)})'>Edit</button>
+              <button class="btn btn-sm btn-danger" onclick="deleteData('${r.id}')">Delete</button>
+            </td>
+          </tr>
+        `;
+      });
+    });
+}
+
+form.onsubmit = e => {
+  e.preventDefault();
+
+  const payload = {
+    id: id.value,
+    title: title.value,
+    year: year.value,
+    scope: scope.value,
+    status: status.value,
+    role: role.value,
+    description: description.value,
+    funding: funding.value,
+    output: output.value
+  };
+
+  fetch(api, {
+    method: payload.id ? "PUT" : "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(payload)
+  }).then(() => {
+    resetForm();
+    loadData();
+  });
+};
+
+function editData(data) {
+  Object.keys(data).forEach(key => {
+    if (document.getElementById(key)) {
+      document.getElementById(key).value = data[key];
+    }
+  });
+}
+
+function deleteData(id) {
+  if (!confirm("Delete this research?")) return;
+
+  fetch(api, {
+    method: "DELETE",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ id })
+  }).then(loadData);
+}
+
+function resetForm() {
+  form.reset();
+  id.value = "";
+}
+
+loadData();
+</script>
+
+</body>
+</html>
