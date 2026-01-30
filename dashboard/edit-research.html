@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Community Service - Rifqi Abdillah</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="/assets/img/logo-rifqi.png" rel="icon">
+  <link href="/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="/assets/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/custom.css">
+
+  <!-- =======================================================
+  * Template Name: iPortfolio
+  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+  * Updated: Jun 29 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="\assets\img\foto profil.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Dashboard Edit</h1>
+    </a>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="#"><i class="bi bi-people navicon"></i>Community</a></li>
+        <li><a href="#"><i class="bi bi-pencil-square navicon"></i>Editorial</a></li>
+        <li><a href="#"><i class="bi bi-images navicon"></i>Gallery</a></li>
+        <li><a href="#"><i class="bi bi-award navicon"></i>HKI</a></li>
+        <li><a href="#"><i class="bi bi-journal-text navicon"></i>Publication</a></li>
+        <li><a href="/dashboard/edit-research.html"><i class="bi bi-search navicon"></i>Research</a></li>
+        <li><a href="#"><i class="bi bi-easel navicon"></i>Teaching</a></li>
+        <li><a href="#"><i class="bi bi-heart navicon"></i>Volunteer</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main class="main section">
+    <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Reseach Dashboard</h2>
+      </div><!-- End Section Title -->
+
+    <!-- FORM -->
+    <div class="container mb-4">
+        <div class="card-body">
+        <h5 class="card-title">Add / Edit Research</h5>
+
+        <form id="researchForm">
+            <input type="hidden" id="id">
+
+            <div class="mb-2">
+            <label class="form-label">Title</label>
+            <input class="form-control" id="title" required >
+            </div>
+
+            <div class="row">
+            <div class="col-md-3 mb-2">
+                <label class="form-label">Year</label>
+                <input class="form-control" id="year" required>
+            </div>
+
+            <div class="col-md-3 mb-2">
+              <label class="form-label">Scope</label>
+              <select class="form-control" id="scope" required>
+                <option value="" disabled selected>-- Select Scope --</option>
+                <option value="national">National</option>
+                <option value="international">International</option>
+              </select>
+            </div>
+
+            <div class="col-md-3 mb-2">
+              <label class="form-label">Status</label>
+              <select class="form-control" id="status" required>
+                <option value="" disabled selected>-- Select Status --</option>
+                <option value="ongoing">Ongoing</option>
+                <option value="completed">Completed</option>
+              </select>
+            </div>
+
+            <div class="col-md-3 mb-2">
+                <label class="form-label">Role</label>
+                <input class="form-control" id="role" required>
+            </div>
+            </div>
+
+            <div class="mb-2">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" id="description" required></textarea>
+            </div>
+
+            <div class="row">
+            <div class="col-md-6 mb-2">
+                <label class="form-label">Funding</label>
+                <input class="form-control" id="funding" required>
+            </div>
+
+            <div class="col-md-6 mb-2">
+                <label class="form-label">Output</label>
+                <input class="form-control" id="output" required>
+            </div>
+            </div>
+
+            <button class="btn btn-primary mt-3">Save</button>
+            <button type="button" class="btn btn-secondary mt-3" onclick="resetForm()">Cancel</button>
+        </form>
+        </div>
+    </div>
+
+    <!-- TABLE -->
+    <div class="container">
+        <div class="card-body">
+        <h5 class="card-title">Research List</h5>
+
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Year</th>
+                <th>Scope</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody id="researchTable"></tbody>
+        </table>
+        </div>
+    </div>
+
+    <script>
+    const api = "/api/research";
+    const table = document.getElementById("researchTable");
+    const form = document.getElementById("researchForm");
+
+    function loadData() {
+    fetch(api)
+        .then(res => res.json())
+        .then(data => {
+        table.innerHTML = "";
+        data.forEach(r => {
+            table.innerHTML += `
+            <tr>
+                <td>${r.title}</td>
+                <td>${r.year || "-"}</td>
+                <td>${r.scope}</td>
+                <td>${r.status}</td>
+                <td>
+                <button class="btn btn-sm btn-warning" onclick="editData('${r.id}')">Edit</button>
+                <button class="btn btn-sm btn-danger" onclick="deleteData('${r.id}')">Delete</button>
+                </td>
+            </tr>
+            `;
+        });
+        });
+    }
+
+    form.onsubmit = e => {
+    e.preventDefault();
+
+    const payload = {
+    id: id.value || undefined,
+    title: title.value,
+    year: year.value ? parseInt(year.value) : null,
+    scope: scope.value,
+    status: status.value,
+    role: role.value,
+    description: description.value,
+    funding: funding.value,
+    output: output.value
+    };
+
+    fetch(api, {
+        method: payload.id ? "PUT" : "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+    }).then(() => {
+        resetForm();
+        loadData();
+    });
+    };
+
+    function editData(id) {
+    fetch(api)
+        .then(res => res.json())
+        .then(data => {
+        const r = data.find(x => x.id === id);
+        if (!r) return;
+
+        Object.keys(r).forEach(key => {
+            if (document.getElementById(key)) {
+            document.getElementById(key).value = r[key] ?? "";
+            }
+        });
+        });
+    }
+
+    function deleteData(id) {
+    if (!confirm("Delete this research?")) return;
+
+    fetch(api, {
+        method: "DELETE",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id })
+    }).then(loadData);
+    }
+
+    function resetForm() {
+    form.reset();
+    id.value = "";
+    }
+
+    loadData();
+    </script>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+
+    <div class="container">
+      <div class="copyright text-center ">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong> <span>All Rights Reserved | Modified by <strong>Rifqi Abdillah</strong></span></p>
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you've purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> Distributed by <a href="https://themewagon.com">ThemeWagon</a>
+      </div>
+    </div>
+
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/assets/vendor/php-email-form/validate.js"></script>
+  <script src="/assets/vendor/aos/aos.js"></script>
+  <script src="/assets/vendor/typed.js/typed.umd.js"></script>
+  <script src="/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="/assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="/assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="/assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="/assets/js/main.js"></script>
+  <script src="/assets/js/custom.js"></script>
+  <script src="/database/community/load.js"></script>
+  <script src="/database/volunteer/load.js"></script>
+
+
+</body>
+
+</html>
