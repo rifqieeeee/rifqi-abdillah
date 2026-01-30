@@ -1,32 +1,33 @@
-fetch('database/research/data.json')
+/* =====================================================
+   RESEARCH SECTION (SUPABASE)
+===================================================== */
+fetch('/api/research')
   .then(res => res.json())
   .then(data => {
 
-    /* =========================
-       RESEARCH SECTION
-    ========================= */
-     const researchContainer = document.getElementById('research-list');
+    const researchContainer = document.getElementById('research-list');
+    researchContainer.innerHTML = "";
 
-    data.research.forEach(item => {
+    data.forEach(item => {
       researchContainer.innerHTML += `
         <div class="col-lg-6 research-item ${item.status} ${item.scope}">
           <div class="research-box">
             <h3>${item.title}</h3>
 
             <p class="research-meta">
-              <span><i class="bi bi-calendar-event"></i> ${item.year}</span>
+              <span><i class="bi bi-calendar-event"></i> ${item.year ?? "-"}</span>
               <span><i class="bi bi-geo-alt"></i> ${capitalize(item.scope)}</span>
               <span class="badge status ${item.status}">
                 ${capitalize(item.status)}
               </span>
             </p>
 
-            <p>${item.description}</p>
+            <p>${item.description ?? ""}</p>
 
             <ul class="research-info">
-              <li><strong>Role:</strong> ${item.role}</li>
-              <li><strong>Funding:</strong> ${item.funding}</li>
-              <li><strong>Output:</strong> ${item.output}</li>
+              <li><strong>Role:</strong> ${item.role ?? "-"}</li>
+              <li><strong>Funding:</strong> ${item.funding ?? "-"}</li>
+              <li><strong>Output:</strong> ${item.output ?? "-"}</li>
             </ul>
           </div>
         </div>
@@ -34,11 +35,21 @@ fetch('database/research/data.json')
     });
 
     initResearchFilter();
+  })
+  .catch(err => {
+    console.error("Error loading research data:", err);
+  });
 
-    /* =========================
-       OPEN SOURCE SECTION
-    ========================= */
+
+/* =====================================================
+   OPEN SOURCE SECTION (JSON STATIS)
+===================================================== */
+fetch('database/research/data.json')
+  .then(res => res.json())
+  .then(data => {
+
     const openSourceContainer = document.getElementById('opensource-list');
+    openSourceContainer.innerHTML = "";
 
     data.opensource.forEach(p => {
       openSourceContainer.innerHTML += `
@@ -65,14 +76,15 @@ fetch('database/research/data.json')
               </a>
 
               ${p.link2 !== "#" ? `
-                <a href="${p.link2}" target="_blank" class="btn btn-sm btn-outline-success">
+                <a href="${p.link2}" target="_blank"
+                   class="btn btn-sm btn-outline-success">
                   <i class="bi bi-box-arrow-up-right"></i> ${p.platform2}
                 </a>
               ` : ""}
 
-
               ${p.github !== "#" ? `
-                <a href="${p.github}" target="_blank" class="btn btn-sm btn-outline-dark">
+                <a href="${p.github}" target="_blank"
+                   class="btn btn-sm btn-outline-dark">
                   <i class="bi bi-github"></i> GitHub
                 </a>
               ` : ""}
@@ -84,6 +96,10 @@ fetch('database/research/data.json')
 
   });
 
+
+/* =====================================================
+   FILTER & HELPER
+===================================================== */
 function initResearchFilter() {
 
   const iso = new Isotope('#research-list', {
@@ -109,5 +125,6 @@ function initResearchFilter() {
 }
 
 function capitalize(text) {
+  if (!text) return "";
   return text.charAt(0).toUpperCase() + text.slice(1);
 }
