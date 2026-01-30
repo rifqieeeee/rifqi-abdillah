@@ -123,7 +123,7 @@ function loadData() {
             <td>${r.scope}</td>
             <td>${r.status}</td>
             <td>
-              <button class="btn btn-sm btn-warning" onclick='editData(${JSON.stringify(r)})'>Edit</button>
+              <button class="btn btn-sm btn-warning" onclick="editData('${r.id}')">Edit</button>
               <button class="btn btn-sm btn-danger" onclick="deleteData('${r.id}')">Delete</button>
             </td>
           </tr>
@@ -136,16 +136,16 @@ form.onsubmit = e => {
   e.preventDefault();
 
   const payload = {
-    id: id.value,
-    title: title.value,
-    year: year.value,
-    scope: scope.value,
-    status: status.value,
-    role: role.value,
-    description: description.value,
-    funding: funding.value,
-    output: output.value
-  };
+  id: id.value || undefined,
+  title: title.value,
+  year: year.value ? parseInt(year.value) : null,
+  scope: scope.value,
+  status: status.value,
+  role: role.value,
+  description: description.value,
+  funding: funding.value,
+  output: output.value
+};
 
   fetch(api, {
     method: payload.id ? "PUT" : "POST",
@@ -157,12 +157,19 @@ form.onsubmit = e => {
   });
 };
 
-function editData(data) {
-  Object.keys(data).forEach(key => {
-    if (document.getElementById(key)) {
-      document.getElementById(key).value = data[key];
-    }
-  });
+function editData(id) {
+  fetch(api)
+    .then(res => res.json())
+    .then(data => {
+      const r = data.find(x => x.id === id);
+      if (!r) return;
+
+      Object.keys(r).forEach(key => {
+        if (document.getElementById(key)) {
+          document.getElementById(key).value = r[key] ?? "";
+        }
+      });
+    });
 }
 
 function deleteData(id) {
