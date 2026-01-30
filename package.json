@@ -1,0 +1,7 @@
+{
+  "name": "rifqi-portfolio",
+  "private": true,
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.7"
+  }
+}
