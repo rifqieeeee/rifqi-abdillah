@@ -1,0 +1,249 @@
+{
+  "teaching": [
+    {
+      "title": "Object Oriented Programming",
+      "level": "undergraduate",
+      "type": "practical",
+      "semester": "Even Semester 2025/2026",
+      "description": "Object-Oriented Programming introduces the fundamental concepts of object-oriented design and programming",
+      "role": "Lecturer",
+      "department": "Informatics Engineering",
+      "credits": 3,
+      "classes": 7
+    },
+    {
+      "title": "Platform-Based Programming",
+      "level": "undergraduate",
+      "type": "practical",
+      "semester": "Odd Semester 2025/2026",
+      "description": "Examines principles and techniques for protecting data and information from unauthorized access and security threats.",
+      "role": "Lecturer",
+      "department": "Informatics Engineering",
+      "credits": 4,
+      "classes": 7
+    },
+    {
+      "title": "Human Computer Interaction",
+      "level": "undergraduate",
+      "type": "theory",
+      "semester": "Odd Semester 2025/2026",
+      "description": "Human Computer Interaction focuses on designing and evaluating user-centered interactive systems that are effective and easy to use.",
+      "role": "Lecturer",
+      "department": "Informatics Engineering",
+      "credits": 3,
+      "classes": 2
+    },
+    {
+      "title": "Object Oriented Programming",
+      "level": "undergraduate",
+      "type": "practical",
+      "semester": "Even Semester 2024/2025",
+      "description": "Object-Oriented Programming introduces the fundamental concepts of object-oriented design and programming",
+      "role": "Lecturer",
+      "department": "Informatics Engineering",
+      "credits": 3,
+      "classes": 4
+    },
+    {
+      "title": "Platform-Based Programming",
+      "level": "undergraduate",
+      "type": "practical",
+      "semester": "Even Semester 2024/2025",
+      "description": "Examines principles and techniques for protecting data and information from unauthorized access and security threats.",
+      "role": "Lecturer",
+      "department": "Informatics Engineering",
+      "credits": 4,
+      "classes": 4
+    },
+    {
+      "title": "Data and Information Security",
+      "level": "undergraduate",
+      "type": "theory",
+      "semester": "Even Semester 2024/2025",
+      "description": "Examines principles and techniques for protecting data and information from unauthorized access and security threats.",
+      "role": "Lecturer",
+      "department": "Informatics Engineering",
+      "credits": 3,
+      "classes": 2
+    },
+    {
+      "title": "Data Structure",
+      "level": "undergraduate",
+      "type": "theory",
+      "semester": "Even Semester 2024/2025",
+      "description": "Introduces fundamental data structures and algorithms for organizing, managing, and efficiently processing data.",
+      "role": "Lecturer",
+      "department": "Informatics Engineering",
+      "credits": 3,
+      "classes": 1
+    },
+    {
+      "title": "Object Oriented Programming",
+      "level": "undergraduate",
+      "type": "practical",
+      "semester": "Odd Semester 2024/2025",
+      "description": "Object-Oriented Programming introduces the fundamental concepts of object-oriented design and programming",
+      "role": "Lecturer (team teaching)",
+      "department": "Informatics Engineering",
+      "credits": 3,
+      "classes": 2
+    },
+    {
+      "title": "Human Computer Interaction",
+      "level": "undergraduate",
+      "type": "theory",
+      "semester": "Odd Semester 2024/2025",
+      "description": "Human Computer Interaction focuses on designing and evaluating user-centered interactive systems that are effective and easy to use.",
+      "role": "Lecturer (team teaching)",
+      "department": "Informatics Engineering",
+      "credits": 3,
+      "classes": 7
+    }
+  ],
+
+  "activities": [
+    {
+      "title": "Invited Speakers – Decode The Future: Introduction to AI, IoT, and AIoT",
+      "category": "speaker",
+      "institution": "Universitas Airlangga",
+      "date": "Jun 2025",
+      "description": "Guest lecture introducing fundamental concepts of Artificial Intelligence and Internet of Things.",
+      "organizer": "Student Association of D4 Informatics Engineering",
+      "audience": "Undergraduate Students",
+      "venue": "Vocational Hall A, Campus B, UNAIR",
+      "mode": "Offline"
+    },
+    {
+      "title": "Invited Speakers – P4F (Pedoman Penghayatan dan Pengamalan Pancasila Al Falah) Program",
+      "category": "speaker",
+      "institution": "SMA Al Falah Darmo",
+      "date": "Mar 2025",
+      "description": "Educational program introducing technology concepts and practical activities to support student learning and creativity.",
+      "organizer": "Senior High School Al Falah Darmo",
+      "audience": "Students",
+      "venue": "SMA Al Falah Building Darmo",
+      "mode": "Offline"
+    },
+    {
+      "title": "Webinar – Mobile Programming and IoT",
+      "category": "webinar",
+      "institution": "Faculty of Computer Science, UNEJ",
+      "date": "Dec 2024",
+      "description": "Webinar discussing the fundamentals of mobile application development and its integration with Internet of Things systems.",
+      "organizer": "Faculty of Computer Science, UNEJ",
+      "audience": "Undergraduate Students",
+      "venue": "Hybrid Online and UNEJ",
+      "mode": "Hybrid"
+    },
+    {
+      "title": "Workshop – Data Acquisition using IoT",
+      "category": "workshop",
+      "institution": "Department of Data Science, PENS",
+      "date": "Nov 2024",
+      "description": "Hands-on workshop on collecting and processing sensor data using Internet of Things technologies.",
+      "organizer": "Department of Data Science, PENS",
+      "audience": "Lecturers",
+      "venue": "SAW Building PENS",
+      "mode": "Offline"
+    },
+    {
+      "title": "Workshop – Internet of Things",
+      "category": "workshop",
+      "institution": "Department of Information Technology, ITS",
+      "date": "Jul 2023",
+      "description": "Workshop introducing basic concepts, architecture, and applications of Internet of Things systems.",
+      "organizer": "Department of Information Technology, ITS",
+      "audience": "Undergraduate Students",
+      "venue": "Informatics Building ITS",
+      "mode": "Offline"
+    },
+    {
+      "title": "Workshop - Line Tracer Robotics",
+      "category": "workshop",
+      "institution": "Sekolah Robot Indonesia",
+      "date": "Mar 2023",
+      "description": "Practical robotics training focused on designing and programming line tracer robots.",
+      "organizer": "Sekolah Robot Indonesia",
+      "audience": "Students",
+      "venue": "Sekolah Robot Indonesia",
+      "mode": "Offline"
+    },
+    {
+      "title": "Invited Speakers – Machine Learning Introduction for High School Students",
+      "category": "speaker",
+      "institution": "Sekolah Robot Indonesia",
+      "date": "Jan 2023",
+      "description": "Introductory workshop explaining basic machine learning concepts using simple and relatable examples.",
+      "organizer": "Sekolah Robot Indonesia",
+      "audience": "Students",
+      "venue": "Sekolah Robot Indonesia",
+      "mode": "Offline"
+    },
+    {
+      "title": "Workshop - Internet of Things for High School Teachers",
+      "category": "workshop",
+      "institution": "SMA Kristen Petra 2",
+      "date": "Dec 2022",
+      "description": "Workshop aimed at introducing IoT concepts and learning media for high school teaching activities.",
+      "organizer": "SMA Kristen Petra 2",
+      "audience": "Teachers",
+      "venue": "SMA Kristen Petra 2 Building",
+      "mode": "Offline"
+    },
+    {
+      "title": "Invited Speakers – Computer Vision Introduction",
+      "category": "speaker",
+      "institution": "Institut Teknologi Sepuluh Nopember",
+      "date": "Aug 2022",
+      "description": "Guest lecture introducing fundamental concepts and applications of computer vision technology.",
+      "organizer": "Department of Information Technology, ITS",
+      "audience": "Undergraduate Students",
+      "venue": "Library Building ITS",
+      "mode": "Offline"
+    },
+    {
+      "title": "Workshop - Internet of Things using MQTT",
+      "category": "workshop",
+      "institution": "Sekolah Robot Indonesia",
+      "date": "Jun 2022",
+      "description": "Workshop on implementing IoT communication using the MQTT protocol for real-time data exchange.",
+      "organizer": "Sekolah Robot Indonesia",
+      "audience": "Students",
+      "venue": "Sekolah Robot Indonesia",
+      "mode": "Offline"
+    },
+    {
+      "title": "Workshop - Arduino Basics",
+      "category": "workshop",
+      "institution": "Sekolah Robot Indonesia",
+      "date": "Apr 2021",
+      "description": "Introductory workshop on Arduino programming and basic electronic components.",
+      "organizer": "Sekolah Robot Indonesia",
+      "audience": "Students",
+      "venue": "Sekolah Robot Indonesia",
+      "mode": "Offline"
+    },
+    {
+      "title": "Invited Speaker - Electrical Circuits",
+      "category": "speaker",
+      "institution": "Bimbel Sang Juara",
+      "date": "Feb 2020",
+      "description": "Teaching basic electrical circuit concepts including current, voltage, and resistance.",
+      "organizer": "Bimbel Sang Juara",
+      "audience": "Students",
+      "venue": "Zoom Meeting",
+      "mode": "Online"
+    },
+    {
+      "title": "Invited Speaker - Embedded System",
+      "category": "speaker",
+      "institution": "Bimbel Sang Juara",
+      "date": "Nov 2019",
+      "description": "Introduction to embedded systems covering microcontrollers and basic system programming.",
+      "organizer": "Bimbel Sang Juara",
+      "audience": "Students",
+      "venue": "Zoom Meeting",
+      "mode": "Online"
+    }
+  ]
+}
