@@ -103,6 +103,17 @@
 
   "activities": [
     {
+      "title": "Invited Showcase Presenter – AMD Advancing AI Day 2025",
+      "category": "speaker",
+      "institution": "AMD Indonesia",
+      "date": "Sep–Oct 2025",
+      "description": "Showcased BISINDOMATE, an Indonesian Sign Language translator powered by AMD Ryzen AI Mini PC, and presented the project development journey at AMD Advancing AI Day 2025.",
+      "organizer": "AMD Indonesia",
+      "audience": "Industry Professionals, Developers, and Academic Participants",
+      "venue": "Shangri-La Hotel, Jakarta",
+      "mode": "Offline"
+    },
+    {
       "title": "Invited Speakers – Decode The Future: Introduction to AI, IoT, and AIoT",
       "category": "speaker",
       "institution": "Universitas Airlangga",

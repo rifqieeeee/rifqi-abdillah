@@ -15,7 +15,7 @@ fetch('database/research/data.json')
 
             <p class="research-meta">
               <span><i class="bi bi-calendar-event"></i> ${item.year}</span>
-              <span><i class="bi bi-geo-alt"></i> ${capitalize(item.scope)}</span>
+              <span><i class="bi bi-globe"></i> ${capitalize(item.scope)}</span>
               <span class="badge status ${item.status}">
                 ${capitalize(item.status)}
               </span>
@@ -85,24 +85,22 @@ fetch('database/research/data.json')
   });
 
 function initResearchFilter() {
-
-  const iso = new Isotope('#research-list', {
-    itemSelector: '.research-item',
-    layoutMode: 'fitRows'
-  });
-
-  const filterButtons = document.querySelectorAll('.filter-btn');
+  const filterButtons = document.querySelectorAll('#research .filter-btn');
+  const items = document.querySelectorAll('#research-list .research-item');
 
   filterButtons.forEach(btn => {
     btn.addEventListener('click', () => {
-
       filterButtons.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
       const filter = btn.getAttribute('data-filter');
 
-      iso.arrange({
-        filter: filter === 'all' ? '*' : '.' + filter
+      items.forEach(item => {
+        if (filter === 'all' || item.classList.contains(filter)) {
+          item.style.display = 'flex';
+        } else {
+          item.style.display = 'none';
+        }
       });
     });
   });

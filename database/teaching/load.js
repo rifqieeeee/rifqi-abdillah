@@ -123,21 +123,8 @@ function loadActivities(items) {
 }
 
 function initActivityFilters() {
-  const grid = document.querySelector("#activities .row");
-
-  // destroy jika sudah pernah dibuat
-  if (activityIsotope) {
-    activityIsotope.destroy();
-  }
-
-  activityIsotope = new Isotope(grid, {
-    itemSelector: ".teaching-item",
-    layoutMode: "fitRows"
-  });
-
-  const filterButtons = document.querySelectorAll(
-    "#activities .filter-btn"
-  );
+  const filterButtons = document.querySelectorAll("#activities .filter-btn");
+  const items = document.querySelectorAll("#activities .teaching-item");
 
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -146,8 +133,12 @@ function initActivityFilters() {
 
       const filterValue = btn.getAttribute("data-filter");
 
-      activityIsotope.arrange({
-        filter: filterValue === "all" ? "*" : `.${filterValue}`
+      items.forEach(item => {
+        if (filterValue === "all" || item.classList.contains(filterValue)) {
+          item.style.display = "flex";
+        } else {
+          item.style.display = "none";
+        }
       });
     });
   });

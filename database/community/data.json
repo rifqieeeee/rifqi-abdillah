@@ -1,5 +1,19 @@
 [
   {
+    "title": "Website-Based Digitalization of Putro Agung Sports Field Management in Rangkah Subdistrict, Surabaya City",
+    "year": 2026,
+    "location": "Surabaya, East Java",
+    "scope": "national",
+    "type": "workshop",
+    "role": "Principal Investigator",
+    "partner": "Rangkah Subdistrict",
+    "funding": "University Community Service Grant",
+    "output": "Website System, Training Module",
+    "badge": "ongoing",
+    "description": "This activity aims to digitalize the management system of Putro Agung sports field through a website-based platform to improve administrative efficiency and service accessibility.",
+    "news": ""
+  },
+  {
     "title": "Enhancing Understanding of Machine Learning Implementation for Students of SMK Negeri 1 Bangil to Improve Competence in the Field of Information Technology Engineering",
     "year": 2025,
     "location": "Pasuruan, East Java",
@@ -9,20 +23,22 @@
     "partner": "SMK Negeri 1 Bangil",
     "funding": "University Community Service Grant",
     "output": "Training Module, Certificate",
-    "badge": "LPPM UNESA",
-    "description": "This activity aims to enhance students’ understanding of machine learning implementation in order to improve their competencies in the field of information technology engineering."
+    "badge": "completed",
+    "description": "This activity aims to enhance students’ understanding of machine learning implementation in order to improve their competencies in the field of information technology engineering.",
+    "news": "https://www.kompasiana.com/farhannamari7988/682eb3f2ed64155bb0541722/siswa-smk-negeri-1-bangil-antusias-ikuti-pelatihan-machine-learning-bersama-dosen-teknik-informatika-unesa"
   },
   {
     "title": "Improving the Mental Health of Indonesian Migrant Workers in Thailand: Screening, Support, and Education within a Single Technology Platform",
     "year": 2025,
-    "location": "International",
+    "location": "Thailand",
     "scope": "international",
     "type": "workshop",
     "role": "Member",
     "partner": "Thailand",
     "funding": "University Community Service Grant",
     "output": "Training Module, Certificate",
-    "badge": "LPPM UNESA",
-    "description": "This program aims to improve the mental health of Indonesian migrant workers in Thailand through integrated screening, support, and educational services delivered via a single technology platform."
+    "badge": "completed",
+    "description": "This program aims to improve the mental health of Indonesian migrant workers in Thailand through integrated screening, support, and educational services delivered via a single technology platform.",
+    "news": ""
   }
 ]

@@ -1,6 +1,56 @@
 {
   "research": [
     {
+      "title": "Hybrid Embedded Edge Computing System Based on Multimodal Sensor Fusion for Illegal Logging Detection to Support SDG 15 and SDG 13",
+      "year": 2026,
+      "scope": "national",
+      "status": "ongoing",
+      "description": "This project aims to develop a hybrid embedded edge computing system based on multimodal sensor fusion for detecting illegal logging activities in forest areas as an effort to support Sustainable Development Goal (SDG) 15 on Life on Land and SDG 13 on Climate Action.",
+      "role": "Principal Investigator",
+      "funding": "LPPM Unesa",
+      "output": "Conference Paper"
+    },
+    {
+      "title": "Vehicle-Type Aware Traffic Flow Prediction Using Spatio-Temporal Graph Convolutional Network on Surabaya Intelligent Transport System (SITS)",
+      "year": 2026,
+      "scope": "national",
+      "status": "ongoing",
+      "description": "This project focuses on developing a vehicle-type aware spatio-temporal graph convolutional network model to predict traffic flow using data from the Surabaya Intelligent Transport System (SITS).",
+      "role": "Member",
+      "funding": "LPPM Unesa",
+      "output": "Conference Paper"
+    },
+    {
+      "title": "Analysis and Implementation of Software-Defined Storage to Support Data Integration in Cloud-Edge Computing Architecture",
+      "year": 2026,
+      "scope": "national",
+      "status": "ongoing",
+      "description": "This project aims to analyze and implement software-defined storage technology to support efficient data integration within cloud-edge computing architectures.",
+      "role": "Member",
+      "funding": "LPPM Unesa",
+      "output": "Conference Paper"
+    },
+    {
+      "title": "Effectiveness of IoT-Based Training Kit Implementation in Case Method Learning Model on Analytical and Problem-Solving Skills of Electrical Engineering Students",
+      "year": 2026,
+      "scope": "national",
+      "status": "ongoing",
+      "description": "This study evaluates the effectiveness of implementing IoT-based training kits within a case method learning model to improve analytical and problem-solving skills among Electrical Engineering students.",
+      "role": "Member",
+      "funding": "LPPM Unesa",
+      "output": "Book"
+    },
+    {
+      "title": "Prediction Model of Graduate Employment Waiting Period Using K-Nearest Neighbor Based on Student Academic Profiles",
+      "year": 2026,
+      "scope": "national",
+      "status": "ongoing",
+      "description": "This project develops a K-Nearest Neighbor-based prediction model to estimate graduate employment waiting periods using students’ academic profile data.",
+      "role": "Member",
+      "funding": "LPPM Unesa",
+      "output": "Conference Paper"
+    },
+    {
       "title": "Development of an Internet of Things–Based System for Monitoring Mosquito Larvae Growth Based on Environmental Parameters for Dengue Fever Prevention",
       "year": 2025,
       "scope": "national",
@@ -23,6 +73,18 @@
   ],
 
   "opensource": [
+    {
+      "title": "ASTRA OS: Assessment Tool for Rapid Ophthalmic Screening",
+      "category": "IoT, AI, Dashboard",
+      "platform": "Hackster",
+      "platform2": "#",
+      "description": "ASTRA OS is a compact and affordable cataract pre-screening device powered by Raspberry Pi and lightweight on-device AI. You can also try the <a href='https://astraos-demo-2026.vercel.app/' target='_blank'>live demo here</a>.",
+      "tech": ["Raspberry Pi 5", "Camera Module", "Keras Tensorflow", "MQTT", "Node.js"],
+      "license": "GPL3+",
+      "link": "https://www.hackster.io/rifqiabdillah/astra-os-assessment-tool-for-rapid-ophthalmic-screening-b0d4e5",
+      "link2": "#",
+      "github": "https://github.com/rifqieeeee/astraos-2026"
+    },
     {
       "title": "Automated Earthquake Tracking and Hazard Emergency Response",
       "category": "IoT, AI",

@@ -12,13 +12,12 @@ fetch('database/community/data.json')
         <div class="community-box">
           <h3>${item.title}</h3>
 
-          <div class="pkm-badges">
-            <span class="pkm-badge drtpm">${item.badge}</span>
-          </div>
-
           <p class="community-meta">
             <span><i class="bi bi-calendar-event"></i> ${item.year}</span>
             <span><i class="bi bi-geo-alt"></i> ${item.location}</span>
+            <span class="pkm-badge ${item.badge}">
+              ${capitalize(item.badge)}
+            </span>
           </p>
 
           <p>${item.description}</p>
@@ -28,6 +27,15 @@ fetch('database/community/data.json')
             <li><strong>Partner:</strong> ${item.partner}</li>
             <li><strong>Funding:</strong> ${item.funding}</li>
             <li><strong>Output:</strong> ${item.output}</li>
+
+            ${item.news && item.news !== "#" ? `
+              <li>
+                <strong>News:</strong>
+                <a href="${item.news}" target="_blank">
+                  View News
+                </a>
+              </li>
+            ` : ""}
           </ul>
         </div>
       `;
@@ -38,10 +46,10 @@ fetch('database/community/data.json')
     /* =========================
        INIT ISOTOPE (FILTER)
     ========================= */
-    const iso = new Isotope(container, {
-      itemSelector: '.community-item',
-      layoutMode: 'fitRows'
-    });
+    // const iso = new Isotope(container, {
+    //   itemSelector: '.community-item',
+    //   layoutMode: 'fitRows'
+    // });
 
     /* =========================
        FILTER BUTTON CLICK
@@ -50,18 +58,24 @@ fetch('database/community/data.json')
 
     filterBtns.forEach(btn => {
       btn.addEventListener('click', () => {
-
-        // active class
         filterBtns.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
 
         const filterValue = btn.getAttribute('data-filter');
+        const items = document.querySelectorAll('.community-item');
 
-        if (filterValue === 'all') {
-          iso.arrange({ filter: '*' });
-        } else {
-          iso.arrange({ filter: `.${filterValue}` });
-        }
+        items.forEach(item => {
+          if (filterValue === 'all' || item.classList.contains(filterValue)) {
+            item.style.display = 'flex';
+          } else {
+            item.style.display = 'none';
+          }
+        });
       });
     });
   });
+
+function capitalize(text) {
+  if (!text) return '';
+  return text.charAt(0).toUpperCase() + text.slice(1);
+}
