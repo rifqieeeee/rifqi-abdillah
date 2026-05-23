@@ -16,7 +16,7 @@ function loadTeaching(items) {
   items.forEach(item => {
     container.innerHTML += `
       <div class="col-lg-6 teaching-item ${item.level} ${item.type}">
-        <div class="teaching-box">
+        <div class="teaching-box def-box">
           <h3>${item.title}</h3>
 
           <p class="teaching-meta">
@@ -88,7 +88,7 @@ function loadActivities(items) {
   items.forEach(item => {
     container.innerHTML += `
       <div class="col-lg-6 teaching-item ${item.category}">
-        <div class="teaching-box">
+        <div class="teaching-box def-box">
           <h3>${item.title}</h3>
 
           <p class="teaching-meta">

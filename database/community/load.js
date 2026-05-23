@@ -9,7 +9,7 @@ fetch('database/community/data.json')
       div.className = `col-lg-6 community-item ${item.type} ${item.scope}`;
 
       div.innerHTML = `
-        <div class="community-box">
+        <div class="community-box def-box">
           <h3>${item.title}</h3>
 
           <p class="community-meta">

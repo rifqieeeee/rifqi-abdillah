@@ -10,7 +10,7 @@ fetch('database/research/data.json')
     data.research.forEach(item => {
       researchContainer.innerHTML += `
         <div class="col-lg-6 research-item ${item.status} ${item.scope}">
-          <div class="research-box">
+          <div class="research-box def-box">
             <h3>${item.title}</h3>
 
             <p class="research-meta">
@@ -43,7 +43,7 @@ fetch('database/research/data.json')
     data.opensource.forEach(p => {
       openSourceContainer.innerHTML += `
         <div class="col-lg-6 opensource-item">
-          <div class="research-box">
+          <div class="research-box def-box">
             <h3>${p.title}</h3>
 
             <p class="research-meta">
