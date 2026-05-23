@@ -8,11 +8,8 @@ fetch('database/publications/data.json')
     nationalList.innerHTML = '';
 
     data.publications.forEach(pub => {
-
-      // Regex untuk Rifqi Abdillah atau R. Abdillah (case-insensitive)
       const authorRegex = /\b(Rifqi\s+Abdillah|R\.\s*Abdillah)\b/gi;
 
-      // Ganti dengan versi bold
       const formattedAuthors = pub.authors.replace(
         authorRegex,
         '<strong>$1</strong>'
@@ -35,8 +32,23 @@ fetch('database/publications/data.json')
         nationalList.appendChild(li);
       }
     });
+
+    // Rekap jumlah publikasi
+    const totalPublications = data.publications.length;
+
+    const totalJournals = data.publications.filter(
+      pub => pub.type.toLowerCase() === 'journal'
+    ).length;
+
+    const totalConferences = data.publications.filter(
+      pub => pub.type.toLowerCase() === 'conference'
+    ).length;
+
+    document.getElementById('total-publications').textContent = totalPublications;
+    document.getElementById('total-journals').textContent = totalJournals;
+    document.getElementById('total-conferences').textContent = totalConferences;
+
+    // Refresh AOS setelah elemen selesai dimuat
+    AOS.refresh();
   })
   .catch(error => console.error('Error loading publications:', error));
-
-  // Refresh AOS supaya elemen baru ter-animasi
-  AOS.refresh();

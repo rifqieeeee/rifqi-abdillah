@@ -737,3 +737,44 @@ details[open] summary::after {
   font-weight: 400;
   color: #6c757d;
 }
+
+.publication-summary {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.summary-card {
+  padding: 10px 18px;
+  border-radius: 10px;
+  background: rgba(20, 157, 221, 0.06);
+  border: 1px solid rgba(20, 157, 221, 0.12);
+  text-align: center;
+  transition: 0.25s ease;
+}
+
+.summary-card:hover {
+  background: rgba(20, 157, 221, 0.1);
+  transform: translateY(-2px);
+}
+
+.summary-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #149ddd;
+  line-height: 1.2;
+}
+
+.summary-card p {
+  margin: 2px 0 0;
+  font-size: 0.78rem;
+  color: #666;
+}
+
+.summary-card h3,
+.summary-card p {
+  margin-bottom: 0;
+}
