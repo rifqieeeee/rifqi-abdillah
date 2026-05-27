@@ -457,9 +457,7 @@
             <em>${item.venue}</em>,
             ${item.pages ? item.pages + ', ' : ''}
             ${item.publisher ? item.publisher + ', ' : ''}
-            ${item.year}.
-            ${item.link ? `<a href="${item.link}" target="_blank">Link</a>` : ''}
-          `;
+            ${item.year}.`;
 
           publicationList.appendChild(li);
         });
@@ -484,8 +482,8 @@
           li.innerHTML = `
             <strong>${item.role}</strong>,
             ${item.journal}
-            ${item.publisher ? `(${item.publisher})` : ''}
-            | ${item.year}
+            ${item.publisher ? `(${item.publisher})` : ''},
+            ${item.year}
           `;
           editorialList.appendChild(li);
         });
@@ -494,8 +492,8 @@
           const li = document.createElement('li');
           li.innerHTML = `
             <strong>${item.role}</strong>,
-            ${item.journal}
-            | ${item.year}
+            ${item.journal},
+            ${item.year}
           `;
           reviewerList.appendChild(li);
         });
@@ -504,8 +502,8 @@
           const li = document.createElement('li');
           li.innerHTML = `
             <strong>${item.role}</strong>,
-            ${item.conference}
-            | ${item.year}
+            ${item.conference},
+            ${item.year}
           `;
           committeeList.appendChild(li);
         });
@@ -572,9 +570,7 @@
             <strong>${item.title}</strong>.
             ${item.role},
             ${item.funding},
-            ${item.year}.
-            Output: ${item.output}.
-          `;
+            ${item.year}.`;
           researchList.appendChild(li);
         });
 
@@ -583,9 +579,9 @@
           li.innerHTML = `
             <strong>${item.title}</strong>
             (${item.category}).
-            ${item.description}
-            ${item.github && item.github !== '#'
-              ? `GitHub: <a href="${item.github}" target="_blank">${item.github}</a>.`
+            ${item.description} <br>
+            ${item.link !== '#'
+              ? `<i>docs: <a href="${item.link}" target="_blank">${item.link}</i></a>.`
               : ''
             }
           `;
@@ -609,7 +605,6 @@
           const li = document.createElement('li');
           li.innerHTML = `
             <strong>${item.title}</strong>.
-            ${item.role},
             ${item.department},
             ${item.semester}.
             ${item.credits} credits,

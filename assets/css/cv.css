@@ -390,14 +390,15 @@ color: #000;
   }
 
   ul {
-    margin-top: 1px;
-    margin-bottom: 0;
-    padding-left: 13px;
+    margin-top: 0;
+    margin-bottom: 3px;
+    line-height: 1.25;
   }
 
   li {
-    margin-bottom: 1px;
-    line-height: 1.2;
+    margin-top: 0;
+    margin-bottom: 3px;
+    line-height: 1.25;
   }
 
   #publication-list li,
@@ -409,7 +410,8 @@ color: #000;
   #workshop-list li,
   #membership-list li,
   #journal-activities li,
-  #hki-list li {
+  #hki-list li,
+  #experience-list li {
     margin-bottom: 2px;
     line-height: 1.2;
   }

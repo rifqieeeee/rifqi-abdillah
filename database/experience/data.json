@@ -5,12 +5,13 @@
       "period": "Aug 2024 – Present",
       "duration": "",
       "institution": "State University of Surabaya (UNESA)",
-      "description": "",
+      "description": "Serve as a lecturer in Informatics Engineering with responsibilities in teaching, research, academic supervision, curriculum development, and institutional academic support activities in the fields of computer science and intelligent systems.",
       "items": [
-        "Deliver lectures and develop curriculum in computer science, AI, and informatics technology",
-        "Conduct and publish research in data processing, IoT, and software development",
-        "Supervise student projects, capstone research, and academic activities",
-        "Engage in academic committees, industry collaboration, and community outreach"
+        "Deliver lectures and develop course materials in computer science, artificial intelligence, and informatics technology",
+        "Conduct and publish research in data processing, IoT, software engineering, and intelligent systems",
+        "Supervise student projects, capstone research, internships, and academic activities",
+        "Contribute to curriculum development, academic quality assurance, and program evaluation initiatives",
+        "Participate in institutional committees, industry collaboration, and community engagement programs"
       ],
       "detailsTitle": "Additional Roles at UNESA (Click to Expand)",
       "details": [
@@ -61,11 +62,13 @@
       "period": "May 2020 – Jul 2026",
       "duration": "(6 years 2 months)",
       "institution": "Sekolah Robot Indonesia",
-      "description": "",
+      "description": "Delivered robotics, embedded systems, and artificial intelligence training programs for students and educational institutions, focusing on hands-on learning, STEM education, and technology-based project development.",
       "items": [
-        "Design and conduct robotics and AI education programs",
-        "Deliver hands-on robotics and AI training sessions",
-        "Develop curriculum modules and learning materials"
+        "Designed and delivered robotics, IoT, and AI training programs for students at various educational levels",
+        "Conducted hands-on workshops and practical sessions involving sensors, microcontrollers, and intelligent systems",
+        "Developed training curricula, learning modules, and project-based educational materials",
+        "Guided students in building robotics and embedded system projects using Arduino, ESP32, and AI technologies",
+        "Supported STEM education activities through interactive technology learning and mentoring"
       ],
       "detailsTitle": "",
       "details": []
@@ -76,11 +79,17 @@
       "duration": "(2 years 11 months)",
       "institution": "Institut Teknologi Sepuluh Nopember (ITS)",
       "description": "Involved in multidisciplinary research projects focusing on biomedical sensing, COVID-19 screening systems, and intelligent IoT devices using photoplethysmography and machine learning.",
-      "items": [],
-      "subRoles": [
+      "items": [
+        "Conducted research and development activities in biomedical sensing and intelligent systems",
+        "Collaborated in multidisciplinary projects involving IoT, AI, and healthcare technology",
+        "Supported data processing, hardware integration, and experimental validation",
+        "Contributed to the development and evaluation of intelligent sensing devices"
+      ],
+      "detailsTitle": "Research Projects and Roles at ITS (Click to Expand)",
+      "details": [
         {
           "title": "AIoT Engineer",
-          "period": "Jan 2022 – Sep 2023",
+          "subtitle": "Jan 2022 – Sep 2023",
           "items": [
             "Designed IoT-based glucose level measurement modules using finger photoplethysmography (PPG)",
             "Integrated hardware, cloud platforms, and AI algorithms for real-time data acquisition",
@@ -89,7 +98,7 @@
         },
         {
           "title": "Data Analyst",
-          "period": "Aug 2021 – Jan 2022",
+          "subtitle": "Aug 2021 – Jan 2022",
           "items": [
             "Performed data validation and sensor ground truth analysis",
             "Conducted quality control for COVID-19 screening devices"
@@ -97,25 +106,25 @@
         },
         {
           "title": "Hardware Engineer",
-          "period": "Oct 2020 – Jul 2021",
+          "subtitle": "Oct 2020 – Jul 2021",
           "items": [
             "Selected and validated hardware components for intelligent sensing devices",
             "Optimized system flow diagrams and resolved system errors"
           ]
         }
-      ],
-      "detailsTitle": "",
-      "details": []
+      ]
     },
     {
       "title": "Industrial Practice Internship – Development Division",
       "period": "Aug 2021 – Dec 2021",
       "duration": "(4 months)",
       "institution": "PT. Hikari Solusindo Sukses",
-      "description": "",
+      "description": "Completed an industrial practice internship in the development division of a fabless integrated circuit (IC) design company, focusing on hardware component evaluation, validation, and electronic system preparation.",
       "items": [
-        "Component comparison and quality evaluation",
-        "Pre-assembly hardware validation"
+        "Performed component comparison and quality evaluation for electronic system development",
+        "Conducted pre-assembly hardware validation and functional testing",
+        "Supported hardware preparation and verification processes for embedded system projects",
+        "Assisted in identifying component compatibility and system reliability issues"
       ],
       "detailsTitle": "",
       "details": []
@@ -125,10 +134,11 @@
       "period": "Jan 2019 – Apr 2019",
       "duration": "(3 months)",
       "institution": "PT. Xirka Silicon Technology",
-      "description": "",
+      "description": "The company known as PT. Xirka Silicon Technology is an enterprise operating in the field of semiconductor chipsets design.",
       "items": [
-        "Electronic schematic and PCB design",
-        "3D modeling and bill of material creation"
+        "Designing a schematic and 3D model of the electronic components",
+        "Designing schematic and PCB of the company's product prototype",
+        "Making a bill of material for the company's product prototype"
       ],
       "detailsTitle": "",
       "details": []
