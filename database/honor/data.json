@@ -1,0 +1,53 @@
+{
+  "honors": [
+    {
+      "country": "us",
+      "flagAlt": "US Flag",
+      "title": "Technology Award",
+      "event": "Pervasive AI Developer Contest – AMD, Sep 2024"
+    },
+    
+    {
+      "country": "cn",
+      "flagAlt": "China Flag",
+      "title": "3rd Place Winner",
+      "event": "Surf5 Contest, Jul 2024"
+    },
+    {
+      "country": "us",
+      "flagAlt": "US Flag",
+      "title": "Most Illuminated Library",
+      "event": "Little Free STEM Library – Avnet, Dec 2023"
+    },
+    {
+      "country": "cn",
+      "flagAlt": "China Flag",
+      "title": "Top Participant",
+      "event": "WizFi360 Contest, Nov 2022"
+    },
+    {
+      "country": "kr",
+      "flagAlt": "Korea Flag",
+      "title": "Enthusiastic Project Award",
+      "event": "IoT2Wild Contest, Oct 2022"
+    },
+    {
+      "country": "kr",
+      "flagAlt": "Korea Flag",
+      "title": "Project of The Month",
+      "event": "Seeed Studio, Sep 2022"
+    },
+    {
+      "country": "id",
+      "flagAlt": "Indonesia Flag",
+      "title": "PKM-KC Research Grant",
+      "event": "BELMAWA, Mar 2020"
+    },
+    {
+      "country": "id",
+      "flagAlt": "Indonesia Flag",
+      "title": "PKM-KC Research Grant",
+      "event": "BELMAWA, Nov 2018"
+    }
+  ]
+}

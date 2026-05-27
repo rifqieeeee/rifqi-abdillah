@@ -1,0 +1,16 @@
+{
+  "memberships": [
+    {
+      "organization": "Asosiasi Pendidikan Tinggi Informatika dan Komputer (APTIKOM)",
+      "memberId": "AP-16.11491",
+      "period": "2025 - Present",
+      "description": "The Indonesian Association of Higher Education in Computer Science (APTIKOM) is an association or community of universities in Indonesia that have study programs related to the field of informatics and computer science (commonly known as information technology)."
+    },
+    {
+      "organization": "International Association of Engineers (IAENG)",
+      "memberId": "501889",
+      "period": "2025 - Present",
+      "description": "IAENG is the largest non-profit international association for all engineers and computer scientists. IAENG publishes scholarly peer-reviewed open access."
+    }
+  ]
+}

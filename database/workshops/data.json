@@ -1,0 +1,94 @@
+{
+  "workshops": [
+    {
+      "title": "Belajar Penggunaan Generative AI",
+      "issuer": "Dicoding",
+      "date": "May 2026"
+    },
+    {
+      "title": "AI Praktis untuk Produktivitas",
+      "issuer": "Dicoding",
+      "date": "April 2026"
+    },
+    {
+      "title": "Bootcamp Data Analsyt With SQL and Python in Google",
+      "issuer": "DQLAB",
+      "date": "Dec 2025"
+    },
+    {
+      "title": "Collaborative Class Workshop",
+      "issuer": "Huawei and ULearning",
+      "date": "Aug 2025"
+    },
+    {
+      "title": "Sistem Penjaminan Mutu Internal",
+      "issuer": "GPM Unesa",
+      "date": "May 2025"
+    },
+    {
+      "title": "Sertifikasi Okupasi Penulis Artikel Ilmiah",
+      "issuer": "LSP Penerbitan",
+      "date": "Oct 2024"
+    },
+    {
+      "title": "Microsoft Certified: Azure AI Fundamentals",
+      "issuer": "Microsoft",
+      "date": "Oct 2024"
+    },
+    {
+      "title": "Cellular IoT Fundamentals",
+      "issuer": "Nordic Semiconductor",
+      "date": "Oct 2024"
+    },
+    {
+      "title": "Bluetooth Low Energy Fundamentals",
+      "issuer": "Nordic Semiconductor",
+      "date": "Jul 2023"
+    },
+    {
+      "title": "nRF Connect SDK Fundamentals",
+      "issuer": "Nordic Semiconductor",
+      "date": "Jul 2023"
+    },
+    {
+      "title": "Professional Academy (PROA): Data Scientist",
+      "issuer": "Digital Talent Scholarship",
+      "date": "May 2022"
+    },
+    {
+      "title": "Mini Course Data Analytics",
+      "issuer": "RevoU",
+      "date": "Mar 2022"
+    },
+    {
+      "title": "Trial Class Data Science",
+      "issuer": "Rakamin",
+      "date": "Feb 2022"
+    },
+    {
+      "title": "Fresh Graduate Academy: Machine Learning",
+      "issuer": "Digital Talent Scholarship",
+      "date": "Jul 2021"
+    },
+    {
+      "title": "Python for Vision and Detection: OpenCV Python",
+      "issuer": "Udemy",
+      "date": "Apr 2020"
+    },
+    {
+      "title": "Bidikmisi Career Development",
+      "issuer": "EBIO",
+      "date": "Feb 2017"
+    },
+    {
+      "title": "Latihan Keterampilan Manajemen Mahasiswa Tingkat Dasar",
+      "issuer": "Hima Elka PENS",
+      "date": "Nov 2016"
+    },
+    {
+      "title": "Latihan Keterampilan Manajemen Mahasiswa Pra Tingkat Dasar",
+      "issuer": "BEM PENS",
+      "date": "Aug 2016"
+    }
+  ]
+}

@@ -1,0 +1,76 @@
+{
+  "tools": [
+    {
+      "icon": "bi bi-code-slash me-2",
+      "title": "Development Tools",
+      "items": [
+        "Visual Studio Code",
+        "Git & GitHub",
+        "Postman",
+        "Google Colab",
+        "Jupyter Notebook",
+        "Docker"
+      ]
+    },
+    {
+      "icon": "bi bi-bar-chart-line-fill me-2",
+      "title": "Data & AI Tools",
+      "items": [
+        "TensorFlow & Keras",
+        "Scikit-learn",
+        "OpenCV",
+        "Pandas & NumPy",
+        "Power BI",
+        "Matplotlib & Seaborn"
+      ]
+    },
+    {
+      "icon": "bi bi-cpu me-2",
+      "title": "Embedded & Electronics",
+      "items": [
+        "Arduino IDE",
+        "PlatformIO",
+        "Proteus",
+        "Fritzing",
+        "Multisim",
+        "KiCad"
+      ]
+    },
+    {
+      "icon": "bi bi-database-fill me-2",
+      "title": "Database & Backend",
+      "items": [
+        "MySQL",
+        "PostgreSQL",
+        "Firebase",
+        "REST API Development",
+        "Laravel",
+        "Node.js"
+      ]
+    },
+    {
+      "icon": "bi bi-kanban-fill me-2",
+      "title": "Productivity Tools",
+      "items": [
+        "Microsoft Office",
+        "Google Workspace",
+        "Notion",
+        "Trello",
+        "Mendeley",
+        "Zotero"
+      ]
+    },
+    {
+      "icon": "bi bi-palette-fill me-2",
+      "title": "Design & Visualization",
+      "items": [
+        "Canva",
+        "Figma",
+        "Adobe Photoshop",
+        "3D CAD Design",
+        "Data Visualization",
+        "UI/UX Prototyping"
+      ]
+    }
+  ]
+}

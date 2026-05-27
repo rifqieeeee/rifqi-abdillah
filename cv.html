@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>ATS CV - Rifqi Abdillah</title>
+
+  <link href="assets/img/logo-rifqi.png" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/cv.css">
+
+  <style>
+    .cv-selector {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 18px;
+      border: 1px solid #ddd;
+      background: #ffffff;
+      font-family: Arial, sans-serif;
+    }
+
+    .cv-selector h3 {
+      margin-bottom: 14px;
+      font-size: 18px;
+      font-weight: 700;
+    }
+
+    .selector-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px 16px;
+      margin-bottom: 16px;
+    }
+
+    .selector-grid label {
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .selector-actions {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .selector-actions button {
+      border: 1px solid #222;
+      background: #fff;
+      padding: 7px 12px;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .selector-actions button:hover {
+      background: #f1f1f1;
+    }
+
+    @media print {
+      .no-print {
+        display: none !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+    <script>
+    function applySelectedSectionsFromURL() {
+        const params = new URLSearchParams(window.location.search);
+        const selected = params.get('sections');
+
+        if (!selected) {
+        return;
+        }
+
+        const selectedSections = selected.split(',');
+
+        const sectionMap = {
+        about: 'about-section',
+        education: 'education-section',
+        experience: 'experience-section',
+        memberships: 'membership-section',
+        workshops: 'workshop-section',
+        honors: 'honors-section',
+        skills: 'skills-section',
+        tools: 'tools-section',
+        publications: 'publications-section',
+        journalActivities: 'journal-activities-section',
+        hki: 'hki-patents-section',
+        books: 'books-section',
+        research: 'research-section',
+        opensource: 'opensource-section',
+        teaching: 'teaching-section',
+        academicActivities: 'academic-activities-section',
+        community: 'community-service-section',
+        volunteer: 'volunteer-section'
+        };
+
+        Object.values(sectionMap).forEach(sectionId => {
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+            section.style.display = 'none';
+        }
+        });
+
+        selectedSections.forEach(key => {
+        const sectionId = sectionMap[key];
+        const section = document.getElementById(sectionId);
+
+        if (section) {
+            section.style.display = '';
+        }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', applySelectedSectionsFromURL);
+    </script>
+
+  <main class="cv-wrapper">
+
+    <header class="cv-header">
+      <h1>Rifqi Abdillah, S.Tr.T., M.Kom.</h1>
+      <h4>Lecturer | Researcher | AI & IoT Enthusiast</h4>
+
+      <div class="contact-info">
+        Email: rifqiabdillah@unesa.ac.id |
+        Phone: +62 853 3162 4441 |
+        Location: Surabaya, Indonesia<br>
+        LinkedIn: <a href="https://linkedin.com/in/rifqi-abdi">linkedin.com/in/rifqi-abdi</a> |
+        Website: <a href="https://rifqi-abdillah.vercel.app">rifqi-abdillah.vercel.app</a>
+      </div>
+    </header>
+
+    <section class="section" id="about-section">
+      <h2 class="section-title">About</h2>
+      <p class="profile-description">
+        Rifqi Abdillah is a Lecturer and Researcher in Informatics Engineering with a strong interdisciplinary background in Artificial Intelligence, Internet of Things (IoT), and Electronic Engineering. His academic and research interests include Biomedical Informatics, Edge Computing, Image Processing, Machine Learning, and intelligent IoT systems, with a particular focus on non-invasive biomedical signal processing and data-driven decision-making.
+      </p>
+    </section>
+
+    <section class="section" id="education-section">
+      <h2 class="section-title">Education</h2>
+
+      <div class="item">
+        <h5>Master's Degree in Informatics Engineering</h5>
+        <div class="meta">
+          Institut Teknologi Sepuluh Nopember - Surabaya, East Java, Indonesia | Aug 2021 - Sep 2023
+        </div>
+        <p><strong>GPA:</strong> 3.93/4.00</p>
+        <ul>
+          <li><strong>Thesis:</strong> Noise Reduction to Improve the Accuracy of Valid Data in Photoplethysmography Signal Using K-Means Clustering and Exponential Filter</li>
+          <li><strong>Project:</strong> Rapid Detection of Covid-19 Through Sweat Analysis by Using an Electronic Nose</li>
+          <li><strong>Project:</strong> Glucose Level Measurement Module Based on Finger Photoplethysmography</li>
+          <li><strong>Conference Proceedings:</strong> Clustering of Photoplethysmography Data Signals for Developing Noise Filters</li>
+          <li><strong>Conference Proceedings:</strong> Filter Validation for Detecting Outliers of Photoplethysmograph Data</li>
+          <li><strong>Conference Proceedings:</strong> Feature Selection of Photoplethysmograph Data in Machine Learning</li>
+          <li><strong>Conference Proceedings:</strong> Design and Implementation of 2-DOF Arm Manipulator Robot as Robotic Kinematic Learning Platform</li>
+        </ul>
+      </div>
+
+      <div class="item">
+        <h5>Bachelor's Degree in Electrical Engineering</h5>
+        <div class="meta">
+          Electronic Engineering Polytechnic Institute of Surabaya - Surabaya, East Java, Indonesia | Jul 2016 - Aug 2020
+        </div>
+        <p><strong>GPA:</strong> 3.23/4.00</p>
+        <ul>
+          <li><strong>Undergraduate Thesis:</strong> Mesin Presensi Perkuliahan Berbasis Embedded Vision - Machine Learning Platform</li>
+          <li><strong>Project:</strong> Automatic Vision Security Assistant Berbasis Machine Learning Sebagai Solusi Keamanan Bangunan Dari Orang Tidak Dikenal</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="experience-section">
+      <h2 class="section-title">Professional Experience</h2>
+      <div id="experience-list"></div>
+    </section>
+
+    <section class="section" id="membership-section">
+      <h2 class="section-title">Professional Memberships</h2>
+      <ul id="membership-list"></ul>
+    </section>
+
+    <section class="section" id="workshop-section">
+      <h2 class="section-title">Workshops & Courses</h2>
+      <ul id="workshop-list"></ul>
+    </section>
+
+    <section class="section" id="honors-section">
+      <h2 class="section-title">Honors & Awards</h2>
+      <ul id="honor-list"></ul>
+    </section>
+
+    <section class="section" id="skills-section">
+      <h2 class="section-title">Skills & Competencies</h2>
+      <p id="skills-list"></p>
+    </section>
+
+    <section class="section" id="tools-section">
+      <h2 class="section-title">Tools & Technologies</h2>
+      <p id="tools-list"></p>
+    </section>
+
+    <section class="section" id="publications-section">
+      <h2 class="section-title">Publications</h2>
+      <ul id="publication-list"></ul>
+    </section>
+
+    <section class="section" id="journal-activities-section">
+      <h2 class="section-title">Journal Activities</h2>
+
+      <div class="item">
+        <h5>Editorial Board</h5>
+        <ul id="editorial-board-list"></ul>
+      </div>
+
+      <div class="item">
+        <h5>Reviewer Activities</h5>
+        <ul id="reviewer-list"></ul>
+      </div>
+
+      <div class="item">
+        <h5>Conference Committees</h5>
+        <ul id="committee-list"></ul>
+      </div>
+    </section>
+
+    <section class="section" id="hki-patents-section">
+      <h2 class="section-title">HKI & Patents</h2>
+      <ul id="hki-list"></ul>
+    </section>
+
+    <section class="section" id="books-section">
+      <h2 class="section-title">Books</h2>
+      <ul id="books-list"></ul>
+    </section>
+
+    <section class="section" id="research-section">
+      <h2 class="section-title">Research</h2>
+      <ul id="research-list"></ul>
+    </section>
+
+    <section class="section" id="opensource-section">
+      <h2 class="section-title">Open-Source Projects</h2>
+      <ul id="opensource-list"></ul>
+    </section>
+
+    <section class="section" id="teaching-section">
+      <h2 class="section-title">Teaching</h2>
+      <ul id="teaching-list"></ul>
+    </section>
+
+    <section class="section" id="academic-activities-section">
+      <h2 class="section-title">Academic Activities</h2>
+      <ul id="academic-activities-list"></ul>
+    </section>
+
+    <section class="section" id="community-service-section">
+      <h2 class="section-title">Community Service</h2>
+      <ul id="community-list"></ul>
+    </section>
+
+    <section class="section" id="volunteer-section">
+      <h2 class="section-title">Volunteer Activities</h2>
+      <ul id="volunteer-list"></ul>
+    </section>
+
+  </main>
+
+  <script>
+    function applySelection() {
+      document.querySelectorAll('.section-check').forEach(checkbox => {
+        const section = document.getElementById(checkbox.value);
+
+        if (section) {
+          section.style.display = checkbox.checked ? '' : 'none';
+        }
+      });
+    }
+
+    function selectAllSections() {
+      document.querySelectorAll('.section-check').forEach(checkbox => {
+        checkbox.checked = true;
+      });
+
+      applySelection();
+    }
+
+    function clearAllSections() {
+      document.querySelectorAll('.section-check').forEach(checkbox => {
+        checkbox.checked = false;
+      });
+
+      applySelection();
+    }
+
+    document.addEventListener('DOMContentLoaded', applySelection);
+  </script>
+
+  <script>
+    fetch('database/experience/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const experienceList = document.getElementById('experience-list');
+        experienceList.innerHTML = '';
+
+        data.experiences.forEach(exp => {
+          const item = document.createElement('div');
+          item.className = 'item';
+
+          let responsibilities = '';
+          if (exp.items && exp.items.length > 0) {
+            responsibilities = `
+              <ul>
+                ${exp.items.map(i => `<li>${i}</li>`).join('')}
+              </ul>
+            `;
+          }
+
+          let subRoles = '';
+          if (exp.subRoles && exp.subRoles.length > 0) {
+            subRoles = exp.subRoles.map(role => `
+              <div class="sub-role">
+                <p><strong>${role.title}</strong> (${role.period})</p>
+                <ul>
+                  ${role.items.map(i => `<li>${i}</li>`).join('')}
+                </ul>
+              </div>
+            `).join('');
+          }
+
+          item.innerHTML = `
+            <h5>${exp.title}</h5>
+            <div class="meta">
+              ${exp.institution} | ${exp.period} ${exp.duration ? exp.duration : ''}
+            </div>
+            ${exp.description ? `<p>${exp.description}</p>` : ''}
+            ${responsibilities}
+            ${subRoles}
+          `;
+
+          experienceList.appendChild(item);
+        });
+      })
+      .catch(error => console.error('Error loading experience data:', error));
+  </script>
+
+  <script>
+    fetch('database/membership/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const membershipList = document.getElementById('membership-list');
+        membershipList.innerHTML = '';
+
+        data.memberships.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.organization}</strong>
+            ${item.memberId ? `(Member ID: ${item.memberId})` : ''}.
+            ${item.period}.
+          `;
+          membershipList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading membership data:', error));
+  </script>
+
+  <script>
+    fetch('database/workshops/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const workshopList = document.getElementById('workshop-list');
+        workshopList.innerHTML = '';
+
+        data.workshops.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.title}</strong>.
+            ${item.issuer},
+            ${item.date}.
+          `;
+          workshopList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading workshop data:', error));
+  </script>
+
+  <script>
+    fetch('database/honor/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const honorList = document.getElementById('honor-list');
+        honorList.innerHTML = '';
+
+        data.honors.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.title}</strong>.
+            ${item.event}.
+          `;
+          honorList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading honors data:', error));
+  </script>
+
+  <script>
+    fetch('database/skills/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const skillsContainer = document.getElementById('skills-list');
+        let allSkills = [];
+
+        data.skills.forEach(category => {
+          allSkills.push(...category.items);
+        });
+
+        skillsContainer.innerHTML = allSkills.join(' • ');
+      })
+      .catch(error => console.error('Error loading skills data:', error));
+  </script>
+
+  <script>
+    fetch('database/tools/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const toolsContainer = document.getElementById('tools-list');
+        let allTools = [];
+
+        data.tools.forEach(category => {
+          allTools.push(...category.items);
+        });
+
+        toolsContainer.innerHTML = allTools.join(' • ');
+      })
+      .catch(error => console.error('Error loading tools data:', error));
+  </script>
+
+  <script>
+    fetch('database/publications/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const publicationList = document.getElementById('publication-list');
+        publicationList.innerHTML = '';
+
+        data.publications.forEach(item => {
+          const li = document.createElement('li');
+
+          li.innerHTML = `
+            ${item.authors}.
+            <strong>${item.title}</strong>.
+            <em>${item.venue}</em>,
+            ${item.pages ? item.pages + ', ' : ''}
+            ${item.publisher ? item.publisher + ', ' : ''}
+            ${item.year}.
+            ${item.link ? `<a href="${item.link}" target="_blank">Link</a>` : ''}
+          `;
+
+          publicationList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading publications data:', error));
+  </script>
+
+  <script>
+    fetch('database/editorial/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const editorialList = document.getElementById('editorial-board-list');
+        const reviewerList = document.getElementById('reviewer-list');
+        const committeeList = document.getElementById('committee-list');
+
+        editorialList.innerHTML = '';
+        reviewerList.innerHTML = '';
+        committeeList.innerHTML = '';
+
+        data.editorial_board.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.role}</strong>,
+            ${item.journal}
+            ${item.publisher ? `(${item.publisher})` : ''}
+            | ${item.year}
+          `;
+          editorialList.appendChild(li);
+        });
+
+        data.reviewer_activities.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.role}</strong>,
+            ${item.journal}
+            | ${item.year}
+          `;
+          reviewerList.appendChild(li);
+        });
+
+        data.conference_committees.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.role}</strong>,
+            ${item.conference}
+            | ${item.year}
+          `;
+          committeeList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading editorial data:', error));
+  </script>
+
+  <script>
+    fetch('database/hki/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const hkiList = document.getElementById('hki-list');
+        hkiList.innerHTML = '';
+
+        data.hki.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.title}</strong>.
+            ${item.authors}.
+            ${item.type},
+            ${item.institution},
+            ${item.year}.
+          `;
+          hkiList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading HKI data:', error));
+  </script>
+
+  <script>
+    fetch('database/books/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const booksList = document.getElementById('books-list');
+        booksList.innerHTML = '';
+
+        data.books.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.title}</strong>.
+            ${item.authors}.
+            ${item.publisher},
+            ${item.year}.
+          `;
+          booksList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading books data:', error));
+  </script>
+
+  <script>
+    fetch('database/research/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const researchList = document.getElementById('research-list');
+        const opensourceList = document.getElementById('opensource-list');
+
+        researchList.innerHTML = '';
+        opensourceList.innerHTML = '';
+
+        data.research.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.title}</strong>.
+            ${item.role},
+            ${item.funding},
+            ${item.year}.
+            Output: ${item.output}.
+          `;
+          researchList.appendChild(li);
+        });
+
+        data.opensource.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.title}</strong>
+            (${item.category}).
+            ${item.description}
+            ${item.github && item.github !== '#'
+              ? `GitHub: <a href="${item.github}" target="_blank">${item.github}</a>.`
+              : ''
+            }
+          `;
+          opensourceList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading research data:', error));
+  </script>
+
+  <script>
+    fetch('database/teaching/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const teachingList = document.getElementById('teaching-list');
+        const activitiesList = document.getElementById('academic-activities-list');
+
+        teachingList.innerHTML = '';
+        activitiesList.innerHTML = '';
+
+        data.teaching.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.title}</strong>.
+            ${item.role},
+            ${item.department},
+            ${item.semester}.
+            ${item.credits} credits,
+            ${item.classes} classes.
+          `;
+          teachingList.appendChild(li);
+        });
+
+        data.activities.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.title}</strong>.
+            ${item.institution},
+            ${item.date}.
+            ${item.mode},
+            ${item.venue}.
+          `;
+          activitiesList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading teaching data:', error));
+  </script>
+
+  <script>
+    fetch('database/community/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const communityList = document.getElementById('community-list');
+        communityList.innerHTML = '';
+
+        data.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.title}</strong>.
+            ${item.role},
+            ${item.partner},
+            ${item.year}.
+          `;
+          communityList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading community service data:', error));
+  </script>
+
+  <script>
+    fetch('database/volunteer/data.json')
+      .then(response => response.json())
+      .then(data => {
+        const volunteerList = document.getElementById('volunteer-list');
+        volunteerList.innerHTML = '';
+
+        data.forEach(item => {
+          const li = document.createElement('li');
+          li.innerHTML = `
+            <strong>${item.title}</strong>.
+            ${item.role},
+            ${item.partner},
+            ${item.year}.
+          `;
+          volunteerList.appendChild(li);
+        });
+      })
+      .catch(error => console.error('Error loading volunteer data:', error));
+  </script>
+
+  
+
+</body>
+
+</html>

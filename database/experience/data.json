@@ -1,0 +1,137 @@
+{
+  "experiences": [
+    {
+      "title": "Lecturer in Informatics Engineering",
+      "period": "Aug 2024 – Present",
+      "duration": "",
+      "institution": "State University of Surabaya (UNESA)",
+      "description": "",
+      "items": [
+        "Deliver lectures and develop curriculum in computer science, AI, and informatics technology",
+        "Conduct and publish research in data processing, IoT, and software development",
+        "Supervise student projects, capstone research, and academic activities",
+        "Engage in academic committees, industry collaboration, and community outreach"
+      ],
+      "detailsTitle": "Additional Roles at UNESA (Click to Expand)",
+      "details": [
+        {
+          "title": "Quality Assurance Unit – Faculty of Engineering",
+          "subtitle": "Data and Information Systems Division (Feb 2025 – Present)",
+          "items": [
+            "Prepare academic data and institutional surveys",
+            "Document and publish Quality Assurance Group (QAG) activity reports",
+            "Plan and manage service satisfaction surveys",
+            "Coordinate data and document entry in the Quality Assurance Information System (QAIS)"
+          ]
+        },
+        {
+          "title": "PIC Tracer Study – Undergraduate Program of Informatics Engineering",
+          "subtitle": "January 2025 – Present",
+          "items": [
+            "Plan and manage annual tracer study implementation for alumni",
+            "Coordinate alumni data collection and verification",
+            "Analyze tracer study results for program evaluation and accreditation purposes",
+            "Prepare and present tracer study reports to faculty and university management"
+          ]
+        },
+        {
+          "title": "Head of Website and Social Media Management Team – Undergraduate Program of Informatics Engineering",
+          "subtitle": "January 2025 – Present",
+          "items": [
+            "Lead the development and maintenance of the study program website",
+            "Manage and oversee official social media content strategy and publication",
+            "Coordinate content creation including academic news, events, and student achievements",
+            "Ensure information accuracy, consistency, and digital branding alignment"
+          ]
+        },
+        {
+          "title": "Student Affairs & Student Association Advisor – Undergraduate Program of Informatics Engineering",
+          "subtitle": "January 2026 – Present",
+          "items": [
+            "Provide guidance and supervision for student organizations and activities",
+            "Support leadership development and organizational governance",
+            "Monitor and evaluate student programs and work plans",
+            "Facilitate coordination between students, department, and faculty management"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Robotics and AI Trainer",
+      "period": "May 2020 – Jul 2026",
+      "duration": "(6 years 2 months)",
+      "institution": "Sekolah Robot Indonesia",
+      "description": "",
+      "items": [
+        "Design and conduct robotics and AI education programs",
+        "Deliver hands-on robotics and AI training sessions",
+        "Develop curriculum modules and learning materials"
+      ],
+      "detailsTitle": "",
+      "details": []
+    },
+    {
+      "title": "Research Staff",
+      "period": "Oct 2020 – Sep 2023",
+      "duration": "(2 years 11 months)",
+      "institution": "Institut Teknologi Sepuluh Nopember (ITS)",
+      "description": "Involved in multidisciplinary research projects focusing on biomedical sensing, COVID-19 screening systems, and intelligent IoT devices using photoplethysmography and machine learning.",
+      "items": [],
+      "subRoles": [
+        {
+          "title": "AIoT Engineer",
+          "period": "Jan 2022 – Sep 2023",
+          "items": [
+            "Designed IoT-based glucose level measurement modules using finger photoplethysmography (PPG)",
+            "Integrated hardware, cloud platforms, and AI algorithms for real-time data acquisition",
+            "Applied machine learning techniques for data analysis and prediction"
+          ]
+        },
+        {
+          "title": "Data Analyst",
+          "period": "Aug 2021 – Jan 2022",
+          "items": [
+            "Performed data validation and sensor ground truth analysis",
+            "Conducted quality control for COVID-19 screening devices"
+          ]
+        },
+        {
+          "title": "Hardware Engineer",
+          "period": "Oct 2020 – Jul 2021",
+          "items": [
+            "Selected and validated hardware components for intelligent sensing devices",
+            "Optimized system flow diagrams and resolved system errors"
+          ]
+        }
+      ],
+      "detailsTitle": "",
+      "details": []
+    },
+    {
+      "title": "Industrial Practice Internship – Development Division",
+      "period": "Aug 2021 – Dec 2021",
+      "duration": "(4 months)",
+      "institution": "PT. Hikari Solusindo Sukses",
+      "description": "",
+      "items": [
+        "Component comparison and quality evaluation",
+        "Pre-assembly hardware validation"
+      ],
+      "detailsTitle": "",
+      "details": []
+    },
+    {
+      "title": "Internship – Development Division",
+      "period": "Jan 2019 – Apr 2019",
+      "duration": "(3 months)",
+      "institution": "PT. Xirka Silicon Technology",
+      "description": "",
+      "items": [
+        "Electronic schematic and PCB design",
+        "3D modeling and bill of material creation"
+      ],
+      "detailsTitle": "",
+      "details": []
+    }
+  ]
+}
