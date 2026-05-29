@@ -778,3 +778,13 @@ details[open] summary::after {
 .summary-card p {
   margin-bottom: 0;
 }
+
+.gallery-pagination button {
+  border-radius: 20px;
+  padding: 6px 14px;
+}
+
+.gallery-pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

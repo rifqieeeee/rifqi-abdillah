@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Rekap Laporan Magang Mahasiswa</title>
+</head>
+<body>
+
+  <h1>Rekap Laporan Magang Mahasiswa</h1>
+
+  <table border="1">
+    <thead id="table-head"></thead>
+    <tbody id="table-body"></tbody>
+  </table>
+
+  <script>
+    fetch('testdata.csv')
+      .then(response => response.text())
+      .then(csv => {
+        const rows = csv.trim().split('\n').map(row => row.split(','));
+
+        const headers = rows[0];
+        const data = rows.slice(1);
+
+        const thead = document.getElementById('table-head');
+        const tbody = document.getElementById('table-body');
+
+        const headerRow = document.createElement('tr');
+
+        headers.forEach(header => {
+          const th = document.createElement('th');
+          th.textContent = header;
+          headerRow.appendChild(th);
+        });
+
+        thead.appendChild(headerRow);
+
+        data.forEach(row => {
+          const tr = document.createElement('tr');
+
+          row.forEach(cell => {
+            const td = document.createElement('td');
+
+            if (cell.startsWith('http')) {
+              const a = document.createElement('a');
+              a.href = cell;
+              a.textContent = cell;
+              a.target = '_blank';
+              td.appendChild(a);
+            } else {
+              td.textContent = cell;
+            }
+
+            tr.appendChild(td);
+          });
+
+          tbody.appendChild(tr);
+        });
+      });
+  </script>
+
+</body>
+</html>
