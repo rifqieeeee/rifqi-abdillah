@@ -27,6 +27,7 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/css/ai.css">
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -104,6 +105,59 @@
 
     </section><!-- /Hero Section -->
 
+      <!-- ========================= -->
+<!-- Ask Rifqi AI -->
+<!-- ========================= -->
+
+<button id="ai-btn" class="ai-chat-btn">
+  <i class="bi bi-robot"></i>
+</button>
+
+<div id="ai-chatbox" class="ai-chatbox d-none">
+
+  <div class="ai-header">
+    <div>
+      <strong>Ask Rifqi AI</strong>
+      <p class="ai-subtitle">Intelligent Academic Assistant</p>
+    </div>
+
+    <button id="close-ai" class="close-ai-btn">
+      <i class="bi bi-x-lg"></i>
+    </button>
+  </div>
+
+  <div id="ai-messages" class="ai-messages">
+
+    <div class="ai-message bot">
+      👋 Hello! I'm Rifqi AI.<br><br>
+      Ask me about:
+      <ul>
+        <li>Research interests</li>
+        <li>Publications</li>
+        <li>Projects</li>
+        <li>Skills</li>
+        <li>Collaboration</li>
+      </ul>
+    </div>
+
+    <div class="suggested-questions">
+      <button class="suggest-btn">Research interests</button>
+      <button class="suggest-btn">Publications</button>
+      <button class="suggest-btn">AI Projects</button>
+      <button class="suggest-btn">Collaboration</button>
+    </div>
+
+  </div>
+
+  <div class="ai-input-area">
+    <input type="text" id="ai-input" placeholder="Ask something...">
+    <button id="send-btn">
+      <i class="bi bi-send-fill"></i>
+    </button>
+  </div>
+
+</div>
+
   </main>
 
   <!-- Scroll Top -->
@@ -127,6 +181,7 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="assets/js/askai.js"></script>
 
 </body>
 

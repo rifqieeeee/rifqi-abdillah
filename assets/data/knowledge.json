@@ -1,0 +1,685 @@
+[
+  {
+    "keywords": ["research", "interest", "topic", "focus"],
+    "answers": [
+      "My research focuses on Edge Computing, AIoT, Computer Vision, and Intelligent Systems.",
+      "I am interested in AI, IoT, Edge Computing, and smart intelligent environments.",
+      "My primary research areas include Edge AI, Computer Vision, and embedded intelligent systems."
+    ]
+  },
+
+  {
+    "keywords": ["publication", "paper", "journal", "ieee"],
+    "answers": [
+      "I have publications in intelligent systems, Edge Computing, and AI-based applications.",
+      "My publications mainly discuss AIoT, Computer Vision, and smart environments.",
+      "Several of my works are published in international conferences and journals."
+    ]
+  },
+
+  {
+    "keywords": ["project", "projects", "system", "application"],
+    "answers": [
+      "I have developed projects related to AIoT, smart monitoring systems, and intelligent web applications.",
+      "My projects include Computer Vision systems, IoT platforms, and AI-integrated applications.",
+      "I work on real-time intelligent systems using AI and Edge Computing technologies."
+    ]
+  },
+
+  {
+    "keywords": ["skill", "technology", "stack", "programming"],
+    "answers": [
+      "My technical skills include Python, JavaScript, IoT, AI, Computer Vision, and Web Development.",
+      "I work with technologies such as TensorFlow, OpenCV, Node.js, and embedded systems.",
+      "My expertise includes AIoT system development, Edge Computing, and intelligent web platforms."
+    ]
+  },
+
+  {
+    "keywords": ["collaboration", "partner", "research collaboration"],
+    "answers": [
+      "I am open for research collaboration, academic partnerships, and intelligent system development.",
+      "Feel free to contact me for collaborative research and technology projects.",
+      "I welcome collaborations in AI, IoT, Computer Vision, and Edge Computing research."
+    ]
+  },
+
+  {
+    "keywords": ["contact", "email", "reach"],
+    "answers": [
+      "You can contact me through LinkedIn, email, or the contact page on this website.",
+      "Feel free to reach out via my social media or academic profile.",
+      "Please visit the Contact page to connect with me."
+    ]
+  }, 
+
+  {
+    "keywords": ["about", "biography", "profile", "introduction"],
+    "answers": [
+      "Rifqi Abdillah is a Lecturer and Researcher in Informatics Engineering specializing in Artificial Intelligence, IoT, and intelligent systems.",
+      "I am an Informatics Engineering lecturer and researcher with interdisciplinary expertise in AI, Edge Computing, Biomedical Informatics, and Machine Learning.",
+      "My academic background combines Informatics Engineering and Electronic Engineering, focusing on intelligent and connected technologies."
+    ]
+  },
+
+  {
+    "keywords": ["research", "interest", "topic", "focus", "research interest"],
+    "answers": [
+      "My research focuses on AIoT, Biomedical Informatics, Edge Computing, Machine Learning, and intelligent IoT systems.",
+      "I am interested in Artificial Intelligence, Image Processing, Biomedical Signal Processing, and Edge AI technologies.",
+      "My primary research areas include Machine Learning, Computer Vision, Biomedical Informatics, and data-driven intelligent systems."
+    ]
+  },
+
+  {
+    "keywords": ["publication", "paper", "journal", "ieee", "conference"],
+    "answers": [
+      "I have authored multiple scientific publications in Artificial Intelligence, IoT, and intelligent system applications.",
+      "My publications mainly discuss AI-based healthcare systems, Edge Computing, and intelligent IoT technologies.",
+      "Several of my works are published in international conferences and journals related to AI and smart systems."
+    ]
+  },
+
+  {
+    "keywords": ["patent", "innovation", "invention"],
+    "answers": [
+      "I hold several granted patents related to non-invasive health monitoring technologies and intelligent systems.",
+      "My innovations focus on AI-driven healthcare technologies, biomedical monitoring, and smart IoT applications.",
+      "I actively develop research-based innovations in biomedical informatics and intelligent monitoring systems."
+    ]
+  },
+
+  {
+    "keywords": ["project", "projects", "system", "application"],
+    "answers": [
+      "I have developed projects related to AIoT, biomedical monitoring systems, and intelligent web applications.",
+      "My projects include Computer Vision systems, IoT platforms, AI-integrated healthcare technologies, and Edge AI applications.",
+      "I work on intelligent real-time systems using AI, Machine Learning, and Edge Computing technologies."
+    ]
+  },
+
+  {
+    "keywords": ["skill", "technology", "stack", "programming"],
+    "answers": [
+      "My technical skills include Python, JavaScript, Machine Learning, IoT, Computer Vision, and Web Development.",
+      "I work with technologies such as TensorFlow, OpenCV, embedded systems, and intelligent IoT platforms.",
+      "My expertise includes AIoT system development, Edge Computing, biomedical signal processing, and intelligent web technologies."
+    ]
+  },
+
+  {
+    "keywords": ["teaching", "lecturer", "education", "academic"],
+    "answers": [
+      "I currently serve as a Lecturer at Universitas Negeri Surabaya (UNESA) in the field of Informatics Engineering.",
+      "My academic activities include teaching, curriculum development, research supervision, and project-based learning.",
+      "I am actively involved in education, research, and innovation in computer science and intelligent systems."
+    ]
+  },
+
+  {
+    "keywords": ["award", "achievement", "competition"],
+    "answers": [
+      "I have received national and international awards for contributions to AI, IoT, and intelligent technology innovation.",
+      "My achievements include awards in intelligent systems, robotics, and AI-based innovation projects.",
+      "I actively participate in research and innovation programs related to Artificial Intelligence and smart technologies."
+    ]
+  },
+
+  {
+    "keywords": ["collaboration", "partner", "research collaboration"],
+    "answers": [
+      "I am open for research collaboration, academic partnerships, and intelligent system development projects.",
+      "Feel free to contact me for collaborative research in AI, IoT, Biomedical Informatics, and Edge Computing.",
+      "I welcome collaborations in Machine Learning, intelligent healthcare systems, and AIoT research."
+    ]
+  },
+
+  {
+    "keywords": ["supervision", "student", "thesis", "mentoring"],
+    "answers": [
+      "I am open for student supervision in topics related to AI, IoT, Biomedical Informatics, and Machine Learning.",
+      "I actively supervise student research and capstone projects in intelligent systems and data-driven technologies.",
+      "My supervision interests include Artificial Intelligence, Edge Computing, Computer Vision, and smart healthcare technologies."
+    ]
+  },
+
+  {
+    "keywords": ["education", "degree", "master", "bachelor"],
+    "answers": [
+      "I hold a Master’s Degree in Informatics Engineering from Institut Teknologi Sepuluh Nopember (ITS).",
+      "My educational background includes Informatics Engineering and Electronic Engineering with a focus on intelligent technologies.",
+      "I completed my Master’s Degree in Informatics Engineering with a GPA of 3.93/4.00."
+    ]
+  },
+
+  {
+    "keywords": ["contact", "email", "reach", "linkedin"],
+    "answers": [
+      "You can contact me through LinkedIn, email, or the contact page on my website.",
+      "Feel free to reach out via my academic profile, LinkedIn, or professional email.",
+      "Please visit my website or LinkedIn profile to connect and collaborate."
+    ]
+  },
+
+  {
+    "keywords": ["website", "portfolio", "personal website"],
+    "answers": [
+      "You can explore my portfolio and academic profile at rifqi-abdillah.vercel.app.",
+      "My personal website contains information about research, projects, publications, and professional activities.",
+      "Please visit my portfolio website to learn more about my academic and technology projects."
+    ]
+  }, 
+
+  {
+    "keywords": ["award", "awards", "achievement", "honor", "recognition"],
+    "answers": [
+      "I have received several national and international awards for innovation, AI, IoT, and intelligent system development.",
+      "My recognitions include awards in AI development, embedded systems, IoT innovation, and research competitions.",
+      "I actively participate in international technology competitions and innovation programs related to AI and IoT."
+    ]
+  },
+
+  {
+    "keywords": ["amd", "pervasive ai", "ai developer contest"],
+    "answers": [
+      "I received the US Flag Technology Award at the Pervasive AI Developer Contest organized by AMD in 2024.",
+      "One of my achievements includes the Technology Award from AMD’s Pervasive AI Developer Contest.",
+      "I was recognized in the AMD Pervasive AI Developer Contest for AI and intelligent system innovation."
+    ]
+  },
+
+  {
+    "keywords": ["surf5", "china", "3rd place", "competition"],
+    "answers": [
+      "I achieved 3rd Place Winner in the Surf5 Contest in 2024.",
+      "One of my international achievements was securing 3rd place in the Surf5 technology competition.",
+      "I participated in the Surf5 Contest and received recognition as a top-winning participant."
+    ]
+  },
+
+  {
+    "keywords": ["library", "stem library", "avnet"],
+    "answers": [
+      "I received the Most Illuminated Library Award from Avnet through the Little Free STEM Library program.",
+      "One of my projects was recognized by Avnet in the Little Free STEM Library initiative.",
+      "I was awarded for innovation and community technology engagement in the STEM Library program."
+    ]
+  },
+
+  {
+    "keywords": ["wizfi360", "top participant"],
+    "answers": [
+      "I was recognized as a Top Participant in the WizFi360 Contest in 2022.",
+      "My participation in the WizFi360 Contest focused on IoT and embedded technology innovation.",
+      "I received recognition in the WizFi360 international technology competition."
+    ]
+  },
+
+  {
+    "keywords": ["iot2wild", "enthusiastic project", "korea"],
+    "answers": [
+      "I received the Enthusiastic Project Award in the IoT2Wild Contest in 2022.",
+      "One of my international recognitions includes the Enthusiastic Project Award for IoT innovation.",
+      "The IoT2Wild Contest recognized my project contribution in intelligent IoT systems."
+    ]
+  },
+
+  {
+    "keywords": ["seeed studio", "project of the month"],
+    "answers": [
+      "I received the Project of The Month Award from Seeed Studio in 2022.",
+      "My IoT and embedded system project was selected as Project of The Month by Seeed Studio.",
+      "Seeed Studio recognized one of my projects for innovation in intelligent system development."
+    ]
+  },
+
+  {
+    "keywords": ["pkm", "belmawa", "research grant", "grant"],
+    "answers": [
+      "I received PKM-KC Research Grants from BELMAWA for innovation and research projects.",
+      "My research projects were funded through the PKM-KC grant program organized by BELMAWA.",
+      "I have been awarded national research grants supporting technology and innovation development."
+    ]
+  }, 
+
+  {
+    "keywords": ["skill", "skills", "competency", "expertise"],
+    "answers": [
+      "My competencies cover Artificial Intelligence, IoT, Web Development, Computer Vision, and Embedded Systems.",
+      "I have interdisciplinary skills in Machine Learning, intelligent systems, software development, and research methodology.",
+      "My expertise combines AI, Edge Computing, IoT, data analysis, and intelligent application development."
+    ]
+  },
+
+  {
+    "keywords": ["ai", "machine learning", "tinyml", "data", "forecasting"],
+    "answers": [
+      "My AI and data expertise includes Machine Learning, TinyML, Data Analysis, Forecasting, and Conversational AI.",
+      "I work with data-driven technologies such as Python, R Programming, Machine Learning, and AI-based analytics.",
+      "My experience includes AI Ethics, predictive analytics, data visualization, and intelligent decision-making systems."
+    ]
+  },
+
+  {
+    "keywords": ["iot", "embedded", "microcontroller", "esp32", "arduino"],
+    "answers": [
+      "I develop IoT and embedded systems using Arduino, ESP32, Bluetooth BLE, and Cellular IoT technologies.",
+      "My embedded system experience includes sensor integration, power management, and Edge AI development.",
+      "I work on intelligent IoT solutions using LTE-M, NB-IoT, and embedded hardware platforms."
+    ]
+  },
+
+  {
+    "keywords": ["web", "frontend", "backend", "react", "laravel"],
+    "answers": [
+      "My web development skills include HTML, CSS, JavaScript, TypeScript, React.js, PHP Laravel, and Node.js.",
+      "I develop intelligent web applications with REST API integration and database systems such as MySQL and PostgreSQL.",
+      "My experience covers both frontend and backend development using modern web technologies."
+    ]
+  },
+
+  {
+    "keywords": ["computer vision", "opencv", "image processing", "vision"],
+    "answers": [
+      "I work on Computer Vision and Image Processing projects using OpenCV and Python.",
+      "My vision-related expertise includes embedded vision systems, TinyML vision applications, and intelligent monitoring systems.",
+      "I develop AI-based image processing solutions for intelligent and automated systems."
+    ]
+  },
+
+  {
+    "keywords": ["python", "programming", "coding", "software"],
+    "answers": [
+      "My programming experience includes Python, JavaScript, TypeScript, Micropython, and C Programming.",
+      "I use Python extensively for Machine Learning, Computer Vision, data analysis, and intelligent system development.",
+      "My software skills include AI application development, embedded programming, and technical documentation."
+    ]
+  },
+
+  {
+    "keywords": ["hardware", "pcb", "cad", "design"],
+    "answers": [
+      "My hardware skills include PCB Design, CAD, prototyping, and embedded system development.",
+      "I work on hardware-software integration projects involving intelligent electronics and IoT devices.",
+      "My experience includes rapid prototyping, electronic system design, and hardware development workflows."
+    ]
+  },
+
+  {
+    "keywords": ["research", "academic writing", "methodology", "mendeley"],
+    "answers": [
+      "My research skills include academic writing, research methodology, editing, proofreading, and reference management.",
+      "I use tools such as Mendeley and Zotero for scientific writing and publication management.",
+      "I am experienced in conducting research design, technical documentation, and scholarly publication activities."
+    ]
+  },
+
+  {
+    "keywords": ["language", "english", "bahasa"],
+    "answers": [
+      "I communicate in Bahasa Indonesia as a native speaker and use English for academic and technical communication.",
+      "My language competencies include technical and scientific English for research and professional activities.",
+      "I actively use English in research publications, academic presentations, and technology documentation."
+    ]
+  },
+
+  {
+    "keywords": ["soft skill", "leadership", "teamwork", "communication"],
+    "answers": [
+      "My soft skills include leadership, teamwork, communication, and project management.",
+      "I value analytical thinking, adaptability, problem solving, and effective collaboration in multidisciplinary projects.",
+      "My professional strengths include critical thinking, time management, and creative problem-solving abilities."
+    ]
+  }, 
+
+   {
+    "keywords": ["tools", "technology", "technologies", "software", "platform"],
+    "answers": [
+      "I use various tools and technologies for AI, IoT, software engineering, and intelligent system development.",
+      "My technology stack includes development tools, AI frameworks, embedded platforms, databases, and design software.",
+      "I work with modern software and engineering tools for research, intelligent applications, and embedded systems."
+    ]
+  },
+
+  {
+    "keywords": ["vscode", "git", "github", "postman", "docker"],
+    "answers": [
+      "My development workflow commonly uses Visual Studio Code, GitHub, Postman, Docker, and Jupyter Notebook.",
+      "I use Git and GitHub for version control and collaborative software development.",
+      "My preferred development tools include VS Code, Google Colab, Docker, and API testing platforms."
+    ]
+  },
+
+  {
+    "keywords": ["tensorflow", "keras", "scikit", "machine learning", "ai tools"],
+    "answers": [
+      "For AI and Machine Learning projects, I commonly use TensorFlow, Keras, Scikit-learn, OpenCV, and Pandas.",
+      "My AI toolkit includes Python-based frameworks for Machine Learning, data analysis, and Computer Vision.",
+      "I work with AI development libraries such as TensorFlow, OpenCV, NumPy, and visualization tools."
+    ]
+  },
+
+  {
+    "keywords": ["data visualization", "power bi", "matplotlib", "seaborn"],
+    "answers": [
+      "I use Power BI, Matplotlib, and Seaborn for data visualization and analytical reporting.",
+      "My experience includes creating dashboards, statistical visualizations, and AI-driven analytics presentations.",
+      "I work with visualization tools to support data-driven decision-making and research analysis."
+    ]
+  },
+
+  {
+    "keywords": ["arduino", "platformio", "iot", "embedded"],
+    "answers": [
+      "For embedded and IoT development, I use Arduino IDE, PlatformIO, and various prototyping platforms.",
+      "My embedded system workflow includes IoT programming, sensor integration, and hardware-software prototyping.",
+      "I develop embedded and AIoT systems using modern microcontroller development environments."
+    ]
+  },
+
+  {
+    "keywords": ["proteus", "kicad", "multisim", "fritzing", "pcb"],
+    "answers": [
+      "I use Proteus, KiCad, Multisim, and Fritzing for electronic circuit simulation and PCB design.",
+      "My hardware design process includes schematic development, PCB prototyping, and embedded electronics simulation.",
+      "I work with CAD and electronics tools for intelligent hardware and IoT system development."
+    ]
+  },
+
+  {
+    "keywords": ["database", "mysql", "postgresql", "firebase"],
+    "answers": [
+      "My database experience includes MySQL, PostgreSQL, Firebase, and backend API integration.",
+      "I develop backend systems and REST APIs for intelligent applications and data-driven platforms.",
+      "I work with relational databases and cloud-based backend technologies for web and IoT systems."
+    ]
+  },
+
+  {
+    "keywords": ["laravel", "nodejs", "backend", "api"],
+    "answers": [
+      "My backend development stack includes Laravel, Node.js, and REST API development.",
+      "I build web and intelligent applications using modern backend frameworks and API technologies.",
+      "I work on scalable application development integrating databases, APIs, and intelligent system services."
+    ]
+  },
+
+  {
+    "keywords": ["office", "workspace", "notion", "trello", "productivity"],
+    "answers": [
+      "I use productivity tools such as Microsoft Office, Google Workspace, Notion, and Trello for academic and project management.",
+      "My workflow includes collaborative documentation, research organization, and project coordination tools.",
+      "I utilize productivity platforms to support teaching, research, and technology development activities."
+    ]
+  },
+
+  {
+    "keywords": ["mendeley", "zotero", "reference"],
+    "answers": [
+      "I use Mendeley and Zotero for reference management and academic writing.",
+      "My research workflow includes citation management and scholarly publication organization tools.",
+      "I manage scientific references and academic documentation using modern reference management platforms."
+    ]
+  },
+
+  {
+    "keywords": ["canva", "figma", "photoshop", "ui", "ux", "design"],
+    "answers": [
+      "I use Canva, Figma, and Adobe Photoshop for design, visualization, and UI/UX prototyping.",
+      "My design tools support presentation design, interface prototyping, and visual communication.",
+      "I work with creative and visualization tools for academic, technology, and software interface projects."
+    ]
+  },
+
+   {
+    "keywords": ["summary", "profile", "professional summary", "overview"],
+    "answers": [
+      "I am an Informatics Engineering Lecturer and AIoT Engineer specializing in Machine Learning, Embedded Systems, Computer Vision, and intelligent IoT applications.",
+      "My professional activities include research, teaching, robotics training, and intelligent technology innovation.",
+      "I work in interdisciplinary areas combining Artificial Intelligence, IoT, embedded systems, and data-driven intelligent applications."
+    ]
+  },
+
+  {
+    "keywords": ["location", "city", "surabaya", "indonesia"],
+    "answers": [
+      "I am based in Surabaya, East Java, Indonesia.",
+      "My academic and professional activities are primarily centered in Surabaya, Indonesia.",
+      "I currently work and conduct research activities in Surabaya, East Java."
+    ]
+  },
+
+  {
+    "keywords": ["master", "master degree", "graduate", "its"],
+    "answers": [
+      "I earned my Master’s Degree in Informatics Engineering from Institut Teknologi Sepuluh Nopember (ITS) with a GPA of 3.93/4.00.",
+      "My graduate studies focused on Biomedical Signal Processing, Machine Learning, and intelligent healthcare technologies.",
+      "During my Master’s Degree at ITS, I conducted research related to photoplethysmography signal processing and intelligent health monitoring systems."
+    ]
+  },
+
+  {
+    "keywords": ["thesis", "photoplethysmography", "ppg", "noise reduction"],
+    "answers": [
+      "My Master’s thesis focused on noise reduction in photoplethysmography signals using K-Means Clustering and Exponential Filters.",
+      "I conducted research on improving the accuracy of biomedical signal data for intelligent healthcare applications.",
+      "My thesis research explored signal filtering and machine learning approaches for photoplethysmography data validation."
+    ]
+  },
+
+  {
+    "keywords": ["covid", "electronic nose", "sweat analysis"],
+    "answers": [
+      "One of my research projects involved rapid Covid-19 detection through sweat analysis using an Electronic Nose system.",
+      "I have worked on intelligent healthcare projects integrating sensors, AI, and biomedical data analysis.",
+      "My projects include non-invasive biomedical detection systems using intelligent sensing technologies."
+    ]
+  },
+
+  {
+    "keywords": ["glucose", "health monitoring", "biomedical"],
+    "answers": [
+      "I developed a glucose level measurement module based on finger photoplethysmography.",
+      "My biomedical projects focus on non-invasive health monitoring and intelligent healthcare technologies.",
+      "I work on AI-assisted biomedical monitoring systems using embedded sensors and signal processing."
+    ]
+  },
+
+  {
+    "keywords": ["conference", "publication", "research paper"],
+    "answers": [
+      "I have presented research in conferences related to photoplethysmography, Machine Learning, robotics, and intelligent systems.",
+      "My conference publications discuss biomedical signal processing, feature selection, and intelligent robotic systems.",
+      "I actively contribute to scientific conferences in AI, healthcare technology, and embedded intelligent systems."
+    ]
+  },
+
+  {
+    "keywords": ["robot", "robotics", "manipulator"],
+    "answers": [
+      "I have experience developing robotic systems including a 2-DOF Arm Manipulator Robot project.",
+      "My robotics experience combines embedded systems, automation, and intelligent control technologies.",
+      "I actively work on robotics training and intelligent robotic system development."
+    ]
+  },
+
+  {
+    "keywords": ["bachelor", "pens", "electronic engineering"],
+    "answers": [
+      "I completed my Bachelor’s Degree in Electronic Engineering at PENS.",
+      "My undergraduate background focused on embedded systems, intelligent electronics, and Machine Learning applications.",
+      "During my undergraduate studies, I worked on intelligent embedded system and Computer Vision projects."
+    ]
+  },
+
+  {
+    "keywords": ["attendance system", "embedded vision", "security assistant"],
+    "answers": [
+      "My undergraduate thesis focused on an Embedded Vision-Based Attendance System using Machine Learning.",
+      "I developed intelligent Computer Vision systems including an Automatic Vision Security Assistant project.",
+      "My early projects explored Machine Learning applications in embedded vision and intelligent monitoring systems."
+    ]
+  },
+
+  {
+    "keywords": ["aptikom", "membership", "professional membership"],
+    "answers": [
+      "I am a member of APTIKOM, the Indonesian Association of Higher Education in Informatics and Computer Science.",
+      "My professional memberships support academic collaboration and technology development activities.",
+      "I actively participate in professional organizations related to Informatics Engineering and computer science education."
+    ]
+  },
+
+  {
+    "keywords": ["iaeng", "engineer", "association"],
+    "answers": [
+      "I am a member of the International Association of Engineers (IAENG).",
+      "IAENG membership supports my involvement in international engineering and technology communities.",
+      "I actively engage with global engineering and computer science professional networks through IAENG."
+    ]
+  },
+
+  {
+    "keywords": ["contact", "linkedin", "email", "phone"],
+    "answers": [
+      "You can contact me through LinkedIn, email, or my professional academic profile.",
+      "Feel free to reach out for collaboration, supervision, or technology-related discussions.",
+      "My contact information is available through LinkedIn and professional communication channels."
+    ]
+  }, 
+
+  {
+    "keywords": ["experience", "professional experience", "career", "work"],
+    "answers": [
+      "My professional experience includes academic teaching, AIoT engineering, research, robotics training, and intelligent system development.",
+      "I have experience working in higher education, biomedical research, IoT engineering, and STEM-based technology training.",
+      "My career combines research, teaching, embedded system development, and AI-driven technology innovation."
+    ]
+  },
+
+  {
+    "keywords": ["lecturer", "unesa", "teaching", "academic"],
+    "answers": [
+      "I currently serve as a Lecturer in Informatics Engineering at Universitas Negeri Surabaya (UNESA).",
+      "My academic responsibilities include teaching, research, supervision, curriculum development, and academic quality support.",
+      "At UNESA, I teach topics related to computer science, Artificial Intelligence, and intelligent systems."
+    ]
+  },
+
+  {
+    "keywords": ["research", "publication", "supervision"],
+    "answers": [
+      "I actively conduct and publish research in AI, IoT, software engineering, and intelligent systems.",
+      "My academic activities include supervising student projects, internships, and capstone research.",
+      "I contribute to research and academic development in intelligent and data-driven technologies."
+    ]
+  },
+
+  {
+    "keywords": ["quality assurance", "qais", "survey"],
+    "answers": [
+      "I am involved in the Quality Assurance Unit at the Faculty of Engineering, focusing on academic data and institutional surveys.",
+      "My responsibilities include managing quality assurance documentation and coordinating QAIS data systems.",
+      "I support academic quality improvement through institutional evaluation and satisfaction survey management."
+    ]
+  },
+
+  {
+    "keywords": ["tracer study", "alumni", "accreditation"],
+    "answers": [
+      "I serve as the PIC for Tracer Study activities in the Informatics Engineering Undergraduate Program.",
+      "My work includes coordinating alumni data collection, tracer study analysis, and accreditation reporting.",
+      "I manage tracer study implementation to support academic evaluation and program improvement."
+    ]
+  },
+
+  {
+    "keywords": ["website", "social media", "content management"],
+    "answers": [
+      "I lead the Website and Social Media Management Team for the Informatics Engineering Undergraduate Program.",
+      "My responsibilities include managing digital content strategy, academic publication, and website development.",
+      "I coordinate online communication and branding activities for the study program."
+    ]
+  },
+
+  {
+    "keywords": ["student affairs", "advisor", "organization"],
+    "answers": [
+      "I serve as a Student Affairs and Student Association Advisor in the Informatics Engineering program.",
+      "My role includes mentoring student organizations, leadership development, and organizational coordination.",
+      "I support student activities, governance, and academic-community engagement initiatives."
+    ]
+  },
+
+  {
+    "keywords": ["robotics", "trainer", "stem", "workshop"],
+    "answers": [
+      "I worked as a Robotics and AI Trainer at Sekolah Robot Indonesia.",
+      "My training activities focused on robotics, IoT, embedded systems, STEM education, and AI applications.",
+      "I designed and delivered hands-on robotics and intelligent system training programs for students."
+    ]
+  },
+
+  {
+    "keywords": ["iot training", "arduino", "esp32"],
+    "answers": [
+      "I guided students in developing IoT and embedded projects using Arduino, ESP32, and AI technologies.",
+      "My workshops involved sensors, microcontrollers, intelligent systems, and project-based learning.",
+      "I developed educational modules related to robotics, IoT, and embedded system applications."
+    ]
+  },
+
+  {
+    "keywords": ["research staff", "its", "biomedical"],
+    "answers": [
+      "I worked as a Research Staff member at Institut Teknologi Sepuluh Nopember (ITS).",
+      "My research activities focused on biomedical sensing, intelligent IoT devices, and healthcare technology.",
+      "I contributed to multidisciplinary research projects involving AI, IoT, and biomedical signal processing."
+    ]
+  },
+
+  {
+    "keywords": ["aiot engineer", "ppg", "glucose"],
+    "answers": [
+      "As an AIoT Engineer, I developed glucose measurement modules based on photoplethysmography signals.",
+      "My work involved integrating hardware, cloud platforms, and AI algorithms for intelligent healthcare systems.",
+      "I applied machine learning and IoT technologies for biomedical data acquisition and analysis."
+    ]
+  },
+
+  {
+    "keywords": ["data analyst", "validation", "covid"],
+    "answers": [
+      "As a Data Analyst, I performed sensor validation and data quality analysis for COVID-19 screening systems.",
+      "My responsibilities included data processing, ground truth validation, and quality control analysis.",
+      "I worked on validating intelligent sensing devices using analytical and data-driven approaches."
+    ]
+  },
+
+  {
+    "keywords": ["hardware engineer", "hardware", "embedded"],
+    "answers": [
+      "As a Hardware Engineer, I validated electronic components and optimized intelligent sensing device systems.",
+      "My experience includes hardware integration, troubleshooting, and embedded system validation.",
+      "I contributed to the development of reliable embedded and intelligent electronic systems."
+    ]
+  },
+
+  {
+    "keywords": ["internship", "hikari", "industrial practice"],
+    "answers": [
+      "I completed an industrial internship at PT. Hikari Solusindo Sukses in the development division.",
+      "My internship focused on hardware validation, component evaluation, and embedded system preparation.",
+      "I assisted in electronic component testing and hardware verification for intelligent system projects."
+    ]
+  },
+
+  {
+    "keywords": ["xirka", "semiconductor", "pcb"],
+    "answers": [
+      "I completed an internship at PT. Xirka Silicon Technology in semiconductor chipset design.",
+      "My responsibilities included schematic design, PCB development, and electronic component modeling.",
+      "I worked on electronic prototype design and bill of material preparation for embedded system products."
+    ]
+  }
+]
