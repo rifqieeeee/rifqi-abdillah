@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery Portfolio - Rifqi Abdillah</title>
+
+  <link href="assets/img/logo-rifqi.png" rel="icon">
+
+  <style>
+    @page {
+      size: A4;
+      margin: 7mm;
+
+      @bottom-left {
+        content: "Generated from rifqi-abdillah.vercel.app";
+        font-size: 8px;
+        color: #666;
+      }
+
+      @bottom-right {
+        content: "Page " counter(page);
+        font-size: 8px;
+        color: #666;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 10px;
+      background: #fff;
+      color: #222;
+      font-size: 10px;
+    }
+
+    a {
+      color: #149ddd;
+      text-decoration: none;
+    }
+
+    .cv-header {
+      text-align: center;
+      padding-bottom: 6px;
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .cv-header h1 {
+      margin: 0 0 2px;
+      font-size: 18px;
+      line-height: 1.15;
+    }
+
+    .cv-header h4 {
+      margin: 0 0 4px;
+      font-size: 11px;
+      font-weight: 500;
+      color: #444;
+    }
+
+    .contact-info {
+      font-size: 8.5px;
+      line-height: 1.25;
+      color: #444;
+    }
+
+    .page-title {
+      text-align: center;
+      font-size: 16px;
+      margin: 8px 0 10px;
+      font-weight: 700;
+    }
+
+    #portfolio-container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 6px;
+    }
+
+    .gallery-card {
+      border: 1px solid #ccc;
+      background: #fff;
+      overflow: hidden;
+
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .gallery-card img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-content {
+      padding: 4px 5px;
+    }
+
+    .gallery-content p {
+      margin: 0;
+      font-size: 8.2px;
+      line-height: 1.2;
+      color: #444;
+    }
+
+    @media print {
+
+      body {
+        padding: 0;
+      }
+
+      #portfolio-container {
+        gap: 5px;
+      }
+
+      .gallery-card {
+        margin-bottom: 20px;
+      }
+
+      .gallery-content {
+        padding: 3px 4px;
+      }
+
+      .gallery-content p {
+        font-size: 7.8px;
+        line-height: 1.15;
+      }
+    }
+
+    @media screen and (max-width: 900px) {
+      #portfolio-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+
+      body {
+        padding: 14px;
+      }
+
+      #portfolio-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="cv-header">
+    <h1>Rifqi Abdillah, S.Tr.T., M.Kom.</h1>
+    <h4>Lecturer | Researcher | AI & IoT Enthusiast</h4>
+
+    <div class="contact-info">
+      Email: rifqiabdillah@unesa.ac.id |
+      Phone: +62 853 3162 4441 |
+      Location: Surabaya, Indonesia<br>
+
+      LinkedIn:
+      <a href="https://linkedin.com/in/rifqi-abdi">
+        linkedin.com/in/rifqi-abdi
+      </a>
+
+      |
+
+      Website:
+      <a href="https://rifqi-abdillah.vercel.app">
+        rifqi-abdillah.vercel.app
+      </a>
+    </div>
+  </header>
+
+  <div class="page-title">
+    Gallery Portfolio
+  </div>
+
+  <main id="portfolio-container"></main>
+
+  <script>
+    fetch('database/gallery/data.json')
+      .then(response => response.json())
+      .then(data => {
+
+        const container = document.getElementById('portfolio-container');
+        container.innerHTML = '';
+
+        // Sorting berdasarkan title
+        data.sort((a, b) => {
+          return (a.title || '')
+            .localeCompare(b.title || '');
+        });
+
+        data.forEach(item => {
+
+          const card = document.createElement('div');
+          card.className = 'gallery-card';
+
+          card.innerHTML = `
+            <img
+              src="${item.image}"
+              alt="${item.description || item.title}"
+            >
+
+            <div class="gallery-content">
+              <p>${item.description || ''}</p>
+            </div>
+          `;
+
+          container.appendChild(card);
+        });
+
+      })
+      .catch(error => {
+        console.error('Error loading gallery data:', error);
+      });
+  </script>
+
+</body>
+</html>
