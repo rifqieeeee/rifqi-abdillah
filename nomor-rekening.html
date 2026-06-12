@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Nomor Rekening - Rifqi Abdillah</title>
+
+  <link href="assets/img/logo-rifqi.png" rel="icon">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <link href="assets/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/custom.css">
+
+  <style>
+    .rekening-card {
+      background: #fff;
+      border: 1px solid #e6e9ef;
+      border-radius: 14px;
+      padding: 18px;
+      height: 100%;
+      transition: 0.25s ease;
+    }
+
+    .rekening-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.08);
+      border-color: #149ddd;
+    }
+
+    .rekening-bank {
+      font-weight: 700;
+      color: #272829;
+      margin-bottom: 6px;
+    }
+
+    .rekening-number {
+      font-size: 18px;
+      font-weight: 600;
+      color: #149ddd;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+
+    .rekening-owner-box {
+      background: #f8fbff;
+      border: 1px solid #dcecff;
+      border-radius: 16px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    .copy-alert {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header dark-background d-flex flex-column">
+    <i class="header-toggle d-xl-none bi bi-list"></i>
+
+    <div class="profile-img">
+      <img src="assets/img/foto profil.jpg" alt="" class="img-fluid rounded-circle">
+    </div>
+
+    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
+      <h1 class="sitename">Rifqi Abdillah</h1>
+    </a>
+
+    <div class="social-links text-center">
+      <a href="https://wa.me/6285331624441" class="whatsapp" target="_blank"><i class="bi bi-whatsapp"></i></a>
+      <a href="https://scholar.google.com/citations?user=S2oIBtYAAAAJ" target="_blank"><i class="bi bi-book"></i></a>
+      <a href="https://instagram.com/rifqi_abdillahh" class="instagram" target="_blank"><i class="bi bi-instagram"></i></a>
+      <a href="https://linkedin.com/in/rifqi-abdi" class="linkedin" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://cv.unesa.ac.id/detail/199911012024061001" target="_blank"><i class="bi bi-globe"></i></a>
+    </div>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="index.html"><i class="bi bi-house navicon"></i>Home</a></li>
+        <li><a href="about.html"><i class="bi bi-person navicon"></i>About</a></li>
+        <li><a href="resume.html"><i class="bi bi-file-earmark-text navicon"></i>Resume</a></li>
+        <li><a href="publications.html"><i class="bi bi-journal-text navicon"></i>Publications</a></li>
+        <li><a href="research.html"><i class="bi bi-search navicon"></i>Research</a></li>
+        <li><a href="teaching.html"><i class="bi bi-easel navicon"></i>Teaching</a></li>
+        <li><a href="community.html"><i class="bi bi-people navicon"></i>Community Service</a></li>
+        <li><a href="gallery.html"><i class="bi bi-images navicon"></i>Gallery</a></li>
+        <li><a href="contact.html"><i class="bi bi-envelope navicon"></i>Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main">
+
+    <section class="section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Nomor Rekening</h2>
+        <p>Daftar nomor rekening dan dompet digital a/n Rifqi Abdillah.</p>
+      </div>
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="rekening-owner-box">
+          <h5 class="mb-1">a/n RIFQI ABDILLAH</h5>
+          <p class="mb-0">Silakan gunakan tombol copy untuk menyalin nomor rekening.</p>
+        </div>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6">
+            <div class="rekening-card">
+              <div class="rekening-bank">BANK BRI</div>
+              <div class="rekening-number">058701029704508</div>
+              <button class="btn btn-primary btn-sm" onclick="copyRekening('058701029704508', this)">
+                <i class="bi bi-copy"></i> Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="rekening-card">
+              <div class="rekening-bank">LINE BANK</div>
+              <div class="rekening-number">13506230260</div>
+              <button class="btn btn-primary btn-sm" onclick="copyRekening('13506230260', this)">
+                <i class="bi bi-copy"></i> Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="rekening-card">
+              <div class="rekening-bank">SEABANK</div>
+              <div class="rekening-number">901859686619</div>
+              <button class="btn btn-primary btn-sm" onclick="copyRekening('901859686619', this)">
+                <i class="bi bi-copy"></i> Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="rekening-card">
+              <div class="rekening-bank">BANK BTN</div>
+              <div class="rekening-number">115501580007196</div>
+              <button class="btn btn-primary btn-sm" onclick="copyRekening('115501580007196', this)">
+                <i class="bi bi-copy"></i> Copy
+              </button>
+            </div>
+          </div>
+
+          <div class="col-lg-4 col-md-6">
+            <div class="rekening-card">
+              <div class="rekening-bank">GOPAY / SHOPEE PAY / DANA</div>
+              <div class="rekening-number">085331624441</div>
+              <button class="btn btn-primary btn-sm" onclick="copyRekening('085331624441', this)">
+                <i class="bi bi-copy"></i> Copy
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="copyAlert" class="alert alert-success copy-alert" role="alert">
+          Nomor berhasil disalin.
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container">
+      <div class="copyright text-center">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">iPortfolio</strong>
+          <span>All Rights Reserved | Modified by <strong>Rifqi Abdillah</strong></span>
+        </p>
+      </div>
+      <div class="credits">
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+
+  <div id="preloader"></div>
+
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/js/main.js"></script>
+
+  <script>
+    function copyRekening(number, button) {
+      navigator.clipboard.writeText(number).then(function () {
+        const originalText = button.innerHTML;
+        button.innerHTML = '<i class="bi bi-check2"></i> Copied';
+        button.classList.remove('btn-primary');
+        button.classList.add('btn-success');
+
+        const alertBox = document.getElementById('copyAlert');
+        alertBox.style.display = 'block';
+
+        setTimeout(function () {
+          button.innerHTML = originalText;
+          button.classList.remove('btn-success');
+          button.classList.add('btn-primary');
+          alertBox.style.display = 'none';
+        }, 1800);
+      }).catch(function () {
+        alert('Gagal menyalin nomor rekening.');
+      });
+    }
+  </script>
+
+</body>
+</html>
