@@ -103,6 +103,17 @@
 
   "activities": [
     {
+      "title": "Invited Speakers – Tech a Note #2",
+      "category": "speaker",
+      "institution": "Google Developer Group on Campus",
+      "date": "Jun 2026",
+      "description": "Tech-A-Note by GDGoC UNESA explores how Artificial Intelligence can transform fear into opportunity by empowering individuals with knowledge, innovation, and confidence in the digital era.",
+      "organizer": "Google Developer Group on Campus",
+      "audience": "Undergraduate Studentd",
+      "venue": "LP3M Building ",
+      "mode": "Offline"
+    },
+    {
       "title": "Invited Showcase Presenter – AMD Advancing AI Day 2025",
       "category": "speaker",
       "institution": "AMD Indonesia",
