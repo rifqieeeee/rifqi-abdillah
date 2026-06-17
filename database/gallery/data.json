@@ -2,6 +2,14 @@
   {
     "id": "gallery-002",
     "category": "speech",
+    "title": "Speech",
+    "description": "Invited Speakers at GDGoC Unesa Surabaya - Tech a Note #2",
+    "image": "assets/img/gallery/031.jpg",
+    "gallery": "portfolio-gallery-teaching"
+  },
+  {
+    "id": "gallery-002",
+    "category": "speech",
     "title": "Campus",
     "description": "Student supervision at BPS Surabaya",
     "image": "assets/img/gallery/030.jpg",

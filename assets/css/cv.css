@@ -433,13 +433,12 @@ color: #000;
     margin-bottom: 7px;
   }
 
-  /* Judul section jangan tertinggal sendirian */
+  /* Judul section jangan tertinggal sendirian
   .section-title {
     break-after: avoid;
     page-break-after: avoid;
   }
 
-  /* Subsection/item jangan terpotong */
   .item,
   .sub-role,
   .detail-item {
@@ -447,14 +446,33 @@ color: #000;
     page-break-inside: avoid;
   }
 
-  /* Tiap item list panjang lebih baik pindah utuh */
   li {
     break-inside: avoid;
     page-break-inside: avoid;
+  } */
+
+  /* Item boleh terpotong jika terlalu panjang */
+  .item,
+  .sub-role,
+  .detail-item {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  /* List item juga boleh lanjut ke halaman berikutnya */
+  li {
+    break-inside: auto;
+    page-break-inside: auto;
+  }
+
+  /* Hanya judul section yang jangan tertinggal sendirian */
+  .section-title {
+    break-after: avoid;
+    page-break-after: avoid;
   }
 
   /* Khusus publication, journal, research, HKI, dll */
-  #publication-list li,
+  /* #publication-list li,
   #journal-activities li,
   #research-list li,
   #opensource-list li,
@@ -467,5 +485,5 @@ color: #000;
   #membership-list li {
     break-inside: avoid;
     page-break-inside: avoid;
-  }
+  } */
 }
