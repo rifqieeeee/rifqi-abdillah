@@ -441,7 +441,7 @@
   },
 
   {
-    "keywords": ["location", "city", "surabaya", "indonesia"],
+    "keywords": ["place", "home", "location", "city", "surabaya", "indonesia"],
     "answers": [
       "I am based in Surabaya, East Java, Indonesia.",
       "My academic and professional activities are primarily centered in Surabaya, Indonesia.",
