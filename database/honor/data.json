@@ -1,6 +1,12 @@
 {
   "honors": [
     {
+      "country": "cn",
+      "flagAlt": "China Flag",
+      "title": "Winners",
+      "event": "WoW io Design Contest – WIZnet, Jul 2026"
+    },
+    {
       "country": "us",
       "flagAlt": "US Flag",
       "title": "Technology Award",
@@ -11,7 +17,7 @@
       "country": "cn",
       "flagAlt": "China Flag",
       "title": "3rd Place Winner",
-      "event": "Surf5 Contest, Jul 2024"
+      "event": "Surf5 Contest – WIZnet, Jul 2024"
     },
     {
       "country": "us",
