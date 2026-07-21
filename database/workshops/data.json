@@ -1,6 +1,11 @@
 {
   "workshops": [
     {
+      "title": "Gemini Certified Faculty",
+      "issuer": "Google for Education",
+      "date": "Jul 2026"
+    },
+    {
       "title": "Belajar Penggunaan Generative AI",
       "issuer": "Dicoding",
       "date": "May 2026"
