@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Website 1st Anniversary romantis, responsif, dengan galeri, musik, animasi, dan modal foto." />
+  <title>Our 1st Anniversary</title>
+  <link rel="icon" href="assets/images/photo1.jpg" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="preloader" id="preloader">
+    <div class="loader-heart">♡</div>
+    <p>Preparing our memories...</p>
+  </div>
+
+  <div class="floating-bg" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
+
+  <audio id="bgMusic" src="asset/music/perfect.mp3" loop></audio>
+
+  <button class="music-btn" id="musicBtn" aria-label="Play music">
+    <span>♫</span>
+  </button>
+
+  <header class="hero" id="home">
+    <nav class="navbar">
+      <a href="#home" class="logo">Our Love ♡</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#journey">Journey</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reasons">Reasons</a>
+        <a href="#playlist">Playlist</a>
+        <a href="#wishes">Wishes</a>
+        <a href="#letter">Letter</a>
+      </div>
+    </nav>
+
+    <div class="hero-content reveal">
+      <div class="hero-sticker">🌸 1st Anniversary 🌼</div>
+      <p class="small-title">Happy One Year Together</p>
+      <h1>One Year<br />of Us</h1><br>
+      <p class="hero-desc">
+        Sebuah ruang kecil untuk menyimpan cerita kita: foto, tawa, rindu,
+        perjalanan, tempat favorit, dan semua momen sederhana yang terasa sangat berarti.
+      </p>
+
+      <div class="couple">
+        <span>Me</span>
+        <b>♡</b>
+        <span>You</span>
+      </div>
+
+      <div class="hero-actions">
+        <a href="#gallery" class="main-btn">Buka Gallery</a>
+        <a href="#letter" class="ghost-btn">Baca Surat</a>
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <section class="countdown-section reveal" id="countdown">
+      <p class="section-label">Our Special Day</p>
+      <h2>Sudah Bersama Selama</h2>
+      <div class="countdown">
+        <div><h3 id="days">0</h3><p>Hari</p></div>
+        <div><h3 id="hours">0</h3><p>Jam</p></div>
+        <div><h3 id="minutes">0</h3><p>Menit</p></div>
+        <div><h3 id="seconds">0</h3><p>Detik</p></div>
+      </div>
+    </section>
+
+    <section class="journey" id="journey">
+      <div class="section-heading reveal">
+        <p class="section-label">Memory Lane</p>
+        <h2>Perjalanan Kecil Kita</h2>
+      </div>
+      <div class="timeline">
+        <article class="timeline-card reveal"><span>01</span><h3>Awal Bertemu</h3><p>Satu pesan sederhana yang selamanya akan membuka lembaran baru.</p></article>
+        <article class="timeline-card reveal"><span>02</span><h3>Mulai Dekat</h3><p>Dari obrolan kecil, candaan random, sampai akhirnya jadi saling nyaman.</p></article>
+        <article class="timeline-card reveal"><span>03</span><h3>Banyak Cerita</h3><p>Jalan bareng, makan bareng, foto bareng, dan menyimpan banyak kenangan.</p></article>
+        <article class="timeline-card reveal"><span>04</span><h3>Hari Ini</h3><p>Satu tahun pertama yang semoga jadi awal dari tahun-tahun indah berikutnya.</p></article>
+      </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="section-heading reveal">
+        <p class="section-label">Sweet Gallery</p>
+        <h2>Gallery Perjalanan Kita</h2>
+      </div>
+      <div class="filter-buttons reveal">
+        <button class="filter-btn active" data-filter="all">Semua</button>
+        <button class="filter-btn" data-filter="date">Date</button>
+        <button class="filter-btn" data-filter="food">Food</button>
+        <button class="filter-btn" data-filter="trip">Trip</button>
+        <button class="filter-btn" data-filter="random">Random</button>
+      </div>
+      <div class="gallery-grid">
+        <article class="photo-card reveal" data-category="date"><img src="asset/images/001.jpg" alt="First date" /><div class="photo-info"><h3>First Date</h3><p>Tempat kencan paling berkesan bagi aku dan kamu.</p></div></article>
+
+        <article class="photo-card tall reveal" data-category="food"><img src="asset/images/003.jpg" alt="Food date" /><div class="photo-info"><h3>Food Date</h3><p>Makan mie sederhana, bahagianya luar biasa.</p></div></article>
+
+        <article class="photo-card reveal" data-category="trip"><img src="asset/images/002.jpg" alt="Our trip" /><div class="photo-info"><h3>Our Trip</h3><p>Masih di surabaya, tapi tetap seru dan berarti.</p></div></article>
+
+        <article class="photo-card reveal" data-category="food"><img src="asset/images/food2.jpg" alt="Mencoba Hal Baru" /><div class="photo-info"><h3>Mencoba Hal Baru</h3><p>Banyak tempat yang perlu kita tandai dengan kenangan kita.</p></div></article>
+
+        <article class="photo-card reveal" data-category="date"><img src="asset/images/date2.jpg" alt="Simple Date" /><div class="photo-info"><h3>Simple Date</h3><p>Selama masih ada kamu, semuanya sangat berarti.</p></div></article>
+
+        <article class="photo-card wide reveal" data-category="date"><img src="asset/images/fav.png" alt="Favorite moment" /><div class="photo-info"><h3>Favorite Moment</h3><p>Foto kecil, rasa besarnya sampai sekarang.</p></div></article>
+
+        <article class="photo-card reveal" data-category="random"><img src="asset/images/random1.jpg" alt="Random day" /><div class="photo-info"><h3>Random Day</h3><p>Pulang kerja malah kencan, haduh!.</p></div></article>
+
+        <article class="photo-card reveal" data-category="food"><img src="asset/images/food.jpg" alt="Sweet time" /><div class="photo-info"><h3>Sweet Time</h3><p>Tempat biasa, asal sama kamu jadi spesial.</p></div></article>
+
+        <article class="photo-card tall reveal" data-category="random"><img src="asset/images/date3.jpg" alt="Favorite person" /><div class="photo-info"><h3>Favorite Person</h3><p>Gak bisa kalo gak peluk katanya.</p></div></article>
+
+        <article class="photo-card reveal" data-category="trip"><img src="asset/images/trip.jpg" alt="Another story" /><div class="photo-info"><h3>Tulungagung Story</h3><p>Kenangan lain yang ingin selalu disimpan.</p></div></article>
+
+        <article class="photo-card wide reveal" data-category="random"><img src="asset/images/1.jpg" alt="Little happiness" /><div class="photo-info"><h3>Little Happiness</h3><p>Nonton film seru jadi andalan buat kegiatan kita.</p></div></article>
+        
+        <article class="photo-card reveal" data-category="trip"><img src="asset/images/next.jpg" alt="Next chapter" /><div class="photo-info"><h3>Next Chapter</h3><p>Semoga masih banyak perjalanan bahagia lainnya setelah ini.</p></div></article>
+      </div>
+    </section>
+
+    <section class="reasons-section" id="reasons">
+      <div class="section-heading reveal">
+        <p class="section-label">Why I Love You</p>
+        <h2>Alasan Aku Bersyukur Ada Kamu</h2>
+      </div>
+      <div class="reason-grid">
+        <article style="text-align: center;" class="reason-card reveal"><span>🌷</span><h3>Kamu Membuat Hari Biasa Jadi Seru</h3><p>Bahkan obrolan kecil denganmu bisa mengubah hari yang lelah jadi lebih ringan.</p></article>
+        <article style="text-align: center;" class="reason-card reveal"><span>🌼</span><h3>Kamu Tempat Cerita Favorit</h3><p>Ada rasa tenang setiap kali bisa berbagi hal random, lucu, atau serius denganmu.</p></article>
+        <article style="text-align: center;" class="reason-card reveal"><span>🍰</span><h3>Kamu Selalu Punya Cara Bikin Senyum</h3><p>Kadang dari perhatian kecil, kadang dari tingkah lucu yang tidak pernah direncanakan.</p></article>
+      </div>
+    </section>
+
+    <section class="wishes-section" id="wishes">
+      <div class="section-heading reveal">
+        <p class="section-label">Little Wishes</p>
+        <h2>Harapan Kecil Kita</h2>
+      </div>
+      <div style="text-align: center;" class="wish-wrap">
+        <div class="wish-card reveal"><h3>01</h3><p>Semoga kita selalu saling memilih, bahkan saat tidak semuanya mudah.</p></div>
+        <div class="wish-card reveal"><h3>02</h3><p>Semoga cerita kita makin dewasa, makin hangat, dan makin kuat.</p></div>
+        <div class="wish-card reveal"><h3>03</h3><p>Semoga ada banyak tempat baru yang nanti kita kunjungi bersama.</p></div>
+      </div>
+    </section>
+
+    <section class="letter-section" id="letter">
+      <div class="letter-card reveal">
+        <p class="quote">“</p>
+        <h2>Untuk Kamu</h2>
+        <p>Terima kasih sudah menjadi bagian paling hangat dalam satu tahun ini. Terima kasih sudah hadir, menemani, memahami, dan membuat banyak hari biasa terasa lebih indah.</p>
+        <p>Semoga setelah ini kita masih terus saling memilih, saling menjaga, dan saling pulang dalam cerita yang lebih panjang.</p>
+        <h3>Happy 1st Anniversary, Sayang ♡</h3>
+      </div>
+    </section>
+
+    <section class="stats reveal">
+      <div class="stat-card"><h3>365+</h3><p>Hari Bersama</p></div>
+      <div class="stat-card"><h3>∞</h3><p>Kenangan</p></div>
+      <div class="stat-card"><h3>1</h3><p>Orang Favorit</p></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made with love for our 1st anniversary ♡</p>
+  </footer>
+
+  <div class="modal" id="imageModal" role="dialog" aria-modal="true">
+    <button class="close-modal" id="closeModal" aria-label="Close modal">×</button>
+    <button class="modal-nav prev" id="prevImg" aria-label="Previous image">‹</button>
+    <img id="modalImg" src="" alt="Preview" />
+    <button class="modal-nav next" id="nextImg" aria-label="Next image">›</button>
+    <div class="modal-text"><h3 id="modalTitle"></h3><p id="modalDesc"></p></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
