@@ -5,26 +5,93 @@
 const aiBtn = document.getElementById("ai-btn");
 const aiChatbox = document.getElementById("ai-chatbox");
 const closeAi = document.getElementById("close-ai");
+const minimizeAi = document.getElementById("minimize-ai");
+const maximizeAi = document.getElementById("maximize-ai");
 const sendBtn = document.getElementById("send-btn");
 const aiInput = document.getElementById("ai-input");
 const aiMessages = document.getElementById("ai-messages");
 const suggestBtns = document.querySelectorAll(".suggest-btn");
 
+
 let isSending = false;
 
 // =========================
-// Toggle Chatbox
+// Chat Window Controls
 // =========================
+
 if (aiBtn && aiChatbox) {
   aiBtn.addEventListener("click", () => {
     aiChatbox.classList.remove("d-none");
+    aiChatbox.classList.remove("ai-minimized");
   });
 }
 
 if (closeAi && aiChatbox) {
   closeAi.addEventListener("click", () => {
     aiChatbox.classList.add("d-none");
+    aiChatbox.classList.remove(
+      "ai-minimized",
+      "ai-maximized"
+    );
+
+    updateMaximizeIcon();
   });
+}
+
+if (minimizeAi && aiChatbox) {
+  minimizeAi.addEventListener("click", () => {
+    const isMinimized =
+      aiChatbox.classList.contains("ai-minimized");
+
+    aiChatbox.classList.remove("ai-maximized");
+    aiChatbox.classList.toggle(
+      "ai-minimized",
+      !isMinimized
+    );
+
+    updateMaximizeIcon();
+  });
+}
+
+if (maximizeAi && aiChatbox) {
+  maximizeAi.addEventListener("click", () => {
+    const isMaximized =
+      aiChatbox.classList.contains("ai-maximized");
+
+    aiChatbox.classList.remove("ai-minimized");
+    aiChatbox.classList.toggle(
+      "ai-maximized",
+      !isMaximized
+    );
+
+    updateMaximizeIcon();
+  });
+}
+
+function updateMaximizeIcon() {
+  if (!maximizeAi || !aiChatbox) return;
+
+  const icon = maximizeAi.querySelector("i");
+  const isMaximized =
+    aiChatbox.classList.contains("ai-maximized");
+
+  if (!icon) return;
+
+  if (isMaximized) {
+    icon.className = "bi bi-fullscreen-exit";
+    maximizeAi.title = "Restore";
+    maximizeAi.setAttribute(
+      "aria-label",
+      "Restore chat size"
+    );
+  } else {
+    icon.className = "bi bi-arrows-fullscreen";
+    maximizeAi.title = "Maximize";
+    maximizeAi.setAttribute(
+      "aria-label",
+      "Maximize chat"
+    );
+  }
 }
 
 // =========================

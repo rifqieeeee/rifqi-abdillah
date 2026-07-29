@@ -52,12 +52,12 @@
   opacity: 0.8;
 }
 
-.close-ai-btn {
+/* .close-ai-btn {
   background: transparent;
   border: none;
   color: white;
   font-size: 18px;
-}
+} */
 
 .ai-messages {
   flex: 1;
@@ -186,4 +186,117 @@
 
 .ai-message.bot br {
   line-height: 1;
+}
+
+/* ========================= */
+/* AI Window Controls */
+/* ========================= */
+
+.ai-window-controls {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.ai-control-btn {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.ai-control-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.ai-control-btn:active {
+  transform: scale(0.92);
+}
+
+/* ========================= */
+/* Minimized State */
+/* ========================= */
+
+.ai-chatbox.ai-minimized {
+  height: 72px;
+}
+
+.ai-chatbox.ai-minimized .ai-messages,
+.ai-chatbox.ai-minimized .ai-input-area {
+  display: none;
+}
+
+.ai-chatbox.ai-minimized .ai-header {
+  flex: 1;
+}
+
+/* ========================= */
+/* Maximized State */
+/* ========================= */
+
+.ai-chatbox.ai-maximized {
+  top: 20px;
+  right: 20px;
+  bottom: 20px;
+  left: 20px;
+
+  width: auto;
+  height: auto;
+  max-width: none;
+  border-radius: 18px;
+}
+
+.ai-chatbox.ai-maximized .ai-message {
+  max-width: 75%;
+}
+
+/* Transisi ukuran */
+.ai-chatbox {
+  transition:
+    width 0.25s ease,
+    height 0.25s ease,
+    top 0.25s ease,
+    right 0.25s ease,
+    bottom 0.25s ease,
+    left 0.25s ease,
+    border-radius 0.25s ease;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .ai-chatbox.ai-maximized {
+    top: 8px;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+
+    width: auto;
+    height: auto;
+    border-radius: 14px;
+  }
+
+  .ai-chatbox.ai-minimized {
+    top: auto;
+    right: 10px;
+    bottom: 90px;
+    left: 10px;
+
+    width: auto;
+    height: 70px;
+  }
+
+  .ai-chatbox.ai-maximized .ai-message {
+    max-width: 88%;
+  }
 }
