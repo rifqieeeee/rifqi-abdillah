@@ -21,10 +21,6 @@ export default async function handler(req, res) {
     }
 
     if (!process.env.GEMINI_API_KEY) {
-      console.error(
-        "GEMINI_API_KEY belum dipasang di Vercel."
-      );
-
       return res.status(500).json({
         success: false,
         error: "API key belum dikonfigurasi."
@@ -64,12 +60,10 @@ Profil Rifqi Abdillah:
 - AIoT Enthusiast
 
 Jawablah pertanyaan pengunjung secara ringkas, ramah,
-profesional, dan hanya berdasarkan knowledge base yang
-diberikan.
+profesional, dan hanya berdasarkan knowledge base.
 
-Jika informasi tidak tersedia di knowledge base, sampaikan
-bahwa informasi tersebut belum tersedia. Jangan mengarang
-informasi.
+Jika informasi tidak tersedia, katakan bahwa informasi
+tersebut belum tersedia. Jangan mengarang informasi.
 
 DATA KNOWLEDGE BASE:
 ${knowledgeBase}
@@ -79,24 +73,19 @@ ${prompt}
 `;
 
     const response = await ai.models.generateContent({
-      model: "gemini-2.5-flash",
+      model: "gemini-3.5-flash",
       contents: fullPrompt
     });
 
-    const responseText =
-      response.text ||
-      "Maaf, Rifqi AI belum dapat memberikan jawaban.";
-
     return res.status(200).json({
       success: true,
-      result: responseText
+      result:
+        response.text ||
+        "Maaf, Rifqi AI belum dapat memberikan jawaban."
     });
 
   } catch (error) {
-    console.error(
-      "Error di Vercel API Chat:",
-      error
-    );
+    console.error("Error Gemini API:", error);
 
     return res.status(500).json({
       success: false,
