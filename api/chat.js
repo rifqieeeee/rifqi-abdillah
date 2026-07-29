@@ -226,7 +226,7 @@ Return only the final answer.
 
     const response =
       await ai.models.generateContent({
-        model: "gemini-3.5-flash",
+        model: "gemini-3.5-flash-lite",
         contents: fullPrompt,
         config: {
           temperature: 0.3,
