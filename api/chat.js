@@ -1,4 +1,6 @@
 import { GoogleGenerativeAI } from '@google/generative-ai';
+import { readFileSync } from 'fs';
+import { join } from 'path';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -13,33 +15,29 @@ export default async function handler(req, res) {
     }
 
     if (!process.env.GEMINI_API_KEY) {
-      console.error('GEMINI_API_KEY is not defined in Environment Variables!');
-      return res.status(500).json({ success: false, error: 'API Key belum dikonfigurasi di Vercel.' });
+      console.error('GEMINI_API_KEY belum terpasang di Vercel Settings');
+      return res.status(500).json({ success: false, error: 'API Key belum dikonfigurasi.' });
     }
 
-    // Inisialisasi Model Gemini
+    // 1. Baca file knowledge.json langsung dari filesystem (Tanpa HTTP fetch)
+    let knowledgeBase = '';
+    try {
+      const filePath = join(process.cwd(), 'assets', 'data', 'knowledge.json');
+      knowledgeBase = readFileSync(filePath, 'utf8');
+    } catch (fileErr) {
+      console.error('Gagal membaca knowledge.json secara lokal:', fileErr.message);
+      knowledgeBase = '[]'; // Fallback jika file tidak ditemukan
+    }
+
+    // 2. Inisialisasi Model Gemini
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
     const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
-    // Ambil data knowledge.json
-    const host = req.headers.host || 'rifqi-abdillah.vercel.app';
-    const protocol = host.includes('localhost') ? 'http' : 'https';
-    const knowledgeUrl = `${protocol}://${host}/assets/data/knowledge.json`;
-
-    let knowledgeBase = '';
-    try {
-      const knowledgeRes = await fetch(knowledgeUrl);
-      if (knowledgeRes.ok) {
-        knowledgeBase = await knowledgeRes.text();
-      }
-    } catch (e) {
-      console.error('Gagal mengambil knowledge.json:', e);
-    }
-
+    // 3. Susun Prompt Context
     const fullPrompt = `
 Anda adalah "Rifqi AI", asisten akademis interaktif untuk portofolio web Rifqi Abdillah (Lecturer, Researcher, Developer, AIoT Enthusiast).
 
-Jawab pertanyaan pengunjung dengan ringkas, sopan, ramah, dan profesional.
+Jawab pertanyaan pengunjung dengan ringkas, sopan, ramah, dan profesional berdasarkan Data Knowledge Base berikut.
 
 DATA KNOWLEDGE BASE:
 ${knowledgeBase}
@@ -48,6 +46,7 @@ PERTANYAAN PENGUNJUNG:
 ${prompt}
     `;
 
+    // 4. Minta Gemini Menjawab
     const result = await model.generateContent(fullPrompt);
     const responseText = result.response.text();
 
@@ -57,7 +56,7 @@ ${prompt}
     });
 
   } catch (error) {
-    console.error('Error in Vercel API:', error);
+    console.error('Error di Vercel API Chat:', error.message);
     return res.status(500).json({
       success: false,
       error: 'Terjadi kesalahan pada server AI.',
