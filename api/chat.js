@@ -1,9 +1,13 @@
 import { GoogleGenAI } from "@google/genai";
-import { readFileSync } from "fs";
-import { join } from "path";
+import {
+  existsSync,
+  readFileSync,
+  readdirSync,
+  statSync
+} from "fs";
+import { join, relative } from "path";
 
 export default async function handler(req, res) {
-  // Hanya menerima request POST
   if (req.method !== "POST") {
     res.setHeader("Allow", ["POST"]);
 
@@ -16,7 +20,6 @@ export default async function handler(req, res) {
   try {
     const { prompt } = req.body || {};
 
-    // Validasi prompt
     if (!prompt || typeof prompt !== "string") {
       return res.status(400).json({
         success: false,
@@ -26,7 +29,7 @@ export default async function handler(req, res) {
 
     const cleanPrompt = prompt.trim();
 
-    if (cleanPrompt.length === 0) {
+    if (!cleanPrompt) {
       return res.status(400).json({
         success: false,
         error: "Prompt tidak boleh kosong."
@@ -40,7 +43,6 @@ export default async function handler(req, res) {
       });
     }
 
-    // Pastikan API key tersedia
     if (!process.env.GEMINI_API_KEY) {
       console.error(
         "GEMINI_API_KEY belum dikonfigurasi di Vercel."
@@ -52,41 +54,32 @@ export default async function handler(req, res) {
       });
     }
 
-    // Membaca knowledge base
-    let knowledgeBase = "[]";
+    const databasePath = join(
+      process.cwd(),
+      "database"
+    );
 
-    try {
-      const knowledgePath = join(
-        process.cwd(),
-        "assets",
-        "data",
-        "knowledge.json"
-      );
+    const knowledgeData =
+      loadAllJsonFiles(databasePath);
 
-      knowledgeBase = readFileSync(
-        knowledgePath,
-        "utf8"
-      );
-    } catch (fileError) {
-      console.error(
-        "Gagal membaca knowledge.json:",
-        fileError.message
-      );
-    }
+    const knowledgeBase = JSON.stringify(
+      knowledgeData,
+      null,
+      2
+    );
 
-    // Inisialisasi Gemini
     const ai = new GoogleGenAI({
       apiKey: process.env.GEMINI_API_KEY
     });
 
     const fullPrompt = `
-You are "Rifqi AI", an interactive academic assistant for the personal portfolio website of Rifqi Abdillah.
+You are "Rifqi AI", an interactive academic assistant for the portfolio website of Rifqi Abdillah.
 
-Your task is to answer visitor questions using only the information available in the knowledge base.
+Use only the information contained in the knowledge base below.
 
 LANGUAGE RULES:
 
-1. Detect the language used by the visitor.
+1. Detect the language of the visitor's question.
 
 2. If the visitor asks in Indonesian, answer entirely in Indonesian.
 
@@ -96,52 +89,63 @@ LANGUAGE RULES:
 
 5. Technical terms such as Artificial Intelligence, Machine Learning, Computer Vision, Edge Computing, AIoT, Internet of Things, and Biomedical Informatics may remain in English.
 
-6. If the question is very short, such as "Research interests", "Publications", "Projects", or "Location", determine the language from the phrase itself.
+6. For short phrases, infer the language from the phrase:
+   "Research interests" means answer in English.
+   "Minat penelitian" means answer in Indonesian.
 
-OUTPUT FORMAT RULES:
+OUTPUT RULES:
 
 1. Use plain text only.
 
-2. Do not use Markdown formatting.
+2. Do not use Markdown.
 
-3. Do not use the following Markdown characters for formatting:
-asterisk, double asterisk, hashtag, underscore, greater-than sign, backticks, or vertical bars.
+3. Do not use asterisks, hashtags, backticks, Markdown headings, Markdown tables, or Markdown bullet points.
 
-4. Do not use bold text, italic text, Markdown headings, Markdown tables, or code blocks.
-
-5. Do not use asterisk characters as bullet points.
-
-6. If a list is necessary, use simple numbering such as:
+4. If a list is required, use simple numbering:
 
 1. First item
 2. Second item
 3. Third item
 
-7. You may also use short paragraphs instead of lists.
+5. Do not use an asterisk character anywhere in the answer.
 
 ANSWERING STYLE:
 
-1. Answer directly without repeatedly introducing yourself.
+1. Answer directly.
 
-2. Do not begin every answer with "Hello", "Halo", or "I am Rifqi AI".
+2. Do not repeatedly introduce yourself.
 
-3. Use a friendly, professional, polite, and natural tone.
+3. Do not begin every answer with "Hello", "Halo", or "I am Rifqi AI".
 
-4. Keep the answer concise, generally no more than 150 words, unless the visitor explicitly asks for a detailed explanation.
+4. Use a friendly, professional, polite, and natural tone.
 
-5. Do not exaggerate Rifqi Abdillah's experience, qualifications, achievements, publications, or projects.
+5. For simple profile questions, answer in one or two complete sentences.
 
-6. Do not invent information.
+6. Keep most answers below 150 words unless the visitor asks for more detail.
 
-7. Do not present assumptions as facts.
+7. Always complete the final sentence.
 
-8. If the requested information is not available in the knowledge base, say so clearly.
+8. Never stop in the middle of a word or sentence.
 
-9. If the visitor asks about collaboration, direct them to the contact page or available professional contact information in the knowledge base.
+9. Do not add unnecessary introductory or closing sentences.
 
-10. Refer to Rifqi Abdillah appropriately:
-In Indonesian, use "Rifqi Abdillah" or "beliau".
-In English, use "Rifqi Abdillah" or "he".
+10. Do not invent information.
+
+11. Do not present assumptions as facts.
+
+12. If information is not available in the knowledge base, say so clearly.
+
+12. Always complete the final sentence.
+
+13. Never stop in the middle of a word or sentence.
+
+14. For simple profile questions, answer in one or two complete sentences.
+
+15. Do not add unnecessary introductory or closing sentences.
+
+16. In Indonesian, refer to Rifqi Abdillah as "Rifqi Abdillah" or "beliau".
+
+17. In English, refer to Rifqi Abdillah as "Rifqi Abdillah" or "he".
 
 KNOWLEDGE BASE:
 
@@ -151,34 +155,38 @@ VISITOR QUESTION:
 
 ${cleanPrompt}
 
-Provide only the final answer. Do not explain these instructions.
+Return only the final answer.
 `;
 
-    // Mengirim permintaan ke Gemini
-    const response = await ai.models.generateContent({
-      model: "gemini-3.5-flash",
-      contents: fullPrompt,
-      config: {
-        temperature: 0.4,
-        maxOutputTokens: 2048,
-        thinkingConfig: {
-          thinkingLevel: "minimal"
+    const response =
+      await ai.models.generateContent({
+        model: "gemini-3.5-flash",
+        contents: fullPrompt,
+        config: {
+          temperature: 0.3,
+          maxOutputTokens: 2048
         }
-      }
-    });
+      });
 
     const finishReason =
       response?.candidates?.[0]?.finishReason;
 
-    console.log("Gemini finish reason:", finishReason);
-    console.log("Gemini usage:", response?.usageMetadata);
+    console.log(
+      "Gemini finish reason:",
+      finishReason
+    );
+
+    console.log(
+      "Gemini usage:",
+      response?.usageMetadata
+    );
 
     let responseText =
       response?.text ||
       "Maaf, Rifqi AI belum dapat memberikan jawaban.";
 
-    // Pembersihan tambahan jika model masih menghasilkan Markdown
-    responseText = cleanAIResponse(responseText);
+    responseText =
+      cleanAIResponse(responseText);
 
     return res.status(200).json({
       success: true,
@@ -195,15 +203,80 @@ Provide only the final answer. Do not explain these instructions.
       success: false,
       error: "Terjadi kesalahan pada server AI.",
       details:
-        process.env.NODE_ENV === "development"
-          ? error?.message || String(error)
-          : undefined
+        error?.message ||
+        String(error)
     });
   }
 }
 
 /**
- * Membersihkan karakter Markdown yang tidak diinginkan.
+ * Membaca seluruh file JSON di dalam folder database
+ * beserta seluruh subfoldernya.
+ */
+function loadAllJsonFiles(directoryPath) {
+  const results = [];
+
+  if (!existsSync(directoryPath)) {
+    console.error(
+      `Folder database tidak ditemukan: ${directoryPath}`
+    );
+
+    return results;
+  }
+
+  const items = readdirSync(directoryPath);
+
+  for (const item of items) {
+    const fullPath = join(
+      directoryPath,
+      item
+    );
+
+    const fileInfo = statSync(fullPath);
+
+    if (fileInfo.isDirectory()) {
+      const nestedData =
+        loadAllJsonFiles(fullPath);
+
+      results.push(...nestedData);
+      continue;
+    }
+
+    if (
+      fileInfo.isFile() &&
+      item.toLowerCase().endsWith(".json")
+    ) {
+      try {
+        const rawData = readFileSync(
+          fullPath,
+          "utf8"
+        );
+
+        const parsedData =
+          JSON.parse(rawData);
+
+        results.push({
+          source: relative(
+            process.cwd(),
+            fullPath
+          ).replace(/\\/g, "/"),
+          data: parsedData
+        });
+
+      } catch (error) {
+        console.error(
+          `Gagal membaca ${fullPath}:`,
+          error.message
+        );
+      }
+    }
+  }
+
+  return results;
+}
+
+/**
+ * Membersihkan karakter Markdown.
  */
 function cleanAIResponse(text) {
   if (!text || typeof text !== "string") {
@@ -211,24 +284,13 @@ function cleanAIResponse(text) {
   }
 
   return text
-    // Hapus tanda bold dan italic Markdown
     .replace(/\*\*/g, "")
     .replace(/\*/g, "")
-
-    // Hapus heading Markdown
     .replace(/^#{1,6}\s*/gm, "")
-
-    // Ubah bullet Markdown menjadi bullet biasa
-    .replace(/^\s*[-+]\s+/gm, "• ")
-
-    // Hapus blockquote Markdown
+    .replace(/^\s*[-+]\s+/gm, "")
     .replace(/^\s*>\s?/gm, "")
-
-    // Hapus backtick
     .replace(/`/g, "")
-
-    // Kurangi baris kosong berlebihan
+    .replace(/\|/g, "")
     .replace(/\n{3,}/g, "\n\n")
-
     .trim();
 }
