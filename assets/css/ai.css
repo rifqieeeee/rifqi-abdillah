@@ -300,3 +300,51 @@
     max-width: 88%;
   }
 }
+
+.ai-chatbox.ai-maximized .ai-messages {
+  padding: 24px 40px;
+}
+
+.ai-chatbox.ai-maximized .ai-message {
+  width: fit-content;
+  max-width: min(760px, 75%);
+  margin-bottom: 16px;
+}
+
+.ai-chatbox.ai-maximized .ai-message.bot {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.ai-chatbox.ai-maximized .ai-message.user {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.ai-chatbox.ai-maximized .suggested-questions {
+  max-width: 760px;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.ai-chatbox.ai-maximized .ai-input-area {
+  padding: 0 24px;
+}
+
+.ai-chatbox.ai-maximized .ai-input-area input {
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .ai-chatbox.ai-maximized .ai-messages {
+    padding: 16px;
+  }
+
+  .ai-chatbox.ai-maximized .ai-message {
+    max-width: 90%;
+  }
+
+  .ai-chatbox.ai-maximized .ai-input-area {
+    padding: 0;
+  }
+}
