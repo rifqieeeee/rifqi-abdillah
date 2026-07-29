@@ -4,10 +4,12 @@
   "description": "Portfolio website with Ask Rifqi AI integration",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "engines": {
+    "node": ">=20.0.0"
   },
-  "keywords": [],
+  "scripts": {
+    "test": "echo \"No tests configured\""
+  },
   "author": "Rifqi Abdillah",
   "license": "ISC",
   "dependencies": {

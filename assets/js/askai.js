@@ -1,5 +1,5 @@
 // =========================
-// Ask Rifqi AI (Vercel Serverless + Gemini API)
+// Ask Rifqi AI
 // =========================
 
 const aiBtn = document.getElementById("ai-btn");
@@ -10,16 +10,18 @@ const aiInput = document.getElementById("ai-input");
 const aiMessages = document.getElementById("ai-messages");
 const suggestBtns = document.querySelectorAll(".suggest-btn");
 
+let isSending = false;
+
 // =========================
-// Toggle Chatbox Visibility
+// Toggle Chatbox
 // =========================
-if (aiBtn) {
+if (aiBtn && aiChatbox) {
   aiBtn.addEventListener("click", () => {
     aiChatbox.classList.remove("d-none");
   });
 }
 
-if (closeAi) {
+if (closeAi && aiChatbox) {
   closeAi.addEventListener("click", () => {
     aiChatbox.classList.add("d-none");
   });
@@ -28,115 +30,108 @@ if (closeAi) {
 // =========================
 // Suggested Questions
 // =========================
-suggestBtns.forEach(btn => {
+suggestBtns.forEach((btn) => {
   btn.addEventListener("click", () => {
+    if (!aiInput) return;
+
     aiInput.value = btn.innerText;
     sendMessage();
   });
 });
 
 // =========================
-// Send Message Function
+// Send Message Events
 // =========================
 if (sendBtn) {
   sendBtn.addEventListener("click", sendMessage);
 }
 
 if (aiInput) {
-  aiInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
+  aiInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
       sendMessage();
     }
   });
 }
 
+// =========================
+// Send Message Function
+// =========================
 async function sendMessage() {
-  const text = aiInput.value.trim();
-  if (!text) return;
+  if (!aiInput || !sendBtn || !aiMessages) return;
 
-  // 1. Tampilkan pesan user di UI
+  const text = aiInput.value.trim();
+
+  if (!text || isSending) return;
+
+  isSending = true;
+  sendBtn.disabled = true;
+  aiInput.disabled = true;
+
   addMessage(text, "user");
   aiInput.value = "";
-
-  // 2. Tampilkan indikator loading / typing
   showTyping();
 
   try {
-    // 3. Panggil Vercel Serverless Function (/api/chat)
     const response = await fetch("/api/chat", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify({ prompt: text })
+      body: JSON.stringify({
+        prompt: text
+      })
     });
 
+    const rawResponse = await response.text();
+
+    let data;
+
     try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          prompt: text
-        })
-      });
-
-      const contentType =
-        response.headers.get("content-type") || "";
-
-      let data;
-
-      if (contentType.includes("application/json")) {
-        data = await response.json();
-      } else {
-        const rawText = await response.text();
-
-        throw new Error(
-          rawText || `HTTP error ${response.status}`
-        );
-      }
-
-      removeTyping();
-
-      if (!response.ok || !data.success) {
-        console.error("API Error Response:", data);
-
-        addMessage(
-          data.error ||
-          "Maaf, Rifqi AI sedang mengalami gangguan.",
-          "bot"
-        );
-
-        return;
-      }
-
-      addMessage(data.result, "bot");
-
-    } catch (error) {
-      console.error("Fetch error:", error);
-
-      removeTyping();
-
-      addMessage(
-        "Maaf, gagal terhubung ke server AI.",
-        "bot"
+      data = JSON.parse(rawResponse);
+    } catch {
+      throw new Error(
+        rawResponse ||
+        `Server mengembalikan status ${response.status}`
       );
     }
+
     removeTyping();
 
-    if (response.ok && data.success) {
-      // Tampilkan balasan cerdas dari Gemini AI
-      addMessage(data.result, "bot");
-    } else {
+    if (!response.ok || !data.success) {
       console.error("API Error Response:", data);
-      addMessage("Maaf, terjadi kendala saat menghubungkan ke AI. Silakan coba lagi nanti.", "bot");
+
+      addMessage(
+        data.details ||
+        data.error ||
+        `Server error ${response.status}`,
+        "bot"
+      );
+
+      return;
     }
+
+    addMessage(
+      data.result || "Maaf, jawaban tidak tersedia.",
+      "bot"
+    );
 
   } catch (error) {
     console.error("Fetch error:", error);
+
     removeTyping();
-    addMessage("Maaf, gagal terhubung ke server AI.", "bot");
+
+    addMessage(
+      `Maaf, gagal terhubung ke server AI. ${error.message}`,
+      "bot"
+    );
+
+  } finally {
+    isSending = false;
+    sendBtn.disabled = false;
+    aiInput.disabled = false;
+    aiInput.focus();
   }
 }
 
@@ -145,26 +140,38 @@ async function sendMessage() {
 // =========================
 function addMessage(text, type) {
   const div = document.createElement("div");
+
   div.classList.add("ai-message", type);
-  
-  // Format baris baru agar rapi di HTML
-  div.innerHTML = text.replace(/\n/g, "<br>");
+
+  // Lebih aman daripada innerHTML langsung
+  div.textContent = text;
 
   aiMessages.appendChild(div);
   aiMessages.scrollTop = aiMessages.scrollHeight;
 }
 
 function showTyping() {
+  removeTyping();
+
   const typing = document.createElement("div");
-  typing.classList.add("ai-message", "bot", "typing-message");
-  typing.innerHTML = "Rifqi AI sedang berpikir<span class='typing'></span>";
+
+  typing.classList.add(
+    "ai-message",
+    "bot",
+    "typing-message"
+  );
+
+  typing.innerHTML =
+    "Rifqi AI sedang berpikir<span class='typing'></span>";
+
   aiMessages.appendChild(typing);
   aiMessages.scrollTop = aiMessages.scrollHeight;
 }
 
 function removeTyping() {
   const typing = document.querySelector(".typing-message");
+
   if (typing) {
     typing.remove();
   }
-}
+} 

@@ -101,10 +101,7 @@ ${prompt}
     return res.status(500).json({
       success: false,
       error: "Terjadi kesalahan pada server AI.",
-      details:
-        process.env.NODE_ENV === "development"
-          ? error.message
-          : undefined
+      details: error?.message || String(error)
     });
   }
 }
