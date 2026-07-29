@@ -75,28 +75,39 @@ aiInput.addEventListener("keypress", (e) => {
 
 });
 
-function sendMessage() {
-
+// Ganti URL fetch di fungsi sendMessage()
+async function sendMessage() {
   const text = aiInput.value.trim();
-
   if (!text) return;
 
   addMessage(text, "user");
-
   aiInput.value = "";
-
   showTyping();
 
-  setTimeout(() => {
+  try {
+    // Panggil Vercel Serverless Function secara langsung
+    const response = await fetch("/api/chat", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ prompt: text })
+    });
 
+    const data = await response.json();
     removeTyping();
 
-    const response = getAIResponse(text);
+    if (data.success) {
+      addMessage(data.result, "bot");
+    } else {
+      addMessage("Maaf, terjadi kesalahan saat menghubungi AI.", "bot");
+    }
 
-    addMessage(response, "bot");
-
-  }, 1000);
-
+  } catch (error) {
+    console.error("Fetch error:", error);
+    removeTyping();
+    addMessage("Maaf, gagal menghubungkan ke server AI.", "bot");
+  }
 }
 
 // =========================

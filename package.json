@@ -1,0 +1,17 @@
+{
+  "name": "rifqi-abdillah",
+  "version": "1.0.0",
+  "description": "Portfolio website with Ask Rifqi AI integration",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Rifqi Abdillah",
+  "license": "ISC",
+  "dependencies": {
+    "@google/genai": "^0.1.1",
+    "dotenv": "^17.4.2"
+  }
+}

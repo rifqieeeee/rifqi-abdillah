@@ -1,0 +1,63 @@
+import { GoogleGenAI } from '@google/genai';
+
+export default async function handler(req, res) {
+  // Hanya izinkan method POST
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method Not Allowed' });
+  }
+
+  try {
+    const { prompt } = req.body;
+
+    if (!prompt) {
+      return res.status(400).json({ error: 'Prompt wajib diisi!' });
+    }
+
+    // Inisialisasi Gemini API dari Environment Variable Vercel
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+
+    // Ambil file knowledge.json secara langsung dari domain Vercel Anda / GitHub
+    const host = req.headers.host || 'rifqi-abdillah.vercel.app';
+    const protocol = host.includes('localhost') ? 'http' : 'https';
+    const knowledgeUrl = `${protocol}://${host}/assets/data/knowledge.json`;
+
+    let knowledgeBase = '';
+    try {
+      const knowledgeRes = await fetch(knowledgeUrl);
+      if (knowledgeRes.ok) {
+        knowledgeBase = await knowledgeRes.text();
+      }
+    } catch (e) {
+      console.error('Gagal mengambil knowledge.json:', e);
+    }
+
+    // Panggil Gemini API
+    const response = await ai.models.generateContent({
+      model: 'gemini-2.5-flash',
+      contents: `
+Anda adalah "Rifqi AI", asisten akademis interaktif untuk portofolio web Rifqi Abdillah (Lecturer, Researcher, Developer, AIoT Enthusiast).
+
+Jawab pertanyaan pengunjung dengan ringkas, sopan, ramah, dan profesional.
+
+DATA KNOWLEDGE BASE:
+${knowledgeBase}
+
+PERTANYAAN PENGUNJUNG:
+${prompt}
+      `
+    });
+
+    return res.status(200).json({
+      success: true,
+      result: response.text
+    });
+
+  } catch (error) {
+    console.error('Error in Vercel API:', error);
+    return res.status(500).json({
+      success: false,
+      error: 'Terjadi kesalahan pada server AI.',
+      details: error.message
+    });
+  }
+}
