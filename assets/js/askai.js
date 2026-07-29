@@ -71,7 +71,58 @@ async function sendMessage() {
       body: JSON.stringify({ prompt: text })
     });
 
-    const data = await response.json();
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          prompt: text
+        })
+      });
+
+      const contentType =
+        response.headers.get("content-type") || "";
+
+      let data;
+
+      if (contentType.includes("application/json")) {
+        data = await response.json();
+      } else {
+        const rawText = await response.text();
+
+        throw new Error(
+          rawText || `HTTP error ${response.status}`
+        );
+      }
+
+      removeTyping();
+
+      if (!response.ok || !data.success) {
+        console.error("API Error Response:", data);
+
+        addMessage(
+          data.error ||
+          "Maaf, Rifqi AI sedang mengalami gangguan.",
+          "bot"
+        );
+
+        return;
+      }
+
+      addMessage(data.result, "bot");
+
+    } catch (error) {
+      console.error("Fetch error:", error);
+
+      removeTyping();
+
+      addMessage(
+        "Maaf, gagal terhubung ke server AI.",
+        "bot"
+      );
+    }
     removeTyping();
 
     if (response.ok && data.success) {

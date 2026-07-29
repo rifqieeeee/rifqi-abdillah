@@ -1,56 +1,91 @@
-import { GoogleGenerativeAI } from '@google/generative-ai';
-import { readFileSync } from 'fs';
-import { join } from 'path';
+import { GoogleGenAI } from "@google/genai";
+import { readFileSync } from "fs";
+import { join } from "path";
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ error: 'Method Not Allowed' });
+  if (req.method !== "POST") {
+    return res.status(405).json({
+      success: false,
+      error: "Method Not Allowed"
+    });
   }
 
   try {
-    const { prompt } = req.body;
+    const { prompt } = req.body || {};
 
-    if (!prompt) {
-      return res.status(400).json({ error: 'Prompt wajib diisi!' });
+    if (!prompt || typeof prompt !== "string") {
+      return res.status(400).json({
+        success: false,
+        error: "Prompt wajib diisi."
+      });
     }
 
     if (!process.env.GEMINI_API_KEY) {
-      console.error('GEMINI_API_KEY belum terpasang di Vercel Settings');
-      return res.status(500).json({ success: false, error: 'API Key belum dikonfigurasi.' });
+      console.error(
+        "GEMINI_API_KEY belum dipasang di Vercel."
+      );
+
+      return res.status(500).json({
+        success: false,
+        error: "API key belum dikonfigurasi."
+      });
     }
 
-    // 1. Baca file knowledge.json langsung dari filesystem (Tanpa HTTP fetch)
-    let knowledgeBase = '';
+    let knowledgeBase = "[]";
+
     try {
-      const filePath = join(process.cwd(), 'assets', 'data', 'knowledge.json');
-      knowledgeBase = readFileSync(filePath, 'utf8');
-    } catch (fileErr) {
-      console.error('Gagal membaca knowledge.json secara lokal:', fileErr.message);
-      knowledgeBase = '[]'; // Fallback jika file tidak ditemukan
+      const filePath = join(
+        process.cwd(),
+        "assets",
+        "data",
+        "knowledge.json"
+      );
+
+      knowledgeBase = readFileSync(filePath, "utf8");
+    } catch (fileError) {
+      console.error(
+        "Gagal membaca knowledge.json:",
+        fileError.message
+      );
     }
 
-    // 2. Inisialisasi Model Gemini
-    const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({
-      model: "gemini-2.5-flash"
+    const ai = new GoogleGenAI({
+      apiKey: process.env.GEMINI_API_KEY
     });
 
-    // 3. Susun Prompt Context
     const fullPrompt = `
-Anda adalah "Rifqi AI", asisten akademis interaktif untuk portofolio web Rifqi Abdillah (Lecturer, Researcher, Developer, AIoT Enthusiast).
+Anda adalah "Rifqi AI", asisten akademis interaktif untuk
+portofolio web Rifqi Abdillah.
 
-Jawab pertanyaan pengunjung dengan ringkas, sopan, ramah, dan profesional berdasarkan Data Knowledge Base berikut.
+Profil Rifqi Abdillah:
+- Lecturer
+- Researcher
+- Developer
+- AIoT Enthusiast
+
+Jawablah pertanyaan pengunjung secara ringkas, ramah,
+profesional, dan hanya berdasarkan knowledge base yang
+diberikan.
+
+Jika informasi tidak tersedia di knowledge base, sampaikan
+bahwa informasi tersebut belum tersedia. Jangan mengarang
+informasi.
 
 DATA KNOWLEDGE BASE:
 ${knowledgeBase}
 
 PERTANYAAN PENGUNJUNG:
 ${prompt}
-    `;
+`;
 
-    // 4. Minta Gemini Menjawab
-    const result = await model.generateContent(fullPrompt);
-    const responseText = result.response.text();
+    const response = await ai.models.generateContent({
+      model: "gemini-2.5-flash",
+      contents: fullPrompt
+    });
+
+    const responseText =
+      response.text ||
+      "Maaf, Rifqi AI belum dapat memberikan jawaban.";
 
     return res.status(200).json({
       success: true,
@@ -58,11 +93,18 @@ ${prompt}
     });
 
   } catch (error) {
-    console.error('Error di Vercel API Chat:', error.message);
+    console.error(
+      "Error di Vercel API Chat:",
+      error
+    );
+
     return res.status(500).json({
       success: false,
-      error: 'Terjadi kesalahan pada server AI.',
-      details: error.message
+      error: "Terjadi kesalahan pada server AI.",
+      details:
+        process.env.NODE_ENV === "development"
+          ? error.message
+          : undefined
     });
   }
 }
