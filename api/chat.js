@@ -200,19 +200,156 @@ Return only the final answer.
     });
 
   } catch (error) {
-    console.error(
-      "Error on Vercel API Chat:",
-      error
+    // Error lengkap hanya masuk ke Vercel Logs
+    console.error("Error on Vercel API Chat:", error);
+
+    const errorMessage = String(
+      error?.message ||
+      error?.toString?.() ||
+      ""
     );
 
+    const normalizedError =
+      errorMessage.toLowerCase();
+
+    const isIndonesian =
+      detectIndonesianLanguage(cleanPrompt);
+
+    const statusCode =
+      extractErrorCode(errorMessage);
+
+    // Kuota atau rate limit
+    if (
+      statusCode === 429 ||
+      normalizedError.includes("resource_exhausted") ||
+      normalizedError.includes("quota exceeded") ||
+      normalizedError.includes("rate limit") ||
+      normalizedError.includes("too many requests")
+    ) {
+      return res.status(429).json({
+        success: false,
+        error: isIndonesian
+          ? "Rifqi AI sedang mencapai batas penggunaan. Silakan coba kembali nanti."
+          : "Rifqi AI has reached its usage limit. Please try again later."
+      });
+    }
+
+    // API key bermasalah
+    if (
+      statusCode === 401 ||
+      statusCode === 403 ||
+      normalizedError.includes("api key not valid") ||
+      normalizedError.includes("invalid api key") ||
+      normalizedError.includes("permission_denied") ||
+      normalizedError.includes("unauthenticated")
+    ) {
+      return res.status(503).json({
+        success: false,
+        error: isIndonesian
+          ? "Rifqi AI sedang mengalami kendala akses. Silakan coba kembali nanti."
+          : "Rifqi AI is currently experiencing an access issue. Please try again later."
+      });
+    }
+
+    // Model tidak tersedia
+    if (
+      statusCode === 404 ||
+      normalizedError.includes("model") &&
+      normalizedError.includes("not found") ||
+      normalizedError.includes("no longer available")
+    ) {
+      return res.status(503).json({
+        success: false,
+        error: isIndonesian
+          ? "Model Rifqi AI sedang diperbarui. Silakan coba kembali nanti."
+          : "The Rifqi AI model is currently being updated. Please try again later."
+      });
+    }
+
+    // Gangguan koneksi atau layanan
+    if (
+      statusCode === 502 ||
+      statusCode === 503 ||
+      statusCode === 504 ||
+      normalizedError.includes("fetch failed") ||
+      normalizedError.includes("network") ||
+      normalizedError.includes("timeout") ||
+      normalizedError.includes("timed out") ||
+      normalizedError.includes("overloaded") ||
+      normalizedError.includes("service unavailable")
+    ) {
+      return res.status(503).json({
+        success: false,
+        error: isIndonesian
+          ? "Rifqi AI sedang mengalami gangguan koneksi. Silakan coba kembali beberapa saat lagi."
+          : "Rifqi AI is currently experiencing a connection issue. Please try again shortly."
+      });
+    }
+
+    // Error umum, tanpa details teknis
     return res.status(500).json({
       success: false,
-      error: "An error occurred on the AI ​​server.",
-      details:
-        error?.message ||
-        String(error)
+      error: isIndonesian
+        ? "Maaf, Rifqi AI sedang mengalami kendala. Silakan coba kembali nanti."
+        : "Sorry, Rifqi AI is currently experiencing an issue. Please try again later."
     });
   }
+}
+
+function extractErrorCode(message) {
+  if (!message || typeof message !== "string") {
+    return 0;
+  }
+
+  const jsonCode =
+    message.match(/"code"\s*:\s*(\d{3})/);
+
+  if (jsonCode) {
+    return Number(jsonCode[1]);
+  }
+
+  const genericCode =
+    message.match(
+      /\b(400|401|403|404|429|500|502|503|504)\b/
+    );
+
+  return genericCode
+    ? Number(genericCode[1])
+    : 0;
+}
+
+function detectIndonesianLanguage(text) {
+  if (!text || typeof text !== "string") {
+    return false;
+  }
+
+  const normalized = text.toLowerCase();
+
+  const indonesianWords = [
+    "apa",
+    "apakah",
+    "siapa",
+    "dimana",
+    "di mana",
+    "kapan",
+    "mengapa",
+    "kenapa",
+    "bagaimana",
+    "tentang",
+    "jelaskan",
+    "rifqi ada",
+    "lokasi",
+    "mengajar",
+    "penelitian",
+    "publikasi",
+    "proyek",
+    "keahlian",
+    "kolaborasi"
+  ];
+
+  return indonesianWords.some(
+    word => normalized.includes(word)
+  );
 }
 
 /**
