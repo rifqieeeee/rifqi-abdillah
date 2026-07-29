@@ -160,9 +160,18 @@ Provide only the final answer. Do not explain these instructions.
       contents: fullPrompt,
       config: {
         temperature: 0.4,
-        maxOutputTokens: 500
+        maxOutputTokens: 2048,
+        thinkingConfig: {
+          thinkingLevel: "minimal"
+        }
       }
     });
+
+    const finishReason =
+      response?.candidates?.[0]?.finishReason;
+
+    console.log("Gemini finish reason:", finishReason);
+    console.log("Gemini usage:", response?.usageMetadata);
 
     let responseText =
       response?.text ||
