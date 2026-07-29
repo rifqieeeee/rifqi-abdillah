@@ -178,7 +178,7 @@ async function sendMessage() {
 
     addMessage(
       data?.error ||
-        "Maaf, Rifqi AI sedang mengalami kendala. Silakan coba kembali nanti.",
+        "Sorry, Rifqi AI is experiencing issues. Please try again later.",
       "bot"
     );
 
