@@ -7,6 +7,46 @@ import {
 } from "fs";
 import { join, relative } from "path";
 
+const fallbackKnowledge = loadFallbackKnowledge();
+
+function loadFallbackKnowledge() {
+  try {
+    const fallbackPath = join(
+      process.cwd(),
+      "assets",
+      "data",
+      "knowledge.json"
+    );
+
+    if (!existsSync(fallbackPath)) {
+      console.error(
+        `Fallback knowledge file not found: ${fallbackPath}`
+      );
+
+      return [];
+    }
+
+    const rawData = readFileSync(
+      fallbackPath,
+      "utf8"
+    );
+
+    const parsedData = JSON.parse(rawData);
+
+    return Array.isArray(parsedData)
+      ? parsedData
+      : [];
+
+  } catch (error) {
+    console.error(
+      "Failed to load fallback knowledge:",
+      error.message
+    );
+
+    return [];
+  }
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     res.setHeader("Allow", ["POST"]);
@@ -16,6 +56,8 @@ export default async function handler(req, res) {
       error: "Method Not Allowed"
     });
   }
+
+  let cleanPrompt = "";
 
   try {
     const { prompt } = req.body || {};
@@ -27,7 +69,7 @@ export default async function handler(req, res) {
       });
     }
 
-    const cleanPrompt = prompt.trim();
+    cleanPrompt = prompt.trim();
 
     if (!cleanPrompt) {
       return res.status(400).json({
@@ -48,9 +90,27 @@ export default async function handler(req, res) {
         "GEMINI_API_KEY is not configured in Vercel."
       );
 
-      return res.status(500).json({
+      const fallbackResult = searchKnowledgeFallback(
+        cleanPrompt,
+        fallbackKnowledge
+      );
+
+      if (fallbackResult) {
+        return res.status(200).json({
+          success: true,
+          fallback: true,
+          languageUnsupported:
+            fallbackResult.languageUnsupported,
+          message:
+            "Rifqi AI will try to search from the knowledge database.",
+          result: fallbackResult.result
+        });
+      }
+
+      return res.status(503).json({
         success: false,
-        error: "API key is not configured."
+        error:
+          "Sorry, Rifqi AI is currently unavailable and no relevant information was found in the knowledge database."
       });
     }
 
@@ -200,98 +260,29 @@ Return only the final answer.
     });
 
   } catch (error) {
-    // Error lengkap hanya masuk ke Vercel Logs
     console.error("Error on Vercel API Chat:", error);
 
-    const errorMessage = String(
-      error?.message ||
-      error?.toString?.() ||
-      ""
+    const fallbackResult = searchKnowledgeFallback(
+      cleanPrompt,
+      fallbackKnowledge
     );
 
-    const normalizedError =
-      errorMessage.toLowerCase();
-
-    const isIndonesian =
-      detectIndonesianLanguage(cleanPrompt);
-
-    const statusCode =
-      extractErrorCode(errorMessage);
-
-    // Kuota atau rate limit
-    if (
-      statusCode === 429 ||
-      normalizedError.includes("resource_exhausted") ||
-      normalizedError.includes("quota exceeded") ||
-      normalizedError.includes("rate limit") ||
-      normalizedError.includes("too many requests")
-    ) {
-      return res.status(429).json({
-        success: false,
-        error: isIndonesian
-          ? "Rifqi AI sedang mencapai batas penggunaan. Silakan coba kembali nanti."
-          : "Rifqi AI has reached its usage limit. Please try again later."
+    if (fallbackResult) {
+      return res.status(200).json({
+        success: true,
+        fallback: true,
+        languageUnsupported:
+          fallbackResult.languageUnsupported,
+        message:
+          "Rifqi AI will try to search from the knowledge database.",
+        result: fallbackResult.result
       });
     }
 
-    // API key bermasalah
-    if (
-      statusCode === 401 ||
-      statusCode === 403 ||
-      normalizedError.includes("api key not valid") ||
-      normalizedError.includes("invalid api key") ||
-      normalizedError.includes("permission_denied") ||
-      normalizedError.includes("unauthenticated")
-    ) {
-      return res.status(503).json({
-        success: false,
-        error: isIndonesian
-          ? "Rifqi AI sedang mengalami kendala akses. Silakan coba kembali nanti."
-          : "Rifqi AI is currently experiencing an access issue. Please try again later."
-      });
-    }
-
-    // Model tidak tersedia
-    if (
-      statusCode === 404 ||
-      normalizedError.includes("model") &&
-      normalizedError.includes("not found") ||
-      normalizedError.includes("no longer available")
-    ) {
-      return res.status(503).json({
-        success: false,
-        error: isIndonesian
-          ? "Model Rifqi AI sedang diperbarui. Silakan coba kembali nanti."
-          : "The Rifqi AI model is currently being updated. Please try again later."
-      });
-    }
-
-    // Gangguan koneksi atau layanan
-    if (
-      statusCode === 502 ||
-      statusCode === 503 ||
-      statusCode === 504 ||
-      normalizedError.includes("fetch failed") ||
-      normalizedError.includes("network") ||
-      normalizedError.includes("timeout") ||
-      normalizedError.includes("timed out") ||
-      normalizedError.includes("overloaded") ||
-      normalizedError.includes("service unavailable")
-    ) {
-      return res.status(503).json({
-        success: false,
-        error: isIndonesian
-          ? "Rifqi AI sedang mengalami gangguan koneksi. Silakan coba kembali beberapa saat lagi."
-          : "Rifqi AI is currently experiencing a connection issue. Please try again shortly."
-      });
-    }
-
-    // Error umum, tanpa details teknis
-    return res.status(500).json({
+    return res.status(503).json({
       success: false,
-      error: isIndonesian
-        ? "Maaf, Rifqi AI sedang mengalami kendala. Silakan coba kembali nanti."
-        : "Sorry, Rifqi AI is currently experiencing an issue. Please try again later."
+      error:
+        "Sorry, Rifqi AI is currently unavailable and no relevant information was found in the knowledge database."
     });
   }
 }
@@ -440,5 +431,86 @@ function cleanAIResponse(text) {
 
     // Rapikan baris kosong
     .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+function searchKnowledgeFallback(prompt, knowledgeItems) {
+  if (!prompt || !Array.isArray(knowledgeItems)) {
+    return null;
+  }
+
+  const normalizedPrompt = normalizeText(prompt);
+  const isIndonesian = detectIndonesianLanguage(prompt);
+
+  let bestMatch = null;
+  let bestScore = 0;
+
+  for (const item of knowledgeItems) {
+    if (
+      !Array.isArray(item.keywords) ||
+      !Array.isArray(item.answers)
+    ) {
+      continue;
+    }
+
+    let score = 0;
+
+    for (const keyword of item.keywords) {
+      const normalizedKeyword = normalizeText(keyword);
+
+      if (
+        normalizedKeyword &&
+        normalizedPrompt.includes(normalizedKeyword)
+      ) {
+        score += normalizedKeyword.split(" ").length;
+      }
+    }
+
+    if (score > bestScore) {
+      bestScore = score;
+      bestMatch = item;
+    }
+  }
+
+  if (!bestMatch || bestScore === 0) {
+    return null;
+  }
+
+  if (isIndonesian) {
+    return {
+      languageUnsupported: true,
+      result:
+        "Currently, the knowledge database can only provide answers in English. Please ask your question in English."
+    };
+  }
+
+  return {
+    languageUnsupported: false,
+    result: formatFallbackAnswers(bestMatch.answers)
+  };
+}
+
+function formatFallbackAnswers(answers) {
+  if (!Array.isArray(answers) || answers.length === 0) {
+    return null;
+  }
+
+  return answers
+    .filter(
+      (answer) =>
+        typeof answer === "string" &&
+        answer.trim().length > 0
+    )
+    .map((answer) => answer.trim())
+    .join("\n");
+}
+
+function normalizeText(text) {
+  return String(text)
+    .toLowerCase()
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[^\p{L}\p{N}\s]/gu, " ")
+    .replace(/\s+/g, " ")
     .trim();
 }

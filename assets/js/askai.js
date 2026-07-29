@@ -185,6 +185,23 @@ async function sendMessage() {
     return;
   }
 
+  if (data.fallback) {
+    addMessage(
+      data.message ||
+        "Rifqi AI will try to search from the knowledge database.",
+      "bot"
+    );
+
+    setTimeout(() => {
+      addMessage(
+        data.result,
+        "bot"
+      );
+    }, 600);
+
+    return;
+  }
+
   addMessage(data.result, "bot");
 
   } catch (error) {
@@ -193,7 +210,7 @@ async function sendMessage() {
     removeTyping();
 
     addMessage(
-      `Sorry, failed to connect to AI server. ${error.message}`,
+      "Sorry, Rifqi AI is currently unavailable. Please try again later.",
       "bot"
     );
 
