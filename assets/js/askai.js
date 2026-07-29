@@ -93,7 +93,7 @@ async function sendMessage() {
     } catch {
       throw new Error(
         rawResponse ||
-        `Server mengembalikan status ${response.status}`
+        `Server returns status ${response.status}`
       );
     }
 
@@ -113,7 +113,7 @@ async function sendMessage() {
     }
 
     addMessage(
-      data.result || "Maaf, jawaban tidak tersedia.",
+      data.result || "Sorry, no answer available.",
       "bot"
     );
 
@@ -123,7 +123,7 @@ async function sendMessage() {
     removeTyping();
 
     addMessage(
-      `Maaf, gagal terhubung ke server AI. ${error.message}`,
+      `Sorry, failed to connect to AI server. ${error.message}`,
       "bot"
     );
 
@@ -162,7 +162,7 @@ function showTyping() {
   );
 
   typing.innerHTML =
-    "Rifqi AI sedang berpikir<span class='typing'></span>";
+    "Rifqi AI is thinking<span class='typing'></span>";
 
   aiMessages.appendChild(typing);
   aiMessages.scrollTop = aiMessages.scrollHeight;

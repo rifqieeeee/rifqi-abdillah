@@ -23,7 +23,7 @@ export default async function handler(req, res) {
     if (!prompt || typeof prompt !== "string") {
       return res.status(400).json({
         success: false,
-        error: "Prompt wajib diisi."
+        error: "Prompt is required."
       });
     }
 
@@ -32,25 +32,25 @@ export default async function handler(req, res) {
     if (!cleanPrompt) {
       return res.status(400).json({
         success: false,
-        error: "Prompt tidak boleh kosong."
+        error: "Prompt cannot be empty."
       });
     }
 
     if (cleanPrompt.length > 1500) {
       return res.status(400).json({
         success: false,
-        error: "Prompt terlalu panjang. Maksimal 1500 karakter."
+        error: "The prompt is too long. Maximum 1500 characters."
       });
     }
 
     if (!process.env.GEMINI_API_KEY) {
       console.error(
-        "GEMINI_API_KEY belum dikonfigurasi di Vercel."
+        "GEMINI_API_KEY is not configured in Vercel."
       );
 
       return res.status(500).json({
         success: false,
-        error: "API key belum dikonfigurasi."
+        error: "API key is not configured."
       });
     }
 
@@ -108,6 +108,12 @@ OUTPUT RULES:
 3. Third item
 
 5. Do not use an asterisk character anywhere in the answer.
+
+6. Insert one line break before the first numbered item.
+
+7. Never place multiple numbered items in the same paragraph.
+
+8. When writing a numbered list, always use newline characters between items.
 
 ANSWERING STYLE:
 
@@ -183,7 +189,7 @@ Return only the final answer.
 
     let responseText =
       response?.text ||
-      "Maaf, Rifqi AI belum dapat memberikan jawaban.";
+      "Sorry, Rifqi AI cannot provide an answer yet.";
 
     responseText =
       cleanAIResponse(responseText);
@@ -195,13 +201,13 @@ Return only the final answer.
 
   } catch (error) {
     console.error(
-      "Error pada Vercel API Chat:",
+      "Error on Vercel API Chat:",
       error
     );
 
     return res.status(500).json({
       success: false,
-      error: "Terjadi kesalahan pada server AI.",
+      error: "An error occurred on the AI ​​server.",
       details:
         error?.message ||
         String(error)
@@ -218,7 +224,7 @@ function loadAllJsonFiles(directoryPath) {
 
   if (!existsSync(directoryPath)) {
     console.error(
-      `Folder database tidak ditemukan: ${directoryPath}`
+      `Database folder not found: ${directoryPath}`
     );
 
     return results;
@@ -265,7 +271,7 @@ function loadAllJsonFiles(directoryPath) {
 
       } catch (error) {
         console.error(
-          `Gagal membaca ${fullPath}:`,
+          `Failed to read ${fullPath}:`,
           error.message
         );
       }
@@ -291,6 +297,11 @@ function cleanAIResponse(text) {
     .replace(/^\s*>\s?/gm, "")
     .replace(/`/g, "")
     .replace(/\|/g, "")
+
+    // Tambahkan enter sebelum penomoran
+    .replace(/\s+(\d+\.\s+)/g, "\n$1")
+
+    // Rapikan baris kosong
     .replace(/\n{3,}/g, "\n\n")
     .trim();
 }
