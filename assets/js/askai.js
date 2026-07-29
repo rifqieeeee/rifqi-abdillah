@@ -1,5 +1,5 @@
 // =========================
-// Ask Rifqi AI
+// Ask AskQ AI
 // =========================
 
 const aiBtn = document.getElementById("ai-btn");
@@ -178,7 +178,7 @@ async function sendMessage() {
 
     addMessage(
       data?.error ||
-        "Sorry, Rifqi AI is experiencing issues. Please try again later.",
+        "Sorry, AskQ AI is experiencing issues. Please try again later.",
       "bot"
     );
 
@@ -188,7 +188,7 @@ async function sendMessage() {
   if (data.fallback) {
     addMessage(
       data.message ||
-        "Rifqi AI will try to search from the knowledge database.",
+        "AskQ AI will try to search from the knowledge database.",
       "bot"
     );
 
@@ -210,7 +210,7 @@ async function sendMessage() {
     removeTyping();
 
     addMessage(
-      "Sorry, Rifqi AI is currently unavailable. Please try again later.",
+      "Sorry, AskQ AI is currently unavailable. Please try again later.",
       "bot"
     );
 
@@ -249,7 +249,7 @@ function showTyping() {
   );
 
   typing.innerHTML =
-    "Rifqi AI is thinking<span class='typing'></span>";
+    "AskQ AI is thinking<span class='typing'></span>";
 
   aiMessages.appendChild(typing);
   aiMessages.scrollTop = aiMessages.scrollHeight;

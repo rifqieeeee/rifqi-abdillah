@@ -102,7 +102,7 @@ export default async function handler(req, res) {
           languageUnsupported:
             fallbackResult.languageUnsupported,
           message:
-            "Rifqi AI will try to search from the knowledge database.",
+            "AskQ AI will try to search from the knowledge database.",
           result: fallbackResult.result
         });
       }
@@ -110,7 +110,7 @@ export default async function handler(req, res) {
       return res.status(503).json({
         success: false,
         error:
-          "Sorry, Rifqi AI is currently unavailable and no relevant information was found in the knowledge database."
+          "Sorry, AskQ AI is currently unavailable and no relevant information was found in the knowledge database."
       });
     }
 
@@ -249,7 +249,7 @@ Return only the final answer.
 
     let responseText =
       response?.text ||
-      "Sorry, Rifqi AI cannot provide an answer yet.";
+      "Sorry, AskQ AI cannot provide an answer yet.";
 
     responseText =
       cleanAIResponse(responseText);
@@ -274,7 +274,7 @@ Return only the final answer.
         languageUnsupported:
           fallbackResult.languageUnsupported,
         message:
-          "Rifqi AI will try to search from the knowledge database.",
+          "AskQ AI will try to search from the knowledge database.",
         result: fallbackResult.result
       });
     }
@@ -282,7 +282,7 @@ Return only the final answer.
     return res.status(503).json({
       success: false,
       error:
-        "Sorry, Rifqi AI is currently unavailable and no relevant information was found in the knowledge database."
+        "Sorry, AskQ AI is currently unavailable and no relevant information was found in the knowledge database."
     });
   }
 }
