@@ -142,47 +142,50 @@ async function sendMessage() {
 
   try {
     const response = await fetch("/api/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        prompt: text
-      })
-    });
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      prompt: text
+    })
+  });
 
-    const rawResponse = await response.text();
+  const contentType =
+    response.headers.get("content-type") || "";
 
-    let data;
+  let data = null;
 
+  if (contentType.includes("application/json")) {
     try {
-      data = JSON.parse(rawResponse);
+      data = await response.json();
     } catch {
-      throw new Error(
-        rawResponse ||
-        `Server returns status ${response.status}`
-      );
+      data = null;
     }
+  } else {
+    // Jangan tampilkan respons teknis Vercel kepada pengguna
+    await response.text().catch(() => "");
+  }
 
-    removeTyping();
+  removeTyping();
 
-    if (!response.ok || !data.success) {
-      console.error("API Error Response:", data);
-
-      addMessage(
-        data.details ||
-        data.error ||
-        `Server error ${response.status}`,
-        "bot"
-      );
-
-      return;
-    }
+  if (!response.ok || !data?.success) {
+    console.error(
+      "API request failed:",
+      response.status,
+      data
+    );
 
     addMessage(
-      data.result || "Sorry, no answer available.",
+      data?.error ||
+        "Maaf, Rifqi AI sedang mengalami kendala. Silakan coba kembali nanti.",
       "bot"
     );
+
+    return;
+  }
+
+  addMessage(data.result, "bot");
 
   } catch (error) {
     console.error("Fetch error:", error);
