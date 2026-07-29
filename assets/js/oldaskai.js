@@ -1,5 +1,5 @@
 // =========================
-// Ask Rifqi AI (Vercel Serverless + Gemini API)
+// Ask Rifqi AI
 // =========================
 
 const aiBtn = document.getElementById("ai-btn");
@@ -11,58 +11,81 @@ const aiMessages = document.getElementById("ai-messages");
 const suggestBtns = document.querySelectorAll(".suggest-btn");
 
 // =========================
-// Toggle Chatbox Visibility
+// Knowledge Base JSON Loader
 // =========================
-if (aiBtn) {
-  aiBtn.addEventListener("click", () => {
-    aiChatbox.classList.remove("d-none");
-  });
+
+let knowledge = [];
+
+async function loadKnowledgeBase() {
+
+  try {
+
+    const response = await fetch("assets/data/knowledge.json");
+
+    knowledge = await response.json();
+
+    console.log("Knowledge base loaded successfully");
+
+  } catch (error) {
+
+    console.error("Failed to load knowledge base:", error);
+
+  }
+
 }
 
-if (closeAi) {
-  closeAi.addEventListener("click", () => {
-    aiChatbox.classList.add("d-none");
-  });
-}
+loadKnowledgeBase();
+
+// =========================
+// Open / Close Chat
+// =========================
+
+aiBtn.addEventListener("click", () => {
+  aiChatbox.classList.remove("d-none");
+});
+
+closeAi.addEventListener("click", () => {
+  aiChatbox.classList.add("d-none");
+});
 
 // =========================
 // Suggested Questions
 // =========================
+
 suggestBtns.forEach(btn => {
+
   btn.addEventListener("click", () => {
     aiInput.value = btn.innerText;
     sendMessage();
   });
+
 });
 
 // =========================
-// Send Message Function
+// Send Message
 // =========================
-if (sendBtn) {
-  sendBtn.addEventListener("click", sendMessage);
-}
 
-if (aiInput) {
-  aiInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-      sendMessage();
-    }
-  });
-}
+sendBtn.addEventListener("click", sendMessage);
 
+aiInput.addEventListener("keypress", (e) => {
+
+  if (e.key === "Enter") {
+    sendMessage();
+  }
+
+});
+
+// Ganti URL fetch di fungsi sendMessage()
 async function sendMessage() {
   const text = aiInput.value.trim();
   if (!text) return;
 
-  // 1. Tampilkan pesan user di UI
   addMessage(text, "user");
   aiInput.value = "";
-
-  // 2. Tampilkan indikator loading / typing
   showTyping();
 
   try {
-    // 3. Panggil Vercel Serverless Function (/api/chat)
+    // Panggil Vercel Serverless Function secara langsung
     const response = await fetch("/api/chat", {
       method: "POST",
       headers: {
@@ -74,46 +97,95 @@ async function sendMessage() {
     const data = await response.json();
     removeTyping();
 
-    if (response.ok && data.success) {
-      // Tampilkan balasan cerdas dari Gemini AI
+    if (data.success) {
       addMessage(data.result, "bot");
     } else {
-      console.error("API Error Response:", data);
-      addMessage("Maaf, terjadi kendala saat menghubungkan ke AI. Silakan coba lagi nanti.", "bot");
+      addMessage("Maaf, terjadi kesalahan saat menghubungi AI.", "bot");
     }
 
   } catch (error) {
     console.error("Fetch error:", error);
     removeTyping();
-    addMessage("Maaf, gagal terhubung ke server AI.", "bot");
+    addMessage("Maaf, gagal menghubungkan ke server AI.", "bot");
   }
 }
 
 // =========================
-// UI Helpers
+// AI Response Engine
 // =========================
-function addMessage(text, type) {
-  const div = document.createElement("div");
-  div.classList.add("ai-message", type);
-  
-  // Format baris baru agar rapi di HTML
-  div.innerHTML = text.replace(/\n/g, "<br>");
 
-  aiMessages.appendChild(div);
-  aiMessages.scrollTop = aiMessages.scrollHeight;
+function getAIResponse(message) {
+
+  const msg = message.toLowerCase();
+
+  for (let item of knowledge) {
+
+    for (let keyword of item.keywords) {
+
+      if (msg.includes(keyword)) {
+
+        return randomAnswer(item.answers);
+
+      }
+
+    }
+
+  }
+
+  return "Sorry, I don't understand that yet. Please ask about research, publications, projects, or collaboration.";
+
 }
 
-function showTyping() {
-  const typing = document.createElement("div");
-  typing.classList.add("ai-message", "bot", "typing-message");
-  typing.innerHTML = "Rifqi AI sedang berpikir<span class='typing'></span>";
-  aiMessages.appendChild(typing);
+// =========================
+// Random Answer
+// =========================
+
+function randomAnswer(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// =========================
+// Add Message
+// =========================
+
+function addMessage(text, type) {
+
+  const div = document.createElement("div");
+
+  div.classList.add("ai-message", type);
+
+  div.innerHTML = text;
+
+  aiMessages.appendChild(div);
+
   aiMessages.scrollTop = aiMessages.scrollHeight;
+
+}
+
+// =========================
+// Typing Animation
+// =========================
+
+function showTyping() {
+
+  const typing = document.createElement("div");
+
+  typing.classList.add("ai-message", "bot", "typing-message");
+
+  typing.innerHTML = "Rifqi AI is typing<span class='typing'></span>";
+
+  aiMessages.appendChild(typing);
+
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+
 }
 
 function removeTyping() {
+
   const typing = document.querySelector(".typing-message");
+
   if (typing) {
     typing.remove();
   }
+
 }
