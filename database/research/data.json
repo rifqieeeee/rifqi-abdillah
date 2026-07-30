@@ -74,6 +74,18 @@
 
   "opensource": [
     {
+      "title": "GSAFE: Smart Campus Safety System",
+      "category": "LAN, Image Processing, EdgeAI, Dashboard",
+      "platform": "Wiznet",
+      "platform2": "#",
+      "description": "GSAFE (IoT-Based Campus Safety System) is developed as an intelligent safety solution that integrates Edge AI and IoT",
+      "tech": ["WIZnet - W55RP20-EVB-Pico", "Arduino Nicla Vision", "Edge Impulse", "Ethernet"],
+      "license": "GPL3+",
+      "link": "https://maker.wiznet.io/rifqieeeee/contest/gsafe%2Dsmart%2Dcampus%2Dsafety%2Dsystem/",
+      "link2": "#",
+      "github": "https://github.com/rifqieeeee/wiznet_gsafe"
+    },
+    {
       "title": "ASTRA OS: Assessment Tool for Rapid Ophthalmic Screening",
       "category": "IoT, AI, Dashboard",
       "platform": "Hackster",
