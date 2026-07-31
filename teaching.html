@@ -203,6 +203,98 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/custom2.js"></script>
+
+  <!--
+    Merge duplicate courses before database/teaching/load.js renders them.
+    This keeps data.json and load.js unchanged.
+  -->
+  <script>
+    (() => {
+      const nativeFetch = window.fetch.bind(window);
+
+      window.fetch = async (...args) => {
+        const response = await nativeFetch(...args);
+        const requestUrl = typeof args[0] === "string"
+          ? args[0]
+          : (args[0]?.url || "");
+
+        // Only process the teaching JSON used on this page.
+        if (!requestUrl.toLowerCase().includes("data.json")) {
+          return response;
+        }
+
+        try {
+          const data = await response.clone().json();
+
+          if (!Array.isArray(data.teaching)) {
+            return response;
+          }
+
+          const groupedCourses = new Map();
+
+          data.teaching.forEach((course) => {
+            const key = (course.title || "Untitled Course")
+              .trim()
+              .toLowerCase();
+
+            if (!groupedCourses.has(key)) {
+              groupedCourses.set(key, {
+                ...course,
+                _semesters: new Set(course.semester ? [course.semester] : []),
+                _roles: new Set(course.role ? [course.role] : []),
+                _departments: new Set(
+                  course.department ? [course.department] : []
+                ),
+                _teachingCount: 1,
+                classes: Number(course.classes) || 0
+              });
+              return;
+            }
+
+            const savedCourse = groupedCourses.get(key);
+
+            if (course.semester) savedCourse._semesters.add(course.semester);
+            if (course.role) savedCourse._roles.add(course.role);
+            if (course.department) {
+              savedCourse._departments.add(course.department);
+            }
+
+            savedCourse._teachingCount += 1;
+            savedCourse.classes += Number(course.classes) || 0;
+          });
+
+          data.teaching = Array.from(groupedCourses.values()).map((course) => {
+            const roles = Array.from(course._roles);
+            const departments = Array.from(course._departments);
+            const teachingCount = course._teachingCount;
+
+            delete course._semesters;
+            delete course._roles;
+            delete course._departments;
+            delete course._teachingCount;
+
+            return {
+              ...course,
+              // Keep the card compact even after many semesters.
+              semester: `${teachingCount} ${teachingCount === 1 ? "Time" : "Times"} Taught`,
+              role: roles.join(" / "),
+              department: departments.join(" / ")
+            };
+          });
+
+          return new Response(JSON.stringify(data), {
+            status: response.status,
+            statusText: response.statusText,
+            headers: response.headers
+          });
+        } catch (error) {
+          console.warn("Course grouping was skipped:", error);
+          return response;
+        }
+      };
+    })();
+  </script>
+
   <script src="database/teaching/load.js"></script>
 
 </body>
