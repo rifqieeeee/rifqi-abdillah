@@ -348,3 +348,152 @@
     padding: 0;
   }
 }
+
+/* ======================================================
+   ASK ME CALLOUT
+====================================================== */
+
+.ai-widget-wrapper {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/*
+  Karena tombol sekarang berada di dalam wrapper,
+  posisinya dibuat relative agar tidak memakai fixed ganda.
+*/
+.ai-widget-wrapper .ai-chat-btn {
+  position: relative;
+  right: auto;
+  bottom: auto;
+}
+
+.ai-callout {
+  position: relative;
+  padding: 9px 15px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #149ddd;
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.7px;
+  white-space: nowrap;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(8px) scale(0.92);
+  animation:
+    aiCalloutAppear 0.5s ease-out 0.8s forwards,
+    aiCalloutFloat 1.8s ease-in-out 1.3s infinite;
+}
+
+/* Segitiga di bawah dialog */
+.ai-callout::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  transform: translateX(-50%) rotate(45deg);
+  border-radius: 2px;
+}
+
+/* Efek lingkaran kecil */
+.ai-callout::before {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  z-index: -1;
+  border: 2px solid rgba(20, 157, 221, 0.35);
+  border-radius: 15px;
+  opacity: 0;
+  animation: aiCalloutPulse 2s ease-out 1.5s infinite;
+}
+
+.ai-callout.ai-callout-hidden {
+  animation: aiCalloutHide 0.25s ease forwards;
+}
+
+@keyframes aiCalloutAppear {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes aiCalloutFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+@keyframes aiCalloutPulse {
+  0% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+
+  70%,
+  100% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+}
+
+@keyframes aiCalloutHide {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(8px) scale(0.85);
+    visibility: hidden;
+  }
+}
+
+/* Penyesuaian perangkat mobile */
+@media (max-width: 576px) {
+  .ai-widget-wrapper {
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .ai-callout {
+    padding: 8px 13px;
+    font-size: 12px;
+  }
+}
+
+/* Menghormati pengaturan reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ai-callout,
+  .ai-callout::before {
+    animation: none;
+  }
+
+  .ai-callout {
+    opacity: 1;
+    transform: none;
+  }
+}
