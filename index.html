@@ -1,238 +1,279 @@
-<!DOCTYPE html>
-<html lang="en">
+// =========================
+// Ask AskQ AI
+// =========================
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Rifqi Abdillah</title>
-
-  <!-- SEO -->
-  <meta name="description" content="Explore the portfolio of Rifqi Abdillah, featuring research publications, artificial intelligence, machine learning, web development, teaching, and community service.">
-  <meta name="keywords" content="Rifqi Abdillah, Lecturer, Researcher, Developer, Artificial Intelligence, Machine Learning, AIoT, Publications, Portfolio">
-  <meta name="author" content="Rifqi Abdillah">
-
-  <!-- Open Graph for WhatsApp, Facebook, LinkedIn, and Telegram -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://rifqiabdillah.my.id/">
-  <meta property="og:title" content="Rifqi Abdillah | Lecturer, Researcher, and Developer">
-  <meta property="og:description" content="Explore research publications, AI projects, web development, teaching activities, and professional experiences of Rifqi Abdillah.">
-  <meta property="og:image" content="https://rifqiabdillah.my.id/assets/img/og-image.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Rifqi Abdillah Portfolio">
-  <meta property="og:site_name" content="Rifqi Abdillah">
-  <meta property="og:locale" content="en_US">
-
-  <!-- Twitter / X Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rifqi Abdillah | Lecturer, Researcher, and Developer">
-  <meta name="twitter:description" content="Explore research publications, AI projects, web development, teaching activities, and professional experiences of Rifqi Abdillah.">
-  <meta name="twitter:image" content="https://rifqiabdillah.my.id/assets/img/og-image.png">
-
-  <!-- Favicons -->
-  <link href="assets/img/logo-rifqi.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com" rel="preconnect">
-  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-
-  <!-- Main CSS File -->
-  <link href="assets/css/main.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/custom.css">
-  <link rel="stylesheet" href="assets/css/ai.css">
-
-  <!-- =======================================================
-  * Template Name: iPortfolio
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Updated: Jun 29 2024 with Bootstrap v5.3.3
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-</head>
-
-<body class="index-page">
-
-  <header id="header" class="header dark-background d-flex flex-column">
-    <i class="header-toggle d-xl-none bi bi-list"></i>
-
-    <div class="profile-img">
-      <img src="assets\img\foto profil.jpg" alt="" class="img-fluid rounded-circle">
-    </div>
-
-    <a href="index.html" class="logo d-flex align-items-center justify-content-center">
-      <!-- Uncomment the line below if you also wish to use an image logo -->
-      <!-- <img src="assets/img/logo.png" alt=""> -->
-      <h1 class="sitename">Rifqi Abdillah</h1>
-    </a>
-
-    <div class="social-links text-center">
-      <a href="https://wa.me/6285331624441" class="whatsapp" target="_blank">
-        <i class="bi bi-whatsapp"></i>
-      </a>
-      <a href="https://scholar.google.com/citations?user=S2oIBtYAAAAJ" class="google-scholar" target="_blank">
-        <i class="bi bi-book"></i>
-      </a>
-      <a href="https://instagram.com/rifqi_abdillahh" class="instagram" target="_blank">
-        <i class="bi bi-instagram"></i>
-      </a>
-      <a href="https://linkedin.com/in/rifqi-abdi" class="linkedin" target="_blank">
-        <i class="bi bi-linkedin"></i>
-      </a>
-      <a href="https://cv.unesa.ac.id/detail/199911012024061001" class="website" target="_blank">
-        <i class="bi bi-globe"></i>
-      </a>
-    </div>
+const aiBtn = document.getElementById("ai-btn");
+const aiChatbox = document.getElementById("ai-chatbox");
+const closeAi = document.getElementById("close-ai");
+const minimizeAi = document.getElementById("minimize-ai");
+const maximizeAi = document.getElementById("maximize-ai");
+const sendBtn = document.getElementById("send-btn");
+const aiInput = document.getElementById("ai-input");
+const aiMessages = document.getElementById("ai-messages");
+const suggestBtns = document.querySelectorAll(".suggest-btn");
+const aiCallout = document.getElementById("ai-callout");
 
 
-    <nav id="navmenu" class="navmenu">
-      <ul>
-        <li><a class="active" href="index.html"><i class="bi bi-house navicon"></i>Home</a></li>
-        <li><a href="about.html"><i class="bi bi-person navicon"></i>About</a></li>
-        <li><a href="resume.html"><i class="bi bi-file-earmark-text navicon"></i>Resume</a></li>
-        <li><a href="publications.html"><i class="bi bi-journal-text navicon"></i>Publications</a></li>
-        <li><a href="research.html"><i class="bi bi-search navicon"></i>Research</a></li>
-        <li><a href="teaching.html"><i class="bi bi-easel navicon"></i>Teaching</a></li>
-        <li><a href="community.html"><i class="bi bi-people navicon"></i>Community Service</a></li>
-        <li><a href="gallery.html"><i class="bi bi-images navicon"></i>Gallery</a></li>
-        <li><a href="contact.html"><i class="bi bi-envelope navicon"></i>Contact</a></li>
-      </ul>
-    </nav>
+let isSending = false;
 
-  </header>
+// =========================
+// Chat Window Controls
+// =========================
 
-  <main class="main">
+if (aiBtn && aiChatbox) {
+  aiBtn.addEventListener("click", () => {
+    aiChatbox.classList.remove("d-none");
+    aiChatbox.classList.remove("ai-minimized");
 
-    <!-- Hero Section -->
-    <section id="hero" class="hero section dark-background">
+    hideAiCallout();
+  });
+}
 
-      <img src="assets\img\banner11.JPG" alt="" data-aos="fade-in" class="">
+function hideAiCallout() {
+  if (!aiCallout || aiCallout.classList.contains("ai-callout-hidden")) {
+    return;
+  }
 
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <h2>Rifqi Abdillah</h2>
-        <p>I'm <span class="typed" data-typed-items="Lecturer, Researcher, Developer, Makers, AIoT Enthusiast">Lecturer</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
-        <a href="about.html" class="btn btn-primary hero-btn">
-          Get to Know Me
-        </a>
-      </div>
+  aiCallout.classList.add("ai-callout-hidden");
 
-    </section><!-- /Hero Section -->
+  window.setTimeout(() => {
+    aiCallout.remove();
+  }, 300);
+}
 
-<!-- ========================= -->
-<!-- Ask Rifqi AI -->
-<!-- ========================= -->
+if (closeAi && aiChatbox) {
+  closeAi.addEventListener("click", () => {
+    aiChatbox.classList.add("d-none");
+    aiChatbox.classList.remove(
+      "ai-minimized",
+      "ai-maximized"
+    );
 
-<button id="ai-btn" class="ai-chat-btn">
-  <i class="bi bi-robot"></i>
-</button>
+    updateMaximizeIcon();
+  });
+}
 
-<div id="ai-chatbox" class="ai-chatbox d-none">
+if (minimizeAi && aiChatbox) {
+  minimizeAi.addEventListener("click", () => {
+    const isMinimized =
+      aiChatbox.classList.contains("ai-minimized");
 
-  <div class="ai-header">
-    <div>
-      <strong>AskQ AI</strong>
-      <p class="ai-subtitle">Professional Portfolio AI Assistant</p>
-    </div>
+    aiChatbox.classList.remove("ai-maximized");
+    aiChatbox.classList.toggle(
+      "ai-minimized",
+      !isMinimized
+    );
 
-    <div class="ai-window-controls">
-      <button
-        id="minimize-ai"
-        class="ai-control-btn"
-        type="button"
-        title="Minimize"
-        aria-label="Minimize chat"
-      >
-        <i class="bi bi-dash-lg"></i>
-      </button>
+    updateMaximizeIcon();
+  });
+}
 
-      <button
-        id="maximize-ai"
-        class="ai-control-btn"
-        type="button"
-        title="Maximize"
-        aria-label="Maximize chat"
-      >
-        <i class="bi bi-arrows-fullscreen"></i>
-      </button>
+if (maximizeAi && aiChatbox) {
+  maximizeAi.addEventListener("click", () => {
+    const isMaximized =
+      aiChatbox.classList.contains("ai-maximized");
 
-      <button
-        id="close-ai"
-        class="ai-control-btn"
-        type="button"
-        title="Close"
-        aria-label="Close chat"
-      >
-        <i class="bi bi-x-lg"></i>
-      </button>
-    </div>
-  </div>
+    aiChatbox.classList.remove("ai-minimized");
+    aiChatbox.classList.toggle(
+      "ai-maximized",
+      !isMaximized
+    );
 
-  <div id="ai-messages" class="ai-messages">
+    updateMaximizeIcon();
+  });
+}
 
-    <div class="ai-message bot welcome-message">
-      <p>👋 Hello! I'm AskQ AI.</p>
-      <p>Ask me about:</p>
+function updateMaximizeIcon() {
+  if (!maximizeAi || !aiChatbox) return;
 
-      <ul>
-        <li>Research interests</li>
-        <li>Publications</li>
-        <li>Projects</li>
-        <li>Skills</li>
-        <li>Collaboration</li>
-      </ul>
-    </div>
+  const icon = maximizeAi.querySelector("i");
+  const isMaximized =
+    aiChatbox.classList.contains("ai-maximized");
 
-    <div class="suggested-questions">
-      <button class="suggest-btn">Research interests</button>
-      <button class="suggest-btn">Publications</button>
-      <button class="suggest-btn">AI Projects</button>
-      <button class="suggest-btn">Collaboration</button>
-    </div>
+  if (!icon) return;
 
-  </div>
+  if (isMaximized) {
+    icon.className = "bi bi-fullscreen-exit";
+    maximizeAi.title = "Restore";
+    maximizeAi.setAttribute(
+      "aria-label",
+      "Restore chat size"
+    );
+  } else {
+    icon.className = "bi bi-arrows-fullscreen";
+    maximizeAi.title = "Maximize";
+    maximizeAi.setAttribute(
+      "aria-label",
+      "Maximize chat"
+    );
+  }
+}
 
-  <div class="ai-input-area">
-    <input type="text" id="ai-input" placeholder="Ask something...">
-    <button id="send-btn">
-      <i class="bi bi-send-fill"></i>
-    </button>
-  </div>
+// =========================
+// Suggested Questions
+// =========================
+suggestBtns.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (!aiInput) return;
 
-</div>
+    aiInput.value = btn.innerText;
+    sendMessage();
+  });
+});
 
-  </main>
+// =========================
+// Send Message Events
+// =========================
+if (sendBtn) {
+  sendBtn.addEventListener("click", sendMessage);
+}
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+if (aiInput) {
+  aiInput.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      sendMessage();
+    }
+  });
+}
 
-  <!-- Preloader -->
-  <div id="preloader"></div>
+// =========================
+// Send Message Function
+// =========================
+async function sendMessage() {
+  if (!aiInput || !sendBtn || !aiMessages) return;
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  const text = aiInput.value.trim();
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-  <script src="assets/js/custom.js"></script>
-  <script src="assets/js/askai.js"></script>
+  if (!text || isSending) return;
 
-</body>
+  isSending = true;
+  sendBtn.disabled = true;
+  aiInput.disabled = true;
 
-</html>
+  addMessage(text, "user");
+  aiInput.value = "";
+  showTyping();
+
+  try {
+    const response = await fetch("/api/chat", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      prompt: text
+    })
+  });
+
+  const contentType =
+    response.headers.get("content-type") || "";
+
+  let data = null;
+
+  if (contentType.includes("application/json")) {
+    try {
+      data = await response.json();
+    } catch {
+      data = null;
+    }
+  } else {
+    // Jangan tampilkan respons teknis Vercel kepada pengguna
+    await response.text().catch(() => "");
+  }
+
+  removeTyping();
+
+  if (!response.ok || !data?.success) {
+    console.error(
+      "API request failed:",
+      response.status,
+      data
+    );
+
+    addMessage(
+      data?.error ||
+        "Sorry, AskQ AI is experiencing issues. Please try again later.",
+      "bot"
+    );
+
+    return;
+  }
+
+  if (data.fallback) {
+    addMessage(
+      data.message ||
+        "AskQ AI will try to search from the knowledge database.",
+      "bot"
+    );
+
+    setTimeout(() => {
+      addMessage(
+        data.result,
+        "bot"
+      );
+    }, 600);
+
+    return;
+  }
+
+  addMessage(data.result, "bot");
+
+  } catch (error) {
+    console.error("Fetch error:", error);
+
+    removeTyping();
+
+    addMessage(
+      "Sorry, AskQ AI is currently unavailable. Please try again later.",
+      "bot"
+    );
+
+  } finally {
+    isSending = false;
+    sendBtn.disabled = false;
+    aiInput.disabled = false;
+    aiInput.focus();
+  }
+}
+
+// =========================
+// UI Helpers
+// =========================
+function addMessage(text, type) {
+  const div = document.createElement("div");
+
+  div.classList.add("ai-message", type);
+
+  // Lebih aman daripada innerHTML langsung
+  div.textContent = text;
+
+  aiMessages.appendChild(div);
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+}
+
+function showTyping() {
+  removeTyping();
+
+  const typing = document.createElement("div");
+
+  typing.classList.add(
+    "ai-message",
+    "bot",
+    "typing-message"
+  );
+
+  typing.innerHTML =
+    "AskQ AI is thinking<span class='typing'></span>";
+
+  aiMessages.appendChild(typing);
+  aiMessages.scrollTop = aiMessages.scrollHeight;
+}
+
+function removeTyping() {
+  const typing = document.querySelector(".typing-message");
+
+  if (typing) {
+    typing.remove();
+  }
+} 

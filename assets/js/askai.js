@@ -11,6 +11,7 @@ const sendBtn = document.getElementById("send-btn");
 const aiInput = document.getElementById("ai-input");
 const aiMessages = document.getElementById("ai-messages");
 const suggestBtns = document.querySelectorAll(".suggest-btn");
+const aiCallout = document.getElementById("ai-callout");
 
 
 let isSending = false;
@@ -23,7 +24,21 @@ if (aiBtn && aiChatbox) {
   aiBtn.addEventListener("click", () => {
     aiChatbox.classList.remove("d-none");
     aiChatbox.classList.remove("ai-minimized");
+
+    hideAiCallout();
   });
+}
+
+function hideAiCallout() {
+  if (!aiCallout || aiCallout.classList.contains("ai-callout-hidden")) {
+    return;
+  }
+
+  aiCallout.classList.add("ai-callout-hidden");
+
+  window.setTimeout(() => {
+    aiCallout.remove();
+  }, 300);
 }
 
 if (closeAi && aiChatbox) {
