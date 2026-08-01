@@ -1,62 +1,62 @@
 [
   {
-    "id": "gallery-002",
+    "id": "gallery-031",
     "category": "speech",
     "title": "Speech",
     "description": "Invited Speakers at GDGoC Unesa Surabaya - Tech a Note #2",
     "image": "assets/img/gallery/031.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-speech"
   },
   {
-    "id": "gallery-002",
-    "category": "speech",
+    "id": "gallery-030",
+    "category": "campus",
     "title": "Campus",
     "description": "Student supervision at BPS Surabaya",
     "image": "assets/img/gallery/030.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-campus"
   },
   {
-    "id": "gallery-002",
-    "category": "speech",
+    "id": "gallery-029",
+    "category": "campus",
     "title": "Campus",
     "description": "Audits Implementations at the Faculty of Economics and Business",
     "image": "assets/img/gallery/029.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-campus"
   },
   {
-    "id": "gallery-002",
-    "category": "speech",
+    "id": "gallery-028",
+    "category": "campus",
     "title": "Campus",
     "description": "Satisfaction survey socializations at Faculty of Engineering",
     "image": "assets/img/gallery/028.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-campus"
   },
   {
-    "id": "gallery-002",
+    "id": "gallery-027",
     "category": "speech",
     "title": "Speech",
     "description": "Present BisindoMate at AMD Advancing AI Day 2025",
     "image": "assets/img/gallery/002.JPG",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-speech"
   },
   {
-    "id": "gallery-002",
-    "category": "speech",
+    "id": "gallery-026",
+    "category": "workshop",
     "title": "Workshop",
     "description": "Data Acquisition & Processing Workshop at PENS",
     "image": "assets/img/gallery/010.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-workshop"
   },
   {
-    "id": "gallery-001",
-    "category": "teaching",
+    "id": "gallery-025",
+    "category": "workshop",
     "title": "Workshop",
     "description": "Internet of Things for High School Teachers",
     "image": "assets/img/gallery/011.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-workshop"
   },
   {
-    "id": "gallery-001",
+    "id": "gallery-024",
     "category": "teaching",
     "title": "Teaching",
     "description": "Student supervision at Universitas Negeri Surabaya (UNESA)",
@@ -64,7 +64,7 @@
     "gallery": "portfolio-gallery-teaching"
   },
   {
-    "id": "gallery-001",
+    "id": "gallery-023",
     "category": "teaching",
     "title": "Teaching",
     "description": "Teaching at Sekolah Robot Indonesia",
@@ -72,179 +72,179 @@
     "gallery": "portfolio-gallery-teaching"
   },
   {
-    "id": "gallery-001",
-    "category": "teaching",
+    "id": "gallery-022",
+    "category": "campus",
     "title": "Campus",
     "description": "Together with lecturers and staff of the Faculty of Engineering, UNESA",
     "image": "assets/img/gallery/024.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-campus"
   },
   {
-    "id": "gallery-002",
-    "category": "speech",
+    "id": "gallery-021",
+    "category": "teaching",
     "title": "Teaching",
     "description": "Teaching at Informatics Program Study",
     "image": "assets/img/gallery/008.jpg",
     "gallery": "portfolio-gallery-teaching"
   },
   {
-    "id": "gallery-002",
-    "category": "speech",
+    "id": "gallery-020",
+    "category": "campus",
     "title": "Campus",
     "description": "Discussion with the Head of the Informatics Engineering Study Program",
     "image": "assets/img/gallery/026.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-campus"
   },
   {
-    "id": "gallery-002",
-    "category": "speech",
+    "id": "gallery-019",
+    "category": "campus",
     "title": "Campus",
     "description": "Basic Training for Civil Servant Candidates (Latsar CPNS) in Depok",
     "image": "assets/img/gallery/027.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-campus"
   },
   {
-    "id": "gallery-002",
-    "category": "speech",
+    "id": "gallery-018",
+    "category": "webinar",
     "title": "Webinar",
     "description": "Webinar IoT at UNEJ",
     "image": "assets/img/gallery/009.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-webinar"
   },
   {
-    "id": "gallery-002",
-    "category": "speech",
+    "id": "gallery-017",
+    "category": "teaching",
     "title": "Teaching",
     "description": "Student Supervision at PT Otak Kanan Surabaya",
     "image": "assets/img/gallery/007.jpg",
     "gallery": "portfolio-gallery-teaching"
   },
   {
-    "id": "gallery-006",
-    "category": "speech",
+    "id": "gallery-016",
+    "category": "teaching",
     "title": "Teaching",
     "description": "Teaching at Informatics Program Study",
     "image": "assets/img/gallery/006.jpeg",
     "gallery": "portfolio-gallery-teaching"
   },
   {
-    "id": "gallery-003",
+    "id": "gallery-015",
     "category": "speech",
     "title": "Speech",
     "description": "Speech at Decode The Future: Introduction to AI, IoT, and AIoT",
     "image": "assets/img/gallery/003.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-speech"
   },
   {
-    "id": "gallery-004",
+    "id": "gallery-014",
     "category": "speech",
     "title": "Speech",
     "description": "Speech at P4F (Pedoman Penghayatan dan Pengamalan Pancasila Al Falah) Program",
     "image": "assets/img/gallery/004.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-speech"
   },
   {
-    "id": "gallery-004",
-    "category": "speech",
+    "id": "gallery-013",
+    "category": "workshop",
     "title": "Workshop",
     "description": "Workshop Internet of Things at PIKTI ITS",
     "image": "assets/img/gallery/005.jpeg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-workshop"
   },
   {
-    "id": "gallery-004",
+    "id": "gallery-012",
     "category": "speech",
     "title": "Speech",
     "description": "Speech about Computer Vision Introduction at ITS",
     "image": "assets/img/gallery/012.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-speech"
   },
   {
-    "id": "gallery-004",
-    "category": "speech",
+    "id": "gallery-011",
+    "category": "research",
     "title": "Research",
     "description": "Official industrial visit to MJM Mursmedic Jaya Mandiri",
     "image": "assets/img/gallery/020.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-research"
   },
   {
-    "id": "gallery-004",
-    "category": "speech",
+    "id": "gallery-010",
+    "category": "research",
     "title": "Research",
     "description": "Initial coordination meeting between Inose and BPFK Surabaya",
     "image": "assets/img/gallery/014.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-research"
   },
   {
-    "id": "gallery-005",
-    "category": "speech",
+    "id": "gallery-009",
+    "category": "campus",
     "title": "Campus",
     "description": "Thesis examination at Institut Teknologi Sepuluh Nopember (ITS)",
     "image": "assets/img/gallery/019.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-campus"
   },
   {
-    "id": "gallery-004",
-    "category": "speech",
+    "id": "gallery-008",
+    "category": "research",
     "title": "Research",
     "description": "Official visit to the Ministry of Health of the Republic of Indonesia, Jakarta",
     "image": "assets/img/gallery/015.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-research"
   },
   {
-    "id": "gallery-004",
-    "category": "speech",
+    "id": "gallery-007",
+    "category": "research",
     "title": "Research",
     "description": "Data acquisition activities at the Batuporon Naval Base",
     "image": "assets/img/gallery/022.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-research"
   },
   {
-    "id": "gallery-004",
-    "category": "speech",
+    "id": "gallery-006",
+    "category": "school",
     "title": "School",
     "description": "Participation in Maker Fair Surabaya",
     "image": "assets/img/gallery/023.jpg",
-    "gallery": "portfolio-gallery-teaching"
-  },
-  {
-    "id": "gallery-004",
-    "category": "speech",
-    "title": "Research",
-    "description": "Health Technology Product Exhibition at Institut Teknologi Sepuluh Nopember (ITS)",
-    "image": "assets/img/gallery/016.jpg",
-    "gallery": "portfolio-gallery-teaching"
-  },
-  {
-    "id": "gallery-004",
-    "category": "speech",
-    "title": "Research",
-    "description": "Follow-up coordination with BPFK Surabaya",
-    "image": "assets/img/gallery/017.jpg",
-    "gallery": "portfolio-gallery-teaching"
-  },
-  {
-    "id": "gallery-004",
-    "category": "speech",
-    "title": "Research",
-    "description": "Follow-up coordination with BPFK Surabaya",
-    "image": "assets/img/gallery/018.jpg",
-    "gallery": "portfolio-gallery-teaching"
-  },
-  {
-    "id": "gallery-004",
-    "category": "speech",
-    "title": "Research",
-    "description": "Internship at PT Xirka Silicon Technology",
-    "image": "assets/img/gallery/021.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-school"
   },
   {
     "id": "gallery-005",
-    "category": "speech",
+    "category": "research",
+    "title": "Research",
+    "description": "Health Technology Product Exhibition at Institut Teknologi Sepuluh Nopember (ITS)",
+    "image": "assets/img/gallery/016.jpg",
+    "gallery": "portfolio-gallery-research"
+  },
+  {
+    "id": "gallery-004",
+    "category": "research",
+    "title": "Research",
+    "description": "Follow-up coordination with BPFK Surabaya",
+    "image": "assets/img/gallery/017.jpg",
+    "gallery": "portfolio-gallery-research"
+  },
+  {
+    "id": "gallery-003",
+    "category": "research",
+    "title": "Research",
+    "description": "Follow-up coordination with BPFK Surabaya",
+    "image": "assets/img/gallery/018.jpg",
+    "gallery": "portfolio-gallery-research"
+  },
+  {
+    "id": "gallery-002",
+    "category": "research",
+    "title": "Research",
+    "description": "Internship at PT Xirka Silicon Technology",
+    "image": "assets/img/gallery/021.jpg",
+    "gallery": "portfolio-gallery-research"
+  },
+  {
+    "id": "gallery-001",
+    "category": "campus",
     "title": "Campus",
     "description": "Final thesis defense for my Bachelor’s degree",
     "image": "assets/img/gallery/013.jpg",
-    "gallery": "portfolio-gallery-teaching"
+    "gallery": "portfolio-gallery-campus"
   }
 ]

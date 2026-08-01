@@ -1,0 +1,408 @@
+/* =========================================================
+   PORTFOLIO PRINT STYLESHEET
+   Gallery Portfolio - Rifqi Abdillah
+========================================================= */
+
+#print-portfolio,
+.print-portfolio {
+  display: none;
+}
+
+/* Browser tidak boleh memakai margin default karena dapat
+   mengecilkan seluruh dokumen (auto scale/fit). */
+@page {
+  size: A4 portrait;
+  margin: 8mm;
+}
+
+@media print {
+  html,
+  body {
+    width: auto !important;
+    min-width: 0 !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    color: #18212a !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 10pt;
+    line-height: 1.4;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box !important;
+  }
+
+  body > *:not(#print-portfolio) {
+    display: none !important;
+    visibility: hidden !important;
+  }
+
+  #header,
+  .header,
+  .header-toggle,
+  .mobile-nav-toggle,
+  #navmenu,
+  .navmenu,
+  #footer,
+  .footer,
+  #scroll-top,
+  .scroll-top,
+  #preloader,
+  #print-gallery-btn,
+  .screen-toolbar {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+
+  #print-portfolio,
+  .print-portfolio {
+    display: block !important;
+    visibility: visible !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    transform: none !important;
+  }
+
+  #print-portfolio *,
+  .print-portfolio * {
+    visibility: visible !important;
+  }
+
+  #print-pages-container {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Area cetak A4 setelah margin 8 mm atas/bawah:
+     297 mm - 16 mm = 281 mm. Tidak memakai width:210mm
+     agar browser tidak mengecilkan dokumen. */
+  .print-page {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    height: 281mm !important;
+    min-height: 281mm !important;
+    max-height: 281mm !important;
+    margin: 0 !important;
+    padding: 0 0 9mm !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+    box-sizing: border-box !important;
+    break-after: page !important;
+    page-break-after: always !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    transform: none !important;
+  }
+
+  .print-page:last-child {
+    break-after: auto !important;
+    page-break-after: auto !important;
+  }
+
+  .print-page-header {
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    margin: 0 0 3.5mm !important;
+    padding: 0 0 2.8mm !important;
+    background: #ffffff !important;
+    border-bottom: 1.2pt solid #149ddd !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-profile {
+    display: grid !important;
+    grid-template-columns: 18mm minmax(0, 1fr) !important;
+    align-items: center !important;
+    gap: 4mm !important;
+    width: 100% !important;
+  }
+
+  .print-logo {
+    display: block !important;
+    width: 18mm !important;
+    height: 18mm !important;
+    margin: 0 !important;
+    padding: 1mm !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    background: #ffffff !important;
+    border: 0.7pt solid #cbd5dc !important;
+    border-radius: 50% !important;
+  }
+
+  .print-identity {
+    min-width: 0 !important;
+  }
+
+  .print-identity h1 {
+    margin: 0 0 0.6mm !important;
+    color: #12344d !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 13.5pt !important;
+    font-weight: 700 !important;
+    line-height: 1.15 !important;
+  }
+
+  .print-profession {
+    margin: 0 0 1mm !important;
+    color: #176b9c !important;
+    font-size: 7pt !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-contact {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 0.5mm 3mm !important;
+    margin: 0.3mm 0 0 !important;
+    color: #4b5963 !important;
+    font-size: 5.5pt !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-contact span {
+    display: inline-block !important;
+  }
+
+  .print-contact span:not(:last-child)::after {
+    content: "•";
+    margin-left: 3mm;
+    color: #9ba8b1;
+  }
+
+  .print-document-intro {
+    flex: 0 0 auto !important;
+    margin: 0 0 3.5mm !important;
+    padding: 0 !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-document-intro > span {
+    display: block !important;
+    margin: 0 0 0.7mm !important;
+    color: #149ddd !important;
+    font-size: 6pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.05pt !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+  }
+
+  .print-document-intro h2 {
+    margin: 0 0 0.9mm !important;
+    color: #12344d !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 12.5pt !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-document-intro p {
+    margin: 0 !important;
+    color: #4e5b65 !important;
+    font-size: 6.5pt !important;
+    line-height: 1.35 !important;
+  }
+
+  .print-category-heading {
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 5mm !important;
+    width: 100% !important;
+    margin: 0 0 3mm !important;
+    padding: 0 0 1.6mm !important;
+    border-bottom: 0.8pt solid #a9cddd !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+    break-after: avoid !important;
+    page-break-after: avoid !important;
+  }
+
+  .print-category-heading h3 {
+    margin: 0 !important;
+    color: #12344d !important;
+    font-family: Georgia, "Times New Roman", serif !important;
+    font-size: 10.5pt !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+  }
+
+  .print-category-heading span {
+    flex: 0 0 auto !important;
+    padding: 0.7mm 2mm !important;
+    color: #176b9c !important;
+    background: #eef7fb !important;
+    border: 0.5pt solid #c4e0ec !important;
+    border-radius: 10mm !important;
+    font-size: 5.4pt !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    white-space: nowrap !important;
+  }
+
+  .print-gallery-grid {
+    flex: 1 1 auto !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    grid-auto-rows: max-content !important;
+    align-content: start !important;
+    align-items: start !important;
+    gap: 4mm 3.5mm !important;
+    width: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+
+  .print-gallery-card {
+    display: flex !important;
+    flex-direction: column !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    background: #ffffff !important;
+    border: 0.6pt solid #bdc8cf !important;
+    border-radius: 1.8mm !important;
+    box-shadow: none !important;
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+
+  .print-gallery-image-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    aspect-ratio: 4 / 3 !important;
+    overflow: hidden !important;
+    background: #edf2f5 !important;
+  }
+
+  .print-gallery-image {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0 !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  .print-gallery-content {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    padding: 2mm 2.3mm 2.4mm !important;
+  }
+
+  .print-gallery-meta {
+    margin: 0 0 0.6mm !important;
+    color: #71808a !important;
+    font-size: 5pt !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.22pt !important;
+    line-height: 1.2 !important;
+    text-transform: uppercase !important;
+  }
+
+  .print-gallery-title {
+    margin: 0 0 0.7mm !important;
+    color: #12344d !important;
+    font-size: 7pt !important;
+    font-weight: 700 !important;
+    line-height: 1.25 !important;
+  }
+
+  .print-gallery-description {
+    margin: 0 !important;
+    color: #46525b !important;
+    font-size: 6pt !important;
+    line-height: 1.32 !important;
+    overflow-wrap: anywhere !important;
+    word-break: normal !important;
+  }
+
+  /* Footer terkunci di batas bawah area cetak setiap print-page. */
+  .print-page > .print-page-footer {
+    position: absolute !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    top: auto !important;
+    z-index: 9999 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 5mm !important;
+    width: 100% !important;
+    height: 6mm !important;
+    min-height: 6mm !important;
+    max-height: 6mm !important;
+    margin: 0 !important;
+    padding: 1mm 0 0 !important;
+    color: #737e86 !important;
+    background: #ffffff !important;
+    border-top: 0.5pt solid #cbd5db !important;
+    font-size: 5.5pt !important;
+    line-height: 1.2 !important;
+    transform: none !important;
+  }
+
+  .print-page-footer span {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .print-empty-message {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    min-height: 80mm !important;
+    margin: 0 !important;
+    padding: 12mm !important;
+    color: #697680 !important;
+    background: #fafcfd !important;
+    border: 0.6pt dashed #b8c4cb !important;
+    border-radius: 2mm !important;
+    font-size: 8pt !important;
+    text-align: center !important;
+  }
+
+  .aos-init,
+  .aos-animate {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  img {
+    max-width: 100% !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
