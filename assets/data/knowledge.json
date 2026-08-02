@@ -1,5 +1,104 @@
 [
   {
+    "keywords": [
+    "basic information",
+    "personal information",
+    "profile",
+    "biodata",
+    "who are you",
+    "introduce yourself",
+    "education",
+    "degree"
+  ],
+  "answers": [
+    "I am Rifqi Abdillah, S.Tr.T., M.Kom., a Lecturer and Researcher in Informatics Engineering at Universitas Negeri Surabaya (UNESA), based in Surabaya, Indonesia.",
+    "I earned my Bachelor's degree (S.Tr.T.) in Electrical Engineering from the Electronic Engineering Polytechnic Institute of Surabaya (EEPIS) from 2016 to 2020, followed by a Master's degree (M.Kom.) in Informatics Engineering at Institut Teknologi Sepuluh Nopember (ITS) from 2021 to 2023.",
+    "My academic background combines Electrical Engineering and Informatics Engineering, providing expertise in embedded systems, Artificial Intelligence, Internet of Things (IoT), Edge Computing, Computer Vision, and intelligent systems.",
+    "I completed my undergraduate studies in Electrical Engineering at EEPIS (2016–2020) and graduated with a GPA of 3.23/4.00. I then pursued a Master's degree in Informatics Engineering at ITS (2021–2023), graduating with a GPA of 3.93/4.00.",
+    "Currently, I serve as a lecturer in the Informatics Engineering Department at Universitas Negeri Surabaya (UNESA), where I teach, conduct research, and supervise student projects in AI, IoT, and software engineering."
+  ]
+  },
+  {
+    "keywords": ["about", "introduction", "profile", "who are you", "yourself"],
+    "answers": [
+      "I am Rifqi Abdillah, S.Tr.T., M.Kom., a Lecturer and Researcher in Informatics Engineering specializing in Artificial Intelligence, Internet of Things (IoT), Edge Computing, and intelligent systems.",
+      "I am a lecturer, researcher, and AI & IoT enthusiast based in Surabaya, Indonesia. My work focuses on developing intelligent technologies that integrate AI, embedded systems, and IoT.",
+      "I am an Informatics Engineering lecturer with an interdisciplinary background in AI, IoT, and Electronic Engineering, actively conducting research in intelligent computing and smart systems."
+    ]
+  },
+  {
+    "keywords": ["research", "interest", "topic", "focus", "research interest"],
+    "answers": [
+      "My research focuses on Artificial Intelligence, Edge Computing, Internet of Things (IoT), Biomedical Informatics, Image Processing, and Machine Learning.",
+      "I am interested in Edge AI, intelligent IoT systems, biomedical signal processing, computer vision, and data-driven decision-making.",
+      "My primary research areas include AI, Edge Computing, Computer Vision, Biomedical Informatics, and embedded intelligent systems."
+    ]
+  },
+  {
+    "keywords": ["education", "academic background", "degree", "study"],
+    "answers": [
+      "I hold a Master's degree in Informatics Engineering from Institut Teknologi Sepuluh Nopember (ITS) and a Bachelor's degree in Electrical Engineering from the Electronic Engineering Polytechnic Institute of Surabaya (EEPIS).",
+      "My academic background combines Informatics Engineering and Electronic Engineering, providing a strong foundation in both software and hardware development.",
+      "I earned my M.Kom. from ITS with a GPA of 3.93/4.00 after completing my undergraduate studies in Electrical Engineering at EEPIS."
+    ]
+  },
+  {
+    "keywords": ["master thesis", "thesis", "graduate research", "master research"],
+    "answers": [
+      "My master's thesis focused on reducing noise in Photoplethysmography (PPG) signals using K-Means Clustering and Exponential Filtering to improve data accuracy.",
+      "During my master's study, I conducted research on biomedical signal processing, particularly improving the quality of PPG data for healthcare applications.",
+      "My graduate research explored intelligent noise reduction techniques for PPG signals using machine learning and digital signal processing approaches."
+    ]
+  },
+  {
+    "keywords": ["projects", "research projects", "work", "portfolio"],
+    "answers": [
+      "I have worked on projects involving Electronic Nose-based COVID-19 detection, non-invasive glucose measurement using Photoplethysmography, embedded vision systems, intelligent security systems, and robotic manipulators.",
+      "My projects span AI, IoT, biomedical engineering, computer vision, robotics, and embedded systems.",
+      "I have developed intelligent systems ranging from healthcare monitoring devices to AI-powered embedded vision applications and robotic learning platforms."
+    ]
+  },
+  {
+    "keywords": ["publications", "papers", "conference", "research papers"],
+    "answers": [
+      "I have published several conference papers on Photoplethysmography signal processing, noise filtering, feature selection, machine learning, and robotics.",
+      "My publications primarily focus on biomedical signal analysis, machine learning, digital filtering, and intelligent systems.",
+      "My research has been presented at conferences covering PPG signal processing, feature engineering, and robotic system development."
+    ]
+  },
+  {
+    "keywords": ["contact", "email", "phone", "location", "linkedin", "website"],
+    "answers": [
+      "You can reach me via email at rifqiabdillah@unesa.ac.id. I am based in Surabaya, Indonesia, and my portfolio is available at www.rifqiabdillah.my.id.",
+      "Feel free to connect with me through LinkedIn or visit my personal website to explore my research, publications, and projects.",
+      "My professional contact information includes email, LinkedIn, and my personal website, where you can learn more about my academic activities."
+    ]
+  },
+  {
+    "keywords": ["biomedical", "healthcare", "ppg", "medical ai"],
+    "answers": [
+      "One of my major research interests is Biomedical Informatics, particularly non-invasive biomedical signal processing using Photoplethysmography (PPG).",
+      "I explore AI techniques for healthcare applications, including signal processing, intelligent filtering, and biomedical data analysis.",
+      "My biomedical research combines machine learning, digital signal processing, and IoT technologies to develop intelligent healthcare solutions."
+    ]
+  },
+  {
+    "keywords": ["computer vision", "image processing", "vision"],
+    "answers": [
+      "I work on Computer Vision and Image Processing for intelligent embedded systems, healthcare, and smart environments.",
+      "My research includes AI-based image processing, embedded vision, and machine learning applications for real-world problems.",
+      "Computer Vision is one of my primary interests, especially when integrated with Edge AI and IoT devices."
+    ]
+  },
+  {
+    "keywords": ["iot", "edge ai", "embedded", "edge computing"],
+    "answers": [
+      "I develop intelligent IoT systems that leverage Edge Computing and AI to perform real-time processing directly on embedded devices.",
+      "My work focuses on integrating AI models with embedded hardware to build efficient, low-latency intelligent systems.",
+      "I am particularly interested in Edge AI, TinyML, embedded intelligence, and IoT applications for smart environments."
+    ]
+  },
+  {
     "keywords": ["research", "interest", "topic", "focus"],
     "answers": [
       "My research focuses on Edge Computing, AIoT, Computer Vision, and Intelligent Systems.",
