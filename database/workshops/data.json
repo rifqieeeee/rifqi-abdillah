@@ -1,6 +1,11 @@
 {
   "workshops": [
     {
+      "title": "Pelatihan Penyusunan LEDIK PIKOBE",
+      "issuer": "APTIKOM",
+      "date": "Jun 2026"
+    },
+    {
       "title": "Gemini Certified Faculty",
       "issuer": "Google for Education",
       "date": "Jul 2026"
