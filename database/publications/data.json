@@ -10,6 +10,7 @@
       "venue": "International Conference on Vocational Education and Electrical Engineering (ICVEE)",
       "pages": "227–232",
       "publisher": "IEEE",
+      "place": "Surabaya",
       "link": "https://doi.org/10.1109/ICVEE66651.2025.11281396"
     },
     {
@@ -21,6 +22,7 @@
       "venue": "International Conference on Green Engineering for Sustainable Future (ICoGESF)",
       "pages": "05001",
       "publisher": "E3S Web of Conferences",
+      "place": "Surabaya",
       "link": "https://doi.org/10.1051/e3sconf/202564505001"
     },
     {
@@ -32,6 +34,7 @@
       "venue": "International Conference on Green Engineering for Sustainable Future (ICoGESF)",
       "pages": "06003",
       "publisher": "E3S Web of Conferences",
+      "place": "Surabaya",
       "link": "https://doi.org/10.1051/e3sconf/202564506003"
     },
     {
@@ -42,7 +45,8 @@
       "title": "A Comprehensive Research of Supervised Learning Strategies Using Machine Learning and Artificial Neural Network Models for Human Personality Trait Classification: A Multi-Model Performance Analysis",
       "venue": "International Joint Conference on UNESA",
       "pages": "Vol.3 (1)",
-      "publisher": "",
+      "publisher": "Universitas Negeri Surabaya",
+      "place": "Surabaya",
       "link": "https://proceeding.unesa.ac.id/index.php/pijcu/article/view/7335"
     },
     {
@@ -54,6 +58,7 @@
       "venue": "International Conference on Advancement in Data Science, E-learning and Information System (ICADEIS)",
       "pages": "1–6",
       "publisher": "IEEE",
+      "place": "Bandung",
       "link": "https://doi.org/10.1109/ICADEIS65852.2025.10933328"
     },
     {
@@ -65,6 +70,7 @@
       "venue": "International Conference on Advancement in Data Science, E-learning and Information System (ICADEIS)",
       "pages": "1–7",
       "publisher": "IEEE",
+      "place": "Bandung",
       "link": "https://doi.org/10.1109/ICADEIS65852.2025.10933404"
     },
 
@@ -77,6 +83,7 @@
       "venue": "International Conference on Vocational Education and Electrical Engineering (ICVEE)",
       "pages": "197–201",
       "publisher": "IEEE",
+      "place": "Surabaya",
       "link": "https://doi.org/10.1109/ICVEE59738.2023.10348214"
     },
     {
@@ -88,6 +95,7 @@
       "venue": "International Conference on Artificial Intelligence in Information and Communication (ICAIIC)",
       "pages": "303–308",
       "publisher": "IEEE",
+      "place": "Bali",
       "link": "https://doi.org/10.1109/ICAIIC57133.2023.10066966"
     },
     {
@@ -99,6 +107,7 @@
       "venue": "International Conference on Artificial Intelligence in Information and Communication (ICAIIC)",
       "pages": "315–320",
       "publisher": "IEEE",
+      "place": "Bali",
       "link": "https://doi.org/10.1109/ICAIIC57133.2023.10067116"
     },
     {
@@ -110,6 +119,7 @@
       "venue": "International Conference on Artificial Intelligence in Information and Communication (ICAIIC)",
       "pages": "012–017",
       "publisher": "IEEE",
+      "place": "Bali",
       "link": "https://doi.org/10.1109/ICAIIC57133.2023.10067110"
     },
 

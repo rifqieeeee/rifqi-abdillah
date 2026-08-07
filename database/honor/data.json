@@ -4,56 +4,84 @@
       "country": "cn",
       "flagAlt": "China Flag",
       "title": "Top 5 Winners",
-      "event": "WoW io Design Contest – WIZnet, Jul 2026"
+      "event": "WoW io Design Contest",
+      "institution": "WIZnet",
+      "month": "Jul",
+      "year": "2026"
     },
     {
       "country": "us",
       "flagAlt": "US Flag",
       "title": "Technology Award",
-      "event": "Pervasive AI Developer Contest – AMD, Sep 2024"
+      "event": "Pervasive AI Developer Contest",
+      "institution": "AMD",
+      "month": "Sep",
+      "year": "2024"
     },
     
     {
       "country": "cn",
       "flagAlt": "China Flag",
       "title": "3rd Place Winner",
-      "event": "Surf5 Contest – WIZnet, Jul 2024"
+      "event": "Surf5 Contest",
+      "institution": "WIZnet",
+      "month": "Jul",
+      "year": "2024"
     },
     {
       "country": "us",
       "flagAlt": "US Flag",
       "title": "Most Illuminated Library",
-      "event": "Little Free STEM Library – Avnet, Dec 2023"
+      "event": "Little Free STEM Library",
+      "institution": "Avnet",
+      "month": "Dec",
+      "year": "2023"
     },
     {
       "country": "cn",
       "flagAlt": "China Flag",
       "title": "Top Participant",
-      "event": "WizFi360 Contest, Nov 2022"
+      "event": "WizFi360 Contest",
+      "institution": "WIZnet",
+      "month": "Nov",
+      "year": "2022"
     },
     {
       "country": "kr",
       "flagAlt": "Korea Flag",
       "title": "Enthusiastic Project Award",
-      "event": "IoT2Wild Contest, Oct 2022"
+      "event": "IoT2Wild Contest",
+      "institution": "Seeed Studio",
+      "month": "Oct",
+      "year": "2022"
     },
     {
       "country": "kr",
       "flagAlt": "Korea Flag",
       "title": "Project of The Month",
-      "event": "Seeed Studio, Sep 2022"
+      "event": "Seeed Best Project, Sep 2022",
+      "institution": "Seeed Studio",
+      "month": "Sep",
+      "year": "2022"
     },
     {
       "country": "id",
       "flagAlt": "Indonesia Flag",
       "title": "PKM-KC Research Grant",
-      "event": "BELMAWA, Mar 2020"
+      "event": "Program Kreativitas Mahasiswa",
+      "institution": "BELMAWA",
+      "month": "Mar",
+      "year": "2020"
     },
     {
       "country": "id",
       "flagAlt": "Indonesia Flag",
       "title": "PKM-KC Research Grant",
-      "event": "BELMAWA, Nov 2018"
+      "event": "Program Kreativitas Mahasiswa",
+      "institution": "BELMAWA",
+      "month": "Nov",
+      "year": "2018"
+
     }
   ]
 }
