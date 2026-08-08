@@ -32,110 +32,599 @@
   <meta name="twitter:image" content="https://rifqiabdillah.my.id/assets/img/og-image.png">
 
   <link href="assets/img/logo-rifqi.png" rel="icon">
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/cv.css">
 
   <style>
-    .cv-selector {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 18px;
-      border: 1px solid #ddd;
-      background: #ffffff;
-      font-family: Arial, sans-serif;
+    /* =========================================================
+      RESET & BASE
+      ========================================================= */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
     }
 
-    .cv-selector h3 {
-      margin-bottom: 14px;
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      line-height: 1.15;
+      color: #000;
+      background: #e9ecef;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    p,
+    ul,
+    ol,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      margin-top: 0;
+    }
+
+    /* =========================================================
+      PAGE / PAPER PREVIEW
+      ========================================================= */
+    .page-shell {
+      width: 100%;
+      padding: 35px 20px 60px;
+    }
+
+    .cv-wrapper {
+      width: 210mm;
+      max-width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 18mm 17mm 18mm 20mm;
+      background: #fff;
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, .10),
+        0 15px 35px rgba(0, 0, 0, .08);
+    }
+
+    /* =========================================================
+      HEADER
+      ========================================================= */
+    .cv-header {
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      text-align: center;
+    }
+
+    .cv-header h1 {
+      margin-bottom: 4px;
+      font-size: 28px;
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: -.2px;
+    }
+
+    .cv-header h4 {
+      margin-bottom: 8px;
+      font-size: 16px;
+      line-height: 1.15;
+      font-weight: 400;
+    }
+
+    .contact-info {
+      font-size: 13px;
+      line-height: 1.35;
+    }
+
+    /* =========================================================
+      SECTIONS
+      ========================================================= */
+    .section {
+      margin-bottom: 18px;
+    }
+
+    .section:last-child {
+      margin-bottom: 0;
+    }
+
+    .section-title {
+      margin: 0 0 9px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid #777;
       font-size: 18px;
+      line-height: 1.15;
+      font-weight: 700;
+      color: #1700a9;
+      text-transform: uppercase;
+    }
+
+    /* =========================================================
+      GENERAL CONTENT
+      ========================================================= */
+    .item {
+      margin-bottom: 12px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item h5 {
+      margin: 0 0 2px;
+      font-size: 15px;
+      line-height: 1.15;
       font-weight: 700;
     }
 
-    .selector-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8px 16px;
-      margin-bottom: 16px;
-    }
-
-    .selector-grid label {
-      font-size: 14px;
-      cursor: pointer;
-    }
-
-    .selector-actions {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-    }
-
-    .selector-actions button {
-      border: 1px solid #222;
-      background: #fff;
-      padding: 7px 12px;
+    .item .meta {
+      margin-bottom: 4px;
       font-size: 13px;
-      cursor: pointer;
+      line-height: 1.2;
     }
 
-    .selector-actions button:hover {
-      background: #f1f1f1;
+    p {
+      margin-bottom: 6px;
+      line-height: 1.15;
+      text-align: justify;
     }
 
-    @media print {
-      .no-print {
-        display: none !important;
-      }
+    ul,
+    ol {
+      margin: 3px 0 0;
+      padding-left: 18px;
     }
 
+    li {
+      margin-bottom: 3px;
+      line-height: 1.15;
+      text-align: justify;
+    }
+
+    li:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================================================
+      CONSISTENT LIST SECTIONS
+      ========================================================= */
+    #publication-list,
+    #hki-list,
+    #research-list,
+    #opensource-list,
+    #community-list,
+    #volunteer-list,
+    #honor-list,
+    #workshop-list,
+    #membership-list,
+    #books-list,
+    #teaching-list,
+    #academic-activities-list,
+    #organization-list,
+    #editorial-board-list,
+    #reviewer-list,
+    #committee-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    #publication-list li,
+    #hki-list li,
+    #research-list li,
+    #opensource-list li,
+    #community-list li,
+    #volunteer-list li,
+    #honor-list li,
+    #workshop-list li,
+    #membership-list li,
+    #books-list li,
+    #teaching-list li,
+    #academic-activities-list li,
+    #organization-list li,
+    #editorial-board-list li,
+    #reviewer-list li,
+    #committee-list li {
+      margin-bottom: 5px;
+      line-height: 1.15;
+      color: #000;
+    }
+
+    #publication-list li strong,
+    #publication-list li em {
+      color: #000;
+      font-style: normal;
+      font-weight: 700;
+    }
+
+    #opensource-list a,
+    #community-list a {
+      word-break: break-word;
+    }
+
+    /* =========================================================
+      EXPERIENCE
+      ========================================================= */
+    #experience-section ul {
+      margin-top: 3px;
+      padding-left: 18px;
+    }
+
+    #experience-section li {
+      margin-bottom: 3px;
+      line-height: 1.15;
+    }
+
+    .sub-role {
+      margin-top: 6px;
+    }
+
+    .sub-role p {
+      margin-bottom: 3px;
+    }
+
+    .experience-extra {
+      margin-top: 8px;
+    }
+
+    .detail-item {
+      margin-top: 7px;
+    }
+
+    .sub-role-title {
+      margin-bottom: 3px;
+    }
+
+    /* =========================================================
+      SKILLS & TOOLS
+      ========================================================= */
+    #skills-list,
+    #tools-list {
+      margin: 0;
+      line-height: 1.2;
+      text-align: justify;
+    }
+
+    .badge-skill {
+      display: inline-block;
+      margin: 2px 3px 2px 0;
+      padding: 3px 8px;
+      border: 1px solid #000;
+      font-size: 13px;
+      line-height: 1.1;
+      background: #fff;
+    }
+
+    /* =========================================================
+      FOOTER
+      ========================================================= */
+    .footer-credit {
+      margin-top: 24px;
+      padding-top: 8px;
+      border-top: 1px solid #000;
+      font-size: 12px;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    /* =========================================================
+      FLOATING ACTION BUTTONS
+      ========================================================= */
     .top-actions {
       position: fixed;
       top: 20px;
       left: 20px;
       z-index: 9999;
       display: flex;
+      flex-wrap: wrap;
       gap: 10px;
     }
 
     .top-actions button {
-      background: #0d6efd;
-      color: #fff;
-      border: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
       padding: 10px 16px;
-      border-radius: 8px;
-      cursor: pointer;
+      border: 0;
+      border-radius: 7px;
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 14px;
+      line-height: 1;
       font-weight: 600;
-      box-shadow: 0 4px 10px rgba(0,0,0,.15);
-      transition: .2s;
+      color: #fff;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+      transition:
+        transform .15s ease,
+        background .15s ease,
+        box-shadow .15s ease;
     }
 
     .top-actions button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, .20);
+    }
+
+    .top-actions button:active {
+      transform: translateY(0);
+    }
+
+    .top-actions svg {
+      width: 16px;
+      height: 16px;
+      flex: 0 0 auto;
+    }
+
+    .btn-back {
+      background: #495057;
+    }
+
+    .btn-back:hover {
+      background: #343a40;
+    }
+
+    .btn-print {
+      background: #0d6efd;
+    }
+
+    .btn-print:hover {
       background: #0b5ed7;
-      transform: translateY(-2px);
     }
 
-    .top-actions button i {
-      margin-right: 6px;
+    /* =========================================================
+      RESPONSIVE SCREEN
+      ========================================================= */
+    @media screen and (max-width: 900px) {
+      .page-shell {
+        padding: 82px 10px 30px;
+        overflow-x: auto;
+      }
+
+      .top-actions {
+        top: 15px;
+        right: 15px;
+        left: 15px;
+      }
+
+      .top-actions button {
+        padding: 9px 13px;
+        font-size: 13px;
+      }
     }
 
+    /* =========================================================
+      PRINT
+      ========================================================= */
     @media print {
+      @page {
+        size: A4;
+        margin: 8mm 8mm 10mm;
+
+        @bottom-left {
+          content: "Generated from www.rifqiabdillah.my.id";
+          font-size: 7.5px;
+          color: #666;
+        }
+
+        @bottom-right {
+          content: "Page " counter(page);
+          font-size: 7.5px;
+          color: #666;
+        }
+      }
+
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+      }
+
+      body {
+        font-size: 10.5px;
+        line-height: 1.12;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+
+      .no-print,
       .top-actions {
         display: none !important;
       }
+
+      .page-shell {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        overflow: visible;
+      }
+
+      .cv-wrapper {
+        width: auto;
+        max-width: 100%;
+        min-height: auto;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+        box-shadow: none;
+      }
+
+      /* ---------- Header ---------- */
+      .cv-header {
+        margin-bottom: 8px;
+        padding-bottom: 4px;
+      }
+
+      .cv-header h1 {
+        margin-bottom: 2px;
+        font-size: 19px;
+        line-height: 1.05;
+      }
+
+      .cv-header h4 {
+        margin-bottom: 3px;
+        font-size: 11.5px;
+        line-height: 1.08;
+      }
+
+      .contact-info {
+        font-size: 9.2px;
+        line-height: 1.15;
+      }
+
+      /* ---------- Sections ---------- */
+      .section {
+        margin-bottom: 7px;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .section-title {
+        margin: 0 0 4px;
+        padding-bottom: 1px;
+        font-size: 12px;
+        line-height: 1.05;
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      /* Keep the heading together with at least the next content block. */
+      .section-title + .item,
+      .section-title + p,
+      .section-title + ul,
+      .section-title + ol,
+      .section-title + div {
+        break-before: avoid;
+        page-break-before: avoid;
+      }
+
+      /* ---------- Content ---------- */
+      .item {
+        margin-bottom: 5px;
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      .item h5 {
+        margin-bottom: 1px;
+        font-size: 10.7px;
+        line-height: 1.08;
+        break-after: avoid;
+        page-break-after: avoid;
+      }
+
+      .item .meta {
+        margin-bottom: 2px;
+        font-size: 9.2px;
+        line-height: 1.1;
+      }
+
+      p {
+        margin-bottom: 2px;
+        line-height: 1.12;
+        orphans: 2;
+        widows: 2;
+      }
+
+      ul,
+      ol {
+        margin: 1px 0 2px;
+        padding-left: 16px;
+      }
+
+      li {
+        margin-bottom: 2px;
+        line-height: 1.12;
+        orphans: 2;
+        widows: 2;
+      }
+
+      /* Short list entries should stay intact. Long ones may continue naturally. */
+      #membership-list li,
+      #workshop-list li,
+      #honor-list li,
+      #volunteer-list li,
+      #books-list li {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      #publication-list li,
+      #research-list li,
+      #opensource-list li,
+      #community-list li,
+      #organization-list li,
+      #experience-list .item {
+        break-inside: auto;
+        page-break-inside: auto;
+      }
+
+      #publication-list li,
+      #hki-list li,
+      #research-list li,
+      #opensource-list li,
+      #community-list li,
+      #volunteer-list li,
+      #honor-list li,
+      #workshop-list li,
+      #membership-list li,
+      #books-list li,
+      #teaching-list li,
+      #academic-activities-list li,
+      #organization-list li,
+      #editorial-board-list li,
+      #reviewer-list li,
+      #committee-list li,
+      #experience-section li {
+        margin-bottom: 2px;
+        line-height: 1.12;
+      }
+
+      #skills-list,
+      #tools-list {
+        line-height: 1.12;
+      }
+
+      .sub-role {
+        margin-top: 3px;
+      }
+
+      .experience-extra {
+        margin-top: 4px;
+      }
+
+      .detail-item {
+        margin-top: 4px;
+      }
+
+      a {
+        color: #000;
+        text-decoration: none;
+      }
     }
-    
-  </style>
+    </style>
 </head>
 
 <body>
-  <div class="top-actions no-print">
-    <button onclick="history.back()">
-      <i class="bi bi-arrow-left"></i> Back
+  <div class="top-actions no-print" aria-label="CV actions">
+    <button type="button" class="btn-back" onclick="history.back()" title="Back">
+      <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5a.5.5 0 0 1 .5.5z"/>
+      </svg>
+      <span>Back</span>
     </button>
 
-    <button onclick="window.print()">
-      <i class="bi bi-printer"></i> Print
+    <button type="button" class="btn-print" onclick="window.print()" title="Print or save as PDF">
+      <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zm6 4H5V3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v2zm.5 5a.5.5 0 0 1 .5.5V13a.5.5 0 0 1-.5.5h-7A.5.5 0 0 1 4 13v-2.5a.5.5 0 0 1 .5-.5h7z"/>
+      </svg>
+      <span>Print / Save PDF</span>
     </button>
   </div>
 
@@ -193,7 +682,8 @@
     document.addEventListener('DOMContentLoaded', applySelectedSectionsFromURL);
     </script>
 
-  <main class="cv-wrapper">
+  <div class="page-shell">
+    <main class="cv-wrapper">
 
     <header class="cv-header">
       <h1>Rifqi Abdillah, S.Tr.T., M.Kom.</h1>
@@ -347,7 +837,8 @@
       <ul id="organization-list"></ul>
     </section>
 
-  </main>
+    </main>
+  </div>
 
   <script>
     function applySelection() {
@@ -476,10 +967,16 @@
 
         data.honors.forEach(item => {
           const li = document.createElement('li');
+
+          const date = [item.month, item.year]
+            .filter(Boolean)
+            .join(' ');
+
           li.innerHTML = `
             <strong>${item.title}</strong>.
-            ${item.event}.
+            ${item.event}${item.institution ? `, ${item.institution}` : ''}${date ? `, ${date}` : ''}.
           `;
+
           honorList.appendChild(li);
         });
       })
@@ -757,19 +1254,11 @@
         data.forEach(item => {
           const li = document.createElement('li');
 
-          const responsibilities = item.items
-            .map(point => `<li>${point}</li>`)
-            .join('');
-
           li.innerHTML = `
             <strong>${item.organization}</strong>.
             ${item.position},
             ${item.location},
             ${item.period}.
-
-            <ul>
-              ${responsibilities}
-            </ul>
           `;
 
           organizationList.appendChild(li);

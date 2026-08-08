@@ -1,6 +1,54 @@
 {
   "teaching": [
     {
+      "title": "Platform-Based Programming",
+      "title_in": "Pemrograman Berbasis Platform",
+      "level": "undergraduate",
+      "type": "practical",
+      "semester": "Odd Semester 2026/2027",
+      "description": "Conducted practical sessions on web application development, covering front-end and back-end programming, database integration, and the implementation of responsive, dynamic, and interactive web applications using modern web technologies.",
+      "role": "Lecturer",
+      "department": "Informatics Engineering",
+      "credits": 4,
+      "classes": 7
+    },
+    {
+      "title": "Internet of Things",
+      "title_in": "Internet of Things",
+      "level": "undergraduate",
+      "type": "practical",
+      "semester": "Odd Semester 2026/2027",
+      "description": "Conducted practical sessions on Internet of Things (IoT), covering sensor and actuator integration, microcontroller programming, communication protocols, data transmission, and the development of connected IoT-based applications.",
+      "role": "Lecturer",
+      "department": "Informatics Engineering",
+      "credits": 3,
+      "classes": 2
+    },
+    {
+      "title": "Internet of Things",
+      "title_in": "Internet of Things",
+      "level": "undergraduate",
+      "type": "practical",
+      "semester": "Odd Semester 2026/2027",
+      "description": "Conducted practical sessions on Internet of Things (IoT), covering sensor and actuator integration, microcontroller programming, communication protocols, data transmission, and the development of connected IoT-based applications.",
+      "role": "Lecturer",
+      "department": "Informatics Engineering",
+      "credits": 3,
+      "classes": 2
+    },
+    {
+      "title": "Digital Literacy",
+      "title_in": "Literasi Digital",
+      "level": "undergraduate",
+      "type": "theoretical",
+      "semester": "Odd Semester 2026/2027",
+      "description": "Delivered lectures on digital literacy, covering effective use of digital technologies, information evaluation, digital communication, online safety, digital ethics, and responsible participation in digital environments.",
+      "role": "Lecturer",
+      "department": "Informatics Engineering",
+      "credits": 2,
+      "classes": 2
+    },
+    {
       "title": "Object Oriented Programming",
       "title_in": "Pemrograman Berorientasi Object",
       "level": "undergraduate",
