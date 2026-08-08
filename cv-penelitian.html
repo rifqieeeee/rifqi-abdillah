@@ -3,247 +3,943 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Generate CV Penelitian- Rifqi Abdillah</title>
+
+  <title>Generate CV Penelitian - Rifqi Abdillah</title>
+
   <!-- SEO -->
-  <meta name="description" content="Explore the portfolio of Rifqi Abdillah, featuring research publications, artificial intelligence, machine learning, web development, teaching, and community service.">
-  <meta name="keywords" content="Rifqi Abdillah, Lecturer, Researcher, Developer, Artificial Intelligence, Machine Learning, AIoT, Publications, Portfolio">
+  <meta
+    name="description"
+    content="Explore the portfolio of Rifqi Abdillah, featuring research publications, artificial intelligence, machine learning, web development, teaching, and community service."
+  >
+  <meta
+    name="keywords"
+    content="Rifqi Abdillah, Lecturer, Researcher, Developer, Artificial Intelligence, Machine Learning, AIoT, Publications, Portfolio"
+  >
   <meta name="author" content="Rifqi Abdillah">
 
-  <!-- Open Graph for WhatsApp, Facebook, LinkedIn, and Telegram -->
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://rifqiabdillah.my.id/">
-  <meta property="og:title" content="Rifqi Abdillah | Lecturer, Researcher, and Developer">
-  <meta property="og:description" content="Explore research publications, AI projects, web development, teaching activities, and professional experiences of Rifqi Abdillah.">
-  <meta property="og:image" content="https://rifqiabdillah.my.id/assets/img/og-image.png">
+  <meta
+    property="og:title"
+    content="Rifqi Abdillah | Lecturer, Researcher, and Developer"
+  >
+  <meta
+    property="og:description"
+    content="Explore research publications, AI projects, web development, teaching activities, and professional experiences of Rifqi Abdillah."
+  >
+  <meta
+    property="og:image"
+    content="https://rifqiabdillah.my.id/assets/img/og-image.png"
+  >
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Rifqi Abdillah Portfolio">
   <meta property="og:site_name" content="Rifqi Abdillah">
   <meta property="og:locale" content="en_US">
 
-  <!-- Twitter / X Card -->
+  <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Rifqi Abdillah | Lecturer, Researcher, and Developer">
-  <meta name="twitter:description" content="Explore research publications, AI projects, web development, teaching activities, and professional experiences of Rifqi Abdillah.">
-  <meta name="twitter:image" content="https://rifqiabdillah.my.id/assets/img/og-image.png">
+  <meta
+    name="twitter:title"
+    content="Rifqi Abdillah | Lecturer, Researcher, and Developer"
+  >
+  <meta
+    name="twitter:description"
+    content="Explore research publications, AI projects, web development, teaching activities, and professional experiences of Rifqi Abdillah."
+  >
+  <meta
+    name="twitter:image"
+    content="https://rifqiabdillah.my.id/assets/img/og-image.png"
+  >
 
+  <!-- Icons -->
   <link href="assets/img/logo-rifqi.png" rel="icon">
   <link href="assets/img/new-apple-touch-icon.png" rel="apple-touch-icon">
 
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <!-- Bootstrap -->
+  <link
+    href="assets/vendor/bootstrap/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link
+    href="assets/vendor/bootstrap-icons/bootstrap-icons.css"
+    rel="stylesheet"
+  >
+  <link
+    href="assets/vendor/aos/aos.css"
+    rel="stylesheet"
+  >
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    rel="stylesheet"
+  >
+
   <style>
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body { margin: 0; padding: 0; background: #e9ecef; font-family: Arial, Helvetica, sans-serif; font-size: 12pt; line-height: 1.35; color: #000; }
-    .action-buttons { position: fixed; top: 20px; left: 20px; z-index: 9999; display: flex; gap: 10px; flex-wrap: wrap; }
-    .action-buttons button { display: inline-flex; align-items: center; justify-content: center; gap: 7px; border: none; border-radius: 7px; padding: 10px 16px; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 600; color: #fff; cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,.18); transition: transform .15s ease, background .15s ease; }
-    .action-buttons button:hover { transform: translateY(-1px); }
-    .action-buttons button:active { transform: translateY(0); }
-    .action-buttons button:disabled { opacity: .65; cursor: wait; transform: none; }
-    .btn-home { background: #495057; }
-    .btn-home:hover { background: #343a40; }
-    .btn-print { background: #0d6efd; }
-    .btn-print:hover { background: #0b5ed7; }
-    .btn-docx { background: #198754; }
-    .btn-docx:hover { background: #157347; }
-
-    .document-wrapper { padding: 35px 20px 60px; }
-    .document { width: 210mm; min-height: 297mm; margin: 0 auto; padding: 18mm 17mm 18mm 20mm; background: #fff; box-shadow: 0 4px 12px rgba(0,0,0,.10), 0 15px 35px rgba(0,0,0,.08); }
-    .document-title { margin: 0 0 18px; font-size: 12pt; font-weight: 700; }
-    .section { margin-top: 18px; }
-    .section-title { margin: 0 0 7px; font-size: 12pt; font-weight: 700; line-height: 1.3; }
-    p { margin: 0 0 8px; text-align: justify; }
-
-    .identity-table { width: 100%; border-collapse: collapse; margin: 0; }
-    .identity-table td { border: none; padding: 2px 3px; vertical-align: top; }
-    .identity-table .number { width: 30px; text-align: right; padding-right: 8px; }
-    .identity-table .label { width: 220px; }
-    .identity-table .separator { width: 15px; text-align: center; }
-    .identity-table .value { width: auto; }
-
-    .course-list { margin: 0; padding-left: 20px; }
-    .course-list li { padding: 1px 0; }
-
-    .data-table { width: 100%; border-collapse: collapse; table-layout: fixed; margin: 6px 0 14px; }
-    .data-table th, .data-table td { border: 1px solid #000; padding: 5px 6px; font-size: 12pt; line-height: 1.25; vertical-align: top; overflow-wrap: anywhere; }
-    .data-table th { font-weight: 700; text-align: center; vertical-align: middle; }
-    .center { text-align: center; }
-
-    .data-status { margin: 10px 0 0; padding: 8px 10px; border: 1px solid #dc3545; background: #fff5f5; color: #842029; font-size: 12pt; display: none; }
-    .data-status.show { display: block; }
-
-    .statement { margin-top: 20px; }
-    .signature-container { display: flex; justify-content: flex-end; width: 100%; margin-top: 20px; }
-    .signature { width: 280px; line-height: 1.5; }
-    .signature-space { height: 75px; }
-    .signature-name { text-decoration: underline; }
-
-    @media screen and (max-width: 900px) {
-      .document-wrapper { padding: 85px 10px 30px; overflow-x: auto; }
-      .action-buttons { top: 15px; left: 15px; }
+    * {
+      box-sizing: border-box;
     }
 
-    @page { size: A4; margin: 15mm 15mm 15mm 18mm; }
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e9ecef;
+      color: #000;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 12pt;
+      line-height: 1.35;
+    }
+
+    /* =========================================================
+       ACTION BUTTONS
+       ========================================================= */
+
+    .action-buttons {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      z-index: 9999;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .action-buttons button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 7px;
+      color: #fff;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+      transition: transform .15s ease, background .15s ease;
+    }
+
+    .action-buttons button:hover {
+      transform: translateY(-1px);
+    }
+
+    .action-buttons button:active {
+      transform: translateY(0);
+    }
+
+    .action-buttons button:disabled {
+      opacity: .65;
+      cursor: wait;
+      transform: none;
+    }
+
+    .btn-home {
+      background: #495057;
+    }
+
+    .btn-home:hover {
+      background: #343a40;
+    }
+
+    .btn-print {
+      background: #0d6efd;
+    }
+
+    .btn-print:hover {
+      background: #0b5ed7;
+    }
+
+    .btn-docx {
+      background: #198754;
+    }
+
+    .btn-docx:hover {
+      background: #157347;
+    }
+
+    /* =========================================================
+       DOCUMENT
+       ========================================================= */
+
+    .document-wrapper {
+      padding: 35px 20px 60px;
+    }
+
+    .document {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      padding: 18mm 17mm 18mm 20mm;
+      background: #fff;
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, .10),
+        0 15px 35px rgba(0, 0, 0, .08);
+    }
+
+    .document-title {
+      margin: 0 0 18px;
+      font-size: 12pt;
+      font-weight: 700;
+    }
+
+    .section {
+      margin-top: 18px;
+    }
+
+    .section-title {
+      margin: 0 0 7px;
+      font-size: 12pt;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    p {
+      margin: 0 0 8px;
+      text-align: justify;
+    }
+
+    /* =========================================================
+       IDENTITY
+       ========================================================= */
+
+    .identity-table {
+      width: 100%;
+      margin: 0;
+      border-collapse: collapse;
+    }
+
+    .identity-table td {
+      padding: 2px 3px;
+      border: none;
+      vertical-align: top;
+    }
+
+    .identity-table .number {
+      width: 30px;
+      padding-right: 8px;
+      text-align: right;
+    }
+
+    .identity-table .label {
+      width: 220px;
+    }
+
+    .identity-table .separator {
+      width: 15px;
+      text-align: center;
+    }
+
+    .identity-table .value {
+      width: auto;
+    }
+
+    .course-list {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .course-list li {
+      padding: 1px 0;
+    }
+
+    /* =========================================================
+       DATA TABLE
+       ========================================================= */
+
+    .data-table {
+      width: 100%;
+      margin: 6px 0 14px;
+      border-collapse: collapse;
+      table-layout: fixed;
+    }
+
+    .data-table th,
+    .data-table td {
+      padding: 5px 6px;
+      border: 1px solid #000;
+      font-size: 12pt;
+      line-height: 1.25;
+      vertical-align: top;
+      overflow-wrap: anywhere;
+    }
+
+    .data-table th {
+      font-weight: 700;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    /* =========================================================
+       STATUS
+       ========================================================= */
+
+    .data-status {
+      display: none;
+      margin: 10px 0 0;
+      padding: 8px 10px;
+      border: 1px solid #dc3545;
+      background: #fff5f5;
+      color: #842029;
+      font-size: 12pt;
+    }
+
+    .data-status.show {
+      display: block;
+    }
+
+    /* =========================================================
+       STATEMENT & SIGNATURE
+       ========================================================= */
+
+    .statement {
+      margin-top: 20px;
+    }
+
+    .signature-container {
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    .signature {
+      width: 280px;
+      line-height: 1.5;
+    }
+
+    .signature-space {
+      height: 75px;
+    }
+
+    .signature-name {
+      text-decoration: underline;
+    }
+
+    /* =========================================================
+       RESPONSIVE
+       ========================================================= */
+
+    @media screen and (max-width: 900px) {
+      .document-wrapper {
+        padding: 85px 10px 30px;
+        overflow-x: auto;
+      }
+
+      .action-buttons {
+        top: 15px;
+        left: 15px;
+      }
+    }
+
+    /* =========================================================
+       PRINT
+       ========================================================= */
+
+    @page {
+      size: A4;
+      margin: 15mm 15mm 15mm 18mm;
+    }
+
     @media print {
-      html, body { margin: 0; padding: 0; background: #fff; }
-      .action-buttons, .data-status { display: none !important; }
-      .document-wrapper { margin: 0; padding: 0; }
-      .document { width: auto; min-height: auto; margin: 0; padding: 0; box-shadow: none; }
-      .section-title { page-break-after: avoid; break-after: avoid; }
-      table { page-break-inside: auto; }
-      tr { page-break-inside: avoid; break-inside: avoid; }
-      thead { display: table-header-group; }
-      .signature-container { page-break-inside: avoid; break-inside: avoid; }
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background: #fff;
+      }
+
+      .action-buttons,
+      .data-status {
+        display: none !important;
+      }
+
+      .document-wrapper {
+        margin: 0;
+        padding: 0;
+      }
+
+      .document {
+        width: auto;
+        min-height: auto;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+      }
+
+      .section-title {
+        page-break-after: avoid;
+        break-after: avoid;
+      }
+
+      table {
+        page-break-inside: auto;
+      }
+
+      tr {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
+
+      thead {
+        display: table-header-group;
+      }
+
+      .signature-container {
+        page-break-inside: avoid;
+        break-inside: avoid;
+      }
     }
   </style>
 </head>
+
 <body>
+
+  <!-- =========================================================
+       ACTION BUTTONS
+       ========================================================= -->
+
   <div class="action-buttons">
-    <button type="button" class="btn-home" onclick="goHome()"><i class="bi bi-house-door"></i> Home</button>
-    <button type="button" class="btn-print" onclick="window.print()"><i class="bi bi-printer"></i> Print</button>
-    <button type="button" class="btn-docx" id="btnDownloadDocx" onclick="downloadDOCX()"><i class="bi bi-file-earmark-word"></i> Download DOCX</button>
+    <button type="button" class="btn-home" onclick="goHome()">
+      <i class="bi bi-house-door"></i>
+      Home
+    </button>
+
+    <button type="button" class="btn-print" onclick="window.print()">
+      <i class="bi bi-printer"></i>
+      Print
+    </button>
+
+    <button
+      type="button"
+      class="btn-docx"
+      id="btnDownloadDocx"
+      onclick="downloadDOCX()"
+    >
+      <i class="bi bi-file-earmark-word"></i>
+      Download DOCX
+    </button>
   </div>
+
+  <!-- =========================================================
+       DOCUMENT
+       ========================================================= -->
 
   <div class="document-wrapper">
     <main class="document" id="documentContent">
-      <div class="document-title">LAMPIRAN 1. Biodata Tim Peneliti</div>
 
+      <div class="document-title">
+        LAMPIRAN 1. Biodata Tim Peneliti
+      </div>
+
+      <!-- A -->
       <section class="section">
         <h2 class="section-title">A. Identitas Diri</h2>
+
         <table class="identity-table">
           <tbody>
-            <tr><td class="number">1</td><td class="label">Nama Lengkap</td><td class="separator">:</td><td class="value">Rifqi Abdillah</td></tr>
-            <tr><td class="number">2</td><td class="label">Jenis Kelamin</td><td class="separator">:</td><td class="value">Laki-laki</td></tr>
-            <tr><td class="number">3</td><td class="label">Jabatan Fungsional</td><td class="separator">:</td><td class="value">Asisten Ahli</td></tr>
-            <tr><td class="number">4</td><td class="label">Program Studi</td><td class="separator">:</td><td class="value">Teknik Informatika</td></tr>
-            <tr><td class="number">5</td><td class="label">NIP/NIK/Identitas lainnya</td><td class="separator">:</td><td class="value">199911012024061001</td></tr>
-            <tr><td class="number">6</td><td class="label">NIDN</td><td class="separator">:</td><td class="value">0001119901</td></tr>
-            <tr><td class="number">7</td><td class="label">Tempat dan Tanggal Lahir</td><td class="separator">:</td><td class="value">Sampang, 01 November 1999</td></tr>
-            <tr><td class="number">8</td><td class="label">Nomor Telepon/Faks/HP</td><td class="separator">:</td><td class="value">+62 85331624441</td></tr>
-            <tr><td class="number">9</td><td class="label">Alamat e-mail</td><td class="separator">:</td><td class="value">rifqiabdillah@unesa.ac.id</td></tr>
-            <tr><td class="number">10</td><td class="label">Alamat Rumah</td><td class="separator">:</td><td class="value">Dusun Bringkoneng Desa Tlagah, Kec. Banyuates, Kab. Sampang</td></tr>
-            <tr><td class="number">11</td><td class="label">Alamat Kantor</td><td class="separator">:</td><td class="value">Kampus UNESA Gedung A10, Unesa Kampus Ketintang Surabaya</td></tr>
+            <tr>
+              <td class="number">1</td>
+              <td class="label">Nama Lengkap</td>
+              <td class="separator">:</td>
+              <td class="value">Rifqi Abdillah</td>
+            </tr>
+
+            <tr>
+              <td class="number">2</td>
+              <td class="label">Jenis Kelamin</td>
+              <td class="separator">:</td>
+              <td class="value">Laki-laki</td>
+            </tr>
+
+            <tr>
+              <td class="number">3</td>
+              <td class="label">Jabatan Fungsional</td>
+              <td class="separator">:</td>
+              <td class="value">Asisten Ahli</td>
+            </tr>
+
+            <tr>
+              <td class="number">4</td>
+              <td class="label">Program Studi</td>
+              <td class="separator">:</td>
+              <td class="value">Teknik Informatika</td>
+            </tr>
+
+            <tr>
+              <td class="number">5</td>
+              <td class="label">NIP/NIK/Identitas lainnya</td>
+              <td class="separator">:</td>
+              <td class="value">199911012024061001</td>
+            </tr>
+
+            <tr>
+              <td class="number">6</td>
+              <td class="label">NIDN</td>
+              <td class="separator">:</td>
+              <td class="value">0001119901</td>
+            </tr>
+
+            <tr>
+              <td class="number">7</td>
+              <td class="label">Tempat dan Tanggal Lahir</td>
+              <td class="separator">:</td>
+              <td class="value">Sampang, 01 November 1999</td>
+            </tr>
+
+            <tr>
+              <td class="number">8</td>
+              <td class="label">Nomor Telepon/Faks/HP</td>
+              <td class="separator">:</td>
+              <td class="value">+62 85331624441</td>
+            </tr>
+
+            <tr>
+              <td class="number">9</td>
+              <td class="label">Alamat e-mail</td>
+              <td class="separator">:</td>
+              <td class="value">rifqiabdillah@unesa.ac.id</td>
+            </tr>
+
+            <tr>
+              <td class="number">10</td>
+              <td class="label">Alamat Rumah</td>
+              <td class="separator">:</td>
+              <td class="value">
+                Dusun Bringkoneng Desa Tlagah, Kec. Banyuates,
+                Kab. Sampang
+              </td>
+            </tr>
+
+            <tr>
+              <td class="number">11</td>
+              <td class="label">Alamat Kantor</td>
+              <td class="separator">:</td>
+              <td class="value">
+                Kampus UNESA Gedung A10, Unesa Kampus Ketintang Surabaya
+              </td>
+            </tr>
+
             <tr>
               <td class="number">12</td>
               <td class="label">Mata Kuliah yg Diampu</td>
               <td class="separator">:</td>
-              <td class="value"><ol class="course-list" id="courseList" type="a"><li>Memuat data...</li></ol></td>
+              <td class="value">
+                <ol class="course-list" id="courseList" type="a">
+                  <li>Memuat data...</li>
+                </ol>
+              </td>
             </tr>
           </tbody>
         </table>
+
         <div class="data-status" id="dataStatus"></div>
       </section>
 
+      <!-- B -->
       <section class="section">
         <h2 class="section-title">B. Riwayat Pendidikan</h2>
+
         <table class="data-table">
-          <colgroup><col style="width:24%"><col style="width:25.33%"><col style="width:25.33%"><col style="width:25.33%"></colgroup>
-          <thead><tr><th></th><th>S-1</th><th>S-2</th><th>S-3</th></tr></thead>
+          <colgroup>
+            <col style="width: 24%">
+            <col style="width: 25.33%">
+            <col style="width: 25.33%">
+            <col style="width: 25.33%">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th></th>
+              <th>S-1</th>
+              <th>S-2</th>
+              <th>S-3</th>
+            </tr>
+          </thead>
+
           <tbody>
-            <tr><td>Nama Perguruan Tinggi</td><td>Politeknik Elektronika Negeri Surabaya</td><td>Institut Teknologi Sepuluh Nopember</td><td></td></tr>
-            <tr><td>Bidang Ilmu</td><td>D4 Teknik Elektronika</td><td>S2 Teknik Informatika</td><td></td></tr>
-            <tr><td>Tahun Masuk-Lulus</td><td>2016-2020</td><td>2021-2023</td><td></td></tr>
-            <tr><td>Judul Tugas Akhir/Thesis/Disertasi</td><td>Mesin Presensi Perkuliahan Berbasis Embedded Vision - Machine Learning Platform</td><td>Pengurangan Noise Untuk Meningkatkan Akurasi Data Valid Pada Sinyal Photoplethysmograph dengan K-Means Clustering dan Exponential Filter</td><td></td></tr>
-            <tr><td>Nama Pembimbing/Promotor</td><td>Dr. Ing. Ir. Arif Irwansyah, S.T., M.Eng.</td><td>Prof. Drs. Ec. Ir. Riyanarto Sarno, M.Sc., Ph.D</td><td></td></tr>
+            <tr>
+              <td>Nama Perguruan Tinggi</td>
+              <td>Politeknik Elektronika Negeri Surabaya</td>
+              <td>Institut Teknologi Sepuluh Nopember</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Bidang Ilmu</td>
+              <td>D4 Teknik Elektronika</td>
+              <td>S2 Teknik Informatika</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Tahun Masuk-Lulus</td>
+              <td>2016-2020</td>
+              <td>2021-2023</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Judul Tugas Akhir/Thesis/Disertasi</td>
+              <td>
+                Mesin Presensi Perkuliahan Berbasis Embedded Vision -
+                Machine Learning Platform
+              </td>
+              <td>
+                Pengurangan Noise Untuk Meningkatkan Akurasi Data Valid
+                Pada Sinyal Photoplethysmograph dengan K-Means Clustering
+                dan Exponential Filter
+              </td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <td>Nama Pembimbing/Promotor</td>
+              <td>Dr. Ing. Ir. Arif Irwansyah, S.T., M.Eng.</td>
+              <td>Prof. Drs. Ec. Ir. Riyanarto Sarno, M.Sc., Ph.D</td>
+              <td></td>
+            </tr>
           </tbody>
         </table>
       </section>
 
+      <!-- C -->
       <section class="section">
-        <h2 class="section-title">C. Pengalaman Penelitian Dalam 5 Tahun Terakhir</h2>
+        <h2 class="section-title">
+          C. Pengalaman Penelitian Dalam 5 Tahun Terakhir
+        </h2>
+
         <table class="data-table">
-          <colgroup><col style="width:7%"><col style="width:12%"><col style="width:51%"><col style="width:15%"><col style="width:15%"></colgroup>
-          <thead><tr><th rowspan="2">No.</th><th rowspan="2">Tahun</th><th rowspan="2">Judul Penelitian</th><th colspan="2">Pendanaan</th></tr><tr><th>Sumber*</th><th>Jml (Rp)</th></tr></thead>
-          <tbody id="researchBody"><tr><td class="center">1</td><td colspan="4">Memuat data...</td></tr></tbody>
+          <colgroup>
+            <col style="width: 7%">
+            <col style="width: 12%">
+            <col style="width: 51%">
+            <col style="width: 15%">
+            <col style="width: 15%">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th rowspan="2">No.</th>
+              <th rowspan="2">Tahun</th>
+              <th rowspan="2">Judul Penelitian</th>
+              <th colspan="2">Pendanaan</th>
+            </tr>
+            <tr>
+              <th>Sumber*</th>
+              <th>Jml (Rp)</th>
+            </tr>
+          </thead>
+
+          <tbody id="researchBody">
+            <tr>
+              <td class="center">1</td>
+              <td colspan="4">Memuat data...</td>
+            </tr>
+          </tbody>
         </table>
       </section>
 
+      <!-- D -->
       <section class="section">
-        <h2 class="section-title">D. Pengalaman Pengabdian Kepada Masyarakat Dalam 5 Tahun Terakhir</h2>
+        <h2 class="section-title">
+          D. Pengalaman Pengabdian Kepada Masyarakat Dalam 5 Tahun Terakhir
+        </h2>
+
         <table class="data-table">
-          <colgroup><col style="width:7%"><col style="width:12%"><col style="width:51%"><col style="width:15%"><col style="width:15%"></colgroup>
-          <thead><tr><th rowspan="2">No.</th><th rowspan="2">Tahun</th><th rowspan="2">Judul Pengabdian Kepada Masyarakat</th><th colspan="2">Pendanaan</th></tr><tr><th>Sumber*</th><th>Jml (Rp)</th></tr></thead>
-          <tbody id="communityBody"><tr><td class="center">1</td><td colspan="4">Memuat data...</td></tr></tbody>
+          <colgroup>
+            <col style="width: 7%">
+            <col style="width: 12%">
+            <col style="width: 51%">
+            <col style="width: 15%">
+            <col style="width: 15%">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th rowspan="2">No.</th>
+              <th rowspan="2">Tahun</th>
+              <th rowspan="2">Judul Pengabdian Kepada Masyarakat</th>
+              <th colspan="2">Pendanaan</th>
+            </tr>
+            <tr>
+              <th>Sumber*</th>
+              <th>Jml (Rp)</th>
+            </tr>
+          </thead>
+
+          <tbody id="communityBody">
+            <tr>
+              <td class="center">1</td>
+              <td colspan="4">Memuat data...</td>
+            </tr>
+          </tbody>
         </table>
       </section>
 
+      <!-- E -->
       <section class="section">
-        <h2 class="section-title">E. Pengalaman Penulisan Artikel Ilmiah Dalam Jurnal Dalam 5 Tahun Terakhir</h2>
+        <h2 class="section-title">
+          E. Pengalaman Penulisan Artikel Ilmiah Dalam Jurnal Dalam 5 Tahun Terakhir
+        </h2>
+
         <table class="data-table">
-          <colgroup><col style="width:8%"><col style="width:43%"><col style="width:27%"><col style="width:22%"></colgroup>
-          <thead><tr><th>No.</th><th>Judul Artikel Ilmiah</th><th>Volume/Nomor/Tahun</th><th>Nama Jurnal</th></tr></thead>
-          <tbody id="journalBody"><tr><td class="center">1</td><td colspan="3">Memuat data...</td></tr></tbody>
+          <colgroup>
+            <col style="width: 8%">
+            <col style="width: 43%">
+            <col style="width: 27%">
+            <col style="width: 22%">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Judul Artikel Ilmiah</th>
+              <th>Volume/Nomor/Tahun</th>
+              <th>Nama Jurnal</th>
+            </tr>
+          </thead>
+
+          <tbody id="journalBody">
+            <tr>
+              <td class="center">1</td>
+              <td colspan="3">Memuat data...</td>
+            </tr>
+          </tbody>
         </table>
       </section>
 
+      <!-- F -->
       <section class="section">
-        <h2 class="section-title">F. Pengalaman Penyampaian Makalah Secara Oral Pada Pertemuan / Seminar Ilmiah Dalam 5 Tahun Terakhir</h2>
+        <h2 class="section-title">
+          F. Pengalaman Penyampaian Makalah Secara Oral Pada Pertemuan /
+          Seminar Ilmiah Dalam 5 Tahun Terakhir
+        </h2>
+
         <table class="data-table">
-          <colgroup><col style="width:7%"><col style="width:32%"><col style="width:36%"><col style="width:25%"></colgroup>
-          <thead><tr><th>No.</th><th>Nama Pertemuan Ilmiah / Seminar</th><th>Judul Artikel Ilmiah</th><th>Waktu dan Tempat</th></tr></thead>
-          <tbody id="conferenceBody"><tr><td class="center">1</td><td colspan="3">Memuat data...</td></tr></tbody>
+          <colgroup>
+            <col style="width: 7%">
+            <col style="width: 32%">
+            <col style="width: 36%">
+            <col style="width: 25%">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Nama Pertemuan Ilmiah / Seminar</th>
+              <th>Judul Artikel Ilmiah</th>
+              <th>Waktu dan Tempat</th>
+            </tr>
+          </thead>
+
+          <tbody id="conferenceBody">
+            <tr>
+              <td class="center">1</td>
+              <td colspan="3">Memuat data...</td>
+            </tr>
+          </tbody>
         </table>
       </section>
 
+      <!-- G -->
       <section class="section">
-        <h2 class="section-title">G. Pengalaman Penulisan Buku dalam 5 Tahun Terakhir</h2>
+        <h2 class="section-title">
+          G. Pengalaman Penulisan Buku dalam 5 Tahun Terakhir
+        </h2>
+
         <table class="data-table">
-          <colgroup><col style="width:8%"><col style="width:37%"><col style="width:14%"><col style="width:17%"><col style="width:24%"></colgroup>
-          <thead><tr><th>No.</th><th>Judul Buku</th><th>Tahun</th><th>Jumlah Halaman</th><th>Penerbit</th></tr></thead>
-          <tbody id="bookBody"><tr><td class="center">1</td><td colspan="4">Memuat data...</td></tr></tbody>
+          <colgroup>
+            <col style="width: 8%">
+            <col style="width: 37%">
+            <col style="width: 14%">
+            <col style="width: 17%">
+            <col style="width: 24%">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Judul Buku</th>
+              <th>Tahun</th>
+              <th>Jumlah Halaman</th>
+              <th>Penerbit</th>
+            </tr>
+          </thead>
+
+          <tbody id="bookBody">
+            <tr>
+              <td class="center">1</td>
+              <td colspan="4">Memuat data...</td>
+            </tr>
+          </tbody>
         </table>
       </section>
 
+      <!-- H -->
       <section class="section">
-        <h2 class="section-title">H. Pengalaman Perolehan HKI Dalam 5 - 10 Tahun Terakhir</h2>
+        <h2 class="section-title">
+          H. Pengalaman Perolehan HKI Dalam 5 - 10 Tahun Terakhir
+        </h2>
+
         <table class="data-table">
-          <colgroup><col style="width:8%"><col style="width:35%"><col style="width:17%"><col style="width:17%"><col style="width:23%"></colgroup>
-          <thead><tr><th>No.</th><th>Judul/Tema HKI</th><th>Tahun</th><th>Jenis</th><th>Nomor P/ID</th></tr></thead>
-          <tbody id="hkiBody"><tr><td class="center">1</td><td colspan="4">Memuat data...</td></tr></tbody>
+          <colgroup>
+            <col style="width: 8%">
+            <col style="width: 35%">
+            <col style="width: 17%">
+            <col style="width: 17%">
+            <col style="width: 23%">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Judul/Tema HKI</th>
+              <th>Tahun</th>
+              <th>Jenis</th>
+              <th>Nomor P/ID</th>
+            </tr>
+          </thead>
+
+          <tbody id="hkiBody">
+            <tr>
+              <td class="center">1</td>
+              <td colspan="4">Memuat data...</td>
+            </tr>
+          </tbody>
         </table>
       </section>
 
+      <!-- I -->
       <section class="section">
-        <h2 class="section-title">I. Pengalaman Merumuskan Kebijakan Publik/Rekayasa Sosial Lainnya Dalam 5 Tahun Terakhir</h2>
+        <h2 class="section-title">
+          I. Pengalaman Merumuskan Kebijakan Publik/Rekayasa Sosial Lainnya
+          Dalam 5 Tahun Terakhir
+        </h2>
+
         <table class="data-table">
-          <colgroup><col style="width:8%"><col style="width:36%"><col style="width:16%"><col style="width:20%"><col style="width:20%"></colgroup>
-          <thead><tr><th>No.</th><th>Judul/Tema/Jenis Rekayasa Sosial Lainnya yang Telah Diterapkan</th><th>Tahun</th><th>Tempat Penerapan</th><th>Respons Masyarakat</th></tr></thead>
-          <tbody><tr><td class="center">1</td><td></td><td></td><td></td><td></td></tr></tbody>
+          <colgroup>
+            <col style="width: 8%">
+            <col style="width: 36%">
+            <col style="width: 16%">
+            <col style="width: 20%">
+            <col style="width: 20%">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>
+                Judul/Tema/Jenis Rekayasa Sosial Lainnya yang Telah Diterapkan
+              </th>
+              <th>Tahun</th>
+              <th>Tempat Penerapan</th>
+              <th>Respons Masyarakat</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="center">1</td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
         </table>
       </section>
 
+      <!-- J -->
       <section class="section">
-        <h2 class="section-title">J. Penghargaan yang Pernah Diraih dalam 10 tahun Terakhir (dari pemerintah, asosiasi atau institusi lainnya)</h2>
+        <h2 class="section-title">
+          J. Penghargaan yang Pernah Diraih dalam 10 tahun Terakhir
+          (dari pemerintah, asosiasi atau institusi lainnya)
+        </h2>
+
         <table class="data-table">
-          <colgroup><col style="width:8%"><col style="width:42%"><col style="width:32%"><col style="width:18%"></colgroup>
-          <thead><tr><th>No.</th><th>Jenis Penghargaan</th><th>Institusi Pemberi Penghargaan</th><th>Tahun</th></tr></thead>
-          <tbody id="honorBody"><tr><td class="center">1</td><td colspan="3">Memuat data...</td></tr></tbody>
+          <colgroup>
+            <col style="width: 8%">
+            <col style="width: 42%">
+            <col style="width: 32%">
+            <col style="width: 18%">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th>No.</th>
+              <th>Jenis Penghargaan</th>
+              <th>Institusi Pemberi Penghargaan</th>
+              <th>Tahun</th>
+            </tr>
+          </thead>
+
+          <tbody id="honorBody">
+            <tr>
+              <td class="center">1</td>
+              <td colspan="3">Memuat data...</td>
+            </tr>
+          </tbody>
         </table>
       </section>
 
+      <!-- Statement -->
       <div class="statement">
-        <p>Semua data yang saya isikan dan tercantum dalam biodata ini adalah benar dan dapat dipertanggungjawabkan secara hukum. Apabila di kemudian hari ternyata dijumpai ketidak-sesuaian dengan kenyataan, saya sanggup menerima risikonya. Demikian biodata ini saya buat dengan sebenarnya.</p>
+        <p>
+          Semua data yang saya isikan dan tercantum dalam biodata ini adalah
+          benar dan dapat dipertanggungjawabkan secara hukum. Apabila di
+          kemudian hari ternyata dijumpai ketidak-sesuaian dengan kenyataan,
+          saya sanggup menerima risikonya. Demikian biodata ini saya buat
+          dengan sebenarnya.
+        </p>
       </div>
 
+      <!-- Signature -->
       <div class="signature-container">
         <div class="signature">
-          <div>Surabaya, <span id="signatureDate">-</span></div>
+          <div>
+            Surabaya,
+            <span id="signatureDate">-</span>
+          </div>
+
           <div>Pengusul,</div>
+
           <div class="signature-space"></div>
-          <div class="signature-name">Rifqi Abdillah, S.Tr.T., M.Kom</div>
-          <div>NIP. 199911012024061001</div>
+
+          <div class="signature-name">
+            Rifqi Abdillah, S.Tr.T., M.Kom
+          </div>
+
+          <div>
+            NIP. 199911012024061001
+          </div>
         </div>
       </div>
+
     </main>
   </div>
 
+  <!-- =========================================================
+       LIBRARIES
+       ========================================================= -->
+
   <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
   <script>
+    /* =========================================================
+       CONFIG
+       ========================================================= */
+
     const DATABASE_PATHS = {
       teaching: "/database/teaching/data.json",
       research: "/database/research/data.json",
@@ -253,6 +949,16 @@
       hki: "/database/hki/data.json",
       honors: "/database/honor/data.json"
     };
+
+    const DOCX_FONT = "Arial";
+
+    /*
+     * Library docx menggunakan half-point.
+     * 24 = 12 pt.
+     */
+    const DOCX_FONT_SIZE = 24;
+
+    const DOCX_LINE_SPACING = 276;
 
     let normalizedData = {
       courses: [],
@@ -267,6 +973,10 @@
 
     let dataReadyPromise = null;
 
+    /* =========================================================
+       GENERAL UTILITIES
+       ========================================================= */
+
     function goHome() {
       window.location.href = "index.html";
     }
@@ -280,9 +990,13 @@
       }).formatToParts(new Date());
 
       const values = {};
+
       parts.forEach(part => {
-        if (part.type !== "literal") values[part.type] = Number(part.value);
+        if (part.type !== "literal") {
+          values[part.type] = Number(part.value);
+        }
       });
+
       return values;
     }
 
@@ -292,73 +1006,170 @@
 
     function formatIndonesianDate() {
       const { day, month, year } = getJakartaDateParts();
+
       const monthNames = [
-        "Januari", "Februari", "Maret", "April", "Mei", "Juni",
-        "Juli", "Agustus", "September", "Oktober", "November", "Desember"
+        "Januari",
+        "Februari",
+        "Maret",
+        "April",
+        "Mei",
+        "Juni",
+        "Juli",
+        "Agustus",
+        "September",
+        "Oktober",
+        "November",
+        "Desember"
       ];
+
       return `${String(day).padStart(2, "0")} ${monthNames[month - 1]} ${year}`;
     }
 
     function alphaLabel(index) {
       let value = index + 1;
       let label = "";
+
       while (value > 0) {
         value--;
-        label = String.fromCharCode(97 + (value % 26)) + label;
+        label =
+          String.fromCharCode(97 + (value % 26)) +
+          label;
+
         value = Math.floor(value / 26);
       }
+
       return label;
     }
 
     function normalizeYear(value) {
       const year = Number.parseInt(value, 10);
-      return Number.isFinite(year) ? year : null;
+
+      return Number.isFinite(year)
+        ? year
+        : null;
     }
 
     function isWithinLastYears(yearValue, years) {
       const year = normalizeYear(yearValue);
-      if (!year) return false;
+
+      if (!year) {
+        return false;
+      }
+
       const currentYear = getCurrentYear();
-      return year >= currentYear - (years - 1) && year <= currentYear;
+
+      return (
+        year >= currentYear - (years - 1) &&
+        year <= currentYear
+      );
     }
 
     function sortNewestFirst(items) {
       return [...items].sort((a, b) => {
-        const yearDiff = (normalizeYear(b.year) || 0) - (normalizeYear(a.year) || 0);
-        if (yearDiff !== 0) return yearDiff;
-        const titleA = String(a.title_in || a.title || a.event || "");
-        const titleB = String(b.title_in || b.title || b.event || "");
+        const yearA = normalizeYear(a.year) || 0;
+        const yearB = normalizeYear(b.year) || 0;
+
+        const yearDifference = yearB - yearA;
+
+        if (yearDifference !== 0) {
+          return yearDifference;
+        }
+
+        const titleA = String(
+          a.title_in ||
+          a.title ||
+          a.event ||
+          ""
+        );
+
+        const titleB = String(
+          b.title_in ||
+          b.title ||
+          b.event ||
+          ""
+        );
+
         return titleA.localeCompare(titleB, "id");
       });
     }
 
     function formatNumber(value) {
-      if (value === null || value === undefined || value === "") return "";
-      const numeric = Number(String(value).replace(/[^\d.-]/g, ""));
-      if (!Number.isFinite(numeric)) return String(value);
-      return new Intl.NumberFormat("id-ID", { maximumFractionDigits: 0 }).format(numeric);
+      if (
+        value === null ||
+        value === undefined ||
+        value === ""
+      ) {
+        return "";
+      }
+
+      const numeric = Number(
+        String(value).replace(/[^\d.-]/g, "")
+      );
+
+      if (!Number.isFinite(numeric)) {
+        return String(value);
+      }
+
+      return new Intl.NumberFormat("id-ID", {
+        maximumFractionDigits: 0
+      }).format(numeric);
     }
 
+    /* =========================================================
+       FETCH DATA
+       ========================================================= */
+
     async function safeFetchJson(path) {
-      const response = await fetch(path, { cache: "no-store" });
-      if (!response.ok) throw new Error(`${path} gagal dimuat (${response.status})`);
+      const response = await fetch(path, {
+        cache: "no-store"
+      });
+
+      if (!response.ok) {
+        throw new Error(
+          `${path} gagal dimuat (${response.status})`
+        );
+      }
+
       return response.json();
     }
 
     function extractArray(data, key) {
-      if (Array.isArray(data)) return data;
-      if (data && Array.isArray(data[key])) return data[key];
+      if (Array.isArray(data)) {
+        return data;
+      }
+
+      if (
+        data &&
+        Array.isArray(data[key])
+      ) {
+        return data[key];
+      }
+
       return [];
     }
+
+    /* =========================================================
+       NORMALIZE DATA
+       ========================================================= */
 
     function deduplicateCourses(items) {
       const unique = new Map();
 
       items.forEach(item => {
-        const title = String(item.title_in || item.title || "").trim();
-        if (!title) return;
+        const title = String(
+          item.title_in ||
+          item.title ||
+          ""
+        ).trim();
 
-        const key = title.toLocaleLowerCase("id-ID").replace(/\s+/g, " ");
+        if (!title) {
+          return;
+        }
+
+        const key = title
+          .toLocaleLowerCase("id-ID")
+          .replace(/\s+/g, " ");
+
         if (!unique.has(key)) {
           unique.set(key, {
             title,
@@ -371,79 +1182,194 @@
     }
 
     function normalizeLoadedData(raw) {
-      const teaching = extractArray(raw.teaching, "teaching");
-      const research = extractArray(raw.research, "research");
-      const community = extractArray(raw.community, "community");
-      const publications = extractArray(raw.publications, "publications");
-      const books = extractArray(raw.books, "books");
-      const hki = extractArray(raw.hki, "hki");
-      const honors = extractArray(raw.honors, "honors");
+      const teaching = extractArray(
+        raw.teaching,
+        "teaching"
+      );
+
+      const research = extractArray(
+        raw.research,
+        "research"
+      );
+
+      const community = extractArray(
+        raw.community,
+        "community"
+      );
+
+      const publications = extractArray(
+        raw.publications,
+        "publications"
+      );
+
+      const books = extractArray(
+        raw.books,
+        "books"
+      );
+
+      const hki = extractArray(
+        raw.hki,
+        "hki"
+      );
+
+      const honors = extractArray(
+        raw.honors,
+        "honors"
+      );
 
       normalizedData = {
         courses: deduplicateCourses(teaching),
-        research: sortNewestFirst(research.filter(item => isWithinLastYears(item.year, 5))),
-        community: sortNewestFirst(community.filter(item => isWithinLastYears(item.year, 5))),
-        journals: sortNewestFirst(publications.filter(item => String(item.type || "").toLowerCase() === "journal" && isWithinLastYears(item.year, 5))),
-        conferences: sortNewestFirst(publications.filter(item => String(item.type || "").toLowerCase() === "conference" && isWithinLastYears(item.year, 5))),
-        books: sortNewestFirst(books.filter(item => isWithinLastYears(item.year, 5))),
-        hki: sortNewestFirst(hki.filter(item => isWithinLastYears(item.year, 5))),
-        honors: sortNewestFirst(honors.filter(item => isWithinLastYears(item.year, 10)))
+
+        research: sortNewestFirst(
+          research.filter(
+            item => isWithinLastYears(item.year, 5)
+          )
+        ),
+
+        community: sortNewestFirst(
+          community.filter(
+            item => isWithinLastYears(item.year, 5)
+          )
+        ),
+
+        journals: sortNewestFirst(
+          publications.filter(item =>
+            String(item.type || "").toLowerCase() === "journal" &&
+            isWithinLastYears(item.year, 5)
+          )
+        ),
+
+        conferences: sortNewestFirst(
+          publications.filter(item =>
+            String(item.type || "").toLowerCase() === "conference" &&
+            isWithinLastYears(item.year, 5)
+          )
+        ),
+
+        books: sortNewestFirst(
+          books.filter(
+            item => isWithinLastYears(item.year, 5)
+          )
+        ),
+
+        hki: sortNewestFirst(
+          hki.filter(
+            item => isWithinLastYears(item.year, 5)
+          )
+        ),
+
+        honors: sortNewestFirst(
+          honors.filter(
+            item => isWithinLastYears(item.year, 10)
+          )
+        )
       };
     }
 
+    /* =========================================================
+       WEB RENDERING
+       ========================================================= */
+
     function setStatus(messages) {
       const status = document.getElementById("dataStatus");
+
       if (!messages.length) {
         status.classList.remove("show");
         status.textContent = "";
         return;
       }
 
-      status.textContent = "Beberapa sumber data tidak dapat dimuat: " + messages.join("; ");
+      status.textContent =
+        "Beberapa sumber data tidak dapat dimuat: " +
+        messages.join("; ");
+
       status.classList.add("show");
     }
 
     function createTextCell(text, className = "") {
       const td = document.createElement("td");
+
       td.textContent = text ?? "";
-      if (className) td.className = className;
+
+      if (className) {
+        td.className = className;
+      }
+
       return td;
     }
 
-    function renderRows(tbodyId, rows, emptyColumnCount) {
+    function renderRows(
+      tbodyId,
+      rows,
+      emptyColumnCount
+    ) {
       const tbody = document.getElementById(tbodyId);
+
       tbody.replaceChildren();
 
       if (!rows.length) {
         const tr = document.createElement("tr");
-        tr.appendChild(createTextCell("1", "center"));
-        for (let i = 1; i < emptyColumnCount; i++) tr.appendChild(createTextCell(""));
+
+        tr.appendChild(
+          createTextCell("1", "center")
+        );
+
+        for (
+          let i = 1;
+          i < emptyColumnCount;
+          i++
+        ) {
+          tr.appendChild(
+            createTextCell("")
+          );
+        }
+
         tbody.appendChild(tr);
         return;
       }
 
       rows.forEach((row, index) => {
         const tr = document.createElement("tr");
-        tr.appendChild(createTextCell(String(index + 1), "center"));
-        row.forEach(value => tr.appendChild(createTextCell(value)));
+
+        tr.appendChild(
+          createTextCell(
+            String(index + 1),
+            "center"
+          )
+        );
+
+        row.forEach(value => {
+          tr.appendChild(
+            createTextCell(value)
+          );
+        });
+
         tbody.appendChild(tr);
       });
     }
 
     function renderCourses() {
       const list = document.getElementById("courseList");
+
       list.replaceChildren();
 
       if (!normalizedData.courses.length) {
         const li = document.createElement("li");
+
         li.textContent = "-";
+
         list.appendChild(li);
         return;
       }
 
       normalizedData.courses.forEach(course => {
         const li = document.createElement("li");
-        li.textContent = course.credits !== "" ? `${course.title} (${course.credits} SKS)` : course.title;
+
+        li.textContent =
+          course.credits !== ""
+            ? `${course.title} (${course.credits} SKS)`
+            : course.title;
+
         list.appendChild(li);
       });
     }
@@ -477,7 +1403,9 @@
         "journalBody",
         normalizedData.journals.map(item => [
           item.title || "",
-          [item.pages, item.year].filter(Boolean).join(" / "),
+          [item.pages, item.year]
+            .filter(Boolean)
+            .join(" / "),
           item.venue || ""
         ]),
         4
@@ -488,7 +1416,9 @@
         normalizedData.conferences.map(item => [
           item.venue || "",
           item.title || "",
-          [item.year, item.place].filter(Boolean).join(", ")
+          [item.year, item.place]
+            .filter(Boolean)
+            .join(", ")
         ]),
         4
       );
@@ -518,61 +1448,99 @@
       renderRows(
         "honorBody",
         normalizedData.honors.map(item => [
-          [item.title, item.event].filter(Boolean).join(" - "),
+          [item.title, item.event]
+            .filter(Boolean)
+            .join(" - "),
           item.institution || "",
           item.year || ""
         ]),
         4
       );
 
-      document.getElementById("signatureDate").textContent = formatIndonesianDate();
+      document.getElementById(
+        "signatureDate"
+      ).textContent = formatIndonesianDate();
     }
 
     async function loadAllData() {
-      const entries = Object.entries(DATABASE_PATHS);
-      const settled = await Promise.allSettled(entries.map(([, path]) => safeFetchJson(path)));
+      const entries = Object.entries(
+        DATABASE_PATHS
+      );
+
+      const settled = await Promise.allSettled(
+        entries.map(
+          ([, path]) => safeFetchJson(path)
+        )
+      );
+
       const raw = {};
       const errors = [];
 
       settled.forEach((result, index) => {
         const key = entries[index][0];
+
         if (result.status === "fulfilled") {
           raw[key] = result.value;
         } else {
           raw[key] = [];
-          errors.push(result.reason?.message || `${DATABASE_PATHS[key]} gagal dimuat`);
+
+          errors.push(
+            result.reason?.message ||
+            `${DATABASE_PATHS[key]} gagal dimuat`
+          );
         }
       });
 
       normalizeLoadedData(raw);
       renderAllData();
       setStatus(errors);
+
       return normalizedData;
     }
 
-    document.addEventListener("DOMContentLoaded", () => {
-      document.getElementById("signatureDate").textContent = formatIndonesianDate();
-      dataReadyPromise = loadAllData();
-    });
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        document.getElementById(
+          "signatureDate"
+        ).textContent = formatIndonesianDate();
+
+        dataReadyPromise = loadAllData();
+      }
+    );
+
+    /* =========================================================
+       DOCX GENERATOR
+       ========================================================= */
 
     async function downloadDOCX() {
-      const button = document.getElementById("btnDownloadDocx");
+      const button = document.getElementById(
+        "btnDownloadDocx"
+      );
 
       try {
         if (typeof docx === "undefined") {
-          alert("Library DOCX gagal dimuat. Pastikan perangkat terhubung ke internet lalu refresh halaman.");
+          alert(
+            "Library DOCX gagal dimuat. Pastikan perangkat terhubung ke internet lalu refresh halaman."
+          );
           return;
         }
 
         if (typeof saveAs === "undefined") {
-          alert("Library FileSaver gagal dimuat. Silakan refresh halaman.");
+          alert(
+            "Library FileSaver gagal dimuat. Silakan refresh halaman."
+          );
           return;
         }
 
         button.disabled = true;
-        button.innerHTML = '<i class="bi bi-hourglass-split"></i> Membuat DOCX...';
 
-        if (dataReadyPromise) await dataReadyPromise;
+        button.innerHTML =
+          '<i class="bi bi-hourglass-split"></i> Membuat DOCX...';
+
+        if (dataReadyPromise) {
+          await dataReadyPromise;
+        }
 
         const {
           Document,
@@ -588,303 +1556,949 @@
           VerticalAlign
         } = docx;
 
+        /* =====================================================
+           BORDERS
+           ===================================================== */
+
         const noBorders = {
-          top: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
-          bottom: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
-          left: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
-          right: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
-          insideHorizontal: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" },
-          insideVertical: { style: BorderStyle.NONE, size: 0, color: "FFFFFF" }
+          top: {
+            style: BorderStyle.NONE,
+            size: 0,
+            color: "FFFFFF"
+          },
+          bottom: {
+            style: BorderStyle.NONE,
+            size: 0,
+            color: "FFFFFF"
+          },
+          left: {
+            style: BorderStyle.NONE,
+            size: 0,
+            color: "FFFFFF"
+          },
+          right: {
+            style: BorderStyle.NONE,
+            size: 0,
+            color: "FFFFFF"
+          },
+          insideHorizontal: {
+            style: BorderStyle.NONE,
+            size: 0,
+            color: "FFFFFF"
+          },
+          insideVertical: {
+            style: BorderStyle.NONE,
+            size: 0,
+            color: "FFFFFF"
+          }
         };
 
         const normalBorders = {
-          top: { style: BorderStyle.SINGLE, size: 6, color: "000000" },
-          bottom: { style: BorderStyle.SINGLE, size: 6, color: "000000" },
-          left: { style: BorderStyle.SINGLE, size: 6, color: "000000" },
-          right: { style: BorderStyle.SINGLE, size: 6, color: "000000" }
+          top: {
+            style: BorderStyle.SINGLE,
+            size: 6,
+            color: "000000"
+          },
+          bottom: {
+            style: BorderStyle.SINGLE,
+            size: 6,
+            color: "000000"
+          },
+          left: {
+            style: BorderStyle.SINGLE,
+            size: 6,
+            color: "000000"
+          },
+          right: {
+            style: BorderStyle.SINGLE,
+            size: 6,
+            color: "000000"
+          }
         };
 
-        function createParagraph(text = "", bold = false, alignment = AlignmentType.LEFT, size = 22, spaceBefore = 0, spaceAfter = 0) {
+        /* =====================================================
+           PARAGRAPH
+           Semua font 12 pt = size 24
+           ===================================================== */
+
+        function createParagraph(
+          text = "",
+          bold = false,
+          alignment = AlignmentType.LEFT,
+          spaceBefore = 0,
+          spaceAfter = 0
+        ) {
           return new Paragraph({
             alignment,
-            spacing: { before: spaceBefore, after: spaceAfter, line: 276 },
-            children: [new TextRun({ text: String(text ?? ""), font: "Arial", size, bold })]
+
+            spacing: {
+              before: spaceBefore,
+              after: spaceAfter,
+              line: DOCX_LINE_SPACING
+            },
+
+            children: [
+              new TextRun({
+                text: String(text ?? ""),
+                font: DOCX_FONT,
+                size: DOCX_FONT_SIZE,
+                bold
+              })
+            ]
           });
         }
 
         function sectionTitle(text) {
-          return createParagraph(text, true, AlignmentType.LEFT, 22, 260, 100);
+          return createParagraph(
+            text,
+            true,
+            AlignmentType.LEFT,
+            260,
+            100
+          );
         }
 
-        function createCell(text = "", width, bold = false, center = false) {
+        /* =====================================================
+           TABLE CELLS
+           ===================================================== */
+
+        function createCell(
+          text = "",
+          width,
+          bold = false,
+          center = false
+        ) {
           return new TableCell({
-            width: { size: width, type: WidthType.PERCENTAGE },
+            width: {
+              size: width,
+              type: WidthType.PERCENTAGE
+            },
+
             verticalAlign: VerticalAlign.TOP,
-            margins: { top: 80, bottom: 80, left: 100, right: 100 },
+
+            margins: {
+              top: 80,
+              bottom: 80,
+              left: 100,
+              right: 100
+            },
+
             borders: normalBorders,
-            children: [createParagraph(text, bold, center ? AlignmentType.CENTER : AlignmentType.LEFT, 21)]
+
+            children: [
+              createParagraph(
+                text,
+                bold,
+                center
+                  ? AlignmentType.CENTER
+                  : AlignmentType.LEFT
+              )
+            ]
           });
         }
 
-        function identityCell(text, width, alignment = AlignmentType.LEFT) {
+        function identityCell(
+          text,
+          width,
+          alignment = AlignmentType.LEFT
+        ) {
           return new TableCell({
-            width: { size: width, type: WidthType.PERCENTAGE },
+            width: {
+              size: width,
+              type: WidthType.PERCENTAGE
+            },
+
             borders: noBorders,
+
             verticalAlign: VerticalAlign.TOP,
-            margins: { top: 30, bottom: 30, left: 20, right: 20 },
-            children: [createParagraph(text, false, alignment, 22)]
+
+            margins: {
+              top: 30,
+              bottom: 30,
+              left: 20,
+              right: 20
+            },
+
+            children: [
+              createParagraph(
+                text,
+                false,
+                alignment
+              )
+            ]
           });
         }
 
-        function identityRow(number, label, value) {
+        /* =====================================================
+           IDENTITY TABLE
+           ===================================================== */
+
+        function identityRow(
+          number,
+          label,
+          value
+        ) {
           return new TableRow({
             cantSplit: true,
+
             children: [
-              identityCell(number, 5, AlignmentType.RIGHT),
-              identityCell(label, 32),
-              identityCell(":", 3, AlignmentType.CENTER),
-              identityCell(value, 60)
+              identityCell(
+                number,
+                5,
+                AlignmentType.RIGHT
+              ),
+
+              identityCell(
+                label,
+                32
+              ),
+
+              identityCell(
+                ":",
+                3,
+                AlignmentType.CENTER
+              ),
+
+              identityCell(
+                value,
+                60
+              )
             ]
           });
         }
 
         function courseIdentityRow() {
-          const courseParagraphs = normalizedData.courses.length
-            ? normalizedData.courses.map((course, index) =>
-                createParagraph(
-                  `${alphaLabel(index)}. ${course.credits !== "" ? `${course.title} (${course.credits} SKS)` : course.title}`,
-                  false,
-                  AlignmentType.LEFT,
-                  22,
-                  0,
-                  0
+          const courseParagraphs =
+            normalizedData.courses.length
+              ? normalizedData.courses.map(
+                  (course, index) => {
+                    const courseText =
+                      course.credits !== ""
+                        ? `${course.title} (${course.credits} SKS)`
+                        : course.title;
+
+                    return createParagraph(
+                      `${alphaLabel(index)}. ${courseText}`
+                    );
+                  }
                 )
-              )
-            : [createParagraph("a. -")];
+              : [
+                  createParagraph("a. -")
+                ];
 
           return new TableRow({
             cantSplit: true,
+
             children: [
-              identityCell("12", 5, AlignmentType.RIGHT),
-              identityCell("Mata Kuliah yg Diampu", 32),
-              identityCell(":", 3, AlignmentType.CENTER),
+              identityCell(
+                "12",
+                5,
+                AlignmentType.RIGHT
+              ),
+
+              identityCell(
+                "Mata Kuliah yg Diampu",
+                32
+              ),
+
+              identityCell(
+                ":",
+                3,
+                AlignmentType.CENTER
+              ),
+
               new TableCell({
-                width: { size: 60, type: WidthType.PERCENTAGE },
+                width: {
+                  size: 60,
+                  type: WidthType.PERCENTAGE
+                },
+
                 borders: noBorders,
-                verticalAlign: VerticalAlign.TOP,
-                margins: { top: 30, bottom: 30, left: 20, right: 20 },
-                children: courseParagraphs
+
+                verticalAlign:
+                  VerticalAlign.TOP,
+
+                margins: {
+                  top: 30,
+                  bottom: 30,
+                  left: 20,
+                  right: 20
+                },
+
+                children:
+                  courseParagraphs
               })
             ]
           });
         }
 
         const identityTable = new Table({
-          width: { size: 100, type: WidthType.PERCENTAGE },
+          width: {
+            size: 100,
+            type: WidthType.PERCENTAGE
+          },
+
           borders: noBorders,
+
           rows: [
-            identityRow("1", "Nama Lengkap (dengan gelar)", "Rifqi Abdillah"),
-            identityRow("2", "Jenis Kelamin", "Laki-laki"),
-            identityRow("3", "Jabatan Fungsional", "Asisten Ahli"),
-            identityRow("4", "Program Studi", "Teknik Informatika"),
-            identityRow("5", "NIP/NIK/Identitas lainnya", "199911012024061001"),
-            identityRow("6", "NIDN", "0001119901"),
-            identityRow("7", "Tempat dan Tanggal Lahir", "Sampang, 01 November 1999"),
-            identityRow("8", "Nomor Telepon/Faks/HP", "+62 85331624441"),
-            identityRow("9", "Alamat e-mail", "rifqiabdillah@unesa.ac.id"),
-            identityRow("10", "Alamat Rumah", "Dusun Bringkoneng Desa Tlagah, Kec. Banyuates, Kab. Sampang"),
-            identityRow("11", "Alamat Kantor", "Kampus UNESA Gedung A10, Unesa Kampus Ketintang Surabaya"),
+            identityRow(
+              "1",
+              "Nama Lengkap",
+              "Rifqi Abdillah"
+            ),
+
+            identityRow(
+              "2",
+              "Jenis Kelamin",
+              "Laki-laki"
+            ),
+
+            identityRow(
+              "3",
+              "Jabatan Fungsional",
+              "Asisten Ahli"
+            ),
+
+            identityRow(
+              "4",
+              "Program Studi",
+              "Teknik Informatika"
+            ),
+
+            identityRow(
+              "5",
+              "NIP/NIK/Identitas lainnya",
+              "199911012024061001"
+            ),
+
+            identityRow(
+              "6",
+              "NIDN",
+              "0001119901"
+            ),
+
+            identityRow(
+              "7",
+              "Tempat dan Tanggal Lahir",
+              "Sampang, 01 November 1999"
+            ),
+
+            identityRow(
+              "8",
+              "Nomor Telepon/Faks/HP",
+              "+62 85331624441"
+            ),
+
+            identityRow(
+              "9",
+              "Alamat e-mail",
+              "rifqiabdillah@unesa.ac.id"
+            ),
+
+            identityRow(
+              "10",
+              "Alamat Rumah",
+              "Dusun Bringkoneng Desa Tlagah, Kec. Banyuates, Kab. Sampang"
+            ),
+
+            identityRow(
+              "11",
+              "Alamat Kantor",
+              "Kampus UNESA Gedung A10, Unesa Kampus Ketintang Surabaya"
+            ),
+
             courseIdentityRow()
           ]
         });
 
+        /* =====================================================
+           EDUCATION TABLE
+           ===================================================== */
+
         const educationRows = [
-          ["", "S-1", "S-2", "S-3"],
-          ["Nama Perguruan Tinggi", "Politeknik Elektronika Negeri Surabaya", "Institut Teknologi Sepuluh Nopember", ""],
-          ["Bidang Ilmu", "D4 Teknik Elektronika", "S2 Teknik Informatika", ""],
-          ["Tahun Masuk-Lulus", "2016-2020", "2021-2023", ""],
-          ["Judul Tugas Akhir/Thesis/Disertasi", "Mesin Presensi Perkuliahan Berbasis Embedded Vision - Machine Learning Platform", "Pengurangan Noise Untuk Meningkatkan Akurasi Data Valid Pada Sinyal Photoplethysmograph dengan K-Means Clustering dan Exponential Filter", ""],
-          ["Nama Pembimbing/Promotor", "Dr. Ing. Ir. Arif Irwansyah, S.T., M.Eng.", "Prof. Drs. Ec. Ir. Riyanarto Sarno, M.Sc., Ph.D", ""]
+          [
+            "",
+            "S-1",
+            "S-2",
+            "S-3"
+          ],
+
+          [
+            "Nama Perguruan Tinggi",
+            "Politeknik Elektronika Negeri Surabaya",
+            "Institut Teknologi Sepuluh Nopember",
+            ""
+          ],
+
+          [
+            "Bidang Ilmu",
+            "D4 Teknik Elektronika",
+            "S2 Teknik Informatika",
+            ""
+          ],
+
+          [
+            "Tahun Masuk-Lulus",
+            "2016-2020",
+            "2021-2023",
+            ""
+          ],
+
+          [
+            "Judul Tugas Akhir/Thesis/Disertasi",
+            "Mesin Presensi Perkuliahan Berbasis Embedded Vision - Machine Learning Platform",
+            "Pengurangan Noise Untuk Meningkatkan Akurasi Data Valid Pada Sinyal Photoplethysmograph dengan K-Means Clustering dan Exponential Filter",
+            ""
+          ],
+
+          [
+            "Nama Pembimbing/Promotor",
+            "Dr. Ing. Ir. Arif Irwansyah, S.T., M.Eng.",
+            "Prof. Drs. Ec. Ir. Riyanarto Sarno, M.Sc., Ph.D",
+            ""
+          ]
         ];
 
         const educationTable = new Table({
-          width: { size: 100, type: WidthType.PERCENTAGE },
-          rows: educationRows.map((row, index) => new TableRow({
-            cantSplit: true,
-            children: row.map(text => createCell(text, 25, index === 0, index === 0))
-          }))
+          width: {
+            size: 100,
+            type: WidthType.PERCENTAGE
+          },
+
+          rows: educationRows.map(
+            (row, index) =>
+              new TableRow({
+                cantSplit: true,
+
+                children: row.map(
+                  text =>
+                    createCell(
+                      text,
+                      25,
+                      index === 0,
+                      index === 0
+                    )
+                )
+              })
+          )
         });
 
-        function createFundingTable(activityTitle, items) {
-          const mergedCell = (text, width, options = {}) => new TableCell({
-            ...options,
-            width: { size: width, type: WidthType.PERCENTAGE },
-            verticalAlign: VerticalAlign.CENTER,
-            margins: { top: 80, bottom: 80, left: 100, right: 100 },
-            borders: normalBorders,
-            children: [createParagraph(text, true, AlignmentType.CENTER, 21)]
-          });
+        /* =====================================================
+           FUNDING TABLE
+           ===================================================== */
 
-          const dataRows = items.length
-            ? items.map((item, index) => new TableRow({
-                cantSplit: true,
-                children: [
-                  createCell(String(index + 1), 7, false, true),
-                  createCell(item.year ?? "", 12),
-                  createCell(item.title_in || item.title || "", 51),
-                  createCell(item.funding || "", 15),
-                  createCell(formatNumber(item.funding_amount), 15)
-                ]
-              }))
-            : [new TableRow({
-                cantSplit: true,
-                children: [
-                  createCell("1", 7, false, true),
-                  createCell("", 12),
-                  createCell("", 51),
-                  createCell("", 15),
-                  createCell("", 15)
-                ]
-              })];
+        function createFundingTable(
+          activityTitle,
+          items
+        ) {
+          function mergedCell(
+            text,
+            width,
+            options = {}
+          ) {
+            return new TableCell({
+              ...options,
+
+              width: {
+                size: width,
+                type: WidthType.PERCENTAGE
+              },
+
+              verticalAlign:
+                VerticalAlign.CENTER,
+
+              margins: {
+                top: 80,
+                bottom: 80,
+                left: 100,
+                right: 100
+              },
+
+              borders: normalBorders,
+
+              children: [
+                createParagraph(
+                  text,
+                  true,
+                  AlignmentType.CENTER
+                )
+              ]
+            });
+          }
+
+          const dataRows =
+            items.length
+              ? items.map(
+                  (item, index) =>
+                    new TableRow({
+                      cantSplit: true,
+
+                      children: [
+                        createCell(
+                          String(index + 1),
+                          7,
+                          false,
+                          true
+                        ),
+
+                        createCell(
+                          item.year ?? "",
+                          12
+                        ),
+
+                        createCell(
+                          item.title_in ||
+                          item.title ||
+                          "",
+                          51
+                        ),
+
+                        createCell(
+                          item.funding || "",
+                          15
+                        ),
+
+                        createCell(
+                          formatNumber(
+                            item.funding_amount
+                          ),
+                          15
+                        )
+                      ]
+                    })
+                )
+              : [
+                  new TableRow({
+                    cantSplit: true,
+
+                    children: [
+                      createCell(
+                        "1",
+                        7,
+                        false,
+                        true
+                      ),
+
+                      createCell("", 12),
+                      createCell("", 51),
+                      createCell("", 15),
+                      createCell("", 15)
+                    ]
+                  })
+                ];
 
           return new Table({
-            width: { size: 100, type: WidthType.PERCENTAGE },
+            width: {
+              size: 100,
+              type: WidthType.PERCENTAGE
+            },
+
             rows: [
               new TableRow({
                 cantSplit: true,
+
                 children: [
-                  mergedCell("No.", 7, { rowSpan: 2 }),
-                  mergedCell("Tahun", 12, { rowSpan: 2 }),
-                  mergedCell(activityTitle, 51, { rowSpan: 2 }),
-                  mergedCell("Pendanaan", 30, { columnSpan: 2 })
+                  mergedCell(
+                    "No.",
+                    7,
+                    { rowSpan: 2 }
+                  ),
+
+                  mergedCell(
+                    "Tahun",
+                    12,
+                    { rowSpan: 2 }
+                  ),
+
+                  mergedCell(
+                    activityTitle,
+                    51,
+                    { rowSpan: 2 }
+                  ),
+
+                  mergedCell(
+                    "Pendanaan",
+                    30,
+                    { columnSpan: 2 }
+                  )
                 ]
               }),
+
               new TableRow({
                 cantSplit: true,
+
                 children: [
-                  createCell("Sumber*", 15, true, true),
-                  createCell("Jml (Rp)", 15, true, true)
+                  createCell(
+                    "Sumber*",
+                    15,
+                    true,
+                    true
+                  ),
+
+                  createCell(
+                    "Jml (Rp)",
+                    15,
+                    true,
+                    true
+                  )
                 ]
               }),
+
               ...dataRows
             ]
           });
         }
 
-        function simpleTable(headers, widths, rows) {
-          const dataRows = rows.length
-            ? rows.map((row, index) => new TableRow({
-                cantSplit: true,
-                children: [
-                  createCell(String(index + 1), widths[0], false, true),
-                  ...row.map((value, i) => createCell(value, widths[i + 1]))
-                ]
-              }))
-            : [new TableRow({
-                cantSplit: true,
-                children: headers.map((_, i) => createCell(i === 0 ? "1" : "", widths[i], false, i === 0))
-              })];
+        /* =====================================================
+           SIMPLE TABLE
+           ===================================================== */
+
+        function simpleTable(
+          headers,
+          widths,
+          rows
+        ) {
+          const dataRows =
+            rows.length
+              ? rows.map(
+                  (row, index) =>
+                    new TableRow({
+                      cantSplit: true,
+
+                      children: [
+                        createCell(
+                          String(index + 1),
+                          widths[0],
+                          false,
+                          true
+                        ),
+
+                        ...row.map(
+                          (value, i) =>
+                            createCell(
+                              value,
+                              widths[i + 1]
+                            )
+                        )
+                      ]
+                    })
+                )
+              : [
+                  new TableRow({
+                    cantSplit: true,
+
+                    children:
+                      headers.map(
+                        (_, i) =>
+                          createCell(
+                            i === 0
+                              ? "1"
+                              : "",
+                            widths[i],
+                            false,
+                            i === 0
+                          )
+                      )
+                  })
+                ];
 
           return new Table({
-            width: { size: 100, type: WidthType.PERCENTAGE },
+            width: {
+              size: 100,
+              type: WidthType.PERCENTAGE
+            },
+
             rows: [
               new TableRow({
                 cantSplit: true,
-                children: headers.map((header, i) => createCell(header, widths[i], true, true))
+
+                children:
+                  headers.map(
+                    (header, i) =>
+                      createCell(
+                        header,
+                        widths[i],
+                        true,
+                        true
+                      )
+                  )
               }),
+
               ...dataRows
             ]
           });
         }
+
+        /* =====================================================
+           JOURNAL TABLE
+           ===================================================== */
 
         const journalTable = simpleTable(
-          ["No.", "Judul Artikel Ilmiah", "Volume/Nomor/Tahun", "Nama Jurnal"],
-          [8, 43, 27, 22],
-          normalizedData.journals.map(item => [
-            item.title || "",
-            [item.pages, item.year].filter(Boolean).join(" / "),
-            item.venue || ""
-          ])
+          [
+            "No.",
+            "Judul Artikel Ilmiah",
+            "Volume/Nomor/Tahun",
+            "Nama Jurnal"
+          ],
+
+          [
+            8,
+            43,
+            27,
+            22
+          ],
+
+          normalizedData.journals.map(
+            item => [
+              item.title || "",
+
+              [
+                item.pages,
+                item.year
+              ]
+                .filter(Boolean)
+                .join(" / "),
+
+              item.venue || ""
+            ]
+          )
         );
+
+        /* =====================================================
+           SEMINAR TABLE
+           ===================================================== */
 
         const seminarTable = simpleTable(
-          ["No.", "Nama Pertemuan Ilmiah / Seminar", "Judul Artikel Ilmiah", "Waktu dan Tempat"],
-          [7, 32, 36, 25],
-          normalizedData.conferences.map(item => [
-            item.venue || "",
-            item.title || "",
-            [item.year, item.place].filter(Boolean).join(", ")
-          ])
+          [
+            "No.",
+            "Nama Pertemuan Ilmiah / Seminar",
+            "Judul Artikel Ilmiah",
+            "Waktu dan Tempat"
+          ],
+
+          [
+            7,
+            32,
+            36,
+            25
+          ],
+
+          normalizedData.conferences.map(
+            item => [
+              item.venue || "",
+              item.title || "",
+
+              [
+                item.year,
+                item.place
+              ]
+                .filter(Boolean)
+                .join(", ")
+            ]
+          )
         );
+
+        /* =====================================================
+           BOOK TABLE
+           ===================================================== */
 
         const bookTable = simpleTable(
-          ["No.", "Judul Buku", "Tahun", "Jumlah Halaman", "Penerbit"],
-          [8, 37, 14, 17, 24],
-          normalizedData.books.map(item => [
-            item.title || "",
-            item.year || "",
-            item.page_amount || "",
-            item.publisher || ""
-          ])
+          [
+            "No.",
+            "Judul Buku",
+            "Tahun",
+            "Jumlah Halaman",
+            "Penerbit"
+          ],
+
+          [
+            8,
+            37,
+            14,
+            17,
+            24
+          ],
+
+          normalizedData.books.map(
+            item => [
+              item.title || "",
+              item.year || "",
+              item.page_amount || "",
+              item.publisher || ""
+            ]
+          )
         );
+
+        /* =====================================================
+           HKI TABLE
+           ===================================================== */
 
         const hkiTable = simpleTable(
-          ["No.", "Judul/Tema HKI", "Tahun", "Jenis", "Nomor P/ID"],
-          [8, 35, 17, 17, 23],
-          normalizedData.hki.map(item => [
-            item.title || "",
-            item.year || "",
-            item.type || "",
-            item.number_id || ""
-          ])
+          [
+            "No.",
+            "Judul/Tema HKI",
+            "Tahun",
+            "Jenis",
+            "Nomor P/ID"
+          ],
+
+          [
+            8,
+            35,
+            17,
+            17,
+            23
+          ],
+
+          normalizedData.hki.map(
+            item => [
+              item.title || "",
+              item.year || "",
+              item.type || "",
+              item.number_id || ""
+            ]
+          )
         );
 
+        /* =====================================================
+           POLICY TABLE
+           ===================================================== */
+
         const policyTable = simpleTable(
-          ["No.", "Judul/Tema/Jenis Rekayasa Sosial Lainnya yang Telah Diterapkan", "Tahun", "Tempat Penerapan", "Respons Masyarakat"],
-          [8, 36, 16, 20, 20],
+          [
+            "No.",
+            "Judul/Tema/Jenis Rekayasa Sosial Lainnya yang Telah Diterapkan",
+            "Tahun",
+            "Tempat Penerapan",
+            "Respons Masyarakat"
+          ],
+
+          [
+            8,
+            36,
+            16,
+            20,
+            20
+          ],
+
           []
         );
 
+        /* =====================================================
+           AWARD TABLE
+           ===================================================== */
+
         const awardTable = simpleTable(
-          ["No.", "Jenis Penghargaan", "Institusi Pemberi Penghargaan", "Tahun"],
-          [8, 42, 32, 18],
-          normalizedData.honors.map(item => [
-            [item.title, item.event].filter(Boolean).join(" - "),
-            item.institution || "",
-            item.year || ""
-          ])
+          [
+            "No.",
+            "Jenis Penghargaan",
+            "Institusi Pemberi Penghargaan",
+            "Tahun"
+          ],
+
+          [
+            8,
+            42,
+            32,
+            18
+          ],
+
+          normalizedData.honors.map(
+            item => [
+              [
+                item.title,
+                item.event
+              ]
+                .filter(Boolean)
+                .join(" - "),
+
+              item.institution || "",
+              item.year || ""
+            ]
+          )
         );
 
+        /* =====================================================
+           SIGNATURE TABLE
+           ===================================================== */
+
         const signatureTable = new Table({
-          width: { size: 100, type: WidthType.PERCENTAGE },
+          width: {
+            size: 100,
+            type: WidthType.PERCENTAGE
+          },
+
           borders: noBorders,
+
           rows: [
             new TableRow({
               children: [
                 new TableCell({
-                  width: { size: 58, type: WidthType.PERCENTAGE },
+                  width: {
+                    size: 58,
+                    type: WidthType.PERCENTAGE
+                  },
+
                   borders: noBorders,
-                  children: [createParagraph("")]
-                }),
-                new TableCell({
-                  width: { size: 42, type: WidthType.PERCENTAGE },
-                  borders: noBorders,
+
                   children: [
-                    createParagraph(`Surabaya, ${formatIndonesianDate()}`),
-                    createParagraph("Pengusul,"),
-                    createParagraph("", false, AlignmentType.LEFT, 22, 0, 700),
+                    createParagraph("")
+                  ]
+                }),
+
+                new TableCell({
+                  width: {
+                    size: 42,
+                    type: WidthType.PERCENTAGE
+                  },
+
+                  borders: noBorders,
+
+                  children: [
+                    createParagraph(
+                      `Surabaya, ${formatIndonesianDate()}`
+                    ),
+
+                    createParagraph(
+                      "Pengusul,"
+                    ),
+
                     new Paragraph({
-                      spacing: { after: 0 },
+                      spacing: {
+                        before: 0,
+                        after: 700,
+                        line: DOCX_LINE_SPACING
+                      },
+
+                      children: [
+                        new TextRun({
+                          text: "",
+                          font: DOCX_FONT,
+                          size: DOCX_FONT_SIZE
+                        })
+                      ]
+                    }),
+
+                    new Paragraph({
+                      spacing: {
+                        before: 0,
+                        after: 0,
+                        line: DOCX_LINE_SPACING
+                      },
+
                       children: [
                         new TextRun({
                           text: "Rifqi Abdillah, S.Tr.T., M.Kom",
-                          font: "Arial",
-                          size: 22,
+                          font: DOCX_FONT,
+                          size: DOCX_FONT_SIZE,
                           underline: {}
                         })
                       ]
                     }),
-                    createParagraph("NIP. 199911012024061001")
+
+                    createParagraph(
+                      "NIP. 199911012024061001"
+                    )
                   ]
                 })
               ]
@@ -892,67 +2506,166 @@
           ]
         });
 
+        /* =====================================================
+           CREATE WORD DOCUMENT
+           ===================================================== */
+
         const wordDocument = new Document({
           styles: {
             default: {
               document: {
-                run: { font: "Arial", size: 22 },
-                paragraph: { spacing: { line: 276 } }
+                run: {
+                  font: DOCX_FONT,
+                  size: DOCX_FONT_SIZE
+                },
+
+                paragraph: {
+                  spacing: {
+                    line: DOCX_LINE_SPACING
+                  }
+                }
               }
             }
           },
-          sections: [{
-            properties: {
-              page: {
-                size: { width: 11906, height: 16838 },
-                margin: { top: 850, right: 850, bottom: 850, left: 1020 }
-              }
-            },
-            children: [
-              createParagraph("LAMPIRAN 1. Biodata Tim Peneliti", true, AlignmentType.LEFT, 22, 0, 260),
-              sectionTitle("A. Identitas Diri"),
-              identityTable,
-              sectionTitle("B. Riwayat Pendidikan"),
-              educationTable,
-              sectionTitle("C. Pengalaman Penelitian Dalam 5 Tahun Terakhir"),
-              createFundingTable("Judul Penelitian", normalizedData.research),
-              sectionTitle("D. Pengalaman Pengabdian Kepada Masyarakat Dalam 5 Tahun Terakhir"),
-              createFundingTable("Judul Pengabdian Kepada Masyarakat", normalizedData.community),
-              sectionTitle("E. Pengalaman Penulisan Artikel Ilmiah Dalam Jurnal Dalam 5 Tahun Terakhir"),
-              journalTable,
-              sectionTitle("F. Pengalaman Penyampaian Makalah Secara Oral Pada Pertemuan / Seminar Ilmiah Dalam 5 Tahun Terakhir"),
-              seminarTable,
-              sectionTitle("G. Pengalaman Penulisan Buku dalam 5 Tahun Terakhir"),
-              bookTable,
-              sectionTitle("H. Pengalaman Perolehan HKI Dalam 5 - 10 Tahun Terakhir"),
-              hkiTable,
-              sectionTitle("I. Pengalaman Merumuskan Kebijakan Publik/Rekayasa Sosial Lainnya Dalam 5 Tahun Terakhir"),
-              policyTable,
-              sectionTitle("J. Penghargaan yang Pernah Diraih dalam 10 tahun Terakhir (dari pemerintah, asosiasi atau institusi lainnya)"),
-              awardTable,
-              createParagraph(
-                "Semua data yang saya isikan dan tercantum dalam biodata ini adalah benar dan dapat dipertanggungjawabkan secara hukum. Apabila di kemudian hari ternyata dijumpai ketidak-sesuaian dengan kenyataan, saya sanggup menerima risikonya. Demikian biodata ini saya buat dengan sebenarnya.",
-                false,
-                AlignmentType.JUSTIFIED,
-                22,
-                260,
-                260
-              ),
-              signatureTable
-            ]
-          }]
+
+          sections: [
+            {
+              properties: {
+                page: {
+                  size: {
+                    width: 11906,
+                    height: 16838
+                  },
+
+                  margin: {
+                    top: 850,
+                    right: 850,
+                    bottom: 850,
+                    left: 1020
+                  }
+                }
+              },
+
+              children: [
+                createParagraph(
+                  "LAMPIRAN 1. Biodata Tim Peneliti",
+                  true,
+                  AlignmentType.LEFT,
+                  0,
+                  260
+                ),
+
+                sectionTitle(
+                  "A. Identitas Diri"
+                ),
+
+                identityTable,
+
+                sectionTitle(
+                  "B. Riwayat Pendidikan"
+                ),
+
+                educationTable,
+
+                sectionTitle(
+                  "C. Pengalaman Penelitian Dalam 5 Tahun Terakhir"
+                ),
+
+                createFundingTable(
+                  "Judul Penelitian",
+                  normalizedData.research
+                ),
+
+                sectionTitle(
+                  "D. Pengalaman Pengabdian Kepada Masyarakat Dalam 5 Tahun Terakhir"
+                ),
+
+                createFundingTable(
+                  "Judul Pengabdian Kepada Masyarakat",
+                  normalizedData.community
+                ),
+
+                sectionTitle(
+                  "E. Pengalaman Penulisan Artikel Ilmiah Dalam Jurnal Dalam 5 Tahun Terakhir"
+                ),
+
+                journalTable,
+
+                sectionTitle(
+                  "F. Pengalaman Penyampaian Makalah Secara Oral Pada Pertemuan / Seminar Ilmiah Dalam 5 Tahun Terakhir"
+                ),
+
+                seminarTable,
+
+                sectionTitle(
+                  "G. Pengalaman Penulisan Buku dalam 5 Tahun Terakhir"
+                ),
+
+                bookTable,
+
+                sectionTitle(
+                  "H. Pengalaman Perolehan HKI Dalam 5 - 10 Tahun Terakhir"
+                ),
+
+                hkiTable,
+
+                sectionTitle(
+                  "I. Pengalaman Merumuskan Kebijakan Publik/Rekayasa Sosial Lainnya Dalam 5 Tahun Terakhir"
+                ),
+
+                policyTable,
+
+                sectionTitle(
+                  "J. Penghargaan yang Pernah Diraih dalam 10 tahun Terakhir (dari pemerintah, asosiasi atau institusi lainnya)"
+                ),
+
+                awardTable,
+
+                createParagraph(
+                  "Semua data yang saya isikan dan tercantum dalam biodata ini adalah benar dan dapat dipertanggungjawabkan secara hukum. Apabila di kemudian hari ternyata dijumpai ketidak-sesuaian dengan kenyataan, saya sanggup menerima risikonya. Demikian biodata ini saya buat dengan sebenarnya.",
+                  false,
+                  AlignmentType.JUSTIFIED,
+                  260,
+                  260
+                ),
+
+                signatureTable
+              ]
+            }
+          ]
         });
 
-        const blob = await Packer.toBlob(wordDocument);
-        saveAs(blob, "Biodata Tim Peneliti - Rifqi Abdillah.docx");
+        /* =====================================================
+           SAVE DOCX
+           ===================================================== */
+
+        const blob = await Packer.toBlob(
+          wordDocument
+        );
+
+        saveAs(
+          blob,
+          "Biodata Tim Peneliti - Rifqi Abdillah.docx"
+        );
+
       } catch (error) {
-        console.error("DOCX ERROR:", error);
-        alert("Gagal membuat file DOCX. Silakan buka Console browser untuk melihat error.");
+        console.error(
+          "DOCX ERROR:",
+          error
+        );
+
+        alert(
+          "Gagal membuat file DOCX. Silakan buka Console browser untuk melihat error."
+        );
+
       } finally {
         button.disabled = false;
-        button.innerHTML = '<i class="bi bi-file-earmark-word"></i> Download DOCX';
+
+        button.innerHTML =
+          '<i class="bi bi-file-earmark-word"></i> Download DOCX';
       }
     }
   </script>
+
 </body>
 </html>
