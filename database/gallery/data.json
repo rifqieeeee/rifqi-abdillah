@@ -1,5 +1,13 @@
 [
   {
+    "id": "gallery-032",
+    "category": "campus",
+    "title": "Campus",
+    "description": "Preparation of Derivative Documents for Study Program Accreditation",
+    "image": "assets/img/gallery/032.jpeg",
+    "gallery": "portfolio-gallery-campus"
+  },
+  {
     "id": "gallery-031",
     "category": "speech",
     "title": "Speech",
