@@ -32,6 +32,7 @@
   <meta name="twitter:image" content="https://rifqiabdillah.my.id/assets/img/og-image.png">
 
   <link href="assets/img/logo-rifqi.png" rel="icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
 
   <style>
     /* =========================================================
@@ -312,9 +313,9 @@
     }
 
     /* =========================================================
-      FLOATING ACTION BUTTONS
+      ACTION BUTTONS
       ========================================================= */
-    .top-actions {
+    .action-buttons {
       position: fixed;
       top: 20px;
       left: 20px;
@@ -324,47 +325,42 @@
       gap: 10px;
     }
 
-    .top-actions button {
+    .action-buttons button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 7px;
       padding: 10px 16px;
-      border: 0;
+      border: none;
       border-radius: 7px;
+      color: #fff;
       font-family: Arial, Helvetica, sans-serif;
       font-size: 14px;
-      line-height: 1;
       font-weight: 600;
-      color: #fff;
       cursor: pointer;
       box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
-      transition:
-        transform .15s ease,
-        background .15s ease,
-        box-shadow .15s ease;
+      transition: transform .15s ease, background .15s ease;
     }
 
-    .top-actions button:hover {
+    .action-buttons button:hover {
       transform: translateY(-1px);
-      box-shadow: 0 4px 12px rgba(0, 0, 0, .20);
     }
 
-    .top-actions button:active {
+    .action-buttons button:active {
       transform: translateY(0);
     }
 
-    .top-actions svg {
-      width: 16px;
-      height: 16px;
-      flex: 0 0 auto;
+    .action-buttons button:disabled {
+      opacity: .65;
+      cursor: wait;
+      transform: none;
     }
 
-    .btn-back {
+    .btn-home {
       background: #495057;
     }
 
-    .btn-back:hover {
+    .btn-home:hover {
       background: #343a40;
     }
 
@@ -376,6 +372,14 @@
       background: #0b5ed7;
     }
 
+    .btn-docx {
+      background: #198754;
+    }
+
+    .btn-docx:hover {
+      background: #157347;
+    }
+
     /* =========================================================
       RESPONSIVE SCREEN
       ========================================================= */
@@ -385,15 +389,9 @@
         overflow-x: auto;
       }
 
-      .top-actions {
+      .action-buttons {
         top: 15px;
-        right: 15px;
         left: 15px;
-      }
-
-      .top-actions button {
-        padding: 9px 13px;
-        font-size: 13px;
       }
     }
 
@@ -433,7 +431,7 @@
       }
 
       .no-print,
-      .top-actions {
+      .action-buttons {
         display: none !important;
       }
 
@@ -611,20 +609,25 @@
 </head>
 
 <body>
-  <div class="top-actions no-print" aria-label="CV actions">
-    <button type="button" class="btn-back" onclick="history.back()" title="Back">
-      <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-        <path fill-rule="evenodd" d="M15 8a.5.5 0 0 1-.5.5H2.707l3.147 3.146a.5.5 0 0 1-.708.708l-4-4a.5.5 0 0 1 0-.708l4-4a.5.5 0 1 1 .708.708L2.707 7.5H14.5a.5.5 0 0 1 .5.5z"/>
-      </svg>
-      <span>Back</span>
+  <div class="action-buttons no-print" aria-label="CV actions">
+    <button type="button" class="btn-home" onclick="history.back()" title="Back">
+      <i class="bi bi-arrow-left"></i>
+      Back
     </button>
 
-    <button type="button" class="btn-print" onclick="window.print()" title="Print or save as PDF">
-      <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
-        <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
-        <path d="M5 1a2 2 0 0 0-2 2v2H2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1v1a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-1h1a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V3a2 2 0 0 0-2-2H5zm6 4H5V3a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 .5.5v2zm.5 5a.5.5 0 0 1 .5.5V13a.5.5 0 0 1-.5.5h-7A.5.5 0 0 1 4 13v-2.5a.5.5 0 0 1 .5-.5h7z"/>
-      </svg>
-      <span>Print / Save PDF</span>
+    <button type="button" class="btn-print" onclick="window.print()">
+      <i class="bi bi-printer"></i>
+      Print / Save PDF
+    </button>
+
+    <button
+      type="button"
+      class="btn-docx"
+      id="btnDownloadDocx"
+      onclick="downloadDOCX()"
+    >
+      <i class="bi bi-file-earmark-word"></i>
+      Download DOCX
     </button>
   </div>
 
@@ -1267,6 +1270,463 @@
       .catch(error => console.error('Error loading organizational data:', error));
   </script>
   
+
+
+
+  <!-- DOCX export -->
+  <script src="https://cdn.jsdelivr.net/npm/docx@8.5.0/build/index.umd.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+
+  <script>
+    /* =========================================================
+      DOCX EXPORT
+      Export follows the sections currently visible in cv.html.
+      ========================================================= */
+
+    function isElementVisible(element) {
+      if (!element) return false;
+
+      const style = window.getComputedStyle(element);
+      return style.display !== 'none' && style.visibility !== 'hidden';
+    }
+
+    function normalizeDocxText(value) {
+      return String(value ?? '')
+        .replace(/\u00a0/g, ' ')
+        .replace(/[ \t\f\v]+/g, ' ')
+        .replace(/ *\n */g, '\n')
+        .trim();
+    }
+
+    function waitForCVContentToSettle(root, quietMs = 300, maxMs = 4500) {
+      return new Promise(resolve => {
+        let quietTimer = null;
+        let finished = false;
+
+        const finish = () => {
+          if (finished) return;
+          finished = true;
+          clearTimeout(quietTimer);
+          clearTimeout(maxTimer);
+          observer.disconnect();
+          resolve();
+        };
+
+        const scheduleQuietFinish = () => {
+          clearTimeout(quietTimer);
+          quietTimer = setTimeout(finish, quietMs);
+        };
+
+        const observer = new MutationObserver(scheduleQuietFinish);
+        observer.observe(root, {
+          childList: true,
+          subtree: true,
+          characterData: true
+        });
+
+        const maxTimer = setTimeout(finish, maxMs);
+        scheduleQuietFinish();
+      });
+    }
+
+    function directInlineRuns(element, options = {}) {
+      const {
+        TextRun,
+        ExternalHyperlink
+      } = docx;
+
+      const runs = [];
+
+      function walk(node, inherited = {}) {
+        if (node.nodeType === Node.TEXT_NODE) {
+          const text = node.textContent.replace(/\s+/g, ' ');
+          if (!text) return;
+
+          runs.push(new TextRun({
+            text,
+            font: 'Arial',
+            size: options.size || 22,
+            bold: inherited.bold || options.bold || false,
+            italics: inherited.italics || options.italics || false,
+            underline: inherited.underline ? {} : undefined,
+            color: inherited.color || options.color
+          }));
+          return;
+        }
+
+        if (node.nodeType !== Node.ELEMENT_NODE) return;
+
+        const tag = node.tagName.toLowerCase();
+
+        if (['ul', 'ol', 'div', 'section'].includes(tag)) {
+          return;
+        }
+
+        if (tag === 'br') {
+          runs.push(new TextRun({ break: 1, text: '' }));
+          return;
+        }
+
+        const next = {
+          ...inherited,
+          bold: inherited.bold || tag === 'strong' || tag === 'b',
+          italics: inherited.italics || tag === 'em' || tag === 'i',
+          underline: inherited.underline || tag === 'u'
+        };
+
+        // Keep links readable in Word while preserving ATS-friendly plain text.
+        if (tag === 'a') {
+          const href = node.getAttribute('href');
+          const label = normalizeDocxText(node.textContent);
+
+          if (href && label && typeof ExternalHyperlink !== 'undefined') {
+            runs.push(new ExternalHyperlink({
+              link: href,
+              children: [
+                new TextRun({
+                  text: label,
+                  font: 'Arial',
+                  size: options.size || 22,
+                  color: '0563C1',
+                  underline: {}
+                })
+              ]
+            }));
+            return;
+          }
+        }
+
+        Array.from(node.childNodes).forEach(child => walk(child, next));
+      }
+
+      Array.from(element.childNodes).forEach(child => walk(child));
+      return runs;
+    }
+
+    function createDocxParagraphFromElement(element, options = {}) {
+      const {
+        Paragraph,
+        TextRun,
+        AlignmentType
+      } = docx;
+
+      const text = normalizeDocxText(element.textContent);
+      const runs = directInlineRuns(element, options);
+
+      return new Paragraph({
+        alignment: options.alignment || AlignmentType.LEFT,
+        spacing: {
+          before: options.before || 0,
+          after: options.after ?? 70,
+          line: options.line || 250
+        },
+        keepNext: options.keepNext || false,
+        bullet: options.bullet ? { level: options.level || 0 } : undefined,
+        children: runs.length
+          ? runs
+          : [
+              new TextRun({
+                text,
+                font: 'Arial',
+                size: options.size || 22,
+                bold: options.bold || false,
+                color: options.color
+              })
+            ]
+      });
+    }
+
+    function addListToDocx(listElement, output, level = 0) {
+      const items = Array.from(listElement.children).filter(
+        child => child.tagName && child.tagName.toLowerCase() === 'li'
+      );
+
+      items.forEach(item => {
+        output.push(
+          createDocxParagraphFromElement(item, {
+            size: 22,
+            after: 45,
+            line: 245,
+            bullet: true,
+            level
+          })
+        );
+
+        Array.from(item.children).forEach(child => {
+          const tag = child.tagName.toLowerCase();
+          if (tag === 'ul' || tag === 'ol') {
+            addListToDocx(child, output, level + 1);
+          }
+        });
+      });
+    }
+
+    function addBlocksToDocx(container, output) {
+      Array.from(container.children).forEach(element => {
+        if (!isElementVisible(element)) return;
+
+        const tag = element.tagName.toLowerCase();
+
+        if (element.classList.contains('meta')) {
+          output.push(
+            createDocxParagraphFromElement(element, {
+              size: 20,
+              after: 45,
+              line: 235
+            })
+          );
+          return;
+        }
+
+        if (tag === 'h5') {
+          output.push(
+            createDocxParagraphFromElement(element, {
+              size: 22,
+              bold: true,
+              before: 80,
+              after: 25,
+              line: 240,
+              keepNext: true
+            })
+          );
+          return;
+        }
+
+        if (tag === 'p') {
+          output.push(
+            createDocxParagraphFromElement(element, {
+              size: 22,
+              after: 60,
+              line: 250,
+              alignment: docx.AlignmentType.JUSTIFIED
+            })
+          );
+          return;
+        }
+
+        if (tag === 'ul' || tag === 'ol') {
+          addListToDocx(element, output, 0);
+          return;
+        }
+
+        addBlocksToDocx(element, output);
+      });
+    }
+
+    async function downloadDOCX() {
+      const button = document.getElementById('btnDownloadDocx');
+      const cvRoot = document.querySelector('.cv-wrapper');
+
+      try {
+        if (typeof docx === 'undefined') {
+          alert('Library DOCX gagal dimuat. Pastikan perangkat terhubung ke internet lalu refresh halaman.');
+          return;
+        }
+
+        if (typeof saveAs === 'undefined') {
+          alert('Library FileSaver gagal dimuat. Silakan refresh halaman.');
+          return;
+        }
+
+        if (!cvRoot) {
+          alert('Konten CV tidak ditemukan.');
+          return;
+        }
+
+        button.disabled = true;
+        button.innerHTML = '<i class="bi bi-hourglass-split"></i> Membuat DOCX...';
+
+        // Gives asynchronous JSON renderers time to finish if the button is clicked early.
+        await waitForCVContentToSettle(cvRoot);
+
+        const {
+          Document,
+          Packer,
+          Paragraph,
+          TextRun,
+          AlignmentType,
+          Footer,
+          PageNumber
+        } = docx;
+
+        const children = [];
+        const header = cvRoot.querySelector('.cv-header');
+
+        if (header && isElementVisible(header)) {
+          const name = header.querySelector('h1');
+          const role = header.querySelector('h4');
+          const contact = header.querySelector('.contact-info');
+
+          if (name) {
+            children.push(new Paragraph({
+              alignment: AlignmentType.CENTER,
+              spacing: { after: 40, line: 260 },
+              children: [
+                new TextRun({
+                  text: normalizeDocxText(name.textContent),
+                  font: 'Arial',
+                  size: 36,
+                  bold: true
+                })
+              ]
+            }));
+          }
+
+          if (role) {
+            children.push(new Paragraph({
+              alignment: AlignmentType.CENTER,
+              spacing: { after: 50, line: 240 },
+              children: [
+                new TextRun({
+                  text: normalizeDocxText(role.textContent),
+                  font: 'Arial',
+                  size: 23
+                })
+              ]
+            }));
+          }
+
+          if (contact) {
+            children.push(
+              createDocxParagraphFromElement(contact, {
+                size: 20,
+                alignment: AlignmentType.CENTER,
+                after: 160,
+                line: 235
+              })
+            );
+          }
+        }
+
+        const sections = Array.from(cvRoot.querySelectorAll(':scope > .section'))
+          .filter(isElementVisible);
+
+        sections.forEach(section => {
+          const title = section.querySelector(':scope > .section-title');
+
+          if (title) {
+            children.push(new Paragraph({
+              spacing: {
+                before: 170,
+                after: 70,
+                line: 240
+              },
+              keepNext: true,
+              border: {
+                bottom: {
+                  color: '777777',
+                  size: 5,
+                  style: docx.BorderStyle.SINGLE,
+                  space: 2
+                }
+              },
+              children: [
+                new TextRun({
+                  text: normalizeDocxText(title.textContent).toUpperCase(),
+                  font: 'Arial',
+                  size: 24,
+                  bold: true,
+                  color: '1700A9'
+                })
+              ]
+            }));
+          }
+
+          Array.from(section.children).forEach(child => {
+            if (child === title || !isElementVisible(child)) return;
+
+            const tag = child.tagName.toLowerCase();
+            if (tag === 'ul' || tag === 'ol') {
+              addListToDocx(child, children);
+            } else if (tag === 'p') {
+              children.push(
+                createDocxParagraphFromElement(child, {
+                  size: 22,
+                  after: 60,
+                  line: 250,
+                  alignment: AlignmentType.JUSTIFIED
+                })
+              );
+            } else {
+              addBlocksToDocx(child, children);
+            }
+          });
+        });
+
+        const footer = new Footer({
+          children: [
+            new Paragraph({
+              alignment: AlignmentType.CENTER,
+              children: [
+                new TextRun({
+                  text: 'Generated from www.rifqiabdillah.my.id  |  Page ',
+                  font: 'Arial',
+                  size: 16,
+                  color: '666666'
+                }),
+                new TextRun({
+                  children: [PageNumber.CURRENT],
+                  font: 'Arial',
+                  size: 16,
+                  color: '666666'
+                })
+              ]
+            })
+          ]
+        });
+
+        const wordDocument = new Document({
+          styles: {
+            default: {
+              document: {
+                run: {
+                  font: 'Arial',
+                  size: 22
+                },
+                paragraph: {
+                  spacing: {
+                    line: 250
+                  }
+                }
+              }
+            }
+          },
+          sections: [
+            {
+              properties: {
+                page: {
+                  size: {
+                    width: 11906,
+                    height: 16838
+                  },
+                  margin: {
+                    top: 720,
+                    right: 720,
+                    bottom: 850,
+                    left: 720
+                  }
+                }
+              },
+              footers: {
+                default: footer
+              },
+              children
+            }
+          ]
+        });
+
+        const blob = await Packer.toBlob(wordDocument);
+        saveAs(blob, 'ATS CV - Rifqi Abdillah.docx');
+
+      } catch (error) {
+        console.error('DOCX ERROR:', error);
+        alert('Gagal membuat file DOCX. Silakan buka Console browser untuk melihat error.');
+      } finally {
+        button.disabled = false;
+        button.innerHTML = '<i class="bi bi-file-earmark-word"></i> Download DOCX';
+      }
+    }
+  </script>
 
 </body>
 
