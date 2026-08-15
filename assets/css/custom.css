@@ -1084,3 +1084,60 @@ details[open] summary::after {
   }
 
 }
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.42) 0%,
+    rgba(0, 0, 0, 0.18) 38%,
+    rgba(0, 0, 0, 0.03) 70%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+.ai-callout {
+  animation: aiCalloutHide 0.4s ease 6s forwards;
+}
+
+@keyframes aiCalloutHide {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(5px);
+  }
+}
+
+.navmenu a.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 3px;
+  height: 28px;
+  border-radius: 0 4px 4px 0;
+  background: var(--accent-color);
+}
+
+.navmenu a:hover .navicon {
+  transform: scale(1.12);
+}
+
+.navmenu .navicon {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.hero-btn {
+  border-radius: 999px;
+  padding: 13px 28px;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(0, 170, 255, 0.22);
+  transition: 0.25s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0, 170, 255, 0.32);
+}
