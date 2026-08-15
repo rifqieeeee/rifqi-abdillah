@@ -1110,6 +1110,14 @@ details[open] summary::after {
   z-index: 0;
 }
 
+/* Expertise tetap satu baris di desktop */
+.hero-expertise {
+  white-space: nowrap;
+  font-size: clamp(18px, 1.55vw, 27px);
+  line-height: 1.4;
+  margin-bottom: 18px;
+}
+
 .home-hero-content {
   position: relative;
   z-index: 2;
@@ -1686,8 +1694,9 @@ a.home-impact-card:hover {
     top: 0;
     bottom: 0;
 
-    width: min(850px, calc(100% - 100px));
-    max-width: 850px;
+    /* Diperlebar agar expertise tetap satu baris */
+    width: min(1120px, calc(100vw - 150px));
+    max-width: 1120px;
 
     margin: 0 !important;
 
@@ -1835,6 +1844,68 @@ a.home-impact-card:hover {
   .home-impact-section {
     margin-top: 0 !important;
     padding-top: 30px !important;
+  }
+
+}
+
+.hero-expertise {
+  font-size: clamp(17px, 1.35vw, 23px);
+  line-height: 1.4;
+  margin-top: 16px;
+  margin-bottom: 26px;
+}
+
+/* Desktop: expertise wajib satu baris */
+@media (min-width: 1200px) {
+  .hero-expertise {
+    display: block;
+    width: max-content;
+    max-width: none;
+    white-space: nowrap !important;
+    overflow: visible;
+  }
+}
+
+/* Mobile / tablet: boleh wrap agar tetap responsif */
+@media (max-width: 1199px) {
+  .hero-expertise {
+    width: auto;
+    max-width: 100%;
+    white-space: normal;
+  }
+}
+
+/* GAP ANTARA EXPERTISE DAN BUTTON */
+.home-hero-actions {
+  margin-top: 24px !important;
+}
+
+/* =====================================================
+   MOBILE BOTTOM WHITE BAR FIX
+===================================================== */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #050d18;
+}
+
+/* Android / mobile browser */
+@media (max-width: 767.98px) {
+
+  html,
+  body,
+  .main {
+    background-color: #050d18 !important;
+  }
+
+  .hero,
+  .home-hero {
+    min-height: 100dvh !important;
+    height: 100dvh !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
 }
