@@ -1236,6 +1236,7 @@ details[open] summary::after {
 }
 
 .home-impact-card {
+  text-align: center;
   min-height: 130px;
   padding: 26px 24px;
   display: flex;
