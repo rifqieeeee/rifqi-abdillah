@@ -198,6 +198,31 @@
   margin-bottom: 6px;
 }
 
+/* =========================================
+   TEACHING CARD - EQUAL HEIGHT
+========================================= */
+
+#teaching .row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#teaching .teaching-item {
+  display: flex;
+}
+
+#teaching .teaching-box {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dorong informasi ke bawah jika diperlukan */
+#teaching .teaching-info {
+  margin-top: auto;
+}
+
 #community .community-item {
   display: flex;
   /* margin-bottom: 24px; */
@@ -787,4 +812,275 @@ details[open] summary::after {
 .gallery-pagination button:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+/* =========================================================
+   COLLAPSIBLE SIDEBAR NAVBAR
+   Default : minimized
+   Hover   : expanded
+   Desktop only
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  :root {
+    --sidebar-collapsed: 72px;
+    --sidebar-expanded: 300px;
+  }
+
+  /* =========================
+     HEADER / SIDEBAR
+  ========================= */
+
+  #header {
+    width: var(--sidebar-collapsed);
+    overflow: hidden;
+
+    transition:
+      width 0.35s ease,
+      box-shadow 0.35s ease;
+
+    z-index: 9999;
+  }
+
+  /* Expand saat disentuh mouse */
+  #header:hover {
+    width: var(--sidebar-expanded);
+    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.18);
+  }
+
+
+  /* =========================
+     PROFILE
+  ========================= */
+
+  #header .profile-img,
+  #header .logo,
+  #header .social-links {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+      opacity 0.2s ease,
+      visibility 0.2s ease;
+  }
+
+  /* Munculkan saat sidebar hover */
+  #header:hover .profile-img,
+  #header:hover .logo,
+  #header:hover .social-links {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transition-delay: 0.12s;
+  }
+
+
+  /* =========================
+     NAVIGATION
+  ========================= */
+
+  #header .navmenu {
+    width: 100%;
+  }
+
+  #header .navmenu ul {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  #header .navmenu li {
+    width: 100%;
+  }
+
+  #header .navmenu a {
+    width: 100%;
+
+    /* Posisi icon ketika minimize */
+    padding: 15px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    white-space: nowrap;
+    overflow: hidden;
+
+    /* Sembunyikan tulisan */
+    font-size: 0;
+
+    transition:
+      padding 0.3s ease,
+      font-size 0.2s ease,
+      justify-content 0.3s ease;
+  }
+
+
+  /* =========================
+     ICON
+  ========================= */
+
+  #header .navmenu a .navicon {
+    font-size: 22px;
+
+    margin: 0;
+
+    min-width: 24px;
+    text-align: center;
+
+    transition:
+      margin 0.3s ease,
+      font-size 0.3s ease;
+  }
+
+
+  /* =========================
+     SAAT HOVER
+  ========================= */
+
+  #header:hover .navmenu a {
+    justify-content: flex-start;
+
+    padding: 15px 25px;
+
+    font-size: 15px;
+  }
+
+  #header:hover .navmenu a .navicon {
+    margin-right: 12px;
+    font-size: 20px;
+  }
+
+
+  /* =========================
+     MAIN CONTENT
+  ========================= */
+
+  /*
+    Content hanya memberikan ruang untuk sidebar kecil.
+    Ketika sidebar dibuka, sidebar akan overlay ke atas content.
+    Jadi halaman tidak bergeser-geser saat hover.
+  */
+
+  .main,
+  #footer {
+    margin-left: var(--sidebar-collapsed) !important;
+
+    transition: margin-left 0.35s ease;
+  }
+
+}
+
+/* =====================================================
+   COLLAPSED SIDEBAR - MENU START FROM TOP
+===================================================== */
+
+@media (min-width: 1200px) {
+
+  /* Saat sidebar minimize */
+  #header:not(:hover) .profile-img,
+  #header:not(:hover) .logo,
+  #header:not(:hover) .social-links {
+    display: none !important;
+  }
+
+  /* Menu langsung mulai dari paling atas */
+  #header:not(:hover) .navmenu {
+    margin-top: 0 !important;
+    padding-top: 10px !important;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start !important;
+  }
+
+  #header:not(:hover) .navmenu ul {
+    margin: 0 !important;
+    padding: 0 !important;
+
+    width: 100%;
+  }
+
+  /* Pastikan header tidak melakukan vertical centering */
+  #header {
+    justify-content: flex-start !important;
+  }
+
+}
+
+/* =====================================================
+   FIX SIDEBAR SCROLL
+===================================================== */
+
+@media (min-width: 1200px) {
+
+  /* Header selalu setinggi layar */
+  #header {
+    height: 100vh !important;
+    max-height: 100vh !important;
+
+    display: flex !important;
+    flex-direction: column !important;
+
+    overflow: hidden !important;
+  }
+
+
+  /* Foto / logo / social tidak ikut menyusut */
+  #header .profile-img,
+  #header .logo,
+  #header .social-links {
+    flex-shrink: 0;
+  }
+
+
+  /* =====================================================
+     NAVIGATION MENJADI AREA SCROLL
+  ===================================================== */
+
+  #header .navmenu {
+    flex: 1 1 auto !important;
+
+    min-height: 0 !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    padding-bottom: 20px !important;
+
+    overscroll-behavior: contain;
+  }
+
+
+  /* Scrollbar */
+  #header .navmenu::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  #header .navmenu::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  #header .navmenu::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.22);
+    border-radius: 10px;
+  }
+
+  #header .navmenu::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+  }
+
+
+  /* Firefox */
+  #header .navmenu {
+    scrollbar-width: thin;
+    scrollbar-color:
+      rgba(255, 255, 255, 0.22)
+      transparent;
+  }
+
 }

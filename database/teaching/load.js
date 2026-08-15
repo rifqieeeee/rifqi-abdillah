@@ -51,33 +51,47 @@ function loadTeaching(items) {
 }
 
 function initTeachingFilters() {
-  const grid = document.querySelector("#teaching .row");
-
-  // destroy jika reload
-  if (teachingIsotope) {
-    teachingIsotope.destroy();
-  }
-
-  teachingIsotope = new Isotope(grid, {
-    itemSelector: ".teaching-item",
-    layoutMode: "fitRows"
-  });
-
   const filterButtons = document.querySelectorAll(
     "#teaching .filter-btn"
   );
 
+  const items = document.querySelectorAll(
+    "#teaching .teaching-item"
+  );
+
   filterButtons.forEach(btn => {
+
     btn.addEventListener("click", () => {
-      filterButtons.forEach(b => b.classList.remove("active"));
+
+      // hapus active semua button
+      filterButtons.forEach(b => {
+        b.classList.remove("active");
+      });
+
+      // aktifkan button yang dipilih
       btn.classList.add("active");
 
       const filterValue = btn.getAttribute("data-filter");
 
-      teachingIsotope.arrange({
-        filter: filterValue === "all" ? "*" : `.${filterValue}`
+      items.forEach(item => {
+
+        if (
+          filterValue === "all" ||
+          item.classList.contains(filterValue)
+        ) {
+
+          item.style.display = "flex";
+
+        } else {
+
+          item.style.display = "none";
+
+        }
+
       });
+
     });
+
   });
 }
 
