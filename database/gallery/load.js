@@ -34,7 +34,7 @@ function renderGallery() {
 
     col.innerHTML = `
       <div class="portfolio-content h-100">
-        <img src="${item.image}" class="img-fluid" alt="${item.title}">
+        <img src="${item.image}" class="img-fluid" alt="${item.title}" loading="lazy" decoding="async">
         <div class="portfolio-info">
           <h4>${item.title}</h4>
           <p>${item.description}</p>
