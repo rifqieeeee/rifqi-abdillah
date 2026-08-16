@@ -1067,14 +1067,50 @@ details[open] summary::after {
   }
 }
 
-.navmenu a.active::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  width: 3px;
-  height: 28px;
-  border-radius: 0 4px 4px 0;
-  background: var(--accent-color);
+/* =====================================================
+   ACTIVE NAV INDICATOR FIX
+===================================================== */
+
+@media (min-width: 1200px) {
+
+  /* Anchor menjadi acuan posisi indicator */
+  #header .navmenu a {
+    position: relative !important;
+  }
+
+  /* Indicator */
+  #header .navmenu a.active::before {
+    content: "";
+    position: absolute;
+
+    left: 0;
+
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 4px;
+    height: 28px;
+
+    border-radius: 0 5px 5px 0;
+
+    background: var(--accent-color, #149ddd);
+
+    transition:
+      left 0.35s ease,
+      height 0.25s ease;
+  }
+
+
+  /* =============================================
+     SIDEBAR EXPANDED
+     Indicator ikut masuk ke kanan
+  ============================================= */
+
+  #header:hover .navmenu a.active::before {
+    left: 10px;
+    height: 32px;
+  }
+
 }
 
 .navmenu a:hover .navicon {
