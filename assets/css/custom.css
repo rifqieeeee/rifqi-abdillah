@@ -770,11 +770,12 @@ details[open] summary::after {
   cursor: not-allowed;
 }
 
+
+
 /* =========================================================
-   COLLAPSIBLE SIDEBAR NAVBAR
-   Default : minimized
-   Hover   : expanded
-   Desktop only
+   FINAL COLLAPSIBLE SIDEBAR
+   Clean version — replaces all previous desktop navbar
+   patches. Desktop only; mobile behavior stays untouched.
 ========================================================= */
 
 @media (min-width: 1200px) {
@@ -782,237 +783,177 @@ details[open] summary::after {
   :root {
     --sidebar-collapsed: 72px;
     --sidebar-expanded: 300px;
+    --sidebar-ease: cubic-bezier(0.22, 1, 0.36, 1);
   }
 
-  /* =========================
-     HEADER / SIDEBAR
-  ========================= */
-
+  /* -----------------------------------------------------
+     HEADER
+  ----------------------------------------------------- */
   #header {
-    width: var(--sidebar-collapsed);
-    overflow: hidden;
-
-    transition:
-      width 0.35s ease,
-      box-shadow 0.35s ease;
-
-    z-index: 9999;
-  }
-
-  /* Expand saat disentuh mouse */
-  #header:hover {
-    width: var(--sidebar-expanded);
-    box-shadow: 8px 0 30px rgba(0, 0, 0, 0.18);
-  }
-
-
-  /* =========================
-     PROFILE
-  ========================= */
-
-  #header .profile-img,
-  #header .logo,
-  #header .social-links {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transition:
-      opacity 0.2s ease,
-      visibility 0.2s ease;
-  }
-
-  /* Munculkan saat sidebar hover */
-  #header:hover .profile-img,
-  #header:hover .logo,
-  #header:hover .social-links {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-
-    transition-delay: 0.12s;
-  }
-
-
-  /* =========================
-     NAVIGATION
-  ========================= */
-
-  #header .navmenu {
-    width: 100%;
-  }
-
-  #header .navmenu ul {
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
-
-  #header .navmenu li {
-    width: 100%;
-  }
-
-  #header .navmenu a {
-    width: 100%;
-
-    /* Posisi icon ketika minimize */
-    padding: 15px 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    white-space: nowrap;
-    overflow: hidden;
-
-    /* Sembunyikan tulisan */
-    font-size: 0;
-
-    transition:
-      padding 0.3s ease,
-      font-size 0.2s ease,
-      justify-content 0.3s ease;
-  }
-
-
-  /* =========================
-     ICON
-  ========================= */
-
-  #header .navmenu a .navicon {
-    font-size: 22px;
-
-    margin: 0;
-
-    min-width: 24px;
-    text-align: center;
-
-    transition:
-      margin 0.3s ease,
-      font-size 0.3s ease;
-  }
-
-
-  /* =========================
-     SAAT HOVER
-  ========================= */
-
-  #header:hover .navmenu a {
-    justify-content: flex-start;
-
-    padding: 15px 25px;
-
-    font-size: 15px;
-  }
-
-  #header:hover .navmenu a .navicon {
-    margin-right: 12px;
-    font-size: 20px;
-  }
-
-
-  /* =========================
-     MAIN CONTENT
-  ========================= */
-
-  /*
-    Content hanya memberikan ruang untuk sidebar kecil.
-    Ketika sidebar dibuka, sidebar akan overlay ke atas content.
-    Jadi halaman tidak bergeser-geser saat hover.
-  */
-
-  .main,
-  #footer {
-    margin-left: var(--sidebar-collapsed) !important;
-
-    transition: margin-left 0.35s ease;
-  }
-
-}
-
-/* =====================================================
-   COLLAPSED SIDEBAR - MENU START FROM TOP
-===================================================== */
-
-@media (min-width: 1200px) {
-
-  /* Saat sidebar minimize */
-  #header:not(:hover) .profile-img,
-  #header:not(:hover) .logo,
-  #header:not(:hover) .social-links {
-    display: none !important;
-  }
-
-  /* Menu langsung mulai dari paling atas */
-  #header:not(:hover) .navmenu {
-    margin-top: 0 !important;
-    padding-top: 10px !important;
-
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start !important;
-  }
-
-  #header:not(:hover) .navmenu ul {
-    margin: 0 !important;
-    padding: 0 !important;
-
-    width: 100%;
-  }
-
-  /* Pastikan header tidak melakukan vertical centering */
-  #header {
-    justify-content: flex-start !important;
-  }
-
-}
-
-/* =====================================================
-   FIX SIDEBAR SCROLL
-===================================================== */
-
-@media (min-width: 1200px) {
-
-  /* Header selalu setinggi layar */
-  #header {
+    width: var(--sidebar-collapsed) !important;
     height: 100vh !important;
     max-height: 100vh !important;
 
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+
     display: flex !important;
     flex-direction: column !important;
+    justify-content: flex-start !important;
 
     overflow: hidden !important;
+
+    z-index: 9999;
+
+    transition:
+      width 0.42s var(--sidebar-ease),
+      box-shadow 0.30s ease !important;
+
+    will-change: width;
+  }
+
+  #header:hover {
+    width: var(--sidebar-expanded) !important;
+    box-shadow: 10px 0 34px rgba(0, 0, 0, 0.18);
   }
 
 
-  /* Foto / logo / social tidak ikut menyusut */
-  #header .profile-img,
-  #header .logo,
+  /* -----------------------------------------------------
+     PROFILE AREA
+     Collapses vertically instead of display:none, so the
+     menu moves smoothly rather than jumping.
+  ----------------------------------------------------- */
+
+  #header .profile-img {
+    width: 100%;
+    max-height: 0;
+    margin: 0 auto !important;
+
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    transition:
+      max-height 0.38s var(--sidebar-ease),
+      margin 0.38s var(--sidebar-ease),
+      opacity 0.18s ease,
+      transform 0.32s var(--sidebar-ease);
+  }
+
+  #header .profile-img img {
+    margin: 0 auto !important;
+  }
+
+  #header .logo {
+    width: 100%;
+    max-height: 0;
+    margin: 0 !important;
+
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    transform: translateY(-6px);
+
+    transition:
+      max-height 0.34s var(--sidebar-ease),
+      margin 0.34s var(--sidebar-ease),
+      opacity 0.16s ease,
+      transform 0.30s var(--sidebar-ease);
+  }
+
   #header .social-links {
-    flex-shrink: 0;
+    width: 100%;
+    max-height: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+
+    transform: translateY(-5px);
+
+    transition:
+      max-height 0.34s var(--sidebar-ease),
+      margin 0.34s var(--sidebar-ease),
+      opacity 0.16s ease,
+      transform 0.30s var(--sidebar-ease);
+  }
+
+  #header:hover .profile-img {
+    max-height: 155px;
+    margin: 15px auto 6px !important;
+
+    opacity: 1;
+    pointer-events: auto;
+
+    transform: translateY(0);
+
+    transition:
+      max-height 0.40s var(--sidebar-ease),
+      margin 0.40s var(--sidebar-ease),
+      opacity 0.24s ease 0.09s,
+      transform 0.34s var(--sidebar-ease) 0.05s;
+  }
+
+  #header:hover .logo {
+    max-height: 54px;
+    margin: 0 0 8px !important;
+
+    opacity: 1;
+    pointer-events: auto;
+
+    transform: translateY(0);
+
+    transition:
+      max-height 0.38s var(--sidebar-ease),
+      margin 0.38s var(--sidebar-ease),
+      opacity 0.22s ease 0.12s,
+      transform 0.32s var(--sidebar-ease) 0.08s;
+  }
+
+  #header:hover .social-links {
+    max-height: 52px;
+    margin: 0 0 12px !important;
+    padding: 4px 0 !important;
+
+    opacity: 1;
+    pointer-events: auto;
+
+    transform: translateY(0);
+
+    transition:
+      max-height 0.38s var(--sidebar-ease),
+      margin 0.38s var(--sidebar-ease),
+      opacity 0.22s ease 0.15s,
+      transform 0.32s var(--sidebar-ease) 0.10s;
   }
 
 
-  /* =====================================================
-     NAVIGATION MENJADI AREA SCROLL
-  ===================================================== */
+  /* -----------------------------------------------------
+     NAVIGATION AREA
+  ----------------------------------------------------- */
 
   #header .navmenu {
+    width: 100% !important;
     flex: 1 1 auto !important;
-
     min-height: 0 !important;
+
+    margin: 0 !important;
+    padding: 8px 0 20px !important;
 
     overflow-y: auto !important;
     overflow-x: hidden !important;
 
-    padding-bottom: 20px !important;
-
     overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.22) transparent;
   }
 
-
-  /* Scrollbar */
   #header .navmenu::-webkit-scrollbar {
     width: 5px;
   }
@@ -1023,22 +964,185 @@ details[open] summary::after {
 
   #header .navmenu::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.22);
-    border-radius: 10px;
+    border-radius: 999px;
   }
 
   #header .navmenu::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.38);
+  }
+
+  #header .navmenu ul {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #header .navmenu li {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
 
-  /* Firefox */
-  #header .navmenu {
-    scrollbar-width: thin;
-    scrollbar-color:
-      rgba(255, 255, 255, 0.22)
-      transparent;
+  /* -----------------------------------------------------
+     MENU ITEM
+     72px sidebar, 24px icon:
+     (72 - 24) / 2 = 24px
+     This keeps every icon perfectly centered.
+  ----------------------------------------------------- */
+
+  #header .navmenu a,
+  #header .navmenu a:focus {
+    position: relative !important;
+
+    width: 100% !important;
+    height: 52px !important;
+    min-height: 52px !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+
+    white-space: nowrap !important;
+    overflow: hidden !important;
+
+    font-size: 15px !important;
+
+    transition:
+      color 0.20s ease,
+      background-color 0.20s ease !important;
   }
 
+  #header .navmenu a .navicon,
+  #header .navmenu a:focus .navicon {
+    width: 24px !important;
+    min-width: 24px !important;
+    flex: 0 0 24px !important;
+
+    margin: 0 0 0 24px !important;
+    padding: 0 !important;
+
+    font-size: 21px !important;
+    line-height: 1 !important;
+    text-align: center !important;
+
+    transform-origin: center;
+
+    transition:
+      transform 0.25s var(--sidebar-ease),
+      color 0.20s ease !important;
+  }
+
+
+  /* -----------------------------------------------------
+     MENU TEXT
+     The sidebar opens first; text fades in slightly later.
+     No font-size animation, so there is no "snap".
+  ----------------------------------------------------- */
+
+  #header .navmenu a span,
+  #header .navmenu a:focus span {
+    display: inline-block !important;
+
+    margin-left: 12px !important;
+    padding: 0 !important;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateX(-7px);
+
+    transition:
+      opacity 0.12s ease,
+      transform 0.24s var(--sidebar-ease),
+      visibility 0s linear 0.15s;
+  }
+
+  #header:hover .navmenu a span,
+  #header:hover .navmenu a:focus span {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateX(0);
+
+    transition:
+      opacity 0.22s ease 0.14s,
+      transform 0.32s var(--sidebar-ease) 0.10s,
+      visibility 0s linear 0s;
+  }
+
+
+  /* -----------------------------------------------------
+     SMALL ICON HOVER
+  ----------------------------------------------------- */
+
+  #header .navmenu a:hover .navicon {
+    transform: scale(1.08);
+  }
+
+
+  /* -----------------------------------------------------
+     ACTIVE INDICATOR
+     Always attached to the true left edge of the sidebar.
+  ----------------------------------------------------- */
+
+  #header .navmenu a.active::before {
+    content: "";
+
+    position: absolute;
+    left: 0 !important;
+    top: 50%;
+
+    width: 4px;
+    height: 28px;
+
+    border-radius: 0 5px 5px 0;
+    background: var(--accent-color, #149ddd);
+
+    transform: translateY(-50%) scaleY(0.90);
+
+    transition:
+      height 0.28s var(--sidebar-ease),
+      transform 0.28s var(--sidebar-ease);
+  }
+
+  #header:hover .navmenu a.active::before {
+    height: 32px;
+    transform: translateY(-50%) scaleY(1);
+  }
+
+
+  /* -----------------------------------------------------
+     PAGE CONTENT
+     Only reserves the collapsed 72px. Expanded sidebar
+     overlays the page rather than resizing the whole layout.
+  ----------------------------------------------------- */
+
+  .main,
+  #footer {
+    margin-left: var(--sidebar-collapsed) !important;
+  }
+
+}
+
+
+/* Reduce sidebar motion for users who request it. */
+@media (min-width: 1200px) and (prefers-reduced-motion: reduce) {
+  #header,
+  #header .profile-img,
+  #header .logo,
+  #header .social-links,
+  #header .navmenu a span,
+  #header .navmenu .navicon,
+  #header .navmenu a.active::before {
+    transition: none !important;
+  }
 }
 
 .hero::after {
@@ -1067,59 +1171,6 @@ details[open] summary::after {
   }
 }
 
-/* =====================================================
-   ACTIVE NAV INDICATOR FIX
-===================================================== */
-
-@media (min-width: 1200px) {
-
-  /* Anchor menjadi acuan posisi indicator */
-  #header .navmenu a {
-    position: relative !important;
-  }
-
-  /* Indicator */
-  #header .navmenu a.active::before {
-    content: "";
-    position: absolute;
-
-    left: 0;
-
-    top: 50%;
-    transform: translateY(-50%);
-
-    width: 4px;
-    height: 28px;
-
-    border-radius: 0 5px 5px 0;
-
-    background: var(--accent-color, #149ddd);
-
-    transition:
-      left 0.35s ease,
-      height 0.25s ease;
-  }
-
-
-  /* =============================================
-     SIDEBAR EXPANDED
-     Indicator ikut masuk ke kanan
-  ============================================= */
-
-  #header:hover .navmenu a.active::before {
-    left: 10px;
-    height: 32px;
-  }
-
-}
-
-.navmenu a:hover .navicon {
-  transform: scale(1.12);
-}
-
-.navmenu .navicon {
-  transition: transform 0.2s ease, color 0.2s ease;
-}
 /* =========================================================
    Homepage enhancement styles
    Add this file as: assets/css/homepage.css
@@ -1743,7 +1794,7 @@ a.home-impact-card:hover {
 
     z-index: 3;
 
-    transition: left 0.35s ease;
+    transition: left 0.42s var(--sidebar-ease, cubic-bezier(0.22, 1, 0.36, 1));
   }
 
   /* Navbar dibuka */
@@ -2301,4 +2352,89 @@ body {
   .home-hero-actions {
     align-items: center;
   }
+}
+
+
+/* =========================================================
+   COLLAPSED NAV LABEL FIX
+   Supports both:
+   <a><i></i><span>Home</span></a>
+   and:
+   <a><i></i>Home</a>
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* Saat collapsed, hilangkan SEMUA teks anchor.
+     Icon tetap normal karena font-size icon ditentukan sendiri. */
+  #header:not(:hover) .navmenu a,
+  #header:not(:hover) .navmenu a:focus {
+    font-size: 0 !important;
+
+    transition:
+      color 0.20s ease,
+      background-color 0.20s ease,
+      font-size 0s linear 0s !important;
+  }
+
+  /* Pastikan icon tidak ikut mengecil */
+  #header:not(:hover) .navmenu a .navicon,
+  #header:not(:hover) .navmenu a:focus .navicon {
+    font-size: 21px !important;
+  }
+
+  /* Jika label memang menggunakan span, tetap sembunyikan juga */
+  #header:not(:hover) .navmenu a span,
+  #header:not(:hover) .navmenu a:focus span {
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateX(-7px) !important;
+    pointer-events: none !important;
+  }
+
+  /* Saat membuka, tunggu sidebar sedikit melebar baru tampilkan teks.
+     Ini mencegah tulisan "Ho", "Ab", "Res" terlihat terpotong. */
+  #header:hover .navmenu a,
+  #header:hover .navmenu a:focus {
+    font-size: 15px !important;
+
+    transition:
+      color 0.20s ease,
+      background-color 0.20s ease,
+      font-size 0s linear 0.13s !important;
+  }
+
+  #header:hover .navmenu a span,
+  #header:hover .navmenu a:focus span {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(0) !important;
+  }
+}
+
+/* =========================================================
+   NAVBAR SPACING POLISH
+========================================================= */
+
+@media (min-width: 1200px) {
+
+  /* Jarak icon ke label menu */
+  #header .navmenu a,
+  #header .navmenu a:focus {
+    column-gap: 16px !important;
+  }
+
+  /* Icon tetap pada posisi yang sama */
+  #header .navmenu a .navicon,
+  #header .navmenu a:focus .navicon {
+    margin-left: 24px !important;
+    margin-right: 0 !important;
+  }
+
+  /* Hindari margin ganda jika label menggunakan span */
+  #header .navmenu a span,
+  #header .navmenu a:focus span {
+    margin-left: 0 !important;
+  }
+
 }
