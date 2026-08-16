@@ -179,3 +179,35 @@ function getActivityIcon(category) {
   };
   return icons[category] || "bi-calendar-event";
 }
+
+document.querySelectorAll('.teaching').forEach(section => {
+
+  const filterButtons = section.querySelectorAll('.filter-btn');
+
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+
+      // Aktifkan tombol
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.getAttribute('data-filter');
+
+      // Ambil item terbaru karena item dibuat secara dinamis dari JSON
+      const items = section.querySelectorAll('.teaching-item');
+
+      items.forEach(item => {
+        if (
+          filter === 'all' ||
+          item.classList.contains(filter)
+        ) {
+          item.style.display = '';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+
+    });
+  });
+
+});
