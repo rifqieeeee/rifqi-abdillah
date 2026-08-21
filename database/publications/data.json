@@ -4,6 +4,18 @@
     {
       "category": "international",
       "type": "conference",
+      "year": 2026,
+      "authors": "Parama Diptya Widayaka, Pradini Puspitaningayu, Sayyidul Aulia Alamsyah, Endryansyah Endryansyah, Lusia Rakhmawati, Paramitha Nerisafitra, Rifqi Abdillah, Akbar Wildhanata, Haikal Alif Eyrlangga",
+      "title": "Hybrid Time-Series Forecasting and Anomaly Detection for Early Deforestation Monitoring in Indonesia",
+      "venue": "International Conference on Green Engineering for Sustainable Future (ICoGESF)",
+      "pages": "1-10",
+      "publisher": "E3S Web of Conferences",
+      "place": "Surabaya",
+      "link": "	https://doi.org/10.1051/e3sconf/202673602004"
+    },
+    {
+      "category": "international",
+      "type": "conference",
       "year": 2025,
       "authors": "Parama Diptya Widayaka, Pradini Puspitaningayu, Sayyidul Aulia Alamsyah, Endryansyah Endryansyah, Lusia Rakhmawati, Paramitha Nerisafitra, Rifqi Abdillah, Akbar Wildhanata, Haikal Alif Eyrlangga",
       "title": "TinyML-Based Object Detection on Smart Blind Stick for Visually Impaired Person",
