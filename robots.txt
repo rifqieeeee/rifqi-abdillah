@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rifqiabdillah.my.id/sitemap.xml
+Sitemap: https://www.rifqiabdillah.my.id/sitemap.xml
