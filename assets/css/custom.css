@@ -460,13 +460,8 @@
 }
 
 .hero-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.55),
-    rgba(0, 0, 0, 0.75)
-  );
-  z-index: 1;
+  display: none;
+
 }
 
 /* Container list jadi grid */
@@ -1185,12 +1180,7 @@ details[open] summary::after {
 }
 
 .home-hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background:
-    linear-gradient(90deg, rgba(0, 0, 0, 0.74) 0%, rgba(0, 0, 0, 0.48) 48%, rgba(0, 0, 0, 0.16) 100%);
+  display: none;
 }
 
 .home-hero > img {
