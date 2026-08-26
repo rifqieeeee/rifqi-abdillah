@@ -22,19 +22,7 @@
       "role": "Lecturer",
       "department": "Informatics Engineering",
       "credits": 3,
-      "classes": 2
-    },
-    {
-      "title": "Internet of Things",
-      "title_in": "Internet of Things",
-      "level": "undergraduate",
-      "type": "practical",
-      "semester": "Odd Semester 2026/2027",
-      "description": "Conducted practical sessions on Internet of Things (IoT), covering sensor and actuator integration, microcontroller programming, communication protocols, data transmission, and the development of connected IoT-based applications.",
-      "role": "Lecturer",
-      "department": "Informatics Engineering",
-      "credits": 3,
-      "classes": 2
+      "classes": 3
     },
     {
       "title": "Digital Literacy",
