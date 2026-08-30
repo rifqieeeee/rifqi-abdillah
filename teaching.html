@@ -232,6 +232,23 @@
 
   <script src="database/teaching/load.js"></script>
 
+  <script>
+    window.addEventListener("load", () => {
+      if (!window.location.hash) return;
+
+      const target = document.querySelector(window.location.hash);
+
+      if (target) {
+        setTimeout(() => {
+          target.scrollIntoView({
+            behavior: "auto",
+            block: "start"
+          });
+        }, 300);
+      }
+    });
+  </script>
+
 </body>
 
 </html>
