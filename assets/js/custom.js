@@ -1,96 +1,127 @@
-const researchButtons = document.querySelectorAll('.research-filters .filter-btn');
-const researchItems = document.querySelectorAll('.research-item');
+/* =========================================================
+   FILTER FUNCTION
+========================================================= */
 
-researchButtons.forEach(button => {
-button.addEventListener('click', () => {
-    researchButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
+function initFilter(buttonSelector, itemSelector) {
 
-    const filter = button.getAttribute('data-filter');
+  const buttons = document.querySelectorAll(buttonSelector);
+  const items = document.querySelectorAll(itemSelector);
 
-    researchItems.forEach(item => {
-    if (filter === 'all' || item.classList.contains(filter)) {
-        item.style.display = 'block';
-    } else {
-        item.style.display = 'none';
-    }
+  if (!buttons.length || !items.length) {
+    return;
+  }
+
+  buttons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      /* Remove active dari semua button */
+      buttons.forEach(btn => {
+        btn.classList.remove("active");
+      });
+
+      /* Active button yang diklik */
+      button.classList.add("active");
+
+      const filter = button.getAttribute("data-filter");
+
+      items.forEach(item => {
+
+        if (
+          filter === "all" ||
+          item.classList.contains(filter)
+        ) {
+
+          item.style.display = "block";
+
+        } else {
+
+          item.style.display = "none";
+
+        }
+
+      });
+
     });
-});
-});
 
-const teachingButtons = document.querySelectorAll('.teaching-filters .filter-btn');
-const teachingItems = document.querySelectorAll('.teaching-item');
+  });
 
-teachingButtons.forEach(button => {
-button.addEventListener('click', () => {
-    teachingButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
+}
 
-    const filter = button.getAttribute('data-filter');
-
-    teachingItems.forEach(item => {
-    if (filter === 'all' || item.classList.contains(filter)) {
-        item.style.display = 'block';
-    } else {
-        item.style.display = 'none';
-    }
-    });
-});
-});
-
-const communityButtons = document.querySelectorAll('.community-filters .filter-btn');
-const communityItems = document.querySelectorAll('.community-item');
-
-communityButtons.forEach(button => {
-button.addEventListener('click', () => {
-    communityButtons.forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-
-    const filter = button.getAttribute('data-filter');
-
-    communityItems.forEach(item => {
-    if (filter === 'all' || item.classList.contains(filter)) {
-        item.style.display = 'block';
-    } else {
-        item.style.display = 'none';
-    }
-    });
-});
-});
 
 /* =========================================================
    GLOBAL LAYOUT LOADER
-   Header + Footer → baru Main JS
+   Header + Footer → Main JS
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", async () => {
 
+  /* =======================================================
+     INITIALIZE FILTER
+  ======================================================= */
+
+  initFilter(
+    ".research-filters .filter-btn",
+    ".research-item"
+  );
+
+  initFilter(
+    ".teaching-filters .filter-btn",
+    ".teaching-item"
+  );
+
+  initFilter(
+    ".community-filters .filter-btn",
+    ".community-item"
+  );
+
+
   try {
 
     /* =====================================================
-       LOAD HEADER & FOOTER BERSAMAAN
+       LOAD HEADER & FOOTER
     ===================================================== */
 
     const [headerResponse, footerResponse] = await Promise.all([
+
       fetch("/assets/html/header.html"),
+
       fetch("/assets/html/footer.html")
+
     ]);
 
+
+    /* =====================================================
+       CHECK RESPONSE
+    ===================================================== */
+
     if (!headerResponse.ok) {
+
       throw new Error(
         `Failed to load header: ${headerResponse.status}`
       );
+
     }
 
     if (!footerResponse.ok) {
+
       throw new Error(
         `Failed to load footer: ${footerResponse.status}`
       );
+
     }
 
+
+    /* =====================================================
+       CONVERT RESPONSE TO HTML
+    ===================================================== */
+
     const [headerHTML, footerHTML] = await Promise.all([
+
       headerResponse.text(),
+
       footerResponse.text()
+
     ]);
 
 
@@ -98,8 +129,7 @@ document.addEventListener("DOMContentLoaded", async () => {
        INSERT HEADER
     ===================================================== */
 
-    const oldHeader =
-      document.querySelector("#header");
+    const oldHeader = document.querySelector("#header");
 
     if (oldHeader) {
 
@@ -119,8 +149,7 @@ document.addEventListener("DOMContentLoaded", async () => {
        INSERT FOOTER
     ===================================================== */
 
-    const oldFooter =
-      document.querySelector("#footer");
+    const oldFooter = document.querySelector("#footer");
 
     if (oldFooter) {
 
@@ -154,29 +183,67 @@ document.addEventListener("DOMContentLoaded", async () => {
        ACTIVE NAVIGATION
     ===================================================== */
 
-    let currentPage =
-      window.location.pathname
-        .split("/")
-        .pop();
+    let currentPath = window.location.pathname;
+
+    /*
+     * Jika URL:
+     *
+     * https://rifqiabdillah.my.id/
+     *
+     * dianggap sama dengan:
+     *
+     * /index.html
+     */
 
     if (
-      !currentPage ||
-      currentPage === ""
+      currentPath === "/" ||
+      currentPath === ""
     ) {
-      currentPage = "index.html";
+
+      currentPath = "/index.html";
+
     }
+
 
     document
       .querySelectorAll("#navmenu a")
       .forEach(link => {
 
+        /* Reset */
         link.classList.remove("active");
         link.removeAttribute("aria-current");
 
-        const href =
-          link.getAttribute("href");
 
-        if (href === currentPage) {
+        /*
+         * Convert href menjadi pathname
+         *
+         * /index.html
+         * /about.html
+         * /research.html
+         * dst.
+         */
+
+        let linkPath = new URL(
+          link.href,
+          window.location.origin
+        ).pathname;
+
+
+        /* Root URL = index.html */
+
+        if (
+          linkPath === "/" ||
+          linkPath === ""
+        ) {
+
+          linkPath = "/index.html";
+
+        }
+
+
+        /* Active page */
+
+        if (linkPath === currentPath) {
 
           link.classList.add("active");
 
@@ -191,80 +258,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 
     /* =====================================================
-       MOBILE NAVIGATION
+       LOAD MAIN.JS
+       HANYA SATU KALI
     ===================================================== */
 
-    const headerToggle =
-      document.querySelector(".header-toggle");
-
-    if (headerToggle) {
-
-      headerToggle.addEventListener(
-        "click",
-        () => {
-
-          document.body.classList.toggle(
-            "mobile-nav-active"
-          );
-
-          headerToggle.classList.toggle(
-            "bi-list"
-          );
-
-          headerToggle.classList.toggle(
-            "bi-x"
-          );
-
-        }
-      );
-
-    }
-
-
-    /* =====================================================
-       LOAD MAIN.JS SETELAH HEADER SUDAH ADA
-    ===================================================== */
-
-    const mainScript =
-      document.createElement("script");
-
-    mainScript.src =
-      "assets/js/main.js";
-
-    mainScript.onload = () => {
-
-      console.log(
-        "Main JS loaded after layout."
-      );
-
-      /* Kalau window load sudah terlewat,
-         pastikan preloader tetap hilang */
-      const preloader =
-        document.querySelector("#preloader");
-
-      if (preloader) {
-        preloader.remove();
-      }
-
-    };
-
-    mainScript.onerror = () => {
-
-      console.error(
-        "Failed to load main.js"
-      );
-
-      /* Jangan biarkan loading berputar terus */
-      const preloader =
-        document.querySelector("#preloader");
-
-      if (preloader) {
-        preloader.remove();
-      }
-
-    };
-
-    document.body.appendChild(mainScript);
+    loadMainJS();
 
 
   } catch (error) {
@@ -274,73 +272,166 @@ document.addEventListener("DOMContentLoaded", async () => {
       error
     );
 
-    /* Emergency fallback */
+
+    /* =====================================================
+       EMERGENCY FALLBACK
+    ===================================================== */
+
     const preloader =
       document.querySelector("#preloader");
 
     if (preloader) {
+
       preloader.remove();
+
     }
 
   }
 
 });
 
-/* =====================================================
-   LOAD MAIN.JS SETELAH HEADER SUDAH ADA
-===================================================== */
 
-const mainScript = document.createElement("script");
+/* =========================================================
+   MAIN JS LOADER
+========================================================= */
 
-mainScript.src = "/assets/js/main.js";
+function loadMainJS() {
 
-mainScript.onload = () => {
+  /*
+   * Hindari main.js dimuat dua kali
+   */
 
-  console.log(
-    "Header, footer, and main.js loaded successfully."
+  if (
+    document.querySelector(
+      'script[data-main-script="true"]'
+    )
+  ) {
+
+    return;
+
+  }
+
+
+  const mainScript =
+    document.createElement("script");
+
+
+  /*
+   * Gunakan absolute path.
+   *
+   * Jangan:
+   *
+   * assets/js/main.js
+   *
+   * karena kalau halaman berada dalam folder,
+   * browser bisa mencari:
+   *
+   * /folder/assets/js/main.js
+   */
+
+  mainScript.src =
+    "/assets/js/main.js";
+
+
+  /* Identifier */
+  mainScript.dataset.mainScript = "true";
+
+
+  /* =======================================================
+     MAIN JS SUCCESS
+  ======================================================= */
+
+  mainScript.onload = () => {
+
+    console.log(
+      "Header, footer, and main.js loaded successfully."
+    );
+
+
+    /*
+     * main.js BootstrapMade biasanya memiliki
+     * beberapa fungsi yang menunggu event:
+     *
+     * window.load
+     *
+     * Karena main.js dimuat secara dynamic,
+     * window.load mungkin sudah terjadi.
+     */
+
+    if (document.readyState === "complete") {
+
+      window.dispatchEvent(
+        new Event("load")
+      );
+
+    }
+
+
+    /* =====================================================
+       AOS REFRESH
+    ===================================================== */
+
+    if (typeof AOS !== "undefined") {
+
+      /*
+       * Tidak perlu init berkali-kali.
+       * Refresh setelah header/footer masuk.
+       */
+
+      AOS.refreshHard();
+
+    }
+
+
+    /* =====================================================
+       PRELOADER FALLBACK
+    ===================================================== */
+
+    setTimeout(() => {
+
+      const preloader =
+        document.querySelector("#preloader");
+
+      if (preloader) {
+
+        preloader.remove();
+
+      }
+
+    }, 300);
+
+  };
+
+
+  /* =======================================================
+     MAIN JS ERROR
+  ======================================================= */
+
+  mainScript.onerror = () => {
+
+    console.error(
+      "Failed to load main.js"
+    );
+
+
+    const preloader =
+      document.querySelector("#preloader");
+
+    if (preloader) {
+
+      preloader.remove();
+
+    }
+
+  };
+
+
+  /* =======================================================
+     APPEND MAIN JS
+  ======================================================= */
+
+  document.body.appendChild(
+    mainScript
   );
 
-
-  /* Trigger event load untuk fungsi bawaan main.js */
-  window.dispatchEvent(new Event("load"));
-
-
-  /* Pastikan AOS aktif */
-  if (typeof AOS !== "undefined") {
-
-    AOS.init({
-      duration: 600,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false
-    });
-
-    AOS.refreshHard();
-
-  }
-
-
-  /* Hapus preloader */
-  const preloader =
-    document.querySelector("#preloader");
-
-  if (preloader) {
-    preloader.remove();
-  }
-
-};
-
-mainScript.onerror = () => {
-
-  console.error("Failed to load main.js");
-
-  const preloader =
-    document.querySelector("#preloader");
-
-  if (preloader) {
-    preloader.remove();
-  }
-
-};
-
-document.body.appendChild(mainScript);
+}
