@@ -197,14 +197,12 @@
   <!-- Custom JS -->
   <script src="/assets/js/custom.js"></script>
 
-  <!-- Copy Link Script -->
   <script>
     function copyDocumentLink(button) {
 
+      // Link yang akan dicopy
       const documentURL =
-        window.location.origin +
-        window.location.pathname.replace(/[^/]*$/, '') +
-        'assets/docs/JeteFEST - VEXcode VR.pdf';
+        'https://rifqi-abdillah.vercel.app/sharing/jetefest.html';
 
       navigator.clipboard.writeText(documentURL).then(function () {
 
@@ -236,6 +234,7 @@
 
     }
   </script>
+
 
 </body>
 
