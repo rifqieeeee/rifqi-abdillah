@@ -1,5 +1,13 @@
 [
   {
+    "id": "gallery-033",
+    "category": "speaker",
+    "title": "Tech Talk with JETE: Coding the Future",
+    "description": "Invited Speaker at JETE Fest 2026, introducing coding and virtual robotics through VEXcode VR.",
+    "image": "assets/img/gallery/033.jpeg",
+    "gallery": "portfolio-gallery-speaker"
+  },
+  {
     "id": "gallery-032",
     "category": "campus",
     "title": "Campus",

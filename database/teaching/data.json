@@ -148,6 +148,17 @@
 
   "activities": [
     {
+      "title": "Invited Speaker – Tech Talk with JETE: Coding the Future",
+      "category": "speaker",
+      "institution": "JETE Indonesia",
+      "date": "Sep 2026",
+      "description": "Tech Talk with JETE: Coding the Future explores the fundamentals of coding and virtual robotics through VEXcode VR, featuring interactive demonstrations to introduce participants to programming, robotics, and future technology.",
+      "organizer": "JETE Indonesia",
+      "audience": "General Public",
+      "venue": "Oval Atrium, Mall Ciputra World Surabaya",
+      "mode": "Offline"
+    },
+    {
       "title": "Invited Speakers – Tech a Note #2",
       "category": "speaker",
       "institution": "Google Developer Group on Campus",
