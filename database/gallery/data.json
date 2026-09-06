@@ -1,5 +1,13 @@
 [
   {
+    "id": "gallery-034",
+    "category": "workshop",
+    "title": "Workshop",
+    "description": "Strengthening the Digitalization of Learning for Teachers at SMK PGRI 13 Surabaya",
+    "image": "assets/img/gallery/034.jpg",
+    "gallery": "portfolio-gallery-workshop"
+  },
+  {
     "id": "gallery-033",
     "category": "speech",
     "title": "Speech",

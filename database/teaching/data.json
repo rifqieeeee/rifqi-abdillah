@@ -148,6 +148,17 @@
 
   "activities": [
     {
+      "title": "Workshop – Strengthening the Digitalization of Learning for Teachers",
+      "category": "workshop",
+      "institution": "SMK PGRI 13 Surabaya",
+      "date": "Sep 2026",
+      "description": "Interactive workshop on strengthening teachers’ digital competencies through educational technology, interactive learning tools, and Artificial Intelligence to support more engaging and innovative teaching practices.",
+      "organizer": "SMK PGRI 13 Surabaya",
+      "audience": "Teachers",
+      "venue": "SMK PGRI 13 Surabaya",
+      "mode": "Offline"
+    },
+    {
       "title": "Invited Speaker – Tech Talk with JETE: Coding the Future",
       "category": "speaker",
       "institution": "JETE Indonesia",
