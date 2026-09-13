@@ -102,7 +102,370 @@
                 </div>
               </div><!-- End Info Item -->
 
-              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.3343077728473!2d112.72270247588067!3d-7.316291571942183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb77985f5b71%3A0x8226ca493dd1aea9!2sGedung%20A10%20Teknik%20Informatika%20UNESA!5e0!3m2!1sid!2sid!4v1769081683546!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.3343077728473!2d112.72270247588067!3d-7.316291571942183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fb77985f5b71%3A0x8226ca493dd1aea9!2sGedung%20A10%20Teknik%20Informatika%20UNESA!5e0!3m2!1sid!2sid!4v1769081683546!5m2!1sid!2sid" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+              
+              <link
+                rel="stylesheet"
+                href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+              />
+
+              <style>
+              #map {
+                width: 100%;
+                height: 320px;
+                border-radius: 14px;
+                overflow: hidden;
+                background: #061a33;
+              }
+
+              /* Membuat tile terasa seperti blueprint */
+              .leaflet-tile-pane {
+                filter:
+                  grayscale(1)
+                  sepia(0.25)
+                  hue-rotate(165deg)
+                  saturate(1.8)
+                  brightness(0.55)
+                  contrast(1.2);
+              }
+
+              /* Popup */
+              .leaflet-popup-content-wrapper {
+                background: rgba(5, 25, 50, 0.96);
+                color: #fff;
+                border: 1px solid rgba(255, 189, 89, 0.5);
+                border-radius: 10px;
+                box-shadow:
+                  0 8px 30px rgba(0,0,0,.35),
+                  0 0 18px rgba(255,189,89,.12);
+              }
+
+              .leaflet-popup-tip {
+                background: #061a33;
+              }
+
+              .leaflet-popup-content {
+                margin: 13px 16px;
+                line-height: 1.5;
+              }
+
+              /* Marker utama */
+              .blueprint-marker {
+                position: relative;
+                width: 22px;
+                height: 22px;
+                background: #ffbd59;
+                border: 4px solid #ffffff;
+                border-radius: 50%;
+
+                box-shadow:
+                  0 0 0 4px #00275b,
+                  0 0 18px rgba(255,189,89,.9);
+
+                animation: markerFloat 2.5s ease-in-out infinite;
+              }
+
+              /* Pulse */
+              .blueprint-marker::before,
+              .blueprint-marker::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 50%;
+
+                width: 22px;
+                height: 22px;
+
+                border: 2px solid #ffbd59;
+                border-radius: 50%;
+
+                transform: translate(-50%, -50%);
+                animation: radarPulse 2.4s infinite;
+              }
+
+              .blueprint-marker::after {
+                animation-delay: 1.2s;
+              }
+
+              @keyframes radarPulse {
+                0% {
+                  width: 22px;
+                  height: 22px;
+                  opacity: .9;
+                }
+
+                100% {
+                  width: 80px;
+                  height: 80px;
+                  opacity: 0;
+                }
+              }
+
+              @keyframes markerFloat {
+                0%, 100% {
+                  transform: translateY(0);
+                }
+
+                50% {
+                  transform: translateY(-4px);
+                }
+              }
+
+              /* Tombol Open Maps */
+              .open-maps {
+                display: inline-flex;
+                align-items: center;
+                gap: 6px;
+
+                margin-top: 10px;
+                padding: 7px 12px;
+
+                background: #ffbd59;
+                color: #00275b !important;
+
+                border-radius: 6px;
+
+                text-decoration: none !important;
+
+                font-size: 11px;
+                font-weight: 700;
+
+                transition: all .25s ease;
+              }
+
+              .open-maps:hover {
+                background: #ffffff;
+                transform: translateY(-2px);
+              }
+
+              /* Crosshair */
+              .crosshair {
+                position: absolute;
+                width: 110px;
+                height: 110px;
+                pointer-events: none;
+                z-index: 500;
+                opacity: .28;
+              }
+
+              .crosshair::before,
+              .crosshair::after {
+                content: "";
+                position: absolute;
+                background: #ffbd59;
+              }
+
+              .crosshair::before {
+                width: 100%;
+                height: 1px;
+                top: 50%;
+                left: 0;
+              }
+
+              .crosshair::after {
+                width: 1px;
+                height: 100%;
+                left: 50%;
+                top: 0;
+              }
+
+              /* Lingkaran crosshair */
+              .crosshair-circle {
+                position: absolute;
+                width: 65px;
+                height: 65px;
+                border: 1px solid #ffbd59;
+                border-radius: 50%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+
+              /* Attribution */
+              .leaflet-control-attribution {
+                background: rgba(3, 20, 40, .8) !important;
+                color: #ccc;
+                font-size: 9px;
+              }
+
+              .leaflet-control-attribution a {
+                color: #ffbd59;
+              }
+
+              /* Zoom */
+              .leaflet-bar a {
+                background: #061a33;
+                color: #ffbd59;
+                border-color: #19395d;
+              }
+
+              .leaflet-bar a:hover {
+                background: #0b2b52;
+                color: #fff;
+              }
+              </style>
+
+              <div id="map"></div>
+
+              <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+              <script>
+              const a10 = [
+                -7.31623764912807,
+                112.72541747021
+              ];
+
+              const map = L.map('map', {
+                zoomControl: true,
+                scrollWheelZoom: false,
+                attributionControl: true
+              }).setView(a10, 15);
+
+
+              /* Base map */
+              L.tileLayer(
+                'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+                {
+                  maxZoom: 19,
+                  attribution: '&copy; OpenStreetMap contributors'
+                }
+              ).addTo(map);
+
+
+              /* Animated marker */
+              const markerIcon = L.divIcon({
+                className: '',
+                html: `
+                  <div class="blueprint-marker"></div>
+                `,
+                iconSize: [30, 30],
+                iconAnchor: [15, 15]
+              });
+
+
+              const marker = L.marker(
+                a10,
+                {
+                  icon: markerIcon
+                }
+              ).addTo(map);
+
+
+              /* Popup */
+              marker.bindPopup(`
+                <div style="
+                  font-family:Arial,Helvetica,sans-serif;
+                  min-width:210px;
+                ">
+
+                  <div style="
+                    color:#ffbd59;
+                    font-weight:700;
+                    font-size:14px;
+                    margin-bottom:4px;
+                  ">
+                    Gedung A10 Teknik Informatika
+                  </div>
+
+                  <div style="
+                    font-size:12px;
+                    color:#d1d5db;
+                  ">
+                    Universitas Negeri Surabaya
+                  </div>
+
+                  <div style="
+                    margin-top:8px;
+                    font-size:10px;
+                    letter-spacing:1px;
+                    color:#7997b8;
+                    text-transform:uppercase;
+                  ">
+                    Location Identified
+                  </div>
+
+                  <a
+                    class="open-maps"
+                    href="https://maps.google.com/?cid=9378405689964211881&g_mp=CiVnb29nbGUubWFwcy5wbGFjZXMudjEuUGxhY2VzLkdldFBsYWNlEAMYASAF&hl=id&gl=ID&source=embed"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    ↗ Open Maps
+                  </a>
+
+                </div>
+              `);
+
+
+              /* Blueprint circle */
+              L.circle(a10, {
+                radius: 150,
+                color: '#ffbd59',
+                weight: 1,
+                opacity: 0.45,
+                fillColor: '#ffbd59',
+                fillOpacity: 0.025,
+                dashArray: '7, 7'
+              }).addTo(map);
+
+
+              /* Lingkaran kedua */
+              L.circle(a10, {
+                radius: 300,
+                color: '#7da6d8',
+                weight: 1,
+                opacity: 0.25,
+                fillOpacity: 0,
+                dashArray: '4, 9'
+              }).addTo(map);
+
+
+              /* Crosshair */
+              const CrosshairControl = L.Control.extend({
+
+                options: {
+                  position: 'topleft'
+                },
+
+                onAdd: function() {
+
+                  const div = L.DomUtil.create(
+                    'div',
+                    'crosshair'
+                  );
+
+                  div.innerHTML = `
+                    <div class="crosshair-circle"></div>
+                  `;
+
+                  return div;
+                }
+
+              });
+
+              map.addControl(
+                new CrosshairControl()
+              );
+
+
+              /* Animasi masuk */
+              setTimeout(() => {
+
+                map.flyTo(
+                  a10,
+                  18,
+                  {
+                    duration: 2.2,
+                    easeLinearity: 0.2
+                  }
+                );
+
+                setTimeout(() => {
+                  marker.openPopup();
+                }, 1900);
+
+              }, 600);
+              </script>
             </div>
           </div>
 
