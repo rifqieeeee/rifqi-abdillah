@@ -1,5 +1,13 @@
 [
   {
+    "id": "gallery-035",
+    "category": "speech",
+    "title": "Speech",
+    "description": "Guest lecture as a speaker at the Department of Information Technology, Institut Teknologi Sepuluh Nopember",
+    "image": "assets/img/gallery/035.jpg",
+    "gallery": "portfolio-gallery-speech"
+  },
+  {
     "id": "gallery-034",
     "category": "workshop",
     "title": "Workshop",

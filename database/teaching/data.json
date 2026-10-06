@@ -148,6 +148,17 @@
 
   "activities": [
     {
+      "title": "Invited Speaker – Things That Know Things",
+      "category": "speaker",
+      "institution": "Institut Teknologi Sepuluh Nopember (ITS)",
+      "date": "Oct 2026",
+      "description": "Guest lecture as a speaker at the Department of Information Technology, Faculty of Intelligent Electrical and Informatics Technology (FT-EIC), Institut Teknologi Sepuluh Nopember, exploring the theme “Things That Know Things.”",
+      "organizer": "Department of Information Technology, FT-EIC ITS",
+      "audience": "Students",
+      "venue": "Auditorium Room, 2nd Floor, Tower 2 Building, ITS",
+      "mode": "Offline"
+    },
+    {
       "title": "Workshop – Strengthening the Digitalization of Learning for Teachers",
       "category": "workshop",
       "institution": "SMK PGRI 13 Surabaya",
