@@ -3,8 +3,7 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Portal Pengisian Formulir</title>
 
   <style>
@@ -57,6 +56,7 @@
       border-radius: 10px;
       margin-top: 20px;
       color: #1d4ed8;
+      line-height: 1.8;
     }
 
     #formContainer {
@@ -86,7 +86,8 @@
 
       <div class="schedule">
         Jadwal Akses<br>
-        <strong>09.50 - 10.40 WIB</strong>
+        <strong>Jumat, 16 Oktober 2026</strong><br>
+        <strong>10.00 - 10.50 WIB</strong>
       </div>
     </div>
   </div>
@@ -105,8 +106,9 @@
       "1FAIpQLSdBD8bO3Zqb3xwDmgAgWjKzgwwo8aNmqIHmGGuP_M7DokaUCw/" +
       "viewform?embedded=true";
 
-    const OPEN_MINUTE = 9 * 60 + 50;
-    const CLOSE_MINUTE = 10 * 60 + 40;
+    // Jadwal berdasarkan WIB (UTC+7)
+    const OPEN_TIME = new Date("2026-10-16T10:00:00+07:00");
+    const CLOSE_TIME = new Date("2026-10-16T10:50:00+07:00");
 
     const title = document.getElementById("title");
     const message = document.getElementById("message");
@@ -117,46 +119,36 @@
     const iframe = document.getElementById("googleForm");
 
     function formatTime(seconds) {
-      const h = Math.floor(seconds / 3600);
+      const days = Math.floor(seconds / 86400);
+      const h = Math.floor((seconds % 86400) / 3600);
       const m = Math.floor((seconds % 3600) / 60);
       const s = seconds % 60;
-      return [h, m, s]
+
+      const time = [h, m, s]
         .map(n => String(n).padStart(2, "0"))
         .join(":");
+
+      return days > 0 ? `${days} hari ${time}` : time;
     }
 
     function checkAccess() {
-      const parts = new Intl.DateTimeFormat("en-GB", {
+      const now = new Date();
+
+      const timeWIB = new Intl.DateTimeFormat("en-GB", {
         timeZone: "Asia/Jakarta",
         hour: "2-digit",
         minute: "2-digit",
         second: "2-digit",
         hourCycle: "h23"
-      }).formatToParts(new Date());
+      }).format(now);
 
-      const get = type =>
-        Number(parts.find(p => p.type === type).value);
+      clock.textContent = timeWIB + " WIB";
 
-      const h = get("hour");
-      const m = get("minute");
-      const s = get("second");
-
-      const currentSeconds = h * 3600 + m * 60 + s;
-      const openSeconds = OPEN_MINUTE * 60;
-      const closeSeconds = CLOSE_MINUTE * 60;
-
-      clock.textContent =
-        [h, m, s]
-          .map(n => String(n).padStart(2, "0"))
-          .join(":") + " WIB";
-
-      if (currentSeconds >= openSeconds &&
-          currentSeconds < closeSeconds) {
-
+      if (now >= OPEN_TIME && now < CLOSE_TIME) {
         status.style.display = "none";
         container.style.display = "block";
 
-        if (!iframe.src) {
+        if (!iframe.getAttribute("src")) {
           iframe.src = FORM_URL;
         }
 
@@ -164,24 +156,26 @@
         status.style.display = "flex";
         container.style.display = "none";
 
-        // Hapus form ketika akses telah ditutup.
-        if (iframe.src) {
+        if (iframe.getAttribute("src")) {
           iframe.removeAttribute("src");
         }
 
-        if (currentSeconds < openSeconds) {
+        if (now < OPEN_TIME) {
           title.textContent = "Formulir Belum Dibuka";
           message.textContent =
-            "Formulir dapat diakses mulai pukul 09.50 WIB.";
+            "Formulir dapat diakses pada Jumat, 16 Oktober 2026 pukul 10.00 WIB.";
+
+          const remaining = Math.ceil(
+            (OPEN_TIME.getTime() - now.getTime()) / 1000
+          );
 
           countdown.textContent =
-            "Dibuka dalam " +
-            formatTime(openSeconds - currentSeconds);
+            "Dibuka dalam " + formatTime(remaining);
 
         } else {
           title.textContent = "Waktu Telah Berakhir";
           message.textContent =
-            "Batas waktu pengisian formulir adalah 10.40 WIB.";
+            "Batas waktu pengisian formulir adalah Jumat, 16 Oktober 2026 pukul 10.50 WIB.";
 
           countdown.textContent = "Akses Ditutup";
         }
