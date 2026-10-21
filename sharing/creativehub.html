@@ -1,60 +1,26 @@
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport"
-        content="width=device-width, initial-scale=1">
-
-  <title>Media Kreatif TI | Creative Hub</title>
-
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Creative Hub | Media Kreatif TI</title>
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-      overflow: hidden;
-      background: #f7f5ff;
-    }
-
-    iframe {
-      display: block;
-      width: 100%;
-      height: 100dvh;
-      border: none;
-    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { width:100%; height:100%; margin:0; overflow:hidden; background:#f7f5ff; }
+    iframe { display:block; width:100%; height:100dvh; border:0; }
   </style>
 </head>
-
 <body>
-  <iframe
-    id="creativeHub"
-    title="Media Kreatif TI Creative Hub"
-    allow="clipboard-write"
-    referrerpolicy="strict-origin-when-cross-origin">
-  </iframe>
-
+  <iframe id="creativeHub" title="Media Kreatif TI — Creative Hub" allow="clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe>
   <script>
-    const GAS_URL =
-      "https://script.google.com/macros/s/AKfycbw2vM1RLGzlz_WXTOAYqbbGVfkOQixUnTmus8E_vVsw9RTXW7iPqGYStGk2euHTdGCE/exec";
-
+    'use strict';
+    const GAS_URL = 'https://script.google.com/macros/s/AKfycbxa6IE6VbJX3FDdbounHmf4mpWIqbzQ83njaYIxQsT4t6m4SyzaavRQykwcleferQ/exec';
     const params = new URLSearchParams(window.location.search);
-    const reviewId = params.get("review");
-
+    const reviewId = params.get('review');
     const target = new URL(GAS_URL);
-
-    // Teruskan ID brief ke Google Apps Script.
-    if (reviewId) {
-      target.searchParams.set("review", reviewId);
-    }
-
-    document.getElementById("creativeHub").src =
-      target.toString();
+    if (reviewId) target.searchParams.set('review', reviewId);
+    document.getElementById('creativeHub').src = target.href;
   </script>
 </body>
 </html>
