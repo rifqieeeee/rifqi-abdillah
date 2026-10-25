@@ -259,3 +259,375 @@ a{color:inherit;text-decoration:none}button{font:inherit}.site-header{height:82p
     font-size: 8px;
   }
 }
+
+
+.polaroid-third {
+  position: absolute;
+  width: 145px;
+  height: 165px;
+  padding: 9px 9px 35px;
+  left: 42%;
+  bottom: 0;
+  transform: rotate(7deg);
+  z-index: 4;
+}
+
+.polaroid-third img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid-third .photo-placeholder {
+  inset: 9px 9px 35px;
+}
+
+.polaroid-third .polaroid-caption {
+  bottom: 7px;
+  font-size: 10px;
+}
+
+@media (max-width: 760px) {
+  .polaroid-third {
+    width: 112px;
+    height: 130px;
+    left: 43%;
+    bottom: 0;
+    padding: 7px 7px 29px;
+  }
+
+  .polaroid-third .photo-placeholder {
+    inset: 7px 7px 29px;
+  }
+
+  .polaroid-third .polaroid-caption {
+    font-size: 8px;
+    bottom: 5px;
+  }
+}
+
+
+/* FIX: Kolase foto hero agar tidak saling menabrak */
+.hero-collage {
+  position: relative;
+  min-height: 570px;
+  isolation: isolate;
+}
+
+/* Foto utama: kanan atas */
+.polaroid-main {
+  top: 10px;
+  right: 12%;
+  left: auto;
+  width: 285px;
+  height: 360px;
+  z-index: 2;
+}
+
+/* Foto kedua: kiri bawah */
+.polaroid-small {
+  left: 0;
+  right: auto;
+  bottom: 5px;
+  top: auto;
+  width: 170px;
+  height: 190px;
+  z-index: 3;
+}
+
+/* Foto ketiga: kanan bawah */
+.polaroid-third {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: 5px;
+  width: 125px;
+  height: 150px;
+  padding: 9px 9px 35px;
+  transform: rotate(6deg);
+  z-index: 4;
+}
+
+/* Pastikan gambar memenuhi bingkai */
+.polaroid-main > img,
+.polaroid-small > img,
+.polaroid-third > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid-main .photo-placeholder,
+.polaroid-small .photo-placeholder,
+.polaroid-third .photo-placeholder {
+  inset: 9px 9px 35px;
+  overflow: hidden;
+}
+
+.polaroid-main .photo-placeholder img,
+.polaroid-small .photo-placeholder img,
+.polaroid-third .photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid-third .polaroid-caption {
+  bottom: 7px;
+  font-size: 9px;
+}
+
+/* Tampilan HP */
+@media (max-width: 760px) {
+  .hero-collage {
+    min-height: 490px;
+    width: 100%;
+  }
+
+  .polaroid-main {
+    top: 0;
+    right: 5%;
+    width: 220px;
+    height: 290px;
+  }
+
+  .polaroid-small {
+    left: 0;
+    bottom: 0;
+    width: 125px;
+    height: 150px;
+  }
+
+  .polaroid-third {
+    right: 0;
+    bottom: 0;
+    width: 105px;
+    height: 130px;
+    padding: 7px 7px 29px;
+  }
+
+  .polaroid-third .photo-placeholder {
+    inset: 7px 7px 29px;
+  }
+
+  .polaroid-third .polaroid-caption {
+    bottom: 5px;
+    font-size: 7px;
+  }
+
+  .hand-note {
+    font-size: 12px;
+  }
+
+  .note-one {
+    top: 0;
+    right: 0;
+  }
+
+  .note-two {
+    right: 0;
+    bottom: 155px;
+  }
+}
+
+
+/* =========================================================
+   FINAL HERO COLLAGE FIX — foto tidak menutupi caption/foto lain
+   ========================================================= */
+.hero { overflow: visible; }
+
+.hero-collage {
+  position: relative;
+  width: 100%;
+  min-width: 0;
+  min-height: 520px;
+  isolation: isolate;
+  overflow: visible;
+}
+
+.collage-sun {
+  width: min(340px, 76%);
+  right: 5%;
+  top: 8%;
+  z-index: -1;
+}
+
+/* Foto utama */
+.polaroid-main {
+  width: min(265px, 64%);
+  height: 340px;
+  top: 12px;
+  right: 10%;
+  left: auto;
+  bottom: auto;
+  padding: 11px 11px 48px;
+  transform: rotate(2deg);
+  z-index: 2;
+}
+
+/* Foto kedua: kiri bawah */
+.polaroid-small {
+  width: 150px;
+  height: 170px;
+  top: auto;
+  left: 0;
+  right: auto;
+  bottom: 8px;
+  padding: 9px 9px 34px;
+  transform: rotate(-6deg);
+  z-index: 3;
+}
+
+/* Foto ketiga: kanan bawah */
+.polaroid-third {
+  width: 132px;
+  height: 158px;
+  top: auto;
+  left: auto;
+  right: 0;
+  bottom: 8px;
+  padding: 9px 9px 34px;
+  transform: rotate(5deg);
+  z-index: 3;
+}
+
+.polaroid-main > img,
+.polaroid-small > img,
+.polaroid-third > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid-main .photo-placeholder,
+.polaroid-small .photo-placeholder,
+.polaroid-third .photo-placeholder {
+  display: none;
+  position: absolute;
+  top: 11px;
+  right: 11px;
+  bottom: 48px;
+  left: 11px;
+  overflow: hidden;
+}
+
+.polaroid-small .photo-placeholder,
+.polaroid-third .photo-placeholder {
+  top: 9px;
+  right: 9px;
+  bottom: 34px;
+  left: 9px;
+}
+
+.polaroid-main .photo-placeholder img,
+.polaroid-small .photo-placeholder img,
+.polaroid-third .photo-placeholder img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.polaroid-caption {
+  left: 8px;
+  right: 8px;
+  bottom: 10px;
+  line-height: 1.25;
+}
+
+.polaroid-small .polaroid-caption,
+.polaroid-third .polaroid-caption {
+  bottom: 7px;
+  font-size: 10px;
+}
+
+.note-one { top: 0; right: 0; z-index: 5; }
+.note-two { right: 0; bottom: 190px; z-index: 5; }
+
+.doodle-flower {
+  right: 1%;
+  bottom: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@media (min-width: 761px) and (max-width: 1100px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+    column-gap: 28px;
+  }
+  .hero-collage { min-height: 480px; }
+  .polaroid-main {
+    width: min(235px, 66%);
+    height: 310px;
+    right: 7%;
+  }
+  .polaroid-small { width: 132px; height: 155px; }
+  .polaroid-third { width: 116px; height: 143px; }
+}
+
+@media (max-width: 760px) {
+  .hero-collage {
+    min-height: 405px;
+    margin-top: 12px;
+    overflow: hidden;
+  }
+  .collage-sun {
+    width: min(260px, 75%);
+    right: 7%;
+    top: 7%;
+  }
+  .polaroid-main {
+    width: min(210px, 61%);
+    height: 270px;
+    top: 8px;
+    right: 7%;
+    padding: 8px 8px 40px;
+  }
+  .polaroid-main .photo-placeholder {
+    top: 8px;
+    right: 8px;
+    bottom: 40px;
+    left: 8px;
+  }
+  .polaroid-small {
+    width: 122px;
+    height: 143px;
+    left: 1%;
+    bottom: 5px;
+    padding: 7px 7px 29px;
+  }
+  .polaroid-third {
+    width: 108px;
+    height: 133px;
+    right: 1%;
+    bottom: 5px;
+    padding: 7px 7px 29px;
+  }
+  .polaroid-small .photo-placeholder,
+  .polaroid-third .photo-placeholder {
+    top: 7px;
+    right: 7px;
+    bottom: 29px;
+    left: 7px;
+  }
+  .polaroid-caption { font-size: 10px; }
+  .polaroid-small .polaroid-caption,
+  .polaroid-third .polaroid-caption {
+    font-size: 8px;
+    bottom: 5px;
+  }
+  .note-one { top: 0; right: 0; font-size: 12px; }
+  .note-two { right: 0; bottom: 150px; font-size: 11px; }
+  .doodle-flower { font-size: 30px; right: 0; bottom: 0; }
+}
+
+@media (max-width: 390px) {
+  .hero-collage { min-height: 370px; }
+  .polaroid-main { width: 59%; height: 245px; right: 6%; }
+  .polaroid-small { width: 112px; height: 132px; }
+  .polaroid-third { width: 98px; height: 122px; }
+  .note-two { bottom: 138px; }
+}
