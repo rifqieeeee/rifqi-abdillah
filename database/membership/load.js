@@ -11,7 +11,7 @@ fetch('database/membership/data.json')
 
       div.innerHTML = `
         <h4>${item.organization}</h4>
-        <p><b><i>${item.memberId}</i></b>- ${item.period}</p>
+        <p><b><i>${item.memberId}</i></b> - ${item.period}</p>
         <p><em>${item.description}</em></p>
       `;
 
