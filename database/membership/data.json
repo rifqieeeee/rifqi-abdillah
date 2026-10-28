@@ -1,6 +1,18 @@
 {
   "memberships": [
     {
+      "organization": "The Institute of Electrical and Electronics Engineers (IEEE)",
+      "memberId": "98864076",
+      "period": "2026 - Present",
+      "description": "The Institute of Electrical and Electronics Engineers (IEEE) is the world's largest technical professional organization dedicated to advancing technology for the benefit of humanity."
+    },
+    {
+      "organization": "IEEE Consumer Technology Society Membership",
+      "memberId": "---",
+      "period": "2026 - Present",
+      "description": "IEEE Consumer Technology Society (CTSoc) is a specialized technical society within IEEE focusing on interdisciplinary consumer technologies, smart devices, artificial intelligence, and big data."
+    },
+    {
       "organization": "Asosiasi Pendidikan Tinggi Informatika dan Komputer (APTIKOM)",
       "memberId": "AP-16.11491",
       "period": "2025 - Present",
