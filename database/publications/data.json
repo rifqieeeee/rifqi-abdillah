@@ -2,6 +2,16 @@
   "publications": [
 
     {
+      "category": "national",
+      "type": "journal",
+      "year": 2026,
+      "authors": "Rifqi Abdillah, Farhanna Mar’i, Moch Deny Pratama, Nisa Dwi Septiyanti, Monica Cinthya, Ersha Aisyah Elfaiz, Meidiana Hana Putri",
+      "title": "Survival Analysis of Heart Failure Patients Using the Cox Proportional Hazards Model",
+      "venue": "Jurnal Buana Informatika",
+      "pages": "Vol.17 (2), 212-223",
+      "link": "https://doi.org/10.24002/jbi.v17i2.15734"
+    },
+    {
       "category": "international",
       "type": "conference",
       "year": 2026,
