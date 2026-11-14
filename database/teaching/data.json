@@ -148,6 +148,17 @@
 
   "activities": [
     {
+      "title": "Invited Speaker – AI for Multimedia: Study, Create, Produce",
+      "category": "speaker",
+      "institution": "Politeknik Elektronika Negeri Surabaya (PENS)",
+      "date": "Nov 2026",
+      "description": "Invited speaker at Seminar Beyond Technology, discussing the application of Artificial Intelligence to support learning, creativity, and productivity in multimedia.",
+      "organizer": "Himpunan Mahasiswa Multimedia Broadcasting, Politeknik Elektronika Negeri Surabaya",
+      "audience": "Students",
+      "venue": "Student Center, 2nd Floor, PENS",
+      "mode": "Offline"
+    },
+    {
       "title": "Invited Speaker – Things That Know Things",
       "category": "speaker",
       "institution": "Institut Teknologi Sepuluh Nopember (ITS)",
