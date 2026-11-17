@@ -1,6 +1,31 @@
 {
   "research": [
     {
+      "title": "Hiliriset IRIGO: Solar-Powered Portable Irrigation Pump with IoT Monitoring for Multi-Petaled Agricultural Investment Efficiency",
+      "title_in": "Hiliriset IRIGO: Pompa Irigasi Portabel Bertenaga Surya dengan IoT Monitoring untuk Efisiensi Investasi Multi-Petak Lahan Tani",
+      "year": 2026,
+      "scope": "national",
+      "status": "ongoing",
+      "description": "This project aims to develop and commercialize an 800 Wp solar-powered portable irrigation pump equipped with IoT monitoring, a hybrid solar-AC electrical system, and IoT-based security features. The project focuses on improving irrigation efficiency and agricultural productivity through real-world prototype validation, intellectual property protection, Q1/Q2 journal publication, and product standardization toward commercial readiness.",
+      "role": "Research Contributor",
+      "funding": "SINERGI Tematik Komersial (Strategis) 2026 - Ditjen Risbang",
+      "funding_amount": null,
+      "output": "Operational Prototype (TKT 7/8), Intellectual Property Registration, Q1/Q2 Journal Publication, and Standardized Commercial-Ready Product (TKT 8/9)",
+      "duration": "2026-2027"
+    },
+    {
+      "title": "Integrated IoT-Web Analytics System Based on Predictive Hydrological Modeling for Early Warning of Peatland Vulnerability to Support SDG 13 and SDG 15",
+      "title_in": "Integrated IoT-Web Analytics System Berbasis Pemodelan Prediktif Hidrologi untuk Peringatan Dini Kerentanan Lahan Gambut Sebagai Upaya Mendukung SDG 13 dan SDG 15",
+      "year": 2026,
+      "scope": "national",
+      "status": "ongoing",
+      "description": "This project aims to develop an integrated IoT-Web analytics system using predictive hydrological modeling to monitor peatland conditions and provide early warnings of peatland vulnerability. The system supports sustainable peatland management and contributes to Sustainable Development Goal (SDG) 13 on Climate Action and SDG 15 on Life on Land.",
+      "role": "Faculty Supervisor",
+      "funding": "LPPM Unesa",
+      "funding_amount": "3000000",
+      "output": "SINTA 4 Accredited Journal Article"
+    },
+    {
       "title": "Hybrid Embedded Edge Computing System Based on Multimodal Sensor Fusion for Illegal Logging Detection to Support SDG 15 and SDG 13",
       "title_in": "Hybrid Embedded Edge Computing System Berbasis Multimodal Sensor Fusion untuk Deteksi Penebangan Hutan Liar Sebagai Upaya Mendukung SDG 15 dan SDG 13",
       "year": 2026,
